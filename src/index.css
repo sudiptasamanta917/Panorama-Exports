@@ -1,0 +1,10 @@
+.fade-enter {
+  opacity: 1;
+}
+.fade-enter-active {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+  .font-headline {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+  }
