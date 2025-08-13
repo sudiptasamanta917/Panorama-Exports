@@ -9,6 +9,7 @@ import { IoEnterOutline } from "react-icons/io5";
 import DynamicText from '../components/DynamicText';
 import craftingTomorrowImage from "../assets/CraftingTomorrow/panorama crafting tomorrow image.jpeg";
 import GlobalFootprintImage from "../assets/GlobalFootprint/global_business.jpg";
+import globalMap from "../assets/GlobalFootprint/map.png"
 import plant1 from "../assets/OurInfrastructure/unit_1.jpg";
 import plant2 from "../assets/OurInfrastructure/unit_2.jpg";
 import plant3 from "../assets/OurInfrastructure/unit_3.jpg";
@@ -274,14 +275,14 @@ export default function Home() {
                 {/* Global Footprint Content */}
                 <div className="relative w-[90%] text-[#01276a] md:py-8 py-4 px-6 md:px-20 mt-6 flex flex-col items-start justify-center mx-auto rounded-t-md">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl text-center">
-                        Global Footprint
+                        Global Presence
                     </h2>
                     <p className="text-center text-gray-600 font-regular mt-2 text-sm md:text-lg ml-1">
                         Our International Presence
                     </p>
                 </div>
                 <div
-                    className={`bg-[url(${GlobalFootprintImage})] bg-[#182123] px-6 md:px-20 bg-cover bg-center h-[50vh] w-full mt-2 text-white flex flex-col items-center justify-center relative`}
+                    className={`bg-[url(${GlobalFootprintImage})] bg-[#182123] px-6 md:px-20 bg-center h-[50vh] w-full mt-2 text-white flex flex-col items-center justify-center relative`}
                 >
                     {/* Dark overlay */}
                     <div className="absolute inset-0 bg-black/60 z-0"></div>
@@ -340,24 +341,24 @@ export default function Home() {
                     ))}
                 </div>
 
-                {/* Media section */}
+                {/* People section */}
                 <div className="py-8 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md mt-6">
                     <div className="flex items-center justify-between">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
-                            Media
+                            People
                             <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
-                                From our Newsroom
+                                From our Internal
                             </div>
                         </div>
                         <div className="w-[50%] mx-4">
                             <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
                                 Stay connected with Panorama Exports presence
-                                through our press releases, media reports,
-                                stories, events, and files.
+                                through our press releases, media reports and
+                                updates.
                             </p>
                             <Link to="">
                                 <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg text-sm">
-                                    Visit Media
+                                    Visit People
                                     <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
                             </Link>

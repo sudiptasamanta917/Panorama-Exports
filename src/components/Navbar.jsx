@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaAnglesDown } from "react-icons/fa6";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 import firstImg from "../assets/images/first.jpg";
 import secondImg from "../assets/images/first.jpg";
@@ -12,73 +12,78 @@ import sixthImg from "../assets/images/first.jpg";
 export default function Navbar() {
     const navItems = [
         {
-            label: "OUR STORY",
+            label: "STORY",
             path: "",
             subItems: [
                 {
-                    label: "Excellence Roots",
+                    label: "Roots Of Excellence",
                     path: "/ourstory/excellenceroots",
                     image: firstImg,
                 },
                 {
-                    label: "Vision & Value",
-                    path: "/ourstory/visionandvalue",
+                    label: "Strategic Outlook",
+                    path: "/ourstory/strategicoutlook",
                     image: secondImg,
+                },
+                {
+                    label: "Core Values",
+                    path: "/ourstory/corevalues",
+                    image: thirdImg,
                 },
                 {
                     label: "Leadership",
                     path: "/ourstory/leadership",
-                    image: thirdImg,
-                },
-                {
-                    label: "Milestone",
-                    path: "/ourstory/milestone",
                     image: fourthImg,
                 },
                 {
-                    label: "Group Purpose",
-                    path: "/ourstory/groupPurpose",
+                    label: "Milestones",
+                    path: "/ourstory/milestones",
                     image: fifthImg,
                 },
                 {
-                    label: "Values",
-                    path: "/ourstory/values",
+                    label: "Our Purpose",
+                    path: "/ourstory/ourpurpose",
                     image: sixthImg,
                 },
             ],
         },
         {
-            label: "WEAVING STORIES",
+            label: "CRAFTED PRECISION",
             path: "",
             subItems: [
                 {
-                    label: "Excellence Roots",
-                    path: "/ourstory/excellenceroots",
+                    label: "Mfg. Excellence",
+                    path: "/craftedprecision/manufacturingexcellence",
                     image: firstImg,
                 },
                 {
-                    label: "Vision & Value",
-                    path: "/ourstory/visionandvalue",
+                    label: "Smart Warehousing",
+                    path: "/craftedprecision/smartwarehousing",
                     image: secondImg,
                 },
                 {
-                    label: "Leadership",
-                    path: "/ourstory/leadership",
+                    label: "Art in Every Thread",
+                    path: "/craftedprecision/artthread",
                     image: thirdImg,
                 },
                 {
-                    label: "Milestone",
-                    path: "/ourstory/milestone",
+                    label: "Exacting Standards",
+                    path: "/craftedprecision/exactingstandards",
                     image: fourthImg,
                 },
                 {
-                    label: "Group Purpose",
-                    path: "/ourstory/groupPurpose",
+                    label: "Sustainable Designs",
+                    path: "/craftedprecision/sustainabledesigns",
                     image: fifthImg,
                 },
                 {
-                    label: "Values",
-                    path: "/ourstory/values",
+                    label: "Advanced Washing",
+                    path: "/craftedprecision/advancedwashing",
+                    image: sixthImg,
+                },
+                {
+                    label: "Adaptive Capacity",
+                    path: "/craftedprecision/adaptivecapacity",
                     image: sixthImg,
                 },
             ],
@@ -88,87 +93,38 @@ export default function Navbar() {
             path: "",
             subItems: [
                 {
-                    label: "Excellence Roots",
-                    path: "/ourstory/excellenceroots",
+                    label: "Innovation that Leads",
+                    path: "/innovation/innovationleads",
                     image: firstImg,
                 },
                 {
-                    label: "Vision & Value",
-                    path: "/ourstory/visionandvalue",
+                    label: "Standard Of Perfection",
+                    path: "/innovation/standardperfection",
                     image: secondImg,
                 },
                 {
-                    label: "Leadership",
-                    path: "/ourstory/leadership",
+                    label: "Handcrafted Luxury",
+                    path: "/innovation/handcraftedluxury",
                     image: thirdImg,
-                },
-                {
-                    label: "Milestone",
-                    path: "/ourstory/milestone",
-                    image: fourthImg,
-                },
-                {
-                    label: "Group Purpose",
-                    path: "/ourstory/groupPurpose",
-                    image: fifthImg,
-                },
-                {
-                    label: "Values",
-                    path: "/ourstory/values",
-                    image: sixthImg,
                 },
             ],
         },
         {
-            label: "ELEVATED CRAFT",
+            label: "PRODUCTS",
             path: "",
-            subItems: [
-                {
-                    label: "Excellence Roots",
-                    path: "/ourstory/excellenceroots",
-                    image: firstImg,
-                },
-                {
-                    label: "Vision & Value",
-                    path: "/ourstory/visionandvalue",
-                    image: secondImg,
-                },
-                {
-                    label: "Leadership",
-                    path: "/ourstory/leadership",
-                    image: thirdImg,
-                },
-                {
-                    label: "Milestone",
-                    path: "/ourstory/milestone",
-                    image: fourthImg,
-                },
-                {
-                    label: "Group Purpose",
-                    path: "/ourstory/groupPurpose",
-                    image: fifthImg,
-                },
-                {
-                    label: "Values",
-                    path: "/ourstory/values",
-                    image: sixthImg,
-                },
-            ],
         },
-        // {
-        //     label: "MORE",
-        //     path: "",
-        //     subItems: [
-        //         {
-        //             label: "SUSTAINABILITY",
-        //             path: "/sustainability",
-        //         },
-        //         {
-        //             label: "OUR PEOPLE",
-        //             path: "/ourpeople",
-        //         },
-        //     ],
-        // },
+        {
+            label: "PEOPLE",
+            path: "",
+        },
+        {
+            label: "RESPONSIBILITY",
+            path: "",
+        },
+        {
+            label: "MEDIA",
+            path: "",
+        },
     ];
 
     const [isOpen, setIsOpen] = useState(false);
@@ -188,11 +144,11 @@ export default function Navbar() {
                 scrolled ? "bg-white" : "bg-transparent backdrop-blur-md"
             } shadow-md 2xl:h-24 sm:h-20 max-h-20 fixed top-0 left-0 right-0 z-50 transition-colors duration-500`}
         >
-            <div className=" mx-auto px-4 2xl:h-24 sm:h-20 max-h-20 flex items-center justify-between">
+            <div className=" mx-auto xl:px-4 px-2 2xl:h-24 sm:h-20 max-h-20 flex items-center justify-between xl:gap-3 gap-2">
                 {/* Logo */}
                 <Link
                     to="/"
-                    className="flex items-center h-full justify-center w-[30%]"
+                    className="flex items-center h-full justify-center 2xl:w-[30%] xl:w-[20%] w-[15%]"
                 >
                     <img
                         src="/panoramalogo.jpg"
@@ -202,7 +158,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Navigation Links */}
-                <ul className="w-[60%] hidden lg:flex gap-8 justify-end items-center relative text-white xl:text-base text-sm font-semibold mr-5">
+                <ul className="2xl:w-[62%] xl:w-[70%] w-[80%] hidden lg:flex xl:gap-8 gap-6 justify-end items-center relative text-white 2xl:text-base text-sm font-semibold mr-5">
                     {navItems.map((item, index) => (
                         <li key={index} className="relative group">
                             <Link
@@ -217,17 +173,17 @@ export default function Navbar() {
                             </Link>
 
                             {item.subItems && (
-                                <ul className="absolute left-1/2 -translate-x-1/2 pt-1 hidden group-hover:flex flex-col shadow-lg rounded-sm text-base z-10 xl:w-[450px] w-[300px]">
+                                <ul className="absolute left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col shadow-lg rounded-sm text-base z-10 2xl:w-[600px] xl:w-[450px] w-[300px]">
                                     <div
-                                        className={`flex justify-center xl:text-2xl text-lg xl:mb-[4px] mb-[7px] ${
+                                        className={`flex justify-center xl:text-2xl text-lg ${
                                             scrolled
                                                 ? "text-[#073281] hover:text-[#073281]"
                                                 : "text-white hover:text-red-300"
                                         } transition-colors duration-500 font-medium`}
                                     >
-                                        <FaAnglesDown />
+                                        <IoMdArrowDropdown />
                                     </div>
-                                    <div className="bg-white p-4 rounded-sm grid xl:grid-cols-3 grid-cols-2 gap-4">
+                                    <div className="bg-white p-4 rounded-sm grid xl:grid-cols-3 grid-cols-2 gap-4 border border-t">
                                         {item.subItems.map(
                                             (subItem, subIndex) => (
                                                 <li
@@ -238,9 +194,9 @@ export default function Navbar() {
                                                         <img
                                                             src={subItem.image}
                                                             alt={item.label}
-                                                            className="w-full h-[90px] object-cover rounded-sm"
+                                                            className="w-full 2xl:h-[110px] h-[90px] object-cover rounded-sm"
                                                         />
-                                                        {subItem.label}
+                                                        <h3 className="2xl:text-[15px] xl:text-[10.5px] text-[10.4px] font-semibold border">{subItem.label}</h3>
                                                     </Link>
                                                 </li>
                                             )
@@ -251,7 +207,7 @@ export default function Navbar() {
                         </li>
                     ))}
                 </ul>
-                <div
+                {/* <div
                     className={`${
                         scrolled
                             ? "text-[#073281] hover:text-[#073281]"
@@ -259,17 +215,17 @@ export default function Navbar() {
                     } transition-colors duration-500 hidden lg:flex text-white mr-5 px-2 xl:text-base text-sm font-medium hover:underline underline-offset-4`}
                 >
                     MORE
-                </div>
+                </div> */}
 
                 <div className="flex">
                     {/* Language Switcher */}
                     <div
-                        className={`flex items-center space-x-2 2xl:ml-16 ml:2 mr-2 ${
+                        className={`flex items-center space-x-2 2xl:ml-16 ml:2 xl:mr-2 ${
                             scrolled ? "text-[#073281]" : "text-white"
                         }`}
                     >
                         <button
-                            className={`xl:text-base text-sm transition-colors duration-500 ${
+                            className={`2xl:text-base text-sm transition-colors duration-500 ${
                                 scrolled
                                     ? "text-[#073281] hover:text-[#073281]"
                                     : "hover:text-red-300"
@@ -279,7 +235,7 @@ export default function Navbar() {
                         </button>
                         <span className="text-sm">|</span>
                         <button
-                            className={`xl:text-base text-sm transition-colors duration-500 ${
+                            className={`2xl:text-base text-sm transition-colors duration-500 ${
                                 scrolled
                                     ? "text-[#073281] hover:text-[#073281]"
                                     : "hover:text-red-300"
