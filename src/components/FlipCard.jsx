@@ -52,7 +52,7 @@ const FlipCard = ({ imageUrl, title, address, locationUrl, text }) => {
                         className="flip-card-image flip-card-back relative w-full bg-cover bg-center"
                         style={{ backgroundImage: `url(${imageUrl})` }}
                     >
-                        <div class="absolute inset-0 flex flex-col items-start justify-end pb-5 px-5 bg-gradient-to-t from-black/70 via-black/60 to-black/20">
+                        <div className="absolute inset-0 flex flex-col items-start justify-end pb-5 px-5 bg-gradient-to-t from-black/70 via-black/60 to-black/20">
                             <p className="font-bold text-lg text-white rounded-md px-2 py-1 mt-2">
                                 {title}
                             </p>

@@ -54,9 +54,9 @@ export default function GlobalMap() {
     return (
         <div
             ref={sectionRef}
-            className="bg-gradient-to-r from-green-500 to-blue-900 px-6 md:px-20 h-[60vh] w-full mt-2 text-white flex items-center justify-between gap-6 relative"
+            className="bg-gradient-to-r from-green-500 to-blue-900 px-6 md:px-20 xl:h-[60vh] h-[50vh] w-full mt-2 text-white flex items-center justify-between gap-6 relative"
         >
-            <div className="h-[50vh]">
+            <div className="xl:h-[50vh] h-[40vh] xl:w-[40%] w-[50%]">
                 <h1 className="mt-5 2xl:text-8xl lg:text-7xl md:text-5xl sm:text-4xl text-2xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] text-center">
                     Worldwide Expansion
                 </h1>
@@ -77,7 +77,7 @@ export default function GlobalMap() {
             </div>
 
             <div
-                className={`bg-[url(${globalMap})] w-[60%] h-[50vh] bg-contain relative z-10 flex flex-col items-center justify-center w-full h-full`}
+                className={`bg-[url(${globalMap})] xl:w-[60%] w-[50%] xl:h-[50vh] h-[40vh] bg-contain bg-no-repeat relative z-10 flex flex-col items-center justify-center w-full h-full`}
             ></div>
         </div>
     );
