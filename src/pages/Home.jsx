@@ -9,7 +9,7 @@ import { IoEnterOutline } from "react-icons/io5";
 import DynamicText from '../components/DynamicText';
 import craftingTomorrowImage from "../assets/CraftingTomorrow/panorama crafting tomorrow image.jpeg";
 import GlobalFootprintImage from "../assets/GlobalFootprint/global_business.jpg";
-import globalMap from "../assets/GlobalFootprint/map.png"
+import GlobalMap from "../components/GlobalMap";
 import plant1 from "../assets/OurInfrastructure/unit_1.jpg";
 import plant2 from "../assets/OurInfrastructure/unit_2.jpg";
 import plant3 from "../assets/OurInfrastructure/unit_3.jpg";
@@ -273,32 +273,31 @@ export default function Home() {
                 </div>
 
                 {/* Global Footprint Content */}
-                <div className="relative w-[90%] text-[#01276a] md:py-8 py-4 px-6 md:px-20 mt-6 flex flex-col items-start justify-center mx-auto rounded-t-md">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl text-center">
-                        Global Presence
-                    </h2>
-                    <p className="text-center text-gray-600 font-regular mt-2 text-sm md:text-lg ml-1">
-                        Our International Presence
-                    </p>
-                </div>
-                <div
-                    className={`bg-[url(${GlobalFootprintImage})] bg-[#182123] px-6 md:px-20 bg-center h-[50vh] w-full mt-2 text-white flex flex-col items-center justify-center relative`}
-                >
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/60 z-0"></div>
-                    <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-                        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-2xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)]">
-                            Worldwide Expansion
-                        </h1>
-
-                        <Link to="">
-                            <button className="mt-10 lg:text-lg md:text-md text-sm md:px-6 px-4 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
-                                Find Us Globally
-                                <IoEnterOutline className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
-                            </button>
-                        </Link>
+                <div className="py-8 mt-6 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
+                    <div className="flex items-center justify-between">
+                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
+                            Global Presence
+                            <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
+                                Our International Presence
+                            </div>
+                        </div>
+                        <div className="w-[50%] mx-4">
+                            <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
+                                Our cutting-edge manufacturing facilities and
+                                advanced warehouse systems span across key
+                                regions of India. Each location is engineered
+                                for efficiency, sustainability, and scale.
+                            </p>
+                            <Link to="">
+                                <button className="my-4 group inline-flex items-center  font-semibold md:text-lg text-sm">
+                                    Find Us Globally
+                                    <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
+                <GlobalMap />
 
                 {/* Diversified Business section */}
                 <div className="py-8 mt-6 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md">

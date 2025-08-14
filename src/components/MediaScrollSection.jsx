@@ -3,7 +3,7 @@ import Media2 from "../assets/Media/media_2.jpg";
 import Media3 from "../assets/Media/media_3.jpg";
 import FlipCard from "./FlipCard";
 
-const images = [Media1, Media2, Media3];
+// const images = [Media1, Media2, Media3];
 const stats = [
     { number: "7000+", label: "EMPLOYEES" },
     { number: "50%", label: "WOMENS" },
@@ -13,8 +13,8 @@ const stats = [
 
 const MediaScrollSection = () => {
     return (
-        <div className="bg-white py-10">
-            <div className="w-[90%] mx-auto px-6 md:px-20 grid grid-cols-4">
+        <div className="bg-white w-[90%] mx-auto px-6 md:px-20 py-10 flex">
+            <div className="w-[60%] grid grid-cols-2 gap-2">
                 {stats.map((stat, index) => (
                     <div
                         key={index}
@@ -33,6 +33,7 @@ const MediaScrollSection = () => {
                     </div>
                 ))}
             </div>
+            <div className="w-[40%]"><img src={Media1} alt="" /></div>
         </div>
     );
 };

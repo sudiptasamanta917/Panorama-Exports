@@ -12,7 +12,7 @@ import sixthImg from "../assets/images/first.jpg";
 export default function Navbar() {
     const navItems = [
         {
-            label: "STORY",
+            label: "OUR STORY",
             path: "",
             subItems: [
                 {
@@ -173,7 +173,7 @@ export default function Navbar() {
                             </Link>
 
                             {item.subItems && (
-                                <ul className="absolute left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col shadow-lg rounded-sm text-base z-10 2xl:w-[600px] xl:w-[450px] w-[300px]">
+                                <ul className="absolute left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col shadow-lg rounded-sm text-base z-10 2xl:w-[500px] xl:w-[450px] w-[300px]">
                                     <div
                                         className={`flex justify-center xl:text-2xl text-lg ${
                                             scrolled
@@ -196,7 +196,7 @@ export default function Navbar() {
                                                             alt={item.label}
                                                             className="w-full 2xl:h-[110px] h-[90px] object-cover rounded-sm"
                                                         />
-                                                        <h3 className="2xl:text-[15px] xl:text-[10.5px] text-[10.4px] font-semibold border">{subItem.label}</h3>
+                                                        <h3 className="2xl:text-[12px] xl:text-[10.5px] text-[10.4px] font-semibold border">{subItem.label}</h3>
                                                     </Link>
                                                 </li>
                                             )
