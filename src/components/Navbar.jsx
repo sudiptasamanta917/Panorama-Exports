@@ -183,15 +183,17 @@ export default function Navbar() {
                                     >
                                         <IoMdArrowDropdown />
                                     </div>
-                                    <div className="bg-white rounded-sm grid grid-cols-1 border-t">
+                                    <div className="bg-[#beaf8e]/70 text-white rounded-sm grid grid-cols-1 border-t">
                                         {item.subItems.map(
                                             (subItem, subIndex) => (
                                                 <li
                                                     key={subIndex}
-                                                    className="hover:bg-blue-950 hover:text-white px-2 text-black whitespace-nowrap border-b"
+                                                    className="hover:bg-[#beaf8e] hover:text-white px-2 whitespace-nowrap border-b"
                                                 >
                                                     <Link to={subItem.path}>
-                                                        <h3 className="py-2">{subItem.label}</h3>
+                                                        <h3 className="py-2">
+                                                            {subItem.label}
+                                                        </h3>
                                                     </Link>
                                                 </li>
                                             )
