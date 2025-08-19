@@ -142,14 +142,14 @@ export default function GlobalMap() {
             className="bg-gradient-to-r from-[#4a3e2e]/90 via-[#7e6e55]/90 to-[#bda684]/90 px-auto sm:px-6 md:px-20 xl:h-[60vh] lg:h-[50vh] h-[75vh] w-full mt-2 text-white lg:flex items-center justify-between gap-6 relative"
         >
             <div className="xl:h-[50vh] lg:h-[40vh] h-[30vh] xl:w-[40%] lg:w-[30%] w-full 2xl:px-5 sm:px-10 lg:px-0 px-5 flex flex-col justify-center">
-                <h1 className="2xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] xl:gap-7 gap-5 flex flex-wrap justify-center items-center">
+                <h1 className="2xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] xl:gap-7 gap-5 flex flex-wrap justify-start items-center">
                     <p className="font-semibold 2xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl text-2xl">
                         Global
                     </p>
                     Footprint
                 </h1>
                 <div className="mt-10 flex justify-center items-center gap-8">
-                    <p className="2xl:text-3xl lg:text-xl md:text-lg text-[12px] text-white">
+                    <p className="2xl:text-2xl lg:text-xl md:text-lg text-[12px] text-white">
                         Panorama's presence extends to over numerous countries
                         in four regions, establishing it as a
                         significant global leader
