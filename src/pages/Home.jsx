@@ -64,7 +64,32 @@ const heroSlides = [
     },
 ];
 
+import brand1 from "../assets/GlobalFootprint/brands/25487.webp";
+import brand2 from "../assets/GlobalFootprint/brands/Boden-new-logo.jpg";
+import brand3 from "../assets/GlobalFootprint/brands/Boots_logo.svg.png";
+import brand4 from "../assets/GlobalFootprint/brands/brand.gif";
+import brand5 from "../assets/GlobalFootprint/brands/ceclogo.webp";
+import brand6 from "../assets/GlobalFootprint/brands/channels4_profile.jpg";
+import brand7 from "../assets/GlobalFootprint/brands/DKNY-Donna-Karan-New-York-logo.webp";
+import brand8 from "../assets/GlobalFootprint/brands/Etam-logo.jpg";
+import brand9 from "../assets/GlobalFootprint/brands/Falabella_Logo.png";
+import brand10 from "../assets/GlobalFootprint/brands/george (1).svg";
+import brand11 from "../assets/GlobalFootprint/brands/george.svg";
+import brand12 from "../assets/GlobalFootprint/brands/images (1).png";
+import brand13 from "../assets/GlobalFootprint/brands/images.jpg";
+import brand14 from "../assets/GlobalFootprint/brands/images.png";
+import brand15 from "../assets/GlobalFootprint/brands/KS.png";
+import brand16 from "../assets/GlobalFootprint/brands/logo_FARM-RIO.png";
+import brand17 from "../assets/GlobalFootprint/brands/Mango-logo.jpg";
+import brand18 from "../assets/GlobalFootprint/brands/marea_by_liz_joy_logo.jpg";
+import brand19 from "../assets/GlobalFootprint/brands/Matalan-logo.png";
+import brand20 from "../assets/GlobalFootprint/brands/Mothercare-Emblem.png";
+import brand21 from "../assets/GlobalFootprint/brands/Mothercare-Logo.png";
+import brand22 from "../assets/GlobalFootprint/brands/Shinsegae_logo.svg.png";
+import brand23 from "../assets/GlobalFootprint/brands/street-one-logo-png_seeklo.png";
+import brand24 from "../assets/GlobalFootprint/brands/Tesco_Logo.svg.png";
 
+const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20, brand21, brand22, brand23, brand24];
 
 export default function Home() {
     const swiperRef = useRef(null);
@@ -226,7 +251,8 @@ export default function Home() {
                     <div className="2xl:w-[65%] xl:w-[70%] lg:w-[90%] w-[97%] sm:ml-20 px-4 md:px-8 flex items-center">
                         <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight flex ">
                             <span className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl flex items-center">
-                                PANORAMA <RxDividerVertical className="text-[80px]" />{" "}
+                                PANORAMA{" "}
+                                <RxDividerVertical className="text-[80px]" />{" "}
                             </span>
                             <DynamicText
                                 slides={heroSlides}
@@ -309,26 +335,55 @@ export default function Home() {
 
                 {/* Global Footprint Content */}
                 <div className="py-8 mt-6 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
-                    <div className="sm:flex items-center justify-between">
+                    <div className="lg:flex items-center justify-between">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
                             Global Presence
-                            <div className="text-sm md:text-lg mt-3 md:mb-14 mb-5 text-gray-600 ml-1">
+                            {/* <div className="text-sm md:text-lg mt-3 md:mb-14 mb-5 text-gray-600 ml-1">
                                 Our International Presence
-                            </div>
+                            </div> */}
                         </div>
-                        <div className="md:w-[50%] md:mx-4">
-                            <p className="2xl:text-xl lg:text-lg md:text-sm text-[8px] text-gray-600">
-                                Our cutting-edge manufacturing facilities and
-                                advanced warehouse systems span across key
-                                regions of India. Each location is engineered
-                                for efficiency, sustainability, and scale.
-                            </p>
-                            <Link to="">
+                        <div
+                            className="lg:w-[50%] w-[80%] md:mx-4 p-2"
+                            
+                        >
+                            <div className="overflow-hidden w-full">
+                                {/* scrolling container */}
+                                <div className="flex animate-scroll gap-3" >
+                                    {[...brands, ...brands].map(
+                                        (brand, idx) => (
+                                            <div
+                                                key={idx}
+                                                className="2xl:w-1/4 lg:w-1/3 w-1/2 flex-shrink-0 flex items-center justify-center"
+                                            >
+                                                <img
+                                                    src={brand}
+                                                    alt={"brand"}
+                                                    className="h-36 w-36 object-contain"
+                                                />
+                                            </div>
+                                        )
+                                    )}
+                                </div>
+
+                                {/* Tailwind custom animation */}
+                                <style>
+                                    {`
+                                    @keyframes scroll {
+                                        0% { transform: translateX(0); }
+                                        100% { transform: translateX(-50%); }
+                                    }
+                                    .animate-scroll {
+                                        animation: scroll 25s linear infinite;
+                                    }
+                                    `}
+                                </style>
+                            </div>
+                            {/* <Link to="">
                                 <button className="my-4 group inline-flex items-center  font-semibold md:text-lg sm:text-sm text-[9px]">
                                     Find Us Globally
                                     <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>

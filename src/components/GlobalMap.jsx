@@ -3,27 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MdLocationPin } from "react-icons/md";
-import globalMap from "../assets/GlobalFootprint/map.png";
-import brand1 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand2 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand3 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand4 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand5 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand6 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand7 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand8 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand9 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand10 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand11 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand12 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand13 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand14 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand15 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand16 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand17 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand18 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand19 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand20 from "../assets/GlobalFootprint/brands/25487.webp";
+import globalMap from "../assets/GlobalFootprint/MAP PNG.png";
 
 
 //marker positions in percentages (relative to map div)
@@ -98,10 +78,6 @@ const markers = [
     },
 ];
 
-const brands = [
-    brand1, brand1, brand1, brand1, brand1, brand1, brand1, brand1,
-];
-
 export default function GlobalMap() {
     const [countries, setCountries] = useState(0);
     const [offices, setOffices] = useState(0);
@@ -163,31 +139,27 @@ export default function GlobalMap() {
     return (
         <div
             ref={sectionRef}
-            className="bg-gradient-to-r from-green-500 to-blue-900 px-auto sm:px-6 md:px-20 xl:h-[60vh] md:h-[50vh] h-[70vh] w-full mt-2 text-white sm:flex items-center justify-between gap-6 relative"
+            className="bg-gradient-to-r from-[#4a3e2e]/90 via-[#7e6e55]/90 to-[#bda684]/90 px-auto sm:px-6 md:px-20 xl:h-[60vh] lg:h-[50vh] h-[75vh] w-full mt-2 text-white lg:flex items-center justify-between gap-6 relative"
         >
-            <div className="xl:h-[50vh] h-[40vh] xl:w-[40%] w-[50%]">
-                <h1 className="mt-5 2xl:text-8xl lg:text-7xl md:text-5xl sm:text-4xl text-2xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] text-center">
-                    GLOBAL FOOTPRINT
+            <div className="xl:h-[50vh] lg:h-[40vh] h-[30vh] xl:w-[40%] lg:w-[30%] w-full 2xl:px-5 sm:px-10 lg:px-0 px-5 flex flex-col justify-center">
+                <h1 className="2xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl text-2xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] xl:gap-7 gap-5 flex flex-wrap justify-center items-center">
+                    <p className="font-semibold 2xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl">
+                        Global
+                    </p>
+                    Footprint
                 </h1>
-                <div className="mt-20 flex justify-center items-center gap-8">
-                    {/* <div className="text-xl flex items-center gap-2 text-gray-300">
-                        <p className="text-4xl font-semibold text-red-950">
-                            {countries}+
-                        </p>{" "}
-                        Countries
-                    </div>
-                    <div className="text-xl flex items-center gap-2 text-gray-300">
-                        <p className="text-4xl font-semibold text-red-950">
-                            {offices}+
-                        </p>{" "}
-                        Offices
-                    </div> */}
+                <div className="mt-10 flex justify-center items-center gap-8">
+                    <p className="2xl:text-3xl lg:text-xl md:text-lg text-[12px] text-white">
+                        Panorama's presence extends to over numerous countries
+                        in four regions, establishing it as a
+                        significant global leader
+                    </p>
                 </div>
             </div>
 
             <div
                 ref={ref}
-                className={`xl:w-[60%] w-[50%] xl:h-[50vh] h-[40vh] z-10 flex flex-col items-center justify-center w-full h-full`}
+                className={`xl:w-[60%] lg:w-[70%] xl:h-[50vh] h-[40vh] z-10 flex flex-col items-center justify-center w-full h-full`}
             >
                 <div className="relative w-full h-full">
                     {/* Background Map */}
