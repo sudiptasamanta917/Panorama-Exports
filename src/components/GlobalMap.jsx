@@ -8,140 +8,71 @@ import globalMap from "../assets/GlobalFootprint/MAP PNG.png";
 
 //marker positions in percentages (relative to map div)
 const markers = [
-    { country: "Belgium", brands: ["Farm Rio"], top: "30%", left: "45%" },
+    { country: "USA", brands: ["Lucky Brand"], top: "27%", left: "23%" },
     {
-        country: "US",
-        brands: ["Farm Rio", "Lucky Brand", "Boden", "DKNY", "Baby Moti"],
-        top: "30%",
-        left: "20%",
+        country: "COLOMBIA",
+        brands: ["Falabella"],
+        top: "50%",
+        left: "22%",
     },
+    {
+        country: "PERU",
+        brands: [
+            "Falabella"
+        ],
+        top: "62%",
+        left: "24%",
+    },
+    { country: "CHILE", brands: ["Falabella"], top: "73%", left: "25%" },
     {
         country: "UK",
-        brands: [
-            "Farm Rio",
-            "Tesco",
-            "George",
-            "Boden",
-            "TJ Maxx",
-            "Matala",
-            "Boots",
-            "Monsoon",
-            "Redid",
-            "Baby Moti",
-        ],
-        top: "28%",
-        left: "70%",
+        brands: ["Farm Rio", "Tesco", "George", "Boden", "TJ Maxx", "Matala", "Boots", "Monsoon", "Redid", "Baby Moti"],
+        top: "19%",
+        left: "43%",
     },
-    { country: "Slovakia", brands: ["Tesco"], top: "35%", left: "49%" },
+    { country: "SPAIN", brands: ["Mango"], top: "27%", left: "42%" },
+    { country: "BELGIUM", brands: ["Farm Rio"], top: "22%", left: "45%" },
+    { country: "GERMANY", brands: ["Cecil", "Street One"], top: "20%", left: "47%" },
+    { country: "GREECE", brands: ["Mothercare"], top: "27%", left: "50%" },
+    { country: "QATAR", brands: ["Landmark Group"], top: "39%", left: "56%" },
+    { country: "AUSTRALIA", brands: ["Taking Shape"], top: "70%", left: "83%" },
     {
-        country: "UAE",
-        brands: ["Landmark Group", "Mothercare"],
-        top: "40%",
-        left: "15%",
-    },
-    { country: "KSA", brands: ["Landmark Group"], top: "40%", left: "58%" },
-    { country: "Qatar", brands: ["Landmark Group"], top: "43%", left: "61%" },
-    { country: "Colombia", brands: ["Falabella"], top: "50%", left: "25%" },
-    { country: "Chile", brands: ["Falabella"], top: "65%", left: "25%" },
-    { country: "Peru", brands: ["Falabella"], top: "60%", left: "28%" },
-    { country: "Australia", brands: ["Taking Shape"], top: "75%", left: "80%" },
-    {
-        country: "New Zealand",
+        country: "NEW ZEALAND",
         brands: ["Taking Shape"],
-        top: "85%",
-        left: "92%",
+        top: "81%",
+        left: "88%",
     },
-    { country: "Singapore", brands: ["Mothercare"], top: "60%", left: "75%" },
-    { country: "Malaysia", brands: ["Mothercare"], top: "50%", left: "70%" },
-    { country: "China", brands: ["Mothercare"], top: "40%", left: "75%" },
-    { country: "Greece", brands: ["Mothercare"], top: "45%", left: "55%" },
-    { country: "Indonesia", brands: ["Mothercare"], top: "65%", left: "77%" },
-    { country: "Spain", brands: ["Mango"], top: "35%", left: "42%" },
+    { country: "Singapore", brands: ["Mothercare"], top: "57%", left: "74%" },
+    { country: "Malaysia", brands: ["Mothercare"], top: "50%", left: "71%" },
+    { country: "CHINA", brands: ["Mothercare"], top: "31%", left: "74%" },
+    { country: "UAE", brands: ["Mothercare", "Landmark Group"], top: "41%", left: "58%" },
+    { country: "INDONESIA", brands: ["Mothercare"], top: "54%", left: "81%" },
     {
-        country: "Korea",
+        country: "KOREA",
         brands: ["Top Ten", "Laughing Child"],
-        top: "35%",
-        left: "80%",
-    },
-    { country: "France", brands: ["Etam"], top: "30%", left: "30%" },
-    {
-        country: "Germany",
-        brands: ["Street One", "Cecil"],
-        top: "35%",
-        left: "25%",
+        top: "39%",
+        left: "77%",
     },
     {
-        country: "South Africa",
+        country: "SOUTH AFRICA",
         brands: ["Trueworths"],
-        top: "75%",
-        left: "55%",
+        top: "70%",
+        left: "52%",
     },
 ];
 
 export default function GlobalMap() {
-    const [countries, setCountries] = useState(0);
-    const [offices, setOffices] = useState(0);
-    const sectionRef = useRef(null);
-    const observerRef = useRef(null);
-
-    // text animations logic.................
-    const animateCounts = () => {
-        setCountries(0);
-        setOffices(0);
-
-        let cInterval = setInterval(() => {
-            setCountries((prev) => {
-                if (prev < 35) return prev + 1;
-                clearInterval(cInterval);
-                return prev;
-            });
-        }, 80); // slower speed (100ms per increment)
-
-        let oInterval = setInterval(() => {
-            setOffices((prev) => {
-                if (prev < 120) return prev + 1;
-                clearInterval(oInterval);
-                return prev;
-            });
-        }, 20); // slower speed for offices
-    };
-
-    useEffect(() => {
-        observerRef.current = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        animateCounts(); // replay animation every time it appears
-                    }
-                });
-            },
-            { threshold: 0.5 } // triggers when 50% visible
-        );
-
-        if (sectionRef.current) {
-            observerRef.current.observe(sectionRef.current);
-        }
-
-        return () => {
-            if (observerRef.current && sectionRef.current) {
-                observerRef.current.unobserve(sectionRef.current);
-            }
-        };
-    }, []);
 
     // map locations animation logic...............
     const { ref, inView } = useInView({
-        triggerOnce: true,
+        triggerOnce: false,
         threshold: 0.2,
     });
 
 
     return (
-        <div
-            ref={sectionRef}
-            className="bg-gradient-to-r from-[#4a3e2e]/90 via-[#7e6e55]/90 to-[#bda684]/90 px-auto sm:px-6 md:px-20 xl:h-[60vh] lg:h-[50vh] h-[75vh] w-full mt-2 text-white lg:flex items-center justify-between gap-6 relative"
-        >
-            <div className="xl:h-[50vh] lg:h-[40vh] h-[30vh] xl:w-[40%] lg:w-[30%] w-full 2xl:px-5 sm:px-10 lg:px-0 flex flex-col justify-center">
+        <div className="bg-gradient-to-r from-[#4a3e2e]/90 via-[#7e6e55]/90 to-[#bda684]/90 px-auto sm:px-6 md:px-20 xl:h-[60vh] lg:h-[50vh] sm:h-[75vh] h-[55vh] w-full mt-2 text-white lg:flex items-center justify-between gap-6 relative">
+            <div className="xl:h-[50vh] lg:h-[40vh] sm:h-[30vh] h-[25vh] xl:w-[40%] lg:w-[30%] w-full 2xl:px-5 px-10 lg:px-0 flex flex-col justify-center">
                 <h1 className="2xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] xl:gap-7 gap-5 flex flex-wrap justify-start items-center">
                     <p className="font-semibold 2xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl text-2xl">
                         Global
@@ -170,33 +101,37 @@ export default function GlobalMap() {
                     />
 
                     {/* Location Markers */}
-                    {markers.map((marker, index) => (
-                        <motion.div
-                            key={marker.country || index}
-                            className="absolute text-white group"
-                            style={{ top: marker.top, left: marker.left }}
-                            initial={{ y: 100, opacity: 0 }}
-                            animate={
-                                inView ? { y: [100, -25, 0], opacity: 1 } : {}
-                            }
-                            transition={{
-                                duration: 0.8,
-                                delay: index * 0.1,
-                                ease: "easeOut",
-                            }}
-                        >
-                            <div className="relative">
-                                <MdLocationPin
-                                    size={24}
-                                    className="text-white"
-                                />
-                                <div className="absolute z-10 bottom-6 hidden group-hover:block bg-white text-sm text-red-950 px-2 py-1 rounded-lg shadow-md whitespace-nowrap">
-                                    <strong>{marker.country}:</strong>{" "}
-                                    {marker.brands.join(", ")}
+                    <div className="absolute inset-0 hidden sm:block">
+                        {markers.map((marker, index) => (
+                            <motion.div
+                                key={marker.country || index}
+                                className="absolute text-white group"
+                                style={{ top: marker.top, left: marker.left }}
+                                initial={{ y: 450, opacity: 0 }}
+                                animate={
+                                    inView
+                                        ? { y: [450, -25, 0], opacity: 1 }
+                                        : {}
+                                }
+                                transition={{
+                                    duration: 0.8,
+                                    delay: index * 0.15,
+                                    ease: "easeOut",
+                                }}
+                            >
+                                <div className="relative">
+                                    <MdLocationPin
+                                        size={28}
+                                        className="text-white"
+                                    />
+                                    <div className="absolute z-10 bottom-6 hidden group-hover:block bg-white text-sm text-red-950 px-2 py-1 rounded-lg shadow-md whitespace-nowrap">
+                                        <strong>{marker.country} : </strong>{" "}
+                                        {marker.brands.join(", ")}
+                                    </div>
                                 </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

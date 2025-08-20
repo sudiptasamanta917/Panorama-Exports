@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import craftingTomorrowImage from "../assets/CraftingTomorrow/panorama crafting tomorrow image.jpeg";
+import craftingTomorrowImage from "../assets/CraftingTomorrow/01.png";
 import { CiPlay1 } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 
@@ -27,7 +27,7 @@ export default function CraftingTomorrow() {
                 className="pt-4 w-full h-screen text-white flex flex-col items-center justify-center relative"
             >
                 {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black/60 z-0"></div>
+                <div className="absolute inset-0 bg-black/40 z-0"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
                     <h1 className="text-7xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)]">
                         Crafting Tomorrow

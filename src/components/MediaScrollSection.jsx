@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { IoEnterOutline } from "react-icons/io5";
-import Media1 from "../assets/Media/media_1.jpg";
+import Media1 from "../assets/Media/media_1.JPG";
 import Media2 from "../assets/Media/media_2.jpg";
 import Media3 from "../assets/Media/media_3.jpg";
 
@@ -95,10 +95,10 @@ const MediaScrollSection = () => {
     };
 
     return (
-        <div className="bg-white w-[90%] mx-auto px-6 md:px-20 py-10 flex gap-4">
+        <div className="bg-white w-[90%] mx-auto px-6 md:px-20 py-10 lg:flex gap-4">
             <div
                 ref={sectionRef}
-                className="xl:w-[60%] w-[50%] grid grid-cols-2 xl:gap-6 gap-4"
+                className="xl:w-[60%] lg:w-[50%] w-full grid grid-cols-2 xl:gap-6 gap-4"
             >
                 {stats.map((stat, index) => {
                     const match = stat.number.match(/[\d,\.]+/);
@@ -124,7 +124,7 @@ const MediaScrollSection = () => {
                 })}
             </div>
 
-            <div className="xl:w-[40%] w-[50%] overflow-hidden rounded-lg">
+            <div className="xl:w-[40%] lg:w-[50%] w-full overflow-hidden rounded-lg lg:mt-0 mt-10 border">
                 <div
                     onTransitionEnd={handleTransitionEnd}
                     className={`flex ${
@@ -137,7 +137,7 @@ const MediaScrollSection = () => {
                     {extended.map((src, idx) => (
                         <div
                             key={idx}
-                            className="w-full h-[50vh] flex-shrink-0 bg-center bg-cover flex items-end justify-center"
+                            className="w-full lg:h-[60vh] md:h-[42vh] h-[30vh] flex-shrink-0 bg-center bg-cover bg-no-repeat flex items-end justify-center"
                             style={{ backgroundImage: `url(${src})` }}
                         >
                             {/* <a to="" className="mb-10">

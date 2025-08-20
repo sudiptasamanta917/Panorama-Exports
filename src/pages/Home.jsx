@@ -14,7 +14,6 @@ import MediaScrollSection from "../components/MediaScrollSection";
 import FlipCard from "../components/FlipCard";
 import Certifications from "../components/Certifications";
 
-import craftingTomorrowImage from "../assets/CraftingTomorrow/panorama crafting tomorrow image.jpeg";
 import GlobalFootprintImage from "../assets/GlobalFootprint/global_business.jpg";
 import plant1 from "../assets/OurInfrastructure/unit_1.jpg";
 import plant2 from "../assets/OurInfrastructure/unit_2.jpg";
@@ -64,6 +63,7 @@ const heroSlides = [
     },
 ];
 
+// Brands images
 import brand1 from "../assets/GlobalFootprint/brands/25487.webp";
 import brand2 from "../assets/GlobalFootprint/brands/Boden-new-logo.jpg";
 import brand3 from "../assets/GlobalFootprint/brands/Boots_logo.svg.png";
@@ -91,9 +91,18 @@ import brand24 from "../assets/GlobalFootprint/brands/Tesco_Logo.svg.png";
 
 const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20, brand21, brand22, brand23, brand24];
 
+// Crafting Tomorrow images
+import img1 from "../assets/CraftingTomorrow/01.png";
+import img2 from "../assets/CraftingTomorrow/2.png";
+import img3 from "../assets/CraftingTomorrow/3.png";
+import img4 from "../assets/CraftingTomorrow/4.png";
+
+const crImages = [img1, img2, img3, img4];
+
 export default function Home() {
     const swiperRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         const swiper = swiperRef.current?.swiper;
@@ -140,6 +149,13 @@ export default function Home() {
             clearTimeout(autoplayTimer);
             swiper.off('slideChange', handleSlideChange);
         };
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % crImages.length);
+        }, 4000); // 4 seconds per slide
+        return () => clearInterval(interval);
     }, []);
 
     const units = [
@@ -306,22 +322,33 @@ export default function Home() {
                 <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex space-x-2"></div>
             </div>
 
-            <div className="bg-white sm:pt-6">
+            <div className="bg-white sm:pt-6 pt-2">
                 {/* Crafting Tomorrow Content */}
-                <div
-                    style={{
-                        backgroundImage: `url(${craftingTomorrowImage})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        position: "relative",
-                    }}
-                    className="bg-[#182123] px-6 md:px-20 mb-6 sm:h-[80vh] h-[380px] text-white flex flex-col items-center justify-center relative"
-                >
+                <div className="relative bg-[#182123] px-6 md:px-20 mb-6 sm:h-[80vh] h-[380px] text-white flex flex-col items-center justify-center overflow-hidden">
+                    {/* Background Slideshow */}
+                    {crImages.map((img, index) => (
+                        <div
+                            key={index}
+                            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                                index === currentIndex
+                                    ? "opacity-100"
+                                    : "opacity-0"
+                            }`}
+                            style={{
+                                backgroundImage: `url(${img})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                            }}
+                        ></div>
+                    ))}
+
                     {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/50 z-0"></div>
+                    <div className="absolute inset-0 bg-black/30 z-0"></div>
+
+                    {/* Text + Button (always fixed on top) */}
                     <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-                        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-2xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)]">
-                            Crafting Tomorrow
+                        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-2xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] flex flex-wrap gap-4">
+                            <p className="font-bold">Crafting</p> Tomorrow
                         </h1>
 
                         <Link to="/craftingtomorrow">
@@ -335,104 +362,87 @@ export default function Home() {
 
                 {/* Global Footprint Content */}
                 <div className="py-8 mt-6 text-[#01276a] mx-auto px-6 md:px-20 rounded-t-md">
-                    <div className="lg:flex items-center justify-between 2xl:px-5 gap-6">
+                    <div className="flex items-center justify-center 2xl:px-5 gap-6">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular flex flex-wrap gap-4">
                             <p className="font-bold">Global</p> Presence
-                            {/* <div className="text-sm md:text-lg mt-3 md:mb-14 mb-5 text-gray-600 ml-1">
-                                Our International Presence
-                            </div> */}
                         </div>
-                        <div className="lg:w-[60%] w-[100%] xl:mx-4 p-2">
-                            <div className="overflow-hidden w-full py-6 bg-white space-y-6">
-                                {/* Row 1 */}
-                                <div className="flex animate-scroll gap-4">
-                                    {[...brands, ...brands].map(
-                                        (brand, idx) => (
-                                            <div
-                                                key={`row1-${idx}`}
-                                                className="xl:w-1/5 lg:w-1/4 sm:w-1/6 w-1/4 flex-shrink-0 flex items-center justify-center"
-                                            >
-                                                {/* Card with shadow */}
-                                                <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
-                                                    <img
-                                                        src={brand}
-                                                        alt="brand"
-                                                        className="2xl:h-20 lg:h-16 md:h-12 h-10 2xl:w-28 lg:w-24 md:w-20 w-16 object-contain"
-                                                    />
-                                                </div>
-                                            </div>
-                                        )
-                                    )}
+                    </div>
+                </div>
+                {/* Brands logo section */}
+                <div className="w-full mb-10">
+                    <div className="overflow-hidden w-full py-6 bg-white space-y-6">
+                        {/* Row 1 */}
+                        <div className="flex w-max animate-marquee gap-4">
+                            {[...brands, ...brands].map((brand, idx) => (
+                                <div
+                                    key={`row1-${idx}`}
+                                    className="flex-shrink-0 flex items-center justify-center"
+                                >
+                                    <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
+                                        <img
+                                            src={brand}
+                                            alt="brand"
+                                            className="2xl:h-20 lg:h-16 md:h-12 h-10 2xl:w-28 lg:w-24 md:w-20 w-16 object-contain"
+                                        />
+                                    </div>
                                 </div>
-
-                                {/* Row 2 (scrolls opposite direction for variation) */}
-                                <div className="flex animate-scroll-reverse gap-4">
-                                    {[...brands, ...brands].map(
-                                        (brand, idx) => (
-                                            <div
-                                                key={`row2-${idx}`}
-                                                className="xl:w-1/5 lg:w-1/4 sm:w-1/6 w-1/4 flex-shrink-0 flex items-center justify-center"
-                                            >
-                                                {/* Card with shadow */}
-                                                <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
-                                                    <img
-                                                        src={brand}
-                                                        alt="brand"
-                                                        className="2xl:h-20 lg:h-16 md:h-12 h-10 2xl:w-28 lg:w-24 md:w-20 w-16 object-contain"
-                                                    />
-                                                </div>
-                                            </div>
-                                        )
-                                    )}
-                                </div>
-
-                                {/* Tailwind custom animations */}
-                                <style>
-                                    {`
-                                    @keyframes scroll {
-                                        0% { transform: translateX(0); }
-                                        100% { transform: translateX(-50%); }
-                                    }
-                                    @keyframes scroll-reverse {
-                                        0% { transform: translateX(-50%); }
-                                        100% { transform: translateX(0); }
-                                    }
-                                    .animate-scroll {
-                                        animation: scroll 25s linear infinite;
-                                    }
-                                    .animate-scroll-reverse {
-                                        animation: scroll-reverse 25s linear infinite;
-                                    }
-                                    `}
-                                </style>
-                            </div>
-
-                            {/* <Link to="">
-                                <button className="my-4 group inline-flex items-center  font-semibold md:text-lg sm:text-sm text-[9px]">
-                                    Find Us Globally
-                                    <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
-                                </button>
-                            </Link> */}
+                            ))}
                         </div>
+
+                        {/* Row 2 */}
+                        <div className="flex w-max animate-marquee-reverse gap-4">
+                            {[...brands, ...brands].map((brand, idx) => (
+                                <div
+                                    key={`row2-${idx}`}
+                                    className="flex-shrink-0 flex items-center justify-center"
+                                >
+                                    <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
+                                        <img
+                                            src={brand}
+                                            alt="brand"
+                                            className="2xl:h-20 lg:h-16 md:h-12 h-10 2xl:w-28 lg:w-24 md:w-20 w-16 object-contain"
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Tailwind custom animations */}
+                        <style>
+                            {`
+                            @keyframes marquee {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-50%); }
+                            }
+                            @keyframes marquee-reverse {
+                            0% { transform: translateX(-50%); }
+                            100% { transform: translateX(0); }
+                            }
+                            .animate-marquee {
+                            animation: marquee 60s linear infinite;
+                            }
+                            .animate-marquee-reverse {
+                            animation: marquee-reverse 60s linear infinite;
+                            }
+                            `}
+                        </style>
                     </div>
                 </div>
                 <GlobalMap />
 
-                {/* Diversified Business section */}
+                {/* Integrated Units section */}
                 <div className="py-8 mt-6 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
                     <div className="flex items-center justify-between">
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
-                            Manufacturing Excellence
-                            <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
+                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular flex flex-wrap gap-4">
+                            <p className="font-bold">5 Integrated</p> Units
+                            {/* <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
                                 Global-Grade Facilities
-                            </div>
+                            </div> */}
                         </div>
                         <div className="w-[50%] mx-4">
                             <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
-                                Our cutting-edge manufacturing facilities and
-                                advanced warehouse systems span across key
-                                regions of India. Each location is engineered
-                                for efficiency, sustainability, and scale.
+                                Seamless cut-to-pack capabilities for
+                                quality and speed.
                             </p>
                             <Link to="">
                                 <button className="my-4 group inline-flex items-center  font-semibold md:text-lg text-sm">
@@ -459,7 +469,7 @@ export default function Home() {
                     ))}
                 </div> */}
                 {/* Google Map section */}
-                <div className="w-[90%] mx-auto px-6 md:px-20">
+                <div className="sm:w-[90%] sm:mx-auto sm:px-6 md:px-20">
                     <LiveMap
                         locations={units}
                         center={[28.5, 77.3]}
@@ -541,12 +551,12 @@ export default function Home() {
                     className="mt-2 h-[60vh] text-white flex items-center justify-start relative overflow-hidden"
                 >
                     {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/50 z-0"></div>
+                    <div className="absolute inset-0 bg-black/30 z-0"></div>
                     <div className="w-[70%] mx-auto relative z-10">
                         <h1 className="lg:text-5xl md:text-4xl sm:text-2xl text-xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] w-[400px] whitespace-nowrap">
                             Panorama's Great Community
                         </h1>
-                        <div className="w-[400px] my-4">
+                        <div className="md:w-[400px] my-4 lg:text-lg md:text-md sm:text-sm text-[12px]">
                             Quality materials is a powerful catalyst for change,
                             and Panorama is committed to harnessing its
                             transform potential.
