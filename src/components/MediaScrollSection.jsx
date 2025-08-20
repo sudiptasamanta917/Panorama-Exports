@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { IoEnterOutline } from "react-icons/io5";
-import Media1 from "../assets/Media/media_1.JPG";
+import Media1 from "../assets/Media/media_1.jpg";
 import Media2 from "../assets/Media/media_2.jpg";
 import Media3 from "../assets/Media/media_3.jpg";
 
