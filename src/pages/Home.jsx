@@ -247,12 +247,12 @@ export default function Home() {
                 </Swiper>
 
                 {/* Fixed Text Content - Outside of Swiper */}
-                <div className="absolute mt-[65vh] 2xl:ml-[100px] m-[50px] h-[20vh] inset-0 flex items-center justify-start pointer-events-none z-20">
+                <div className="absolute 3xl:mt-[65vh] 2xl:mt-[65vh] xl:mt-[65vh] lg:mt-[65vh] md:mt-[65vh] sm:mt-[65vh] mt-[20vh] 2xl:ml-[30px] md:m-[10px] h-[20vh] inset-0 flex items-center justify-start pointer-events-none z-20">
                     <div className="2xl:w-[65%] xl:w-[70%] lg:w-[90%] w-[97%] sm:ml-20 px-4 md:px-8 flex items-center">
                         <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight flex ">
                             <span className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl flex items-center">
                                 PANORAMA{" "}
-                                <RxDividerVertical className="text-[80px]" />{" "}
+                                <RxDividerVertical className="lg:text-[80px] md:text-[60px] sm:text-[40px] text-[30px]" />{" "}
                             </span>
                             <DynamicText
                                 slides={heroSlides}
@@ -334,50 +334,79 @@ export default function Home() {
                 </div>
 
                 {/* Global Footprint Content */}
-                <div className="py-8 mt-6 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
-                    <div className="lg:flex items-center justify-between">
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
-                            Global Presence
+                <div className="py-8 mt-6 text-[#01276a] mx-auto px-6 md:px-20 rounded-t-md">
+                    <div className="lg:flex items-center justify-between 2xl:px-5 gap-6">
+                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular flex flex-wrap gap-4">
+                            <p className="font-bold">Global</p> Presence
                             {/* <div className="text-sm md:text-lg mt-3 md:mb-14 mb-5 text-gray-600 ml-1">
                                 Our International Presence
                             </div> */}
                         </div>
-                        <div
-                            className="lg:w-[50%] w-[80%] md:mx-4 p-2"
-                            
-                        >
-                            <div className="overflow-hidden w-full">
-                                {/* scrolling container */}
-                                <div className="flex animate-scroll gap-3" >
+                        <div className="lg:w-[60%] w-[100%] xl:mx-4 p-2">
+                            <div className="overflow-hidden w-full py-6 bg-white space-y-6">
+                                {/* Row 1 */}
+                                <div className="flex animate-scroll gap-4">
                                     {[...brands, ...brands].map(
                                         (brand, idx) => (
                                             <div
-                                                key={idx}
-                                                className="2xl:w-1/4 lg:w-1/3 w-1/2 flex-shrink-0 flex items-center justify-center"
+                                                key={`row1-${idx}`}
+                                                className="xl:w-1/5 lg:w-1/4 sm:w-1/6 w-1/4 flex-shrink-0 flex items-center justify-center"
                                             >
-                                                <img
-                                                    src={brand}
-                                                    alt={"brand"}
-                                                    className="h-36 w-36 object-contain"
-                                                />
+                                                {/* Card with shadow */}
+                                                <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
+                                                    <img
+                                                        src={brand}
+                                                        alt="brand"
+                                                        className="2xl:h-20 lg:h-16 md:h-12 h-10 2xl:w-28 lg:w-24 md:w-20 w-16 object-contain"
+                                                    />
+                                                </div>
                                             </div>
                                         )
                                     )}
                                 </div>
 
-                                {/* Tailwind custom animation */}
+                                {/* Row 2 (scrolls opposite direction for variation) */}
+                                <div className="flex animate-scroll-reverse gap-4">
+                                    {[...brands, ...brands].map(
+                                        (brand, idx) => (
+                                            <div
+                                                key={`row2-${idx}`}
+                                                className="xl:w-1/5 lg:w-1/4 sm:w-1/6 w-1/4 flex-shrink-0 flex items-center justify-center"
+                                            >
+                                                {/* Card with shadow */}
+                                                <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
+                                                    <img
+                                                        src={brand}
+                                                        alt="brand"
+                                                        className="2xl:h-20 lg:h-16 md:h-12 h-10 2xl:w-28 lg:w-24 md:w-20 w-16 object-contain"
+                                                    />
+                                                </div>
+                                            </div>
+                                        )
+                                    )}
+                                </div>
+
+                                {/* Tailwind custom animations */}
                                 <style>
                                     {`
                                     @keyframes scroll {
                                         0% { transform: translateX(0); }
                                         100% { transform: translateX(-50%); }
                                     }
+                                    @keyframes scroll-reverse {
+                                        0% { transform: translateX(-50%); }
+                                        100% { transform: translateX(0); }
+                                    }
                                     .animate-scroll {
                                         animation: scroll 25s linear infinite;
+                                    }
+                                    .animate-scroll-reverse {
+                                        animation: scroll-reverse 25s linear infinite;
                                     }
                                     `}
                                 </style>
                             </div>
+
                             {/* <Link to="">
                                 <button className="my-4 group inline-flex items-center  font-semibold md:text-lg sm:text-sm text-[9px]">
                                     Find Us Globally
