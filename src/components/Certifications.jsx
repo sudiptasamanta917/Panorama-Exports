@@ -28,11 +28,11 @@ const CertificateSlider = () => {
             {/* grid container */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 xl:w-[60%] lg:w-[80%] mx-auto">
                 {certificates.map((cert, idx) => (
-                    <div key={idx} className="border">
+                    <div key={idx} className="">
                         <img
                             src={cert.src}
                             alt={cert.alt}
-                            className="object-contain shadow-[0_0_12px_rgba(0,0,0,0.2)] border"
+                            className="object-contain shadow-[0_0_12px_rgba(0,0,0,0.2)]"
                         />
                     </div>
                 ))}
