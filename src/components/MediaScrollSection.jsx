@@ -6,7 +6,7 @@ import Media3 from "../assets/Media/media_3.jpg";
 
 const stats = [
     { number: "7000+", label: "EMPLOYEES" },
-    { number: "50%", label: "WOMENS" },
+    { number: "50%", label: "WOMEN" },
     { number: "18 MILLION", label: "ANNUALLY GARMENTS" },
     { number: "5", label: "UNITS" },
 ];

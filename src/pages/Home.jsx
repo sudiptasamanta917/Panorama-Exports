@@ -26,7 +26,7 @@ import Hero2 from "../assets/HeroImages/02.png";
 import Hero3 from "../assets/HeroImages/03.png";
 import Hero4 from "../assets/HeroImages/04.png";
 import Hero05 from "../assets/HeroImages/05.png";
-import Hero06 from "../assets/HeroImages/06.png";
+import Hero06 from "../assets/HeroImages/07.png";
 
 
 // Hero data
@@ -488,9 +488,12 @@ export default function Home() {
                         </div>
                         <div className="w-[50%] mx-4">
                             <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
-                                Stay connected with Panorama Exports presence
-                                through our press releases, media reports and
-                                updates.
+                                7,000+ individuals, 50% women, all united by
+                                passion, purpose, and creativity. We foster
+                                safe, inclusive spaces, invest in
+                                skill-building, and champion equal
+                                opportunity—growing together, every step of the
+                                way.
                             </p>
                             <Link to="">
                                 <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg text-sm">
@@ -527,10 +530,14 @@ export default function Home() {
                         </div>
                         <div className="w-[50%] mx-4">
                             <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
-                                At Panorama Export, we believe that success goes
-                                beyond financial progress. It encompasses our
-                                shared responsibility to enable a sustainable
-                                way of life for all sections of the society.
+                                Our motto: People. Progress. Purpose. At
+                                Panorama, we cultivate a culture of
+                                responsibility, inclusion, and continuous
+                                growth: Empowered Employees: Enhancing skills
+                                for personal and professional growth. Health &
+                                Wellness: Strengthening awareness and preventive
+                                care. Ethical & Fair Workplace : Upholding
+                                dignity, human rights, and grievance redressed
                             </p>
                             <Link to="">
                                 <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg text-sm">
@@ -554,7 +561,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-black/30 z-0"></div>
                     <div className="w-[70%] mx-auto relative z-10">
                         <h1 className="lg:text-5xl md:text-4xl sm:text-2xl text-xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] w-[400px] whitespace-nowrap">
-                            Panorama's Great Community
+                            {/* Panorama's Great Community */}
                         </h1>
                         <div className="md:w-[400px] my-4 lg:text-lg md:text-md sm:text-sm text-[12px]">
                             Quality materials is a powerful catalyst for change,
