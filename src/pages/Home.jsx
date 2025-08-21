@@ -15,10 +15,7 @@ import FlipCard from "../components/flipCard/FlipCard";
 import Certifications from "../components/Certifications";
 
 import GlobalFootprintImage from "../assets/GlobalFootprint/global_business.jpg";
-import plant1 from "../assets/OurInfrastructure/unit_1.jpg";
-import plant2 from "../assets/OurInfrastructure/unit_2.jpg";
-import plant3 from "../assets/OurInfrastructure/unit_3.jpg";
-import warehouse from "../assets/OurInfrastructure/unit_4.jpg";
+import GoogleMapUnits from "../components/GoogleMapUnits";
 import CommunityImage from "../assets/Community/community1.jpg";
 
 import Hero1 from "../assets/HeroImages/01.png";
@@ -157,61 +154,6 @@ export default function Home() {
         }, 4000); // 4 seconds per slide
         return () => clearInterval(interval);
     }, []);
-
-    const units = [
-        {
-            id: 1,
-            lat: 28.468845,
-            lng: 77.31234,
-            title: "Unit 01",
-            subtitle: "Faridabad",
-            address:
-                "Plot No 08, DLF Industrial Area Phase – I, Faridabad, Haryana",
-            locationUrl: "/unitmap",
-            image: plant1,
-        },
-        {
-            id: 2,
-            lat: 28.539579,
-            lng: 77.289271,
-            title: "Unit 02",
-            subtitle: "Faridabad",
-            address:
-                "Plot No. 11 DLF Industrial Area– Phase I, Faridabad, Haryana",
-            locationUrl: "/unitmap",
-            image: plant2,
-        },
-        {
-            id: 3,
-            lat: 28.468817,
-            lng: 77.304441,
-            title: "Unit 03",
-            subtitle: "Faridabad",
-            address: "Plot No 67, Sector 27C, Faridabad, Haryana",
-            locationUrl: "/unitmap",
-            image: plant3,
-        },
-        {
-            id: 4,
-            lat: 28.6139,
-            lng: 77.209,
-            title: "Unit 04",
-            subtitle: "Panorama Warehouse",
-            address: "Plot No 16/3, Delhi Mathura Road, Faridabad, Haryana",
-            locationUrl: "/unitmap",
-            image: warehouse,
-        },
-        {
-            id: 5,
-            lat: 28.5139,
-            lng: 77.22,
-            title: "Unit 05",
-            subtitle: "Panorama Warehouse",
-            address: "Plot No 16/3, Delhi Mathura Road, Faridabad, Haryana",
-            locationUrl: "/unitmap",
-            image: warehouse,
-        },
-    ];
 
     return (
         <div className="relative">
@@ -469,12 +411,8 @@ export default function Home() {
                     ))}
                 </div> */}
                 {/* Google Map section */}
-                <div className="sm:w-[90%] sm:mx-auto sm:px-6 md:px-20">
-                    <LiveMap
-                        locations={units}
-                        center={[28.5, 77.3]}
-                        zoom={11}
-                    />
+                <div className="">
+                    <GoogleMapUnits />
                 </div>
 
                 {/* People section */}
