@@ -17,7 +17,7 @@ export default function Navbar() {
             subItems: [
                 {
                     label: "Roots Of Excellence",
-                    path: "/ourstory/excellenceroots",
+                    path: "/ourstory/rootsofexcellence",
                     image: firstImg,
                 },
                 {
@@ -111,15 +111,15 @@ export default function Navbar() {
         },
         {
             label: "PRODUCTS",
-            path: "",
+            path: "/products",
         },
         {
             label: "PEOPLE",
-            path: "",
+            path: "/peoples",
         },
         {
             label: "RESPONSIBILITY",
-            path: "",
+            path: "/responsibilityroute",
         },
         {
             label: "MEDIA",
