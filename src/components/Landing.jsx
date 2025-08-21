@@ -1,4 +1,4 @@
-import bg from "../assets/Landing_bg.webp";
+// import bg from "../assets/Landing_bg.webp";
 import React, { useState, useRef, useEffect } from "react";
 
 export default function Landing({ onEnter }) {
@@ -91,7 +91,7 @@ export default function Landing({ onEnter }) {
                 <>
                     {/* Background image (not stretched to cover) */}
                     <img
-                        src={bg}
+                        src=""
                         alt="Background"
                         className="absolute inset-0 w-auto h-3/4 object-contain md:object-cover mx-auto my-auto"
                         style={{ zIndex: 0 }}

@@ -1,16 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import OurStory from "../pages/OurStory";
+import OurStory from "../pages/ourStory/OurStory";
 import Innovation from "../pages/Innovation";
 import WeavingStories from "../pages/WeavingStories";
 import ElevatedCraft from "../pages/ElevatedCraft";
 import OurPeople from "../pages/OurPeople";
 import Sustainability from "../pages/Sustainability";
-import CraftingTomorrow from "../pages/CraftingTomorrow";
-import GlobalFootprint from "../pages/GlobalFootprint"; 
+import CraftingTomorrow from "../pages/craftingTomorrow/CraftingTomorrow";
+import GlobalFootprint from "../pages/globalFootprint/GlobalFootprint"; 
 import OurInfrastructure from "../pages/OurInfrastructure"; 
 import Community from "../pages/Community";
-import Media from "../pages/Media";
+import Media from "../pages/media/Media";
 import UnitLocationMap from "../components/UnitLocationMap";
 
 export default function AppRoutes() {

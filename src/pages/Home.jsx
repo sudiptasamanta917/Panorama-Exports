@@ -11,7 +11,7 @@ import DynamicText from '../components/DynamicText';
 import GlobalMap from "../components/GlobalMap";
 import LiveMap from "../components/LiveMap";
 import MediaScrollSection from "../components/MediaScrollSection";
-import FlipCard from "../components/FlipCard";
+import FlipCard from "../components/flipCard/FlipCard";
 import Certifications from "../components/Certifications";
 
 import GlobalFootprintImage from "../assets/GlobalFootprint/global_business.jpg";
@@ -19,7 +19,7 @@ import plant1 from "../assets/OurInfrastructure/unit_1.jpg";
 import plant2 from "../assets/OurInfrastructure/unit_2.jpg";
 import plant3 from "../assets/OurInfrastructure/unit_3.jpg";
 import warehouse from "../assets/OurInfrastructure/unit_4.jpg";
-import CommunityImage from "../assets/Community.jpg";
+import CommunityImage from "../assets/Community/community1.jpg";
 
 import Hero1 from "../assets/HeroImages/01.png";
 import Hero2 from "../assets/HeroImages/02.png";
@@ -483,7 +483,7 @@ export default function Home() {
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
                             People
                             <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
-                                From our Internal
+                                The soul of Panorama is its people
                             </div>
                         </div>
                         <div className="w-[50%] mx-4">

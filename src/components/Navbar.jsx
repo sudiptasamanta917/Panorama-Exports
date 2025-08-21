@@ -123,7 +123,7 @@ export default function Navbar() {
         },
         {
             label: "MEDIA",
-            path: "",
+            path: "/media",
         },
     ];
 
