@@ -73,7 +73,7 @@ const LiveMap = ({ locations = [], center, zoom }) => {
     }, [locations]);
 
     return (
-        <div className="w-full sm:h-[60vh] h-[35vh] sm:rounded-lg sm:shadow-lg" id="map"></div>
+        <div className="w-full lg:h-full h-[35vh] sm:rounded-lg sm:shadow-lg" id="map"></div>
     );
 };
 

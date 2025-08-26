@@ -376,7 +376,7 @@ export default function Home() {
                 <div className="py-8 mt-6 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
                     <div className="flex items-center justify-between">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular flex flex-wrap gap-4">
-                            <p className="font-bold">5 Integrated</p> Units
+                            <p className="font-bold">Manufacturing</p> Units
                             {/* <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
                                 Global-Grade Facilities
                             </div> */}
@@ -449,7 +449,7 @@ export default function Home() {
                     <div className="flex items-center justify-start">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
                             Certifications
-                            <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
+                            <div className="text-sm md:text-lg mt-3 md:mb-14 text-gray-600 ml-1">
                                 Our legal certificates
                             </div>
                         </div>
