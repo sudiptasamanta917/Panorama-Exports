@@ -416,16 +416,16 @@ export default function Home() {
                 </div>
 
                 {/* People section */}
-                <div className="py-8 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md mt-6">
-                    <div className="flex items-center justify-between">
+                <div className="sm:py-8 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md mt-6">
+                    <div className="sm:flex items-center justify-between">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
                             People
-                            <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
+                            <div className="text-sm md:text-lg mt-3 sm:mb-14 text-gray-600 ml-1">
                                 The soul of Panorama is its people
                             </div>
                         </div>
-                        <div className="w-[50%] mx-4">
-                            <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
+                        <div className="w-[50%] sm:mx-4">
+                            <p className="2xl:text-xl lg:text-lg text-sm text-gray-600 hidden sm:block">
                                 7,000+ individuals, 50% women, all united by
                                 passion, purpose, and creativity. We foster
                                 safe, inclusive spaces, invest in
@@ -459,14 +459,14 @@ export default function Home() {
 
                 {/* Community section */}
                 <div className="py-8 text-[#01276a] mt-6 w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-start justify-between">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
                             Community
-                            <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
+                            <div className="text-sm md:text-lg mt-3 sm:mb-14 text-gray-600 ml-1">
                                 Our purpose in action
                             </div>
                         </div>
-                        <div className="w-[50%] mx-4">
+                        <div className="w-[50%] mx-4 hidden sm:block">
                             <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
                                 Our motto: People. Progress. Purpose. At
                                 Panorama, we cultivate a culture of
