@@ -5,10 +5,10 @@ import Media2 from "../assets/Media/media_2.jpg";
 import Media3 from "../assets/Media/media_3.jpg";
 
 const stats = [
-    { number: "7000+", label: "EMPLOYEES" },
-    { number: "50%", label: "WOMEN" },
-    { number: "18 MILLION", label: "ANNUALLY GARMENTS" },
-    { number: "5", label: "UNITS" },
+    { number: "4759+", label: "EMPLOYEES" },
+    { number: "40%", label: "WOMEN" },
+    { number: "10 Lack PCs", label: "CAPACITY" },
+    { number: "6", label: "UNITS" },
 ];
 
 const images = [Media1, Media2, Media3];

@@ -16,7 +16,8 @@ import Certifications from "../components/Certifications";
 
 import GlobalFootprintImage from "../assets/GlobalFootprint/global_business.jpg";
 import GoogleMapUnits from "../components/GoogleMapUnits";
-import CommunityImage from "../assets/Community/community1.jpg";
+import HumanTouch1 from "../assets/Community/csr.jpg";
+import HumanTouch2 from "../assets/Community/csr2.jpg";
 
 import Hero1 from "../assets/HeroImages/01.png";
 import Hero2 from "../assets/HeroImages/02.png";
@@ -426,7 +427,7 @@ export default function Home() {
                         </div>
                         <div className="w-[50%] sm:mx-4">
                             <p className="2xl:text-xl lg:text-lg text-sm text-gray-600 hidden sm:block">
-                                7,000+ individuals, 50% women, all united by
+                                4,759+ individuals, 40% women, all united by
                                 passion, purpose, and creativity. We foster
                                 safe, inclusive spaces, invest in
                                 skill-building, and champion equal
@@ -461,22 +462,9 @@ export default function Home() {
                 <div className="py-8 text-[#01276a] mt-6 w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
                     <div className="flex items-start justify-between">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
-                            Community
-                            <div className="text-sm md:text-lg mt-3 sm:mb-14 text-gray-600 ml-1">
-                                Our purpose in action
-                            </div>
+                            Human Touch
                         </div>
-                        <div className="w-[50%] mx-4 hidden sm:block">
-                            <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
-                                Our motto: People. Progress. Purpose. At
-                                Panorama, we cultivate a culture of
-                                responsibility, inclusion, and continuous
-                                growth: Empowered Employees: Enhancing skills
-                                for personal and professional growth. Health &
-                                Wellness: Strengthening awareness and preventive
-                                care. Ethical & Fair Workplace : Upholding
-                                dignity, human rights, and grievance redressed
-                            </p>
+                        <div className="w-[50%] mx-4 hidden sm:flex items-center justify-center">
                             <Link to="">
                                 <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg text-sm">
                                     Visit Community
@@ -486,32 +474,23 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div
-                    style={{
-                        backgroundImage: `url(${CommunityImage})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        position: "relative",
-                    }}
-                    className="mt-2 h-[60vh] text-white flex items-center justify-start relative overflow-hidden"
-                >
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/30 z-0"></div>
-                    <div className="w-[70%] mx-auto relative z-10">
-                        <h1 className="lg:text-5xl md:text-4xl sm:text-2xl text-xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] w-[400px] whitespace-nowrap">
-                            {/* Panorama's Great Community */}
-                        </h1>
-                        <div className="md:w-[400px] my-4 lg:text-lg md:text-md sm:text-sm text-[12px]">
-                            Quality materials is a powerful catalyst for change,
-                            and Panorama is committed to harnessing its
-                            transform potential.
-                        </div>
-                        <Link to="">
-                            <button className="mt-10 lg:text-lg md:text-md text-sm md:px-6 px-4 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
-                                Click to Read More
-                                <IoEnterOutline className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
-                            </button>
-                        </Link>
+                <div className="pt-20 bg-[#fcfbf7]">
+                    <div className="w-[90%] mx-auto px-6 md:px-20 mb-1">
+                        <img src={HumanTouch2} alt="Human Touch" className="rounded-t-md shadow-sm" />
+                    </div>
+                    <div
+                        className="w-full h-[50vh] flex lg:items-center items-start justify-end 2xl:px-[10%] xl:px-[8%] lg:px-[5%] md:px-[2%] px-[5%] lg:pt-[0px] md:pt-[50px] pt-[20px] "
+                        style={{
+                            backgroundImage: `url(${HumanTouch1})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                        }}
+                    >
+                        <p className="2xl:w-[400px] xl:w-[330px] md:w-[250px] w-[170px] 2xl:text-xl lg:text-md sm:text-sm text-[10px] text-blue-950 font-semibold">
+                            Our motto: People. Progress. Purpose. At Panorama,
+                            we cultivate a culture of responsibility, inclusion,
+                            and continuous growth
+                        </p>
                     </div>
                 </div>
             </div>

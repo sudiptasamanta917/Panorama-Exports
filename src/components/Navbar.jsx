@@ -17,32 +17,32 @@ export default function Navbar() {
             subItems: [
                 {
                     label: "Roots Of Excellence",
-                    path: "/ourstory/rootsofexcellence",
+                    path: "",
                     image: firstImg,
                 },
                 {
                     label: "Strategic Outlook",
-                    path: "/ourstory/strategicoutlook",
+                    path: "",
                     image: secondImg,
                 },
                 {
                     label: "Core Values",
-                    path: "/ourstory/corevalues",
+                    path: "",
                     image: thirdImg,
                 },
                 {
                     label: "Leadership",
-                    path: "/ourstory/leadership",
+                    path: "",
                     image: fourthImg,
                 },
                 {
                     label: "Milestones",
-                    path: "/ourstory/milestones",
+                    path: "",
                     image: fifthImg,
                 },
                 {
                     label: "Our Purpose",
-                    path: "/ourstory/ourpurpose",
+                    path: "",
                     image: sixthImg,
                 },
             ],
@@ -53,37 +53,37 @@ export default function Navbar() {
             subItems: [
                 {
                     label: "Mfg. Excellence",
-                    path: "/craftedprecision/manufacturingexcellence",
+                    path: "",
                     image: firstImg,
                 },
                 {
                     label: "Smart Warehousing",
-                    path: "/craftedprecision/smartwarehousing",
+                    path: "",
                     image: secondImg,
                 },
                 {
                     label: "Art in Every Thread",
-                    path: "/craftedprecision/artthread",
+                    path: "",
                     image: thirdImg,
                 },
                 {
                     label: "Exacting Standards",
-                    path: "/craftedprecision/exactingstandards",
+                    path: "",
                     image: fourthImg,
                 },
                 {
                     label: "Sustainable Designs",
-                    path: "/craftedprecision/sustainabledesigns",
+                    path: "",
                     image: fifthImg,
                 },
                 {
                     label: "Advanced Washing",
-                    path: "/craftedprecision/advancedwashing",
+                    path: "",
                     image: sixthImg,
                 },
                 {
                     label: "Adaptive Capacity",
-                    path: "/craftedprecision/adaptivecapacity",
+                    path: "",
                     image: sixthImg,
                 },
             ],
@@ -94,17 +94,17 @@ export default function Navbar() {
             subItems: [
                 {
                     label: "Innovation that Leads",
-                    path: "/innovation/innovationleads",
+                    path: "",
                     image: firstImg,
                 },
                 {
                     label: "Standard Of Perfection",
-                    path: "/innovation/standardperfection",
+                    path: "",
                     image: secondImg,
                 },
                 {
                     label: "Handcrafted Luxury",
-                    path: "/innovation/handcraftedluxury",
+                    path: "",
                     image: thirdImg,
                 },
             ],
