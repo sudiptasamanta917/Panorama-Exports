@@ -111,19 +111,19 @@ export default function Navbar() {
         },
         {
             label: "PRODUCTS",
-            path: "/products",
+            path: "",
         },
         {
             label: "PEOPLE",
-            path: "/peoples",
+            path: "",
         },
         {
             label: "RESPONSIBILITY",
-            path: "/responsibilityroute",
+            path: "",
         },
         {
             label: "MEDIA",
-            path: "/media",
+            path: "",
         },
     ];
 
