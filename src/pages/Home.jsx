@@ -467,7 +467,7 @@ export default function Home() {
                         <div className="w-[50%] mx-4 hidden sm:flex items-center justify-center">
                             <Link to="">
                                 <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg text-sm">
-                                    Visit Community
+                                    Visit Responsibility
                                     <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
                             </Link>
