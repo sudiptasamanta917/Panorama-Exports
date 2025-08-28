@@ -16,7 +16,7 @@ export default function Navbar() {
             path: "/ourstory",
             subItems: [
                 {
-                    label: "Roots Of Excellence",
+                    label: "Legacy",
                     path: "",
                     image: firstImg,
                 },

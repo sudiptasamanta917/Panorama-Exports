@@ -25,7 +25,7 @@ export default function OurStory() {
     return (
         <div className="font-sans text-gray-900 bg-white">
             {/* Hero Section */}
-            <section className="relative w-full sm:h-[80vh] h-[380px] bg-black overflow-hidden">
+            <section className="relative w-full sm:h-[100vh] h-[380px] bg-black overflow-hidden">
                 {heroImages.map((img, index) => (
                     <div
                         key={index}
@@ -44,19 +44,34 @@ export default function OurStory() {
             </section>
 
             {/* Breadcrumbs */}
-            <div className="bg-[#fdf2df] text-lg py-5">
+            {/* <div className="bg-[#fdf2df] text-lg py-5">
                 <div className="w-[90%] mx-auto px-6 md:px-20">
                     <span className="text-gray-800">Home</span> &gt;{" "}
                     <span className="text-gray-800">Our Story</span> &gt;{" "}
                     <span className="font-semibold text-[#01276a]">Legacy</span>
                 </div>
-            </div>
+            </div> */}
 
             {/* Legacy Sections */}
             <section className="bg-white">
-                <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Legacy
-                </h2>
+                <div className="bg-white py-16 px-6 text-center">
+                    <div className="max-w-6xl mx-auto">
+                        {/* Heading */}
+                        <h2 className="text-7xl font-serif  text-gray-600 mb-6">
+                            Legacy
+                        </h2>
+
+                        {/* Subheading */}
+                        <p className="text-4xl text-blue-900 font-poppins leading-snug mb-6">
+                            Since 1973, Panorama Exports has transformed fabrics
+                            into fashion-blending Indian craftsmanship with
+                            advanced manufacturing. Today, our garments travel
+                            from India to global wardrobes, each piece echoing
+                            artistry, innovation, and timeless tradition. More
+                            than fashion-it's handcrafted legacy.
+                        </p>
+                    </div>
+                </div>
                 <div
                     className={`sm:h-[80vh] h-[380px] flex flex-col justify-end items-start py-28`}
                     style={{
@@ -101,17 +116,15 @@ export default function OurStory() {
                     <div className="flex flex-col justify-center items-end w-full h-[35vh] bg-[#96785e] text-white 2xl:px-40 xl:px-28 px-10 py-10">
                         <p className="text-md md:text-lg lg:text-xl xl:text-2xl leading-relaxed  mb-6 w-[40%]">
                             “Fashion is a dialogue between tradition and
-                            tomorrow. Let’s keep shaping that conversation—one
+                            tomorrow. Let’s keep shaping that conversation-one
                             inspired creation at a time.”
                         </p>
                         <h2 className="text-md md:text-lg lg:text-xl xl:text-2xl font-semibold w-[500px] mb-16">
-                            —Shri Shyam Sahni & Smt. Veena Sahni
+                            — Shri Shyam Sahni & Smt. Veena Sahni
                         </h2>
                     </div>
                 </div>
             </section>
-
-            
 
             {/* MileStones Sections */}
             {/* <section className="bg-white">
