@@ -13,7 +13,7 @@ export default function Navbar() {
     const navItems = [
         {
             label: "OUR STORY",
-            path: "",
+            path: "/ourstory",
             subItems: [
                 {
                     label: "Roots Of Excellence",
