@@ -85,6 +85,73 @@ const CoreValues = () => {
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Director's Message */}
+                    <section className="bg-white">
+                        <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                            Director's Message
+                        </h2>
+                        <div className="relative bg-[#b9a686]">
+                            <div className="w-[90%] mx-auto py-16 px-6 md:px-20 grid md:grid-cols-2 gap-8 items-center">
+                                {/* Left Text Box */}
+                                <div className="relative z-10 bg-white p-8 shadow-lg rounded-lg h-[400px]">
+                                    <p className="text-gray-700 leading-relaxed">
+                                        Innovation is our language—spoken
+                                        through designs that inspire and lead
+                                        globally. We don't just follow trends—we
+                                        anticipate them, crafting future-ready
+                                        fashion with purpose. Every creation is
+                                        a translation of insight, technology,
+                                        and timeless craftsmanship. Innovation
+                                        is our language—spoken through designs
+                                        that inspire and lead globally. We don't
+                                        just follow trends—we anticipate them,
+                                        crafting future-ready fashion with
+                                        purpose. Every creation is a translation
+                                        of insight, technology, and timeless
+                                        craftsmanship.
+                                    </p>
+                                    <h2 className="text-xl font-bold mb-4">
+                                        Rajan Sahni
+                                    </h2>
+                                </div>
+
+                                {/* Right Image Box */}
+                                <div className="relative z-20">
+                                    <img
+                                        src={LegacyImage} // your image import
+                                        alt="Legacy"
+                                        className="w-full h-[400px] object-cover rounded-lg shadow-xl"
+                                    />
+                                </div>
+                            </div>
+                            <div className="w-[90%] mx-auto pb-16 px-6 md:px-20 grid md:grid-cols-2 gap-8 items-center">
+                                {/* Left Text Box */}
+                                <div className="relative z-20">
+                                    <img
+                                        src={LegacyImage} // your image import
+                                        alt="Legacy"
+                                        className="w-full h-[400px] object-cover rounded-lg shadow-xl"
+                                    />
+                                </div>
+
+                                {/* Right Image Box */}
+                                <div className="relative z-10 bg-white p-8 shadow-lg rounded-lg h-[400px]">
+                                    <p className="text-gray-700 leading-relaxed">
+                                        Our identity is crafted through
+                                        integrity and defined by an unwavering
+                                        commitment to brilliance & values that
+                                        shape every garment, every partnership,
+                                        and every milestone on our global
+                                        journey.
+                                    </p>
+                                    <h2 className="text-xl font-bold mb-4">
+                                        Navin Sahni
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
         </>
