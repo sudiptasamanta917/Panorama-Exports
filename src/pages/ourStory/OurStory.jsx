@@ -1,4 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+import Milestones from "./Milestones";
 
 // Hero images
 import img1 from "../../assets/OurStory/02.jpg";
@@ -10,10 +14,23 @@ import LegacyImage from "../../assets/Legacy/01.jpg";
 
 import FounderImage from "../../assets/Founders/founder.png";
 
-const heroImages = [img1, img2, img3, img4];
+const heroImages = [img1, img2, img3, img4, LegacyImage];
 
 export default function OurStory() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const { ref, inView } = useInView({
+        triggerOnce: false, 
+        threshold: 0.2,
+    });
+
+    const textVariants = {
+        hidden: { opacity: 0, x: "-40vw" },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: { duration: 2, ease: "easeOut" },
+        },
+    };
 
     useEffect(() => {
             const interval = setInterval(() => {
@@ -25,7 +42,8 @@ export default function OurStory() {
     return (
         <div className="font-sans text-gray-900 bg-white">
             {/* Hero Section */}
-            <section className="relative w-full sm:h-[100vh] h-[380px] bg-black overflow-hidden">
+            <section className="relative w-full sm:h-[100vh] h-[380px] bg-black overflow-hidden flex flex-col items-start justify-end py-28">
+                {/* Background Dissolve Animations images */}
                 {heroImages.map((img, index) => (
                     <div
                         key={index}
@@ -41,6 +59,26 @@ export default function OurStory() {
                         }}
                     ></div>
                 ))}
+
+                {/* Dark Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+                {/* Text Box */}
+                <div className="relative z-20 text-white w-[90%] mx-auto px-6 md:px-20 font-semibold">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5">
+                        Legacy
+                    </h1>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl underline underline-offset-8">
+                        <span className="text-xl sm:text-2xl md:text-3xl font-normal">
+                            Where
+                        </span>{" "}
+                        Heritage{" "}
+                        <span className="text-xl sm:text-2xl md:text-3xl font-normal">
+                            Meets
+                        </span>{" "}
+                        Modern Luxury
+                    </h2>
+                </div>
             </section>
 
             {/* Breadcrumbs */}
@@ -54,7 +92,7 @@ export default function OurStory() {
 
             {/* Legacy Sections */}
             <section className="bg-white">
-                <div className="bg-white py-16 px-6 text-center">
+                <div className="bg-white pt-16 pb-10 px-6 text-center">
                     <div className="max-w-6xl mx-auto">
                         {/* Heading */}
                         <h2 className="text-7xl font-serif  text-gray-600 mb-6">
@@ -62,7 +100,7 @@ export default function OurStory() {
                         </h2>
 
                         {/* Subheading */}
-                        <p className="text-4xl text-blue-900 font-poppins leading-snug mb-6">
+                        <p className="text-4xl text-blue-900 font-poppins leading-snug">
                             Since 1973, Panorama Exports has transformed fabrics
                             into fashion-blending Indian craftsmanship with
                             advanced manufacturing. Today, our garments travel
@@ -70,30 +108,6 @@ export default function OurStory() {
                             artistry, innovation, and timeless tradition. More
                             than fashion-it's handcrafted legacy.
                         </p>
-                    </div>
-                </div>
-                <div
-                    className={`sm:h-[80vh] h-[380px] flex flex-col justify-end items-start py-28`}
-                    style={{
-                        backgroundImage: `url(${LegacyImage})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                    }}
-                >
-                    <div className="text-white w-[90%] mx-auto px-6 md:px-20 font-semibold">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5">
-                            Legacy
-                        </h1>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl underline underline-offset-8">
-                            <span className="text-xl sm:text-2xl md:text-3xl font-normal">
-                                Where
-                            </span>{" "}
-                            Heritage{" "}
-                            <span className="text-xl sm:text-2xl md:text-3xl font-normal">
-                                Meets
-                            </span>{" "}
-                            Modern Luxury
-                        </h2>
                     </div>
                 </div>
             </section>
@@ -113,25 +127,41 @@ export default function OurStory() {
                     </div>
 
                     {/* Quote Section */}
-                    <div className="flex flex-col justify-center items-end w-full h-[35vh] bg-[#96785e] text-white 2xl:px-40 xl:px-28 px-10 py-10">
-                        <p className="text-md md:text-lg lg:text-xl xl:text-2xl leading-relaxed  mb-6 w-[40%]">
+                    <div
+                        ref={ref}
+                        className="flex flex-col justify-center items-end w-full h-[35vh] bg-[#96785e] text-white 2xl:px-40 xl:px-28 px-10 py-10"
+                    >
+                        <motion.p
+                            className="text-md md:text-lg lg:text-xl xl:text-2xl leading-relaxed mb-6 w-[40%]"
+                            initial="hidden"
+                            animate={inView ? "visible" : "hidden"}
+                            variants={textVariants}
+                        >
                             “Fashion is a dialogue between tradition and
-                            tomorrow. Let’s keep shaping that conversation-one
+                            tomorrow. Let’s keep shaping that conversation — one
                             inspired creation at a time.”
-                        </p>
-                        <h2 className="text-md md:text-lg lg:text-xl xl:text-2xl font-semibold w-[500px] mb-16">
+                        </motion.p>
+
+                        <motion.h2
+                            className="text-md md:text-lg lg:text-xl xl:text-2xl font-semibold w-[500px] mb-16"
+                            initial="hidden"
+                            animate={inView ? "visible" : "hidden"}
+                            variants={textVariants}
+                            transition={{ delay: 0.2 }} // little delay
+                        >
                             — Shri Shyam Sahni & Smt. Veena Sahni
-                        </h2>
+                        </motion.h2>
                     </div>
                 </div>
             </section>
 
             {/* MileStones Sections */}
-            {/* <section className="bg-white">
+            <section className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Milestones
                 </h2>
-            </section> */}
+                <Milestones />
+            </section>
         </div>
     );
 }

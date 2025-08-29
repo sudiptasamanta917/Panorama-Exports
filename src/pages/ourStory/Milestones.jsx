@@ -1,100 +1,139 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import img1 from "../../assets/OurInfrastructure/unit_1.jpg";
+import Way from "../../assets/Milestones/S_way.png";
+import {
+    IoIosArrowDropleftCircle,
+    IoIosArrowDroprightCircle,
+} from "react-icons/io";
 
-const milestones = [
-    { year: "1973", text: "Founded with a vision to blend craftsmanship with global appeal." },
-    { year: "1980s", text: "Expanded internationally; deepened global collaborations." },
-    { year: "1990s", text: "Embraced modern technology; laid the foundation for future-ready manufacturing." },
-    { year: "2000s", text: "Launched ESG-driven sustainability programs, creating positive impact for society and industry." },
-    { year: "2010", text: "Grew advanced manufacturing units in Faridabad, boosting capabilities and delivery excellence." },
-    { year: "2024", text: "Powered by 5,000+ skilled hands, we craft 12 million garments a year with a new fabric warehouse fueling global reach." },
-    { year: "2025", text: "With 7,000 team members, expanded presence with new head office in Faridabad and factory in Noida—where tradition meets technology." },
-];
-
-const factories = [
+const cards = [
     {
-        id: 1,
-        title: "Faridabad Factory",
-        img: "/images/factory1.jpg",
-        details: "Employees: 2,500 • Production: 6M garments/year",
+        pos: "left-[86%] bottom-[88%]",
+        title: "1973",
+        subtitle: "Founded with a vision",
+        desc: "blend craftsmanship...",
+        Img: img1,
     },
     {
-        id: 2,
-        title: "Noida Factory",
-        img: "/images/factory2.jpg",
-        details: "Employees: 1,200 • Production: 3M garments/year",
+        pos: "left-[59.3%] bottom-[76%]",
+        title: "1980",
+        subtitle: "Expanded internationally",
+        desc: "deepened global collaborations",
+        Img: img1,
+    },
+    {
+        pos: "left-[73%] bottom-[39%]",
+        title: "1990",
+        subtitle: "Embraced modern technology",
+        desc: "laid the foundation...",
+        Img: img1,
+    },
+    {
+        pos: "left-[45%] bottom-[22%]",
+        title: "2000",
+        subtitle: "ESG-driven sustainability programs",
+        desc: "We've launched ESG-driven...",
+        Img: img1,
+    },
+    {
+        pos: "left-[29%] bottom-[16%]",
+        title: "2010",
+        subtitle: "Units in Faridabad",
+        desc: "Grew state of the art...",
+        Img: img1,
+    },
+    {
+        pos: "left-[15%] bottom-[12%]",
+        title: "2024",
+        subtitle: "New Fabric Warehouse",
+        desc: "Powered by 5,000+ skilled hands...",
+        Img: img1,
+    },
+    {
+        pos: "left-[2%] bottom-[9.2%]",
+        title: "2025",
+        subtitle: "New Factory in Noida",
+        desc: "With 4,000 team members...",
+        Img: img1,
     },
 ];
 
-const Milestones = () => {
-    const [selectedFactory, setSelectedFactory] = useState(null);
+export default function Milestones() {
+    const { ref, inView } = useInView({ threshold: 0.28 });
+    const [visibleIndex, setVisibleIndex] = useState(0);
+
+    const handleNext = () => {
+        setVisibleIndex((prev) => (prev < cards.length ? prev + 1 : prev));
+    };
+
+    const handlePrev = () => {
+        setVisibleIndex((prev) => (prev > 0 ? prev - 1 : prev));
+    };
 
     return (
-        <>
-            <div className="bg-blue-950 h-20 mb-12"></div>
-            <div className="min-h-screen bg-white text-gray-800">
-                {/* Header */}
-                <div className="text-center py-12">
-                    <motion.h1
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl font-bold tracking-wide"
+        <div
+            ref={ref}
+            className="relative md:w-[90%] w-full mx-auto h-[80vh] mb-10 bg-gradient-to-br from-gray-50 to-white overflow-hidden flex items-end"
+        >
+            <div className="relative w-full h-[35%]">
+                {/* Curved Path Image */}
+                <img src={Way} alt="way path" className="w-full h-full" />
+
+                {/* Cards */}
+                {cards.map((c, i) => (
+                    <motion.div
+                        key={i}
+                        className={`absolute ${c.pos} z-[1] 2xl:w-[180px] xl:w-[140px] lg:w-[110px] md:w-[120px] sm:w-[100px] w-[50px] flex flex-col items-start justify-center group`}
+                        initial={{ x: "-100vw", opacity: 0 }}
+                        animate={
+                            i < visibleIndex
+                                ? { x: 0, opacity: 1 }
+                                : { x: "-100vw", opacity: 0 }
+                        }
+                        transition={{
+                            duration: 0.8,
+                            ease: "easeOut",
+                        }}
                     >
-                        Our Milestones
-                    </motion.h1>
-                </div>
+                        <div className="shadow-md border-2 border-blue-900 rounded-2xl w-full overflow-hidden">
+                            <div className="text-lg font-semibold h-14 bg-blue-900 text-white rounded-t-xl flex items-center justify-center">
+                                {c.title}
+                            </div>
+                            <div className="w-full flex items-center justify-center hidden group-hover:block mb-2">
+                                <img
+                                    src={c.Img}
+                                    alt=""
+                                    className="w-full h-24"
+                                />
+                            </div>
+                            <div className="text-md px-2 font-semibold mb-2 hidden group-hover:block max-h-24 text-center overflow-hidden">
+                                {c.subtitle}
+                            </div>
+                            <div className="text-xs px-2 text-gray-600 mb-4 hidden group-hover:block max-h-24 overflow-hidden">
+                                {c.desc}
+                            </div>
+                        </div>
 
-                {/* Timeline Section */}
-                <div className="max-w-5xl mx-auto px-4 space-y-8">
-                    {milestones.map((m, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            className="flex flex-col md:flex-row items-center md:items-start gap-6"
-                        >
-                            <div className="text-2xl font-bold text-blue-600 w-24">{m.year}</div>
-                            <p className="bg-gray-100 rounded-xl p-4 shadow-md flex-1">{m.text}</p>
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* Graph Placeholder */}
-                <div className="max-w-6xl mx-auto px-4 py-16">
-                    <h2 className="text-2xl font-semibold mb-4">Factory Growth Graph</h2>
-                    <div className="w-full h-64 bg-gray-200 rounded-xl flex items-center justify-center">
-                        {/* Replace later with recharts / chart.js */}
-                        <span className="text-gray-600">[Graph Coming Soon]</span>
-                    </div>
-                </div>
-
-                {/* Factories Section */}
-                <div className="max-w-6xl mx-auto px-4 py-16">
-                    <h2 className="text-2xl font-semibold mb-8 text-center">Our Factories</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {factories.map((factory) => (
-                            <motion.div
-                                key={factory.id}
-                                whileHover={{ scale: 1.03 }}
-                                onClick={() => setSelectedFactory(factory.id)}
-                                className="cursor-pointer bg-white rounded-2xl shadow-lg overflow-hidden"
-                            >
-                                <img src={factory.img} alt={factory.title} className="w-full h-56 object-cover" />
-                                <div className="p-4">
-                                    <h3 className="text-lg font-bold">{factory.title}</h3>
-                                    {selectedFactory === factory.id && (
-                                        <p className="mt-2 text-gray-600">{factory.details}</p>
-                                    )}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
+                        <div className="w-0 h-[250px] border-l-2 border-blue-900 mt-[-15px]" />
+                    </motion.div>
+                ))}
             </div>
-        </>
-    )
-}
 
-export default Milestones;
+            {/* Left / Right Buttons */}
+            <button
+                onClick={handlePrev}
+                className="absolute left-2 top-1/2 -translate-y-1/2 text-white rounded-full shadow-md"
+            >
+                <IoIosArrowDropleftCircle className="bg-blue-900 rounded-full text-white w-10 h-10 hover:bg-blue-700" />
+            </button>
+            <button
+                onClick={handleNext}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-white rounded-full shadow-md"
+            >
+                <IoIosArrowDroprightCircle className="bg-blue-900 rounded-full text-white w-10 h-10 hover:bg-blue-700" />
+            </button>
+        </div>
+    );
+}
