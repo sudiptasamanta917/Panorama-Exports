@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+// Milestones.jsx
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import img1 from "../../assets/OurInfrastructure/unit_1.jpg";
 import Way from "../../assets/Milestones/S_way.png";
-import {
-    IoIosArrowDropleftCircle,
-    IoIosArrowDroprightCircle,
-} from "react-icons/io";
 
 const cards = [
     {
@@ -34,7 +31,7 @@ const cards = [
         pos: "left-[45%] bottom-[22%]",
         title: "2000",
         subtitle: "ESG-driven sustainability programs",
-        desc: "We've launched ESG-driven...",
+        desc: "We’ve launched ESG-driven...",
         Img: img1,
     },
     {
@@ -61,21 +58,50 @@ const cards = [
 ];
 
 export default function Milestones() {
+    // tweak these to control speed
+    const STEP_DELAY_MS = 520; // time between each card starting animation
+    const ANIM_DURATION = 0.9; // framer-motion duration (seconds)
+
     const { ref, inView } = useInView({ threshold: 0.28 });
     const [visibleIndex, setVisibleIndex] = useState(0);
+    const timerRef = useRef(null);
 
-    const handleNext = () => {
-        setVisibleIndex((prev) => (prev < cards.length ? prev + 1 : prev));
-    };
+    useEffect(() => {
+        if (timerRef.current) {
+            clearInterval(timerRef.current);
+            timerRef.current = null;
+        }
 
-    const handlePrev = () => {
-        setVisibleIndex((prev) => (prev > 0 ? prev - 1 : prev));
-    };
+        if (inView) {
+            // restart animation whenever inView is true
+            setVisibleIndex(0); // reset before starting
+            timerRef.current = setInterval(() => {
+                setVisibleIndex((prev) => {
+                    if (prev >= cards.length) {
+                        clearInterval(timerRef.current);
+                        timerRef.current = null;
+                        return prev;
+                    }
+                    return prev + 1;
+                });
+            }, STEP_DELAY_MS);
+        } else {
+            // reset completely when leaving view
+            setVisibleIndex(0); // ensures animation restarts next time
+        }
+
+        return () => {
+            if (timerRef.current) {
+                clearInterval(timerRef.current);
+                timerRef.current = null;
+            }
+        };
+    }, [inView]);
 
     return (
         <div
             ref={ref}
-            className="relative md:w-[90%] w-full mx-auto h-[80vh] mb-10 bg-gradient-to-br from-gray-50 to-white overflow-hidden flex items-end"
+            className="md:w-[90%] w-full mx-auto h-[80vh] mb-10 bg-gradient-to-br from-gray-50 to-white overflow-hidden flex items-end"
         >
             <div className="relative w-full h-[35%]">
                 {/* Curved Path Image */}
@@ -93,7 +119,7 @@ export default function Milestones() {
                                 : { x: "-100vw", opacity: 0 }
                         }
                         transition={{
-                            duration: 0.8,
+                            duration: ANIM_DURATION,
                             ease: "easeOut",
                         }}
                     >
@@ -120,20 +146,6 @@ export default function Milestones() {
                     </motion.div>
                 ))}
             </div>
-
-            {/* Left / Right Buttons */}
-            <button
-                onClick={handlePrev}
-                className="absolute left-2 top-1/2 -translate-y-1/2 text-white rounded-full shadow-md"
-            >
-                <IoIosArrowDropleftCircle className="bg-blue-900 rounded-full text-white w-10 h-10 hover:bg-blue-700" />
-            </button>
-            <button
-                onClick={handleNext}
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-white rounded-full shadow-md"
-            >
-                <IoIosArrowDroprightCircle className="bg-blue-900 rounded-full text-white w-10 h-10 hover:bg-blue-700" />
-            </button>
         </div>
     );
 }
