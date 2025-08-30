@@ -17,12 +17,12 @@ export default function Navbar() {
             subItems: [
                 {
                     label: "Legacy",
-                    path: "",
+                    path: "/ourstory",
                     image: firstImg,
                 },
                 {
-                    label: "Strategic Outlook",
-                    path: "",
+                    label: "Mission & Vision",
+                    path: "/ourstory/vision-mission",
                     image: secondImg,
                 },
                 {

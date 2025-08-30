@@ -1,6 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import OurStory from "../pages/ourStory/OurStory";
+import RootOfExcellence from "../pages/ourStory/RootsOfExcellence";
+import CoreValues from "../pages/ourStory/CoreValues";
+import Milestones from "../pages/ourStory/Milestones";
+import OurPurpose from "../pages/ourStory/OurPurpose";
+import VisionMission from "../pages/ourStory/VisionMission";
+
 import Innovation from "../pages/Innovation";
 import WeavingStories from "../pages/WeavingStories";
 import ElevatedCraft from "../pages/ElevatedCraft";
@@ -12,10 +18,8 @@ import OurInfrastructure from "../pages/OurInfrastructure";
 import Community from "../pages/Community";
 import Media from "../pages/media/Media";
 import UnitLocationMap from "../components/UnitLocationMap";
-import RootOfExcellence from "../pages/ourStory/RootsOfExcellence";
-import CoreValues from "../pages/ourStory/CoreValues";
-import Milestones from "../pages/ourStory/Milestones";
-import OurPurpose from "../pages/ourStory/OurPurpose";
+
+
 import MfgExcellence from "../pages/CraftedPrecision/MfgExcellence";
 import SmartWarehousing from "../pages/CraftedPrecision/SmartWarehousing";
 import ArtInEveryThread from "../pages/CraftedPrecision/ArtInEveryThread";
@@ -29,6 +33,7 @@ import HandcraftedLuxury from "../pages/Innovation/HandcraftedLuxury";
 import Products from "../pages/Product/Products";
 import Peoples from "../pages/People/Peoples";
 import ResponsibilityRoute from "../pages/Responsibility/ResponsibilityRoute";
+
 
 export default function AppRoutes() {
     return (
@@ -51,6 +56,7 @@ export default function AppRoutes() {
                 element={<RootOfExcellence />}
             />
             <Route path="/ourstory/corevalues" element={<CoreValues />} />
+            <Route path="/ourstory/vision-mission" element={<VisionMission />} />
             <Route path="/ourstory/milestones" element={<Milestones />} />
             <Route path="/ourstory/ourpurpose" element={<OurPurpose />} />
             <Route
