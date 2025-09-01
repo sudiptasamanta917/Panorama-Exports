@@ -64,7 +64,7 @@ export default function Milestones() {
     const { ref, inView } = useInView({ threshold: 0.28 });
     const [visibleIndex, setVisibleIndex] = useState(0);
     const timerRef = useRef(null);
-    const [open, setOpen] = useState(false);
+    const [selectedCard, setSelectedCard] = useState(null); // store clicked card
 
     useEffect(() => {
         if (timerRef.current) {
@@ -127,7 +127,7 @@ export default function Milestones() {
                             {/* Clickable div */}
                             <div
                                 className="shadow-md border-2 border-l-0 border-blue-900 rounded-r-md w-full overflow-hidden cursor-pointer group"
-                                onClick={() => setOpen(true)}
+                                onClick={() => setSelectedCard(c)} // set clicked card data
                             >
                                 <div className="text-lg font-semibold h-16 bg-blue-900 text-white rounded-r-sm flex items-center justify-center">
                                     {c.title}
@@ -138,32 +138,37 @@ export default function Milestones() {
                             </div>
 
                             {/* Popup Modal */}
-                            {open && (
+                            {selectedCard && (
                                 <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
-                                    <div className="bg-white rounded-lg shadow-lg w-80 p-6 relative animate-fadeIn">
+                                    <div className="bg-white rounded-lg shadow-lg w-96 p-6 relative animate-fadeIn">
                                         {/* Close Button */}
                                         <button
                                             className="absolute top-2 right-2 text-gray-600 hover:text-black"
-                                            onClick={() => setOpen(false)}
+                                            onClick={() =>
+                                                setSelectedCard(null)
+                                            }
                                         >
                                             ✕
                                         </button>
 
-                                        <div className="text-lg font-semibold h-16 bg-blue-900 text-white rounded-r-sm flex items-center justify-center">
-                                            {c.title}
+                                        {/* Dynamic content from clicked card */}
+                                        <div className="text-lg font-semibold h-16 bg-blue-900 text-white rounded-md flex items-center justify-center mb-4">
+                                            {selectedCard.title}
                                         </div>
-                                        <div className="w-full flex items-center justify-center hidden group-hover:block mb-2">
-                                            <img
-                                                src={c.Img}
-                                                alt=""
-                                                className="w-full h-24"
-                                            />
+                                        {selectedCard.Img && (
+                                            <div className="w-full flex items-center justify-center mb-4">
+                                                <img
+                                                    src={selectedCard.Img}
+                                                    alt={selectedCard.title}
+                                                    className="w-full h-40 object-contain"
+                                                />
+                                            </div>
+                                        )}
+                                        <div className="text-md px-2 font-semibold mb-2 text-center">
+                                            {selectedCard.subtitle}
                                         </div>
-                                        <div className="text-md px-2 font-semibold mb-2 hidden group-hover:block text-center overflow-hidden">
-                                            {c.subtitle}
-                                        </div>
-                                        <div className="text-xs px-2 text-gray-600 mb-4 hidden group-hover:block overflow-hidden">
-                                            {c.desc}
+                                        <div className="text-sm px-2 text-gray-600">
+                                            {selectedCard.desc}
                                         </div>
                                     </div>
                                 </div>
