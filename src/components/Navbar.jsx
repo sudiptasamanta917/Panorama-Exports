@@ -22,7 +22,7 @@ export default function Navbar() {
                 },
                 {
                     label: "Mission & Vision",
-                    path: "/ourstory/vision-mission",
+                    path: "/ourstory",
                     image: secondImg,
                 },
                 {

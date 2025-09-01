@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import Milestones from "./Milestones";
-
+import VisionMission from "./VisionMission";
 // Hero images
 import img1 from "../../assets/OurStory/02.jpg";
 import img2 from "../../assets/OurStory/03.jpg";
@@ -80,7 +80,6 @@ export default function OurStory() {
                     </h2>
                 </div>
             </section>
-
             {/* Breadcrumbs */}
             {/* <div className="bg-[#fdf2df] text-lg py-5">
                 <div className="w-[90%] mx-auto px-6 md:px-20">
@@ -89,7 +88,6 @@ export default function OurStory() {
                     <span className="font-semibold text-[#01276a]">Legacy</span>
                 </div>
             </div> */}
-
             {/* Legacy Sections */}
             <section className="bg-white">
                 <div className="bg-white pt-16 pb-10 px-6 text-center">
@@ -111,7 +109,6 @@ export default function OurStory() {
                     </div>
                 </div>
             </section>
-
             {/* Founder's Message Sections */}
             <section className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
@@ -154,13 +151,19 @@ export default function OurStory() {
                     </div>
                 </div>
             </section>
-
             {/* MileStones Sections */}
             <section className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Milestones
                 </h2>
                 <Milestones />
+            </section>
+            {/* Vision & Mission Sections */}
+            <section className="bg-white">
+                <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                    Vision & Mission
+                </h2>
+                <VisionMission />
             </section>
         </div>
     );

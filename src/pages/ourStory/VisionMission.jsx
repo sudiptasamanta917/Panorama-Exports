@@ -90,7 +90,7 @@ export default function VisionMission() {
                     </motion.div>
                 </div>
             </section>
-            <section className="w-full bg-white">
+            {/* <section className="w-full bg-white">
                 <div className="py-16 px-6 lg:px-20 bg-gray-50">
                     <h2 className="text-3xl font-semibold text-blue-900 text-center mb-12">
                         Our Values
@@ -130,7 +130,7 @@ export default function VisionMission() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 }
