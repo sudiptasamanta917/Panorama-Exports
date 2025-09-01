@@ -13,7 +13,7 @@ export default function Navbar() {
     const navItems = [
         {
             label: "OUR STORY",
-            path: "/ourstory",
+            path: "",
             subItems: [
                 {
                     label: "Legacy",
@@ -21,8 +21,8 @@ export default function Navbar() {
                     image: firstImg,
                 },
                 {
-                    label: "Mission & Vision",
-                    path: "/ourstory#vision-mission",
+                    label: "Vision & Values",
+                    path: "/vision-values",
                     image: secondImg,
                 },
                 {

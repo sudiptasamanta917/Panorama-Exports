@@ -58,13 +58,13 @@ const cards = [
 ];
 
 export default function Milestones() {
-    // tweak these to control speed
     const STEP_DELAY_MS = 520; // time between each card starting animation
     const ANIM_DURATION = 0.9; // framer-motion duration (seconds)
 
     const { ref, inView } = useInView({ threshold: 0.28 });
     const [visibleIndex, setVisibleIndex] = useState(0);
     const timerRef = useRef(null);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         if (timerRef.current) {
@@ -101,7 +101,7 @@ export default function Milestones() {
     return (
         <div
             ref={ref}
-            className="md:w-[90%] w-full mx-auto h-[60vh] mb-10 bg-gradient-to-br from-gray-50 to-white overflow-hidden flex items-end"
+            className="md:w-[90%] w-full mx-auto h-[80vh] mb-10 bg-gradient-to-br from-gray-50 to-white overflow-hidden flex items-end"
         >
             <div className="relative w-full h-[40%]">
                 {/* Curved Path Image */}
@@ -111,7 +111,7 @@ export default function Milestones() {
                 {cards.map((c, i) => (
                     <motion.div
                         key={i}
-                        className={`absolute ${c.pos} 2xl:w-[180px] xl:w-[140px] lg:w-[110px] md:w-[120px] sm:w-[100px] w-[50px] flex flex-col items-start justify-center group`}
+                        className={`absolute ${c.pos} 2xl:w-[170px] xl:w-[140px] lg:w-[110px] md:w-[100px] sm:w-[80px] w-[50px] flex flex-col items-start justify-center group`}
                         initial={{ x: "-100vw", opacity: 0 }}
                         animate={
                             i < visibleIndex
@@ -123,25 +123,51 @@ export default function Milestones() {
                             ease: "easeOut",
                         }}
                     >
-                        <div className="h-[350px] w-full border-l-2 border-blue-900">
-                            <div className="shadow-md border-2 border-l-0 border-blue-900 rounded-r-md w-full overflow-hidden">
+                        <div className="2xl:h-[350px] lg:h-[300px] h-[250px]  w-full border-l-2 border-blue-900">
+                            {/* Clickable div */}
+                            <div
+                                className="shadow-md border-2 border-l-0 border-blue-900 rounded-r-md w-full overflow-hidden cursor-pointer group"
+                                onClick={() => setOpen(true)}
+                            >
                                 <div className="text-lg font-semibold h-16 bg-blue-900 text-white rounded-r-sm flex items-center justify-center">
                                     {c.title}
-                                </div>
-                                <div className="w-full flex items-center justify-center hidden group-hover:block mb-2">
-                                    <img
-                                        src={c.Img}
-                                        alt=""
-                                        className="w-full h-24"
-                                    />
                                 </div>
                                 <div className="text-md px-2 font-semibold mb-2 hidden group-hover:block max-h-24 text-center overflow-hidden">
                                     {c.subtitle}
                                 </div>
-                                <div className="text-xs px-2 text-gray-600 mb-4 hidden group-hover:block max-h-24 overflow-hidden">
-                                    {c.desc}
-                                </div>
                             </div>
+
+                            {/* Popup Modal */}
+                            {open && (
+                                <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
+                                    <div className="bg-white rounded-lg shadow-lg w-80 p-6 relative animate-fadeIn">
+                                        {/* Close Button */}
+                                        <button
+                                            className="absolute top-2 right-2 text-gray-600 hover:text-black"
+                                            onClick={() => setOpen(false)}
+                                        >
+                                            ✕
+                                        </button>
+
+                                        <div className="text-lg font-semibold h-16 bg-blue-900 text-white rounded-r-sm flex items-center justify-center">
+                                            {c.title}
+                                        </div>
+                                        <div className="w-full flex items-center justify-center hidden group-hover:block mb-2">
+                                            <img
+                                                src={c.Img}
+                                                alt=""
+                                                className="w-full h-24"
+                                            />
+                                        </div>
+                                        <div className="text-md px-2 font-semibold mb-2 hidden group-hover:block text-center overflow-hidden">
+                                            {c.subtitle}
+                                        </div>
+                                        <div className="text-xs px-2 text-gray-600 mb-4 hidden group-hover:block overflow-hidden">
+                                            {c.desc}
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </motion.div>
                 ))}

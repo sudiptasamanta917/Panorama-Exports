@@ -45,52 +45,59 @@ export default function VisionMission() {
 
     return (
         <>
-            <section
-                className="relative w-full h-[80vh] flex items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${bgImage})` }}
-            >
-                {/* Overlay black */}
-                <div className="absolute inset-0 bg-black/10" />
+            {/* Vision Sections */}
+            <section id="vision-values" className="bg-white">
+                {/* <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                    Vision
+                </h2> */}
+                <div
+                    className="relative w-full h-[80vh] flex items-center justify-center bg-cover bg-center"
+                    style={{ backgroundImage: `url(${bgImage})` }}
+                >
+                    {/* Overlay black */}
+                    <div className="absolute inset-0 bg-black/10" />
 
-                <div className="relative z-10 2xl:w-[60%] xl:w-[70%] lg:w-[80%] w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between text-center text-white">
-                    {/* Vision */}
-                    <motion.div
-                        className="w-[350px] flex flex-col items-center mb-8 md:mb-0"
-                        initial={{ y: 200, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                    >
-                        <h2 className="text-4xl font-semibold mb-4">
-                            Our Vision
-                        </h2>
-                        <p className="text-sm text-gray-200">
-                            To be the world’s most trusted apparel partner,
-                            championing technology, sustainability, and design
-                            excellence.
-                        </p>
-                    </motion.div>
+                    <div className="relative z-10 2xl:w-[60%] xl:w-[70%] lg:w-[80%] w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between text-center text-white">
+                        {/* Vision */}
+                        <motion.div
+                            className="w-[350px] flex flex-col items-center mb-8 md:mb-0"
+                            initial={{ y: 200, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            viewport={{ once: false, amount: 0.3 }}
+                        >
+                            <h2 className="text-4xl font-semibold mb-4">
+                                Our Vision
+                            </h2>
+                            <p className="text-sm text-gray-200">
+                                To be the world’s most trusted apparel partner,
+                                championing technology, sustainability, and
+                                design excellence.
+                            </p>
+                        </motion.div>
 
-                    {/* Mission */}
-                    <motion.div
-                        className="w-[350px] flex flex-col items-center"
-                        initial={{ y: 200, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                    >
-                        <h2 className="text-4xl font-semibold mb-4">
-                            Our Mission
-                        </h2>
-                        <p className="text-sm text-gray-200">
-                            To exceed expectations through innovation,
-                            efficiency, and a people-first culture-redefining
-                            global apparel manufacturing.
-                        </p>
-                    </motion.div>
+                        {/* Mission */}
+                        <motion.div
+                            className="w-[350px] flex flex-col items-center"
+                            initial={{ y: 200, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            viewport={{ once: false, amount: 0.3 }}
+                        >
+                            <h2 className="text-4xl font-semibold mb-4">
+                                Our Mission
+                            </h2>
+                            <p className="text-sm text-gray-200">
+                                To exceed expectations through innovation,
+                                efficiency, and a people-first
+                                culture-redefining global apparel manufacturing.
+                            </p>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
-            {/* <section className="w-full bg-white">
+            {/* Values Sections */}
+            <section className="w-full bg-white">
                 <div className="py-16 px-6 lg:px-20 bg-gray-50">
                     <h2 className="text-3xl font-semibold text-blue-900 text-center mb-12">
                         Our Values
@@ -130,7 +137,7 @@ export default function VisionMission() {
                         ))}
                     </div>
                 </div>
-            </section> */}
+            </section>
         </>
     );
 }

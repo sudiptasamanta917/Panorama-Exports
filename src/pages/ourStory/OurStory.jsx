@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLocation } from "react-router-dom";
 
 import Milestones from "./Milestones";
-import VisionMission from "./VisionMission";
+
 // Hero images
 import img1 from "../../assets/OurStory/02.jpg";
 import img2 from "../../assets/OurStory/03.jpg";
@@ -18,9 +18,7 @@ import FounderImage from "../../assets/Founders/founder.png";
 const heroImages = [img1, img2, img3, img4, LegacyImage];
 const labels = {
     "#legacy": "Legacy",
-    "#founder-message": "Founder's Message",
     "#milestones": "Milestones",
-    "#vision-mission": "Vision & Mission",
 };
 
 export default function OurStory() {
@@ -75,50 +73,11 @@ export default function OurStory() {
 
     return (
         <div className="font-sans text-gray-900 bg-white">
-            {/* Hero Section */}
-            <section className="relative w-full sm:h-[80vh] h-[380px] bg-black overflow-hidden flex flex-col items-start justify-end py-28">
-                {/* Background Dissolve Animations images */}
-                {heroImages.map((img, index) => (
-                    <div
-                        key={index}
-                        className={`absolute inset-0 transition-all duration-[1500ms] ease-in-out ${
-                            index === currentIndex
-                                ? "opacity-100 blur-0 scale-100"
-                                : "opacity-0 blur-md scale-105"
-                        }`}
-                        style={{
-                            backgroundImage: `url(${img})`,
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                        }}
-                    ></div>
-                ))}
-
-                {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-
-                {/* Text Box */}
-                <div className="relative z-20 text-white w-[90%] mx-auto px-6 md:px-20 font-semibold">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5">
-                        Legacy
-                    </h1>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl underline underline-offset-8">
-                        <span className="text-xl sm:text-2xl md:text-3xl font-normal">
-                            Where
-                        </span>{" "}
-                        Heritage{" "}
-                        <span className="text-xl sm:text-2xl md:text-3xl font-normal">
-                            Meets
-                        </span>{" "}
-                        Modern Luxury
-                    </h2>
-                </div>
-            </section>
             {/* Breadcrumbs */}
-            <div
+            {/* <div
                 className={`bg-[#fdf2df] text-lg py-2 transition-all duration-300 ${
                     legacyInView
-                        ? "relative" // normal flow when in Legacy section
+                        ? "hidden" // normal flow when in Legacy section
                         : "sticky top-[80px] z-40 shadow-md" // adjust top offset = navbar height
                 }`}
             >
@@ -129,22 +88,61 @@ export default function OurStory() {
                         {currentLabel}
                     </span>
                 </div>
-            </div>
+            </div> */}
 
             {/* Legacy Sections */}
             <section id="legacy" ref={legacyRef} className="bg-white">
-                <div className="bg-white pt-16 pb-10 px-6 text-center">
+                {/* Hero Section */}
+                <div className="relative w-full sm:h-[100vh] h-[380px] bg-black overflow-hidden flex flex-col items-start justify-end py-28">
+                    {/* Background Dissolve Animations images */}
+                    {heroImages.map((img, index) => (
+                        <div
+                            key={index}
+                            className={`absolute inset-0 transition-all duration-[1500ms] ease-in-out ${
+                                index === currentIndex
+                                    ? "opacity-100 blur-0 scale-100"
+                                    : "opacity-0 blur-md scale-105"
+                            }`}
+                            style={{
+                                backgroundImage: `url(${img})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                            }}
+                        ></div>
+                    ))}
+
+                    {/* Dark Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+                    {/* Text Box */}
+                    <div className="relative z-20 text-white w-[90%] mx-auto px-6 md:px-20 font-semibold">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5">
+                            Legacy
+                        </h1>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl underline underline-offset-8">
+                            <span className="text-xl sm:text-2xl md:text-3xl font-normal">
+                                Where
+                            </span>{" "}
+                            Heritage{" "}
+                            <span className="text-xl sm:text-2xl md:text-3xl font-normal">
+                                Meets
+                            </span>{" "}
+                            Modern Luxury
+                        </h2>
+                    </div>
+                </div>
+                <div className="bg-white pt-16 pb-10 px-6 ">
                     <div className="max-w-6xl mx-auto">
                         {/* Heading */}
-                        <h2 className="text-7xl font-serif  text-gray-600 mb-6">
+                        <h2 className="text-7xl text-gray-600 text-center mb-6">
                             Legacy
                         </h2>
 
                         {/* Subheading */}
-                        <p className="text-4xl text-blue-900 font-poppins leading-snug">
+                        <p className="2xl:text-4xl lg:text-3xl text-2xl text-blue-900">
                             Since 1973, Panorama Exports has transformed fabrics
-                            into fashion-blending Indian craftsmanship with
-                            advanced manufacturing. Today, our garments travel
+                            into fashion blending Indian craftsmanship with
+                            advanced manufacturing.Today,our garments travel
                             from India to global wardrobes, each piece echoing
                             artistry, innovation, and timeless tradition. More
                             than fashion-it's handcrafted legacy.
@@ -153,7 +151,7 @@ export default function OurStory() {
                 </div>
             </section>
             {/* Founder's Message Sections */}
-            <section id="founder-message" className="bg-white">
+            <section id="founder-message" ref={ref} className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Founder's Message
                 </h2>
@@ -167,15 +165,18 @@ export default function OurStory() {
                     </div>
 
                     {/* Quote Section */}
-                    <div
-                        ref={ref}
-                        className="flex flex-col justify-center items-end w-full h-[35vh] bg-[#96785e] text-white 2xl:px-40 xl:px-28 px-10 py-10"
-                    >
+                    <div className="flex flex-col justify-center items-end w-full h-[35vh] bg-[#96785e] text-white 2xl:px-40 xl:px-28 px-10 py-10">
+                        {/* Define variants for cleaner animation control */}
                         <motion.p
                             className="text-md md:text-lg lg:text-xl xl:text-2xl leading-relaxed mb-6 w-[40%]"
+                            variants={{
+                                hidden: { opacity: 0, y: 1 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
                             initial="hidden"
-                            animate={inView ? "visible" : "hidden"}
-                            variants={textVariants}
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.3 }}
+                            transition={{ duration: 2, ease: "easeInOut" }}
                         >
                             “Fashion is a dialogue between tradition and
                             tomorrow. Let’s keep shaping that conversation — one
@@ -184,29 +185,31 @@ export default function OurStory() {
 
                         <motion.h2
                             className="text-md md:text-lg lg:text-xl xl:text-2xl font-semibold w-[500px] mb-16"
+                            variants={{
+                                hidden: { opacity: 0, y: 1 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
                             initial="hidden"
-                            animate={inView ? "visible" : "hidden"}
-                            variants={textVariants}
-                            transition={{ delay: 0.2 }} // little delay
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.8 }}
+                            transition={{
+                                duration: 2,
+                                delay: 2,
+                                ease: "easeInOut",
+                            }}
                         >
                             — Shri Shyam Sahni & Smt. Veena Sahni
                         </motion.h2>
                     </div>
                 </div>
             </section>
+
             {/* MileStones Sections */}
             <section id="milestones" className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Milestones
                 </h2>
                 <Milestones />
-            </section>
-            {/* Vision & Mission Sections */}
-            <section id="vision-mission" className="bg-white">
-                <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Vision & Mission
-                </h2>
-                <VisionMission />
             </section>
         </div>
     );

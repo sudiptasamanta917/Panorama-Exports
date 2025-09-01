@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import OurStory from "../pages/ourStory/OurStory";
+import VisionMission from "../pages/ourStory/VisionMission";
 
 import Innovation from "../pages/Innovation";
 import WeavingStories from "../pages/WeavingStories";
@@ -34,7 +35,12 @@ export default function AppRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
+
             <Route path="/ourstory" element={<OurStory />} />
+            <Route path="/vision-values" element={<VisionMission />} />
+            <Route path="/ourstory" element={<OurStory />} />
+            <Route path="/ourstory" element={<OurStory />} />
+
             <Route path="/innovation" element={<Innovation />} />
             <Route path="/weavingstories" element={<WeavingStories />} />
             <Route path="/elevatedcraft" element={<ElevatedCraft />} />
@@ -46,7 +52,7 @@ export default function AppRoutes() {
             <Route path="/community" element={<Community />} />
             <Route path="/media" element={<Media />} />
             <Route path="/unitmap" element={<UnitLocationMap />} />
-        
+
             <Route
                 path="/craftedprecision/manufacturingexcellence"
                 element={<MfgExcellence />}
