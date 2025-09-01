@@ -17,32 +17,32 @@ export default function Navbar() {
             subItems: [
                 {
                     label: "Legacy",
-                    path: "/ourstory",
+                    path: "/ourstory#legacy",
                     image: firstImg,
                 },
                 {
                     label: "Mission & Vision",
-                    path: "/ourstory",
+                    path: "/ourstory#vision-mission",
                     image: secondImg,
                 },
                 {
                     label: "Core Values",
-                    path: "",
+                    path: "/ourstory#core-values",
                     image: thirdImg,
                 },
                 {
                     label: "Leadership",
-                    path: "",
+                    path: "/ourstory#leadership",
                     image: fourthImg,
                 },
                 {
                     label: "Milestones",
-                    path: "",
+                    path: "/ourstory#milestones",
                     image: fifthImg,
                 },
                 {
                     label: "Our Purpose",
-                    path: "",
+                    path: "/ourstory#our-purpose",
                     image: sixthImg,
                 },
             ],

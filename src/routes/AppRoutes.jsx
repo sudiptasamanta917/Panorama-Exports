@@ -1,11 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import OurStory from "../pages/ourStory/OurStory";
-import RootOfExcellence from "../pages/ourStory/RootsOfExcellence";
-import CoreValues from "../pages/ourStory/CoreValues";
-import Milestones from "../pages/ourStory/Milestones";
-import OurPurpose from "../pages/ourStory/OurPurpose";
-import VisionMission from "../pages/ourStory/VisionMission";
 
 import Innovation from "../pages/Innovation";
 import WeavingStories from "../pages/WeavingStories";
@@ -51,14 +46,7 @@ export default function AppRoutes() {
             <Route path="/community" element={<Community />} />
             <Route path="/media" element={<Media />} />
             <Route path="/unitmap" element={<UnitLocationMap />} />
-            <Route
-                path="/ourstory/rootsofexcellence"
-                element={<RootOfExcellence />}
-            />
-            <Route path="/ourstory/corevalues" element={<CoreValues />} />
-            <Route path="/ourstory/vision-mission" element={<VisionMission />} />
-            <Route path="/ourstory/milestones" element={<Milestones />} />
-            <Route path="/ourstory/ourpurpose" element={<OurPurpose />} />
+        
             <Route
                 path="/craftedprecision/manufacturingexcellence"
                 element={<MfgExcellence />}

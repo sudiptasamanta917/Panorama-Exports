@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useLocation } from "react-router-dom";
 
 import Milestones from "./Milestones";
 import VisionMission from "./VisionMission";
@@ -15,12 +16,22 @@ import LegacyImage from "../../assets/Legacy/01.jpg";
 import FounderImage from "../../assets/Founders/founder.png";
 
 const heroImages = [img1, img2, img3, img4, LegacyImage];
+const labels = {
+    "#legacy": "Legacy",
+    "#founder-message": "Founder's Message",
+    "#milestones": "Milestones",
+    "#vision-mission": "Vision & Mission",
+};
 
 export default function OurStory() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const location = useLocation();
     const { ref, inView } = useInView({
-        triggerOnce: false, 
+        triggerOnce: false,
         threshold: 0.2,
+    });
+    const { ref: legacyRef, inView: legacyInView } = useInView({
+        threshold: 0.3, // 30% of legacy visible = considered "in view", this for breadcrums control............
     });
 
     const textVariants = {
@@ -33,16 +44,39 @@ export default function OurStory() {
     };
 
     useEffect(() => {
-            const interval = setInterval(() => {
-                setCurrentIndex((prev) => (prev + 1) % heroImages.length);
-            }, 4000); // 4 seconds per slide
-            return () => clearInterval(interval);
-        }, []);
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+        }, 4000); // 4 seconds per slide
+        return () => clearInterval(interval);
+    }, []);
+
+    // Smooth scroll on hash change
+    useEffect(() => {
+        if (location.hash) {
+            setTimeout(() => {
+                const section = document.querySelector(location.hash);
+                if (section) {
+                    const yOffset = -80; // adjust based on your navbar/breadcrumb height
+                    const y =
+                        section.getBoundingClientRect().top +
+                        window.pageYOffset +
+                        yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }
+            }, 100);
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    }, [location]);
+
+
+    // Breadcrumb current label
+    const currentLabel = labels[location.hash] || "Legacy";
 
     return (
         <div className="font-sans text-gray-900 bg-white">
             {/* Hero Section */}
-            <section className="relative w-full sm:h-[100vh] h-[380px] bg-black overflow-hidden flex flex-col items-start justify-end py-28">
+            <section className="relative w-full sm:h-[80vh] h-[380px] bg-black overflow-hidden flex flex-col items-start justify-end py-28">
                 {/* Background Dissolve Animations images */}
                 {heroImages.map((img, index) => (
                     <div
@@ -81,15 +115,24 @@ export default function OurStory() {
                 </div>
             </section>
             {/* Breadcrumbs */}
-            {/* <div className="bg-[#fdf2df] text-lg py-5">
+            <div
+                className={`bg-[#fdf2df] text-lg py-2 transition-all duration-300 ${
+                    legacyInView
+                        ? "relative" // normal flow when in Legacy section
+                        : "sticky top-[80px] z-40 shadow-md" // adjust top offset = navbar height
+                }`}
+            >
                 <div className="w-[90%] mx-auto px-6 md:px-20">
                     <span className="text-gray-800">Home</span> &gt;{" "}
                     <span className="text-gray-800">Our Story</span> &gt;{" "}
-                    <span className="font-semibold text-[#01276a]">Legacy</span>
+                    <span className="font-semibold text-[#01276a]">
+                        {currentLabel}
+                    </span>
                 </div>
-            </div> */}
+            </div>
+
             {/* Legacy Sections */}
-            <section className="bg-white">
+            <section id="legacy" ref={legacyRef} className="bg-white">
                 <div className="bg-white pt-16 pb-10 px-6 text-center">
                     <div className="max-w-6xl mx-auto">
                         {/* Heading */}
@@ -110,7 +153,7 @@ export default function OurStory() {
                 </div>
             </section>
             {/* Founder's Message Sections */}
-            <section className="bg-white">
+            <section id="founder-message" className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Founder's Message
                 </h2>
@@ -152,14 +195,14 @@ export default function OurStory() {
                 </div>
             </section>
             {/* MileStones Sections */}
-            <section className="bg-white">
+            <section id="milestones" className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Milestones
                 </h2>
                 <Milestones />
             </section>
             {/* Vision & Mission Sections */}
-            <section className="bg-white">
+            <section id="vision-mission" className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Vision & Mission
                 </h2>
