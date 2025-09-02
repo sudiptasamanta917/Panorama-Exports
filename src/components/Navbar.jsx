@@ -204,15 +204,6 @@ export default function Navbar() {
                         </li>
                     ))}
                 </ul>
-                {/* <div
-                    className={`${
-                        scrolled
-                            ? "text-[#073281] hover:text-[#073281]"
-                            : "text-white hover:text-red-300"
-                    } transition-colors duration-500 hidden lg:flex text-white mr-5 px-2 xl:text-base text-sm font-medium hover:underline underline-offset-4`}
-                >
-                    MORE
-                </div> */}
 
                 <div className="flex">
                     {/* Language Switcher */}
@@ -245,7 +236,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="lg:hidden p-2 rounded-md text-white hover:text-red-300 ml-10"
+                        className="lg:hidden p-2 rounded-md text-white ml-10"
                         aria-label="Toggle mobile menu"
                     >
                         <svg
@@ -267,46 +258,62 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <ul className="md:hidden bg-black bg-opacity-80 px-4 py-6 space-y-4 text-white text-base">
-                    <li>
-                        <Link to="/" onClick={() => setIsOpen(false)}>
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/Ourstory" onClick={() => setIsOpen(false)}>
-                            Our Story
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/manufacturing"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Manufacturing
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/people" onClick={() => setIsOpen(false)}>
-                            People
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/innovation" onClick={() => setIsOpen(false)}>
-                            Innovation
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/media" onClick={() => setIsOpen(false)}>
-                            Media
-                        </Link>
-                    </li>
-                    <li className="flex space-x-4 pt-2">
+                <div>
+                    {/* Close Button */}
+                    <button
+                        className="absolute top-12 right-4 text-white text-2xl hover:text-gray-300"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        ✕
+                    </button>
+
+                    <ul className="lg:hidden bg-black bg-opacity-80 px-4 py-6 space-y-4 text-white text-base">
+                        <li>
+                            <Link to="/" onClick={() => setIsOpen(false)}>
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/Ourstory"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Our Story
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/manufacturing"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Manufacturing
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/people" onClick={() => setIsOpen(false)}>
+                                People
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/innovation"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Innovation
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/media" onClick={() => setIsOpen(false)}>
+                                Media
+                            </Link>
+                        </li>
+                        {/* <li className="flex space-x-4 pt-2">
                         <button className="hover:text-red-300">EN</button>
                         <span>|</span>
                         <button className="hover:text-red-300">HI</button>
-                    </li>
-                </ul>
+                    </li> */}
+                    </ul>
+                </div>
             )}
         </nav>
     );

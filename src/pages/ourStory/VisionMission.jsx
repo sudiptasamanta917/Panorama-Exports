@@ -55,7 +55,7 @@ export default function VisionMission() {
                     style={{ backgroundImage: `url(${bgImage})` }}
                 >
                     {/* Overlay black */}
-                    <div className="absolute inset-0 bg-black/10" />
+                    <div className="absolute inset-0 lg:bg-black/10 md:bg-black/30 bg-black/60" />
 
                     <div className="relative z-10 2xl:w-[60%] xl:w-[70%] lg:w-[80%] w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between text-center text-white">
                         {/* Vision */}

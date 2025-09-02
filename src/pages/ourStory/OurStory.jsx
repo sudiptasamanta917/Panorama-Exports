@@ -131,15 +131,15 @@ export default function OurStory() {
                         </h2>
                     </div>
                 </div>
-                <div className="bg-white pt-16 pb-10 px-6 ">
+                <div className="bg-white sm:pt-16 pt-5 pb-10 px-6 ">
                     <div className="max-w-6xl mx-auto">
                         {/* Heading */}
-                        <h2 className="text-7xl text-gray-600 text-center mb-6">
+                        <h2 className="2xl:text-7xl lg:text-5xl text-4xl text-gray-600 text-center mb-6">
                             Legacy
                         </h2>
 
                         {/* Subheading */}
-                        <p className="2xl:text-4xl lg:text-3xl text-2xl text-blue-900">
+                        <p className="2xl:text-4xl lg:text-3xl md:text-2xl text-lg text-blue-900">
                             Since 1973, Panorama Exports has transformed fabrics
                             into fashion blending Indian craftsmanship with
                             advanced manufacturing.Today,our garments travel
@@ -152,11 +152,11 @@ export default function OurStory() {
             </section>
             {/* Founder's Message Sections */}
             <section id="founder-message" ref={ref} className="bg-white">
-                <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                <h2 className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Founder's Message
                 </h2>
-                <div className="bg-[#b9a686] h-[70vh] relative pt-24">
-                    <div className="text-white h-[80vh] absolute bottom-0 flex items-center justify-center">
+                <div className="bg-[#b9a686] md:h-[70vh] h-[45vh] relative md:pt-24 pt-10">
+                    <div className="text-white md:h-[70vh] h-[30vh] absolute bottom-0 left-0 flex items-center justify-center">
                         <img
                             src={FounderImage}
                             alt="Founder"
@@ -165,10 +165,10 @@ export default function OurStory() {
                     </div>
 
                     {/* Quote Section */}
-                    <div className="flex flex-col justify-center items-end w-full h-[35vh] bg-[#96785e] text-white 2xl:px-40 xl:px-28 px-10 py-10">
+                    <div className="flex flex-col md:justify-center justify-start items-end w-full md:h-[35vh] h-[30vh] bg-[#96785e] text-white 2xl:px-40 xl:px-28 px-10 md:py-10 py-5">
                         {/* Define variants for cleaner animation control */}
                         <motion.p
-                            className="text-md md:text-lg lg:text-xl xl:text-2xl leading-relaxed mb-6 w-[40%]"
+                            className="text-sm md:text-lg lg:text-xl xl:text-2xl md:leading-relaxed md:mb-6 mb-2 md:w-[40%] w-full"
                             variants={{
                                 hidden: { opacity: 0, y: 1 },
                                 visible: { opacity: 1, y: 0 },
@@ -184,7 +184,7 @@ export default function OurStory() {
                         </motion.p>
 
                         <motion.h2
-                            className="text-md md:text-lg lg:text-xl xl:text-2xl font-semibold w-[500px] mb-16"
+                            className="text-sm md:text-lg lg:text-xl xl:text-2xl font-semibold flex justify-end 2xl:w-[40%] md:w-[50%] w-full md:mb-16"
                             variants={{
                                 hidden: { opacity: 0, y: 1 },
                                 visible: { opacity: 1, y: 0 },
