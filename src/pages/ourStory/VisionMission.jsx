@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLocation } from "react-router-dom";
 
-import bgImage from "../../assets/OurStory/visionMission/oven-into-every-thread.jpg";
+import bgImage from "../../assets/OurStory/visionMission/main_bg.jpg";
 import visionMission from "../../assets/OurStory/visionMission/vision-mission.jpg";
 import CoreValues from "./CoreValues";
 
@@ -47,10 +47,10 @@ export default function VisionMission() {
             <section id="vision-values" className="bg-white">
                 <div
                     ref={ref}
-                    className="w-full h-[100vh] bg-cover bg-center flex flex-col items-start justify-end px-[10%] py-[5%]"
+                    className="w-full h-[100vh] bg-cover bg-center flex flex-col items-start justify-end"
                     style={{ backgroundImage: `url(${bgImage})` }}
                 >
-                    <div className="text-white font-medium">
+                    <div className="text-white font-medium bg-black/80 px-[10%] pb-[4%] pt-[2%]">
                         <motion.h1
                             className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl"
                             variants={{
@@ -89,11 +89,11 @@ export default function VisionMission() {
                         </motion.div>
                     </div>
                 </div>
-                <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                {/* <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Vision & Mission
-                </h2>
+                </h2> */}
                 <div
-                    className="relative w-full h-[80vh] flex items-center justify-center bg-cover bg-center"
+                    className="relative w-full h-[80vh] mt-4 flex items-center justify-center bg-cover bg-center"
                     style={{ backgroundImage: `url(${visionMission})` }}
                 >
                     {/* Overlay black */}
@@ -139,7 +139,7 @@ export default function VisionMission() {
                 </div>
             </section>
             {/* Values Sections */}
-            <section id="core-values" className="w-full bg-white">
+            <section id="core-values" className="w-full bg-[#f3ebdf]">
                 <CoreValues />
             </section>
         </>

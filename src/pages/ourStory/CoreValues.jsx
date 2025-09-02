@@ -46,11 +46,11 @@ const CoreValues = () => {
     return (
         <>
             <div className="w-[90%] mx-auto py-16 px-6 lg:px-20">
-                <h2 className="text-3xl pb-16 sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Our Values
+                <h2 className="text-3xl pb-16 sm:text-4xl md:text-5xl text-blue-950 tracking-widest text-center font-semibold">
+                    CORE VALUE
                 </h2>
 
-                <div className="xl:w-[70%] w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div className="w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 xl:gap-10 lg:gap-8 md:gap-8 gap-6">
                     {values.map((value, index) => (
                         <motion.div
                             key={index}
@@ -61,24 +61,26 @@ const CoreValues = () => {
                                 delay: index * 0.2,
                             }}
                             viewport={{ once: false }}
-                            className="bg-white shadow-md rounded-sm overflow-hidden"
+                            className="border border-amber-700/30 shadow-[0_0_20px_#ab9777] rounded-sm overflow-hidden"
                         >
-                            <div
-                                className={`${value.bg} p-6 flex justify-center items-center`}
-                            >
-                                <img
-                                    src={value.icon}
-                                    alt={value.title}
-                                    className="h-12"
-                                />
-                            </div>
-                            <div className="p-4">
-                                <h3 className="text-blue-900 font-semibold mb-2">
-                                    {value.title}
-                                </h3>
-                                <p className="text-sm text-gray-600">
-                                    {value.description}
-                                </p>
+                            <div className="border-[20px] border-white h-full w-full">
+                                <div
+                                    className={`${value.bg} p-6 flex justify-center items-center`}
+                                >
+                                    <img
+                                        src={value.icon}
+                                        alt={value.title}
+                                        className="h-12"
+                                    />
+                                </div>
+                                <div className="p-4">
+                                    <h3 className="text-blue-900 font-semibold mb-2">
+                                        {value.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-600">
+                                        {value.description}
+                                    </p>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

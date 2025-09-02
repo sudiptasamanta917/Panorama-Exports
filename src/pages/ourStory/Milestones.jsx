@@ -10,7 +10,7 @@ const cards = [
         pos: "left-[86%] bottom-[88%]",
         title: "1973",
         subtitle: "Founded with a vision",
-        desc: " Founded with a vision to blend craftsmanship with global appeal.",
+        desc: "Founded with a vision to blend craftsmanship with global appeal.",
         Img: img1,
     },
     {
@@ -29,16 +29,16 @@ const cards = [
     },
     {
         pos: "left-[45%] bottom-[22%]",
-        title: "2000",
-        subtitle: "ESG-driven sustainability programs",
-        desc: "We’ve launched ESG-driven sustainability programs that blend environmental sensitivity with ethical production—creating positive impact for both society and industry development.",
+        title: "2006",
+        subtitle: "Unit-1 (Plot-8)",
+        desc: "Where it all began! Our very first unit laid the foundation of our fashion-forward journey.",
         Img: img1,
     },
     {
         pos: "left-[29%] bottom-[16%]",
-        title: "2010",
-        subtitle: "Units in Faridabad",
-        desc: "Grew state of the art advanced manufacturing units in Faridabad, boosting production capabilities and strengthening delivery excellence",
+        title: "2023",
+        subtitle: "Unit-2 (Plot-67)",
+        desc: "A new thread in our fabric! This unit marked our post-pandemic expansion into modern production.",
         Img: img1,
     },
     {
