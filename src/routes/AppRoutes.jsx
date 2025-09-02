@@ -38,8 +38,6 @@ export default function AppRoutes() {
 
             <Route path="/ourstory" element={<OurStory />} />
             <Route path="/vision-values" element={<VisionMission />} />
-            <Route path="/ourstory" element={<OurStory />} />
-            <Route path="/ourstory" element={<OurStory />} />
 
             <Route path="/innovation" element={<Innovation />} />
             <Route path="/weavingstories" element={<WeavingStories />} />

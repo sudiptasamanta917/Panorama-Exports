@@ -15,7 +15,7 @@ import LegacyImage from "../../assets/Legacy/01.jpg";
 
 import FounderImage from "../../assets/Founders/founder.png";
 
-const heroImages = [img1, img2, img3, img4, LegacyImage];
+const heroImages = [LegacyImage, img1, img2, img3, img4];
 const labels = {
     "#legacy": "Legacy",
     "#milestones": "Milestones",
@@ -132,20 +132,20 @@ export default function OurStory() {
                     </div>
                 </div>
                 <div className="bg-white sm:pt-16 pt-5 pb-10 px-6 ">
-                    <div className="max-w-6xl mx-auto">
+                    <div className="">
                         {/* Heading */}
-                        <h2 className="2xl:text-7xl lg:text-5xl text-4xl text-gray-600 text-center mb-6">
+                        <h2 className="2xl:text-7xl lg:text-5xl text-4xl text-gray-600 text-center md:mb-10 mb-4">
                             Legacy
                         </h2>
 
                         {/* Subheading */}
-                        <p className="2xl:text-4xl lg:text-3xl md:text-2xl text-lg text-blue-900">
+                        <p className="2xl:text-4xl lg:text-3xl md:text-2xl text-lg text-blue-900 text-justify max-w-[70%] mx-auto leading-relaxed">
                             Since 1973, Panorama Exports has transformed fabrics
                             into fashion blending Indian craftsmanship with
-                            advanced manufacturing.Today,our garments travel
+                            advanced manufacturing. Today, our garments travel
                             from India to global wardrobes, each piece echoing
                             artistry, innovation, and timeless tradition. More
-                            than fashion-it's handcrafted legacy.
+                            than fashion — it's handcrafted legacy.
                         </p>
                     </div>
                 </div>

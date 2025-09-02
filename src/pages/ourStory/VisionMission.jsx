@@ -1,75 +1,117 @@
-// VisionMission.jsx
-import React from "react";
-import { motion } from "framer-motion";
-import bgImage from "../../assets/OurStory/visionMission/bg.png";
+/// VisionMission.jsx
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useLocation } from "react-router-dom";
+
+import bgImage from "../../assets/OurStory/visionMission/oven-into-every-thread.jpg";
+import visionMission from "../../assets/OurStory/visionMission/vision-mission.jpg";
+import CoreValues from "./CoreValues";
+
+const labels = {
+    "#vision-values": "VisionValues",
+    "#core-values": "CoreValues",
+};
 
 export default function VisionMission() {
-    // Values data
-    const values = [
-        {
-            title: "Integrity",
-            description:
-                "Acting and making decisions in a fair and honest manner, upholding the highest standards of professionalism, and being recognized for doing so.",
-            icon: "/icons/integrity.svg",
-            bg: "bg-blue-900",
-        },
-        {
-            title: "Commitment",
-            description:
-                "Building on the foundation of integrity, we do everything necessary to deliver value to all stakeholders. This includes being accountable for our actions and decisions.",
-            icon: "/icons/commitment.svg",
-            bg: "bg-[#4E2D2D]",
-        },
-        {
-            title: "Passion",
-            description:
-                "Fuelled by an energetic, intuitive zeal that stems from emotional engagement with the organisation, inspiring every individual to give their best.",
-            icon: "/icons/passion.svg",
-            bg: "bg-orange-500",
-        },
-        {
-            title: "Seamlessness",
-            description:
-                "Collaborating and working together across functional groups, hierarchies, businesses, and geographies to harness the benefits of synergy.",
-            icon: "/icons/seamlessness.svg",
-            bg: "bg-green-600",
-        },
-        {
-            title: "Speed",
-            description:
-                "Responding to both internal and external customers with a sense of urgency, completing tasks ahead of deadlines with efficiency.",
-            icon: "/icons/speed.svg",
-            bg: "bg-red-600",
-        },
-    ];
+    const location = useLocation();
+    const { ref, inView } = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+    });
+
+    // Smooth scroll on hash change
+    useEffect(() => {
+        if (location.hash) {
+            setTimeout(() => {
+                const section = document.querySelector(location.hash);
+                if (section) {
+                    const yOffset = -80; // adjust based on your navbar/breadcrumb height
+                    const y =
+                        section.getBoundingClientRect().top +
+                        window.pageYOffset +
+                        yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }
+            }, 100);
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    }, [location]);
+
+    
 
     return (
         <>
             {/* Vision Sections */}
             <section id="vision-values" className="bg-white">
-                {/* <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Vision
-                </h2> */}
                 <div
-                    className="relative w-full h-[80vh] flex items-center justify-center bg-cover bg-center"
+                    ref={ref}
+                    className="w-full h-[100vh] bg-cover bg-center flex flex-col items-start justify-end px-[10%] py-[5%]"
                     style={{ backgroundImage: `url(${bgImage})` }}
                 >
+                    <div className="text-white font-medium">
+                        <motion.h1
+                            className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl"
+                            variants={{
+                                hidden: { opacity: 0, y: 1 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.8 }}
+                            transition={{
+                                duration: 2,
+                                ease: "easeInOut",
+                            }}
+                        >
+                            Woven into Every Thread
+                        </motion.h1>
+                        <motion.div
+                            className="2xl:text-3xl lg:text-2xl md:text-xl text-lg mt-4"
+                            variants={{
+                                hidden: { opacity: 0, y: 1 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.3 }}
+                            transition={{
+                                duration: 2,
+                                delay: 1,
+                                ease: "easeInOut",
+                            }}
+                        >
+                            Our vision shapes the future of fashion; our values
+                            guide every stitch. We don’t just make clothing—we
+                            build trust, innovate with intent, and create with
+                            heart.
+                        </motion.div>
+                    </div>
+                </div>
+                <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                    Vision & Mission
+                </h2>
+                <div
+                    className="relative w-full h-[80vh] flex items-center justify-center bg-cover bg-center"
+                    style={{ backgroundImage: `url(${visionMission})` }}
+                >
                     {/* Overlay black */}
-                    <div className="absolute inset-0 lg:bg-black/10 md:bg-black/30 bg-black/60" />
+                    <div className="absolute inset-0 lg:bg-black/10 md:bg-black/20 bg-black/60" />
 
-                    <div className="relative z-10 2xl:w-[60%] xl:w-[70%] lg:w-[80%] w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between text-center text-white">
+                    <div className="relative z-10 2xl:w-[90%] xl:w-[70%] lg:w-[80%] w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between text-center text-white">
                         {/* Vision */}
                         <motion.div
-                            className="w-[350px] flex flex-col items-center mb-8 md:mb-0"
+                            className="w-[40%] flex flex-col items-center font-semibold mb-8 md:mb-0"
                             initial={{ y: 200, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             viewport={{ once: false, amount: 0.3 }}
                         >
-                            <h2 className="text-4xl font-semibold mb-4">
+                            <h2 className="xl:text-5xl md:text-4xl text-3x mb-4">
                                 Our Vision
                             </h2>
-                            <p className="text-sm text-gray-200">
+                            <p className="xl:text-xl md:text-lg sm:text-md text-sm text-gray-200">
                                 To be the world’s most trusted apparel partner,
                                 championing technology, sustainability, and
                                 design excellence.
@@ -78,16 +120,16 @@ export default function VisionMission() {
 
                         {/* Mission */}
                         <motion.div
-                            className="w-[350px] flex flex-col items-center"
+                            className="w-[40%] flex flex-col items-center font-semibold"
                             initial={{ y: 200, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             viewport={{ once: false, amount: 0.3 }}
                         >
-                            <h2 className="text-4xl font-semibold mb-4">
+                            <h2 className="xl:text-5xl md:text-4xl text-3xl mb-4">
                                 Our Mission
                             </h2>
-                            <p className="text-sm text-gray-200">
+                            <p className="xl:text-xl md:text-lg sm:text-md text-sm text-gray-200">
                                 To exceed expectations through innovation,
                                 efficiency, and a people-first
                                 culture-redefining global apparel manufacturing.
@@ -97,46 +139,8 @@ export default function VisionMission() {
                 </div>
             </section>
             {/* Values Sections */}
-            <section className="w-full bg-white">
-                <div className="py-16 px-6 lg:px-20 bg-gray-50">
-                    <h2 className="text-3xl font-semibold text-blue-900 text-center mb-12">
-                        Our Values
-                    </h2>
-
-                    <div className="xl:w-[70%] w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                        {values.map((value, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ y: -100, opacity: 0 }}
-                                whileInView={{ y: 0, opacity: 1 }}
-                                transition={{
-                                    duration: 0.6,
-                                    delay: index * 0.2,
-                                }}
-                                viewport={{ once: false }}
-                                className="bg-white shadow-md rounded-sm overflow-hidden"
-                            >
-                                <div
-                                    className={`${value.bg} p-6 flex justify-center items-center`}
-                                >
-                                    <img
-                                        src={value.icon}
-                                        alt={value.title}
-                                        className="h-12"
-                                    />
-                                </div>
-                                <div className="p-4">
-                                    <h3 className="text-blue-900 font-semibold mb-2">
-                                        {value.title}
-                                    </h3>
-                                    <p className="text-sm text-gray-600">
-                                        {value.description}
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
+            <section id="core-values" className="w-full bg-white">
+                <CoreValues />
             </section>
         </>
     );

@@ -1,159 +1,89 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-import { CheckCircle2 } from "lucide-react";
 
 const CoreValues = () => {
+    // CoreValues data
     const values = [
         {
-            title: "Crafted with Excellence",
-            desc: "A blend of work & play — allowing passion & precision to coexist — where artisan skill meets advanced technology. Every piece is made with unmatched care, pride, and creativity.",
+            title: "Integrity",
+            description:
+                "Acting and making decisions in a fair and honest manner, upholding the highest standards of professionalism, and being recognized for doing so.",
+            icon: "/icons/integrity.svg",
+            bg: "bg-blue-900",
         },
         {
-            title: "One Team, One Dream",
-            desc: "Designers, artisans, and technologists working in perfect sync to bring visions to life.",
+            title: "Commitment",
+            description:
+                "Building on the foundation of integrity, we do everything necessary to deliver value to all stakeholders. This includes being accountable for our actions and decisions.",
+            icon: "/icons/commitment.svg",
+            bg: "bg-[#4E2D2D]",
         },
         {
-            title: "Innovating with Purpose",
-            desc: "Honoring heritage while embracing the future — creating clothing that resonates globally.",
+            title: "Passion",
+            description:
+                "Fuelled by an energetic, intuitive zeal that stems from emotional engagement with the organisation, inspiring every individual to give their best.",
+            icon: "/icons/passion.svg",
+            bg: "bg-orange-500",
         },
         {
-            title: "Planet-First Process",
-            desc: "From mindful materials to low-impact methods, sustainability leads every decision. Our sensitivity to the environment is at the heart of our process.",
+            title: "Seamlessness",
+            description:
+                "Collaborating and working together across functional groups, hierarchies, businesses, and geographies to harness the benefits of synergy.",
+            icon: "/icons/seamlessness.svg",
+            bg: "bg-green-600",
         },
         {
-            title: "Proudly Made in India",
-            desc: "Every garment tells a story of culture, soul, and craftsmanship rooted in India — designed to connect with the world.",
+            title: "Speed",
+            description:
+                "Responding to both internal and external customers with a sense of urgency, completing tasks ahead of deadlines with efficiency.",
+            icon: "/icons/speed.svg",
+            bg: "bg-red-600",
         },
     ];
 
     return (
         <>
-            <div className="bg-blue-950 h-20 mb-12"></div>
-            <section className="relative px-6 py-20 md:px-20">
-                {/* Background with texture + gradient */}
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/fabric-of-squares.png')] opacity-10"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-gray-50/90 backdrop-blur-sm"></div>
+            <div className="w-[90%] mx-auto py-16 px-6 lg:px-20">
+                <h2 className="text-3xl pb-16 sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                    Our Values
+                </h2>
 
-                {/* Content Wrapper */}
-                <div className="relative z-10">
-                    {/* Heading */}
-                    <div className="max-w-4xl mx-auto text-center mb-16">
-                        <motion.h1
-                            initial={{ opacity: 0, y: -30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
-                            className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight"
+                <div className="xl:w-[70%] w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    {values.map((value, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ y: -100, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: index * 0.2,
+                            }}
+                            viewport={{ once: false }}
+                            className="bg-white shadow-md rounded-sm overflow-hidden"
                         >
-                            Our Core Values
-                        </motion.h1>
-
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 1, delay: 0.3 }}
-                            className="text-lg text-gray-700 leading-relaxed"
-                        >
-                            The foundation of everything we create — a blend of
-                            heritage, innovation, and responsibility.
-                        </motion.p>
-                    </div>
-
-                    {/* Values Grid */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                        {values.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    duration: 0.8,
-                                    delay: index * 0.2,
-                                }}
-                                viewport={{ once: true }}
-                                className="bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                            <div
+                                className={`${value.bg} p-6 flex justify-center items-center`}
                             >
-                                <div className="flex items-center gap-3 mb-4">
-                                    <CheckCircle2 className="text-blue-700 w-7 h-7" />
-                                    <h3 className="text-xl font-semibold text-gray-900">
-                                        {item.title}
-                                    </h3>
-                                </div>
-                                <p className="text-gray-600 leading-relaxed">
-                                    {item.desc}
+                                <img
+                                    src={value.icon}
+                                    alt={value.title}
+                                    className="h-12"
+                                />
+                            </div>
+                            <div className="p-4">
+                                <h3 className="text-blue-900 font-semibold mb-2">
+                                    {value.title}
+                                </h3>
+                                <p className="text-sm text-gray-600">
+                                    {value.description}
                                 </p>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Director's Message */}
-                    <section className="bg-white">
-                        <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                            Director's Message
-                        </h2>
-                        <div className="relative bg-[#b9a686]">
-                            <div className="w-[90%] mx-auto py-16 px-6 md:px-20 grid md:grid-cols-2 gap-8 items-center">
-                                {/* Left Text Box */}
-                                <div className="relative z-10 bg-white p-8 shadow-lg rounded-lg h-[400px]">
-                                    <p className="text-gray-700 leading-relaxed">
-                                        Innovation is our language—spoken
-                                        through designs that inspire and lead
-                                        globally. We don't just follow trends—we
-                                        anticipate them, crafting future-ready
-                                        fashion with purpose. Every creation is
-                                        a translation of insight, technology,
-                                        and timeless craftsmanship. Innovation
-                                        is our language—spoken through designs
-                                        that inspire and lead globally. We don't
-                                        just follow trends—we anticipate them,
-                                        crafting future-ready fashion with
-                                        purpose. Every creation is a translation
-                                        of insight, technology, and timeless
-                                        craftsmanship.
-                                    </p>
-                                    <h2 className="text-xl font-bold mb-4">
-                                        Rajan Sahni
-                                    </h2>
-                                </div>
-
-                                {/* Right Image Box */}
-                                <div className="relative z-20">
-                                    <img
-                                        src={LegacyImage} // your image import
-                                        alt="Legacy"
-                                        className="w-full h-[400px] object-cover rounded-lg shadow-xl"
-                                    />
-                                </div>
                             </div>
-                            <div className="w-[90%] mx-auto pb-16 px-6 md:px-20 grid md:grid-cols-2 gap-8 items-center">
-                                {/* Left Text Box */}
-                                <div className="relative z-20">
-                                    <img
-                                        src={LegacyImage} // your image import
-                                        alt="Legacy"
-                                        className="w-full h-[400px] object-cover rounded-lg shadow-xl"
-                                    />
-                                </div>
-
-                                {/* Right Image Box */}
-                                <div className="relative z-10 bg-white p-8 shadow-lg rounded-lg h-[400px]">
-                                    <p className="text-gray-700 leading-relaxed">
-                                        Our identity is crafted through
-                                        integrity and defined by an unwavering
-                                        commitment to brilliance & values that
-                                        shape every garment, every partnership,
-                                        and every milestone on our global
-                                        journey.
-                                    </p>
-                                    <h2 className="text-xl font-bold mb-4">
-                                        Navin Sahni
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                        </motion.div>
+                    ))}
                 </div>
-            </section>
+            </div>
         </>
     );
 };

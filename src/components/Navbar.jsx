@@ -27,12 +27,12 @@ export default function Navbar() {
                 },
                 {
                     label: "Core Values",
-                    path: "/ourstory#core-values",
+                    path: "/vision-values#core-values",
                     image: thirdImg,
                 },
                 {
                     label: "Leadership",
-                    path: "/ourstory#leadership",
+                    path: "/vision-values#core-values",
                     image: fourthImg,
                 },
                 {
@@ -42,7 +42,7 @@ export default function Navbar() {
                 },
                 {
                     label: "Our Purpose",
-                    path: "/ourstory#our-purpose",
+                    path: "/",
                     image: sixthImg,
                 },
             ],
