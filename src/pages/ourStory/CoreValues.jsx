@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import Img from "../../assets/ourStory/coreValues/img.jpg";
+import Img from "../../assets/OurStory/coreValues/img.jpg";
 
 //hello
 
