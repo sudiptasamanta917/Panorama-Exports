@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+import Img from "../../assets/ourStory/coreValues/img.jpg";
+
 
 const CoreValues = () => {
     // CoreValues data
@@ -10,36 +12,31 @@ const CoreValues = () => {
             title: "Integrity",
             description:
                 "Acting and making decisions in a fair and honest manner, upholding the highest standards of professionalism, and being recognized for doing so.",
-            icon: "/icons/integrity.svg",
-            bg: "bg-blue-900",
+            img: { Img },
         },
         {
-            title: "Commitment",
+            title: "Integrity",
             description:
-                "Building on the foundation of integrity, we do everything necessary to deliver value to all stakeholders. This includes being accountable for our actions and decisions.",
-            icon: "/icons/commitment.svg",
-            bg: "bg-[#4E2D2D]",
+                "Acting and making decisions in a fair and honest manner, upholding the highest standards of professionalism, and being recognized for doing so.",
+            img: { Img },
         },
         {
-            title: "Passion",
+            title: "Integrity",
             description:
-                "Fuelled by an energetic, intuitive zeal that stems from emotional engagement with the organisation, inspiring every individual to give their best.",
-            icon: "/icons/passion.svg",
-            bg: "bg-orange-500",
+                "Acting and making decisions in a fair and honest manner, upholding the highest standards of professionalism, and being recognized for doing so.",
+            img: { Img },
         },
         {
-            title: "Seamlessness",
+            title: "Integrity",
             description:
-                "Collaborating and working together across functional groups, hierarchies, businesses, and geographies to harness the benefits of synergy.",
-            icon: "/icons/seamlessness.svg",
-            bg: "bg-green-600",
+                "Acting and making decisions in a fair and honest manner, upholding the highest standards of professionalism, and being recognized for doing so.",
+            img: { Img },
         },
         {
-            title: "Speed",
+            title: "Integrity",
             description:
-                "Responding to both internal and external customers with a sense of urgency, completing tasks ahead of deadlines with efficiency.",
-            icon: "/icons/speed.svg",
-            bg: "bg-red-600",
+                "Acting and making decisions in a fair and honest manner, upholding the highest standards of professionalism, and being recognized for doing so.",
+            img: { Img },
         },
     ];
 
@@ -65,21 +62,19 @@ const CoreValues = () => {
                         >
                             <div className="border-[20px] border-white h-full w-full">
                                 <div
-                                    className={`${value.bg} p-6 flex justify-center items-center`}
+                                    className={`p-6 h-[250px] flex justify-center items-center bg-center bg-cover`}
+                                    style={{
+                                        backgroundImage: `url(${Img})`,
+                                    }}
                                 >
-                                    <img
-                                        src={value.icon}
-                                        alt={value.title}
-                                        className="h-12"
-                                    />
-                                </div>
-                                <div className="p-4">
-                                    <h3 className="text-blue-900 font-semibold mb-2">
-                                        {value.title}
-                                    </h3>
-                                    <p className="text-sm text-gray-600">
-                                        {value.description}
-                                    </p>
+                                    {/* <div className="p-4">
+                                        <h3 className="text-white font-semibold mb-2">
+                                            {value.title}
+                                        </h3>
+                                        <p className="text-sm text-white">
+                                            {value.description}
+                                        </p>
+                                    </div> */}
                                 </div>
                             </div>
                         </motion.div>

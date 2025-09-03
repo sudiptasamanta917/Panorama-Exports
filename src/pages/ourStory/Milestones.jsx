@@ -37,22 +37,31 @@ const cards = [
     {
         pos: "left-[29%] bottom-[16%]",
         title: "2023",
+        month: "Jan 2023",
         subtitle: "Unit-2 (Plot-67)",
         desc: "A new thread in our fabric! This unit marked our post-pandemic expansion into modern production.",
         Img: img1,
+        submenu: {
+            month: "Oct 2023",
+            title: "",
+            subtitle: "Warehouse",
+            desc: "Style needs space! Our logistics hub came to life to handle growing global demands.",
+        },
     },
     {
         pos: "left-[15%] bottom-[12%]",
         title: "2024",
-        subtitle: "New Fabric Warehouse",
-        desc: "Powered by 5,000+ skilled hands, we craft 12 million garments a year—now growing stronger with a new fabric warehouse fueling global reach.",
+        month: "Jan 2024",
+        subtitle: "Unit-3 (Plot-11)",
+        desc: "A fresh stitch in time! This unit joined the fashion brigade with cutting-edge capabilities.",
         Img: img1,
     },
     {
         pos: "left-[2%] bottom-[9.2%]",
         title: "2025",
-        subtitle: "New Factory in Noida",
-        desc: "With 7,000 team members driving our growth, we’ve expanded our presence with a new head office in Faridabad and launched our new factory in Noida—a benchmark where tradition meets technology and quiet luxury takes form. From production to quality control, we craft elevated essentials and rare, refined pieces for the global market.",
+        month: "Jul 2025",
+        subtitle: "Unit-4 Noida Factory (D-144) & HO (Faridabad Head Office)",
+        desc: "Double debut! A monumental month—our latest production unit and brand-new headquarters open their doors.",
         Img: img1,
     },
 ];
@@ -139,11 +148,11 @@ export default function Milestones() {
 
                             {/* Popup Modal */}
                             {selectedCard && (
-                                <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
-                                    <div className="bg-white rounded-lg shadow-lg w-96 p-6 relative animate-fadeIn">
+                                <div className="fixed inset-0 flex items-center justify-center bg-black/15 z-50">
+                                    <div className="bg-white rounded-lg shadow-lg w-96 h-[500px] px-6 py-7 overflow-y-scroll relative animate-fadeIn">
                                         {/* Close Button */}
                                         <button
-                                            className="absolute top-2 right-2 text-gray-600 hover:text-black"
+                                            className="absolute top-1 right-2 text-gray-600 hover:text-black"
                                             onClick={() =>
                                                 setSelectedCard(null)
                                             }
@@ -164,12 +173,33 @@ export default function Milestones() {
                                                 />
                                             </div>
                                         )}
+                                        {selectedCard.month && (
+                                            <div className="text-md font-semibold h-10 bg-green-700 text-white rounded-md flex items-center justify-center mb-4">
+                                                {selectedCard.month}
+                                            </div>
+                                        )}
                                         <div className="text-md px-2 font-semibold mb-2 text-center">
                                             {selectedCard.subtitle}
                                         </div>
                                         <div className="text-sm px-2 text-gray-600">
                                             {selectedCard.desc}
                                         </div>
+                                        {selectedCard.submenu && (
+                                            <div className="mt-4">
+                                                <div className="text-md font-semibold h-10 bg-green-700 text-white rounded-md flex items-center justify-center mb-4">
+                                                    {selectedCard.submenu.month}
+                                                </div>
+                                                <div className="text-md px-2 font-semibold mb-2 text-center">
+                                                    {
+                                                        selectedCard.submenu
+                                                            .subtitle
+                                                    }
+                                                </div>
+                                                <div className="text-sm px-2 text-gray-600">
+                                                    {selectedCard.submenu.desc}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             )}

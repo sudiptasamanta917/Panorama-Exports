@@ -13,7 +13,7 @@ import img4 from "../../assets/OurStory/05.jpg";
 
 import LegacyImage from "../../assets/Legacy/01.jpg";
 
-import FounderImage from "../../assets/Founders/founder.png";
+import FounderImage from "../../assets/Founders/founderImage.png";
 
 const heroImages = [LegacyImage, img1, img2, img3, img4];
 const labels = {
@@ -156,7 +156,7 @@ export default function OurStory() {
                     Founder's Message
                 </h2>
                 <div className="bg-[#b9a686] md:h-[70vh] h-[45vh] relative md:pt-24 pt-10">
-                    <div className="text-white md:h-[70vh] h-[30vh] absolute bottom-0 left-0 flex items-center justify-center">
+                    <div className="text-white md:h-[70vh] h-[30vh] absolute bottom-0 2xl:left-28 lg:left-20 md:left-5 left-0 flex items-center justify-center">
                         <img
                             src={FounderImage}
                             alt="Founder"
