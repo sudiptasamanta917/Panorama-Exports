@@ -155,8 +155,8 @@ export default function OurStory() {
                 <h2 className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Founder's Message
                 </h2>
-                <div className="bg-[#b9a686] md:h-[70vh] h-[45vh] relative md:pt-24 pt-10">
-                    <div className="text-white md:h-[70vh] h-[30vh] absolute bottom-0 2xl:left-28 lg:left-20 md:left-5 left-0 flex items-center justify-center">
+                <div className="bg-[#b9a686] lg:h-[70vh] md:h-[50vh] h-[45vh] relative flex items-center pb-5">
+                    <div className="text-white lg:h-[70vh] md:h-[40vh] h-[30vh] absolute bottom-0 2xl:left-28 md:left-5 left-2 flex items-center justify-center">
                         <img
                             src={FounderImage}
                             alt="Founder"
@@ -165,10 +165,10 @@ export default function OurStory() {
                     </div>
 
                     {/* Quote Section */}
-                    <div className="flex flex-col md:justify-center justify-start items-end w-full md:h-[35vh] h-[30vh] bg-[#96785e] text-white 2xl:px-40 xl:px-28 px-10 md:py-10 py-5">
+                    <div className="flex flex-col justify-start items-end w-full md:h-[25vh] sm:h-[15vh] xs:h-[25vh] h-[30vh] bg-[#96785e] text-white 2xl:px-40 xl:px-10 px-5 py-2">
                         {/* Define variants for cleaner animation control */}
                         <motion.p
-                            className="text-sm md:text-lg lg:text-xl xl:text-2xl md:leading-relaxed md:mb-6 mb-2 md:w-[40%] w-full"
+                            className="xl:mt-4 text-sm md:text-lg lg:text-lg 2xl:text-2xl md:leading-relaxed 2xl:mb-6 lg:mb-3 mb-2 2xl:w-[40%] xl:w-[550px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full sm:tracking-wide"
                             variants={{
                                 hidden: { opacity: 0, y: 1 },
                                 visible: { opacity: 1, y: 0 },
@@ -179,12 +179,12 @@ export default function OurStory() {
                             transition={{ duration: 2, ease: "easeInOut" }}
                         >
                             “Fashion is a dialogue between tradition and
-                            tomorrow. Let’s keep shaping that conversation — one
+                            tomorrow. Let’s keep shaping that conversation-one
                             inspired creation at a time.”
                         </motion.p>
 
                         <motion.h2
-                            className="text-sm md:text-lg lg:text-xl xl:text-2xl font-semibold flex justify-end 2xl:w-[40%] md:w-[50%] w-full md:mb-16"
+                            className="text-sm md:text-lg lg:text-lg 2xl:text-2xl font-semibold flex justify-end 2xl:w-[40%] xl:w-[550px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full"
                             variants={{
                                 hidden: { opacity: 0, y: 1 },
                                 visible: { opacity: 1, y: 0 },
