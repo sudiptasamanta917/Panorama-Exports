@@ -4,6 +4,8 @@ import { useInView } from "react-intersection-observer";
 
 import Img from "../../assets/ourStory/coreValues/img.jpg";
 
+//hello
+
 
 const CoreValues = () => {
     // CoreValues data
