@@ -142,7 +142,7 @@ export default function Navbar() {
         <nav
             className={`${
                 scrolled ? "bg-white" : "bg-transparent backdrop-blur-md"
-            } shadow-md 2xl:h-24 sm:h-20 max-h-20 fixed top-0 left-0 right-0 z-50 transition-colors duration-500 overflow-hidden`}
+            } shadow-md 2xl:h-24 sm:h-20 max-h-20 fixed top-0 left-0 right-0 z-50 transition-colors duration-500`}
         >
             <div className=" mx-auto xl:px-4 px-2 2xl:h-24 sm:h-20 max-h-20 flex items-center justify-end xl:gap-3 gap-2">
                 {/* Logo */}

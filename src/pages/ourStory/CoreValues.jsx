@@ -64,20 +64,19 @@ const CoreValues = () => {
                         >
                             <div className="border-[20px] border-white h-full w-full">
                                 <div
-                                    className={`p-6 h-[250px] flex justify-center items-center bg-center bg-cover`}
+                                    className={`p-6 flex justify-center items-center bg-center bg-cover`}
                                     style={{
                                         backgroundImage: `url(${Img})`,
                                     }}
-                                >
-                                    {/* <div className="p-4">
+                                ></div>
+                                <div className="p-4">
                                         <h3 className="text-white font-semibold mb-2">
                                             {value.title}
                                         </h3>
                                         <p className="text-sm text-white">
                                             {value.description}
                                         </p>
-                                    </div> */}
-                                </div>
+                                    </div>
                             </div>
                         </motion.div>
                     ))}
