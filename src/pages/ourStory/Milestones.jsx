@@ -2,7 +2,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import img1 from "../../assets/OurInfrastructure/unit_1.jpg";
+import img1 from "../../assets/Milestones/1980.jpg";
+import img2 from "../../assets/Milestones/1990.jpg";
+import img3 from "../../assets/Milestones/2024.jpg";
+import img4 from "../../assets/Milestones/2025.jpg";
 import Way from "../../assets/Milestones/S_way.png";
 
 const cards = [
@@ -25,7 +28,7 @@ const cards = [
         title: "1990",
         subtitle: "Embraced modern technology",
         desc: "Embraced modern technology; laid the foundation for future-ready manufacturing.",
-        Img: img1,
+        Img: img2,
     },
     {
         pos: "left-[45%] bottom-[22%]",
@@ -54,7 +57,7 @@ const cards = [
         month: "Jan 2024",
         subtitle: "Unit-3 (Plot-11)",
         desc: "A fresh stitch in time! This unit joined the fashion brigade with cutting-edge capabilities.",
-        Img: img1,
+        Img: img3,
     },
     {
         pos: "left-[2%] bottom-[9.2%]",
@@ -62,7 +65,7 @@ const cards = [
         month: "Jul 2025",
         subtitle: "Unit-4 Noida Factory (D-144) & HO (Faridabad Head Office)",
         desc: "Double debut! A monumental month—our latest production unit and brand-new headquarters open their doors.",
-        Img: img1,
+        Img: img4,
     },
 ];
 

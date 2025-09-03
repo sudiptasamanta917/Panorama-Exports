@@ -165,10 +165,10 @@ export default function OurStory() {
                     </div>
 
                     {/* Quote Section */}
-                    <div className="flex flex-col justify-start items-end w-full md:h-[25vh] sm:h-[15vh] xs:h-[25vh] h-[30vh] bg-[#96785e] text-white 2xl:px-40 xl:px-10 px-5 py-2">
+                    <div className="flex flex-col justify-start items-end w-[100vw] md:h-[25vh] sm:h-[15vh] xs:h-[25vh] h-[30vh] bg-[#96785e] border border-transparent text-white 2xl:px-40 xl:px-10 px-5 py-2">
                         {/* Define variants for cleaner animation control */}
                         <motion.p
-                            className="xl:mt-4 text-sm md:text-lg lg:text-lg 2xl:text-2xl md:leading-relaxed 2xl:mb-6 lg:mb-3 mb-2 2xl:w-[40%] xl:w-[550px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full sm:tracking-wide"
+                            className="xl:mt-4 text-sm md:text-lg lg:text-lg 2xl:text-2xl md:leading-relaxed 2xl:mb-6 lg:mb-3 mb-2 2xl:w-[40%] border border-transparent xl:w-[550px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full sm:tracking-wide"
                             variants={{
                                 hidden: { opacity: 0, y: 1 },
                                 visible: { opacity: 1, y: 0 },
