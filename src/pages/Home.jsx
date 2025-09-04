@@ -14,17 +14,16 @@ import MediaScrollSection from "../components/MediaScrollSection";
 import FlipCard from "../components/flipCard/FlipCard";
 import Certifications from "../components/Certifications";
 
-import GlobalFootprintImage from "../assets/GlobalFootprint/global_business.jpg";
 import GoogleMapUnits from "../components/GoogleMapUnits";
-import HumanTouch1 from "../assets/Community/csr.jpg";
-import HumanTouch2 from "../assets/Community/csr2.jpg";
+import HumanTouch1 from "../assets/Community/csr.webp";
+import HumanTouch2 from "../assets/Community/csr2.webp";
 
-import Hero1 from "../assets/HeroImages/01.png";
-import Hero2 from "../assets/HeroImages/02.png";
-import Hero3 from "../assets/HeroImages/03.png";
-import Hero4 from "../assets/HeroImages/04.png";
-import Hero05 from "../assets/HeroImages/05.png";
-import Hero06 from "../assets/HeroImages/07.png";
+import Hero1 from "../assets/HeroImages/01.webp";
+import Hero2 from "../assets/HeroImages/02.webp";
+import Hero3 from "../assets/HeroImages/03.webp";
+import Hero4 from "../assets/HeroImages/04.webp";
+import Hero05 from "../assets/HeroImages/05.webp";
+import Hero06 from "../assets/HeroImages/07.webp";
 
 
 // Hero data
@@ -90,10 +89,10 @@ import brand24 from "../assets/GlobalFootprint/brands/Tesco_Logo.svg.png";
 const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20, brand21, brand22, brand23, brand24];
 
 // Crafting Tomorrow images
-import img1 from "../assets/CraftingTomorrow/01.png";
-import img2 from "../assets/CraftingTomorrow/2.png";
-import img3 from "../assets/CraftingTomorrow/3.png";
-import img4 from "../assets/CraftingTomorrow/4.png";
+import img1 from "../assets/CraftingTomorrow/01.webp";
+import img2 from "../assets/CraftingTomorrow/2.webp";
+import img3 from "../assets/CraftingTomorrow/3.webp";
+import img4 from "../assets/CraftingTomorrow/4.webp";
 
 const crImages = [img1, img2, img3, img4];
 

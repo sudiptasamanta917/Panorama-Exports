@@ -6,12 +6,12 @@ import { useLocation } from "react-router-dom";
 import Milestones from "./Milestones";
 
 // Hero images
-import img1 from "../../assets/OurStory/02.jpg";
-import img2 from "../../assets/OurStory/03.jpg";
-import img3 from "../../assets/OurStory/04.jpg";
-import img4 from "../../assets/OurStory/05.jpg";
+import img1 from "../../assets/OurStory/02.webp";
+import img2 from "../../assets/OurStory/03.webp";
+import img3 from "../../assets/OurStory/04.webp";
+import img4 from "../../assets/OurStory/05.webp";
 
-import LegacyImage from "../../assets/Legacy/01.jpg";
+import LegacyImage from "../../assets/Legacy/01.webp";
 
 import FounderImage from "../../assets/Founders/founderImage.png";
 
@@ -155,8 +155,8 @@ export default function OurStory() {
                 <h2 className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Founder's Message
                 </h2>
-                <div className="bg-[#b9a686] lg:h-[70vh] md:h-[50vh] h-[45vh] relative flex items-center pb-5">
-                    <div className="text-white lg:h-[70vh] md:h-[40vh] h-[30vh] absolute bottom-0 2xl:left-28 md:left-5 left-2 flex items-center justify-center">
+                <div className="bg-[#b9a686] h-[70vh] relative flex items-center pb-5">
+                    <div className="text-white h-[70vh] absolute bottom-0 flex items-center justify-center">
                         <img
                             src={FounderImage}
                             alt="Founder"
@@ -165,10 +165,10 @@ export default function OurStory() {
                     </div>
 
                     {/* Quote Section */}
-                    <div className="flex flex-col justify-start items-end w-[100vw] md:h-[25vh] sm:h-[15vh] xs:h-[25vh] h-[30vh] bg-[#96785e] border border-transparent text-white 2xl:px-40 xl:px-10 px-5 py-2">
+                    <div className="flex flex-col justify-start items-end w-[100vw] h-[26vh] bg-[#96785e] text-white xl:px-10 px-5 py-2">
                         {/* Define variants for cleaner animation control */}
                         <motion.p
-                            className="xl:mt-4 text-sm md:text-lg lg:text-lg 2xl:text-2xl md:leading-relaxed 2xl:mb-6 lg:mb-3 mb-2 2xl:w-[40%] border border-transparent xl:w-[550px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full sm:tracking-wide"
+                            className="xl:mt-4 text-[10px] lg:text-sm xl:text-md 2xl:text-xl font-semibold md:leading-relaxed 2xl:mb-6 lg:mb-3 mb-2 2xl:w-[500px] xl:w-[450px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full sm:tracking-wide"
                             variants={{
                                 hidden: { opacity: 0, y: 1 },
                                 visible: { opacity: 1, y: 0 },
@@ -184,7 +184,7 @@ export default function OurStory() {
                         </motion.p>
 
                         <motion.h2
-                            className="text-sm md:text-lg lg:text-lg 2xl:text-2xl font-semibold flex justify-end 2xl:w-[40%] xl:w-[550px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full"
+                            className="text-[10px] lg:text-sm xl:text-md 2xl:text-xl font-semibold flex justify-end 2xl:w-[500px] xl:w-[450px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full"
                             variants={{
                                 hidden: { opacity: 0, y: 1 },
                                 visible: { opacity: 1, y: 0 },
@@ -202,20 +202,6 @@ export default function OurStory() {
                         </motion.h2>
                     </div>
                 </div>
-            </section>
-            {/* Directors's Message Sections */}
-            <section id="director-message" className="bg-white">
-                <h2 className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Director's Message
-                </h2>
-                <div></div>
-            </section>
-            {/* Executive Directors's Message Sections */}
-            <section id="director-message" className="bg-white">
-                <h2 className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Executive Director's Message
-                </h2>
-                <div></div>
             </section>
 
             {/* MileStones Sections */}

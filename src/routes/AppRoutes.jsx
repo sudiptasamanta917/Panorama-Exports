@@ -11,7 +11,6 @@ import Sustainability from "../pages/Sustainability";
 import CraftingTomorrow from "../pages/craftingTomorrow/CraftingTomorrow";
 import GlobalFootprint from "../pages/globalFootprint/GlobalFootprint";
 import OurInfrastructure from "../pages/OurInfrastructure";
-import Community from "../pages/Community";
 import Media from "../pages/media/Media";
 import UnitLocationMap from "../components/UnitLocationMap";
 
@@ -47,7 +46,6 @@ export default function AppRoutes() {
             <Route path="/craftingtomorrow" element={<CraftingTomorrow />} />
             <Route path="/globalfootprint" element={<GlobalFootprint />} />
             <Route path="/ourinfrastructure" element={<OurInfrastructure />} />
-            <Route path="/community" element={<Community />} />
             <Route path="/media" element={<Media />} />
             <Route path="/unitmap" element={<UnitLocationMap />} />
 

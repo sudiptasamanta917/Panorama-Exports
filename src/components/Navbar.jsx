@@ -110,7 +110,7 @@ export default function Navbar() {
             ],
         },
         {
-            label: "PRODUCTS",
+            label: "LOOK BOOK",
             path: "",
         },
         {

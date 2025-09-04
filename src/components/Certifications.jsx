@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 
-import C1 from "../assets/Certificates/cert 1.png";
-import C2 from "../assets/Certificates/cert 2.png";
-import C3 from "../assets/Certificates/cert 3.png";
-import C4 from "../assets/Certificates/cert 4.png";
-import C5 from "../assets/Certificates/cert 5.png";
-import C6 from "../assets/Certificates/cert 6.png";
-import C7 from "../assets/Certificates/cert 7.png";
-import C8 from "../assets/Certificates/cert 8.png";
+import C1 from "../assets/Certificates/cert 1.webp";
+import C2 from "../assets/Certificates/cert 2.webp";
+import C3 from "../assets/Certificates/cert 3.webp";
+import C4 from "../assets/Certificates/cert 4.webp";
+import C5 from "../assets/Certificates/cert 5.webp";
+import C6 from "../assets/Certificates/cert 6.webp";
+import C7 from "../assets/Certificates/cert 7.webp";
+import C8 from "../assets/Certificates/cert 8.webp";
 
 const certificates = [
     { id: 1, src: C1, alt: "Certificate 1" },

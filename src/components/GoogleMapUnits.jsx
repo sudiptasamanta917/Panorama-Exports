@@ -2,12 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import { IoEnterOutline } from "react-icons/io5";
 import LiveMap from "../components/LiveMap";
 
-import plant1 from "../assets/OurInfrastructure/unit_1.jpg";
-import plant2 from "../assets/OurInfrastructure/unit_2.jpg";
-import plant3 from "../assets/OurInfrastructure/unit_3.jpg";
-import plant4 from "../assets/OurInfrastructure/unit_4.jpg";
-import corporateOffice from "../assets/OurInfrastructure/unit_1.jpg";
-import plant5 from "../assets/OurInfrastructure/unit_1.jpg";
+import plant1 from "../assets/OurInfrastructure/unit_1.webp";
+import plant2 from "../assets/OurInfrastructure/unit_2.webp";
+import plant3 from "../assets/OurInfrastructure/unit_3.webp";
+import plant4 from "../assets/OurInfrastructure/unit_4.webp";
+import corporateOffice from "../assets/OurInfrastructure/unit_1.webp";
+import plant5 from "../assets/OurInfrastructure/unit_1.webp";
 
 const GoogleMapUnits = () => {
 

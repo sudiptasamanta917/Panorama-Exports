@@ -2,10 +2,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import img1 from "../../assets/Milestones/1980.jpg";
-import img2 from "../../assets/Milestones/1990.jpg";
-import img3 from "../../assets/Milestones/2024.jpg";
-import img4 from "../../assets/Milestones/2025.jpg";
+import img1 from "../../assets/Milestones/1973.png";
+import img2 from "../../assets/Milestones/1980.webp";
+import img3 from "../../assets/Milestones/1990.webp";
+import img4 from "../../assets/Milestones/2006.webp";
+import img5 from "../../assets/Milestones/2023.webp";
+import img6 from "../../assets/Milestones/2023_2.webp";
+import img7 from "../../assets/Milestones/2024.webp";
+import img8 from "../../assets/Milestones/2025.webp";
 import Way from "../../assets/Milestones/S_way.png";
 
 const cards = [
@@ -21,51 +25,52 @@ const cards = [
         title: "1980",
         subtitle: "Expanded internationally",
         desc: "Expanded internationally; deepened global collaborations.",
-        Img: img1,
+        Img: img2,
     },
     {
         pos: "left-[73%] bottom-[39%]",
         title: "1990",
         subtitle: "Embraced modern technology",
         desc: "Embraced modern technology; laid the foundation for future-ready manufacturing.",
-        Img: img2,
+        Img: img3,
     },
     {
         pos: "left-[45%] bottom-[22%]",
         title: "2006",
         subtitle: "Unit-1 (Plot-8)",
         desc: "Where it all began! Our very first unit laid the foundation of our fashion-forward journey.",
-        Img: img1,
+        Img: img4,
     },
     {
         pos: "left-[29%] bottom-[16%]",
         title: "2023",
-        month: "Jan 2023",
+        month: "January",
         subtitle: "Unit-2 (Plot-67)",
         desc: "A new thread in our fabric! This unit marked our post-pandemic expansion into modern production.",
-        Img: img1,
+        Img: img5,
         submenu: {
-            month: "Oct 2023",
+            month: "October",
             title: "",
             subtitle: "Warehouse",
             desc: "Style needs space! Our logistics hub came to life to handle growing global demands.",
+            Img: img6,
         },
     },
     {
         pos: "left-[15%] bottom-[12%]",
         title: "2024",
-        month: "Jan 2024",
+        month: "January",
         subtitle: "Unit-3 (Plot-11)",
         desc: "A fresh stitch in time! This unit joined the fashion brigade with cutting-edge capabilities.",
-        Img: img3,
+        Img: img7,
     },
     {
         pos: "left-[2%] bottom-[9.2%]",
         title: "2025",
-        month: "Jul 2025",
+        month: "July",
         subtitle: "Unit-4 Noida Factory (D-144) & HO (Faridabad Head Office)",
         desc: "Double debut! A monumental month—our latest production unit and brand-new headquarters open their doors.",
-        Img: img4,
+        Img: img8,
     },
 ];
 
@@ -152,10 +157,10 @@ export default function Milestones() {
                             {/* Popup Modal */}
                             {selectedCard && (
                                 <div className="fixed inset-0 flex items-center justify-center bg-black/15 z-50">
-                                    <div className="bg-white rounded-lg shadow-lg w-96 h-[500px] px-6 py-7 overflow-y-scroll relative animate-fadeIn">
+                                    <div className="bg-white rounded-lg shadow-lg 2xl:w-[40%] xl:w-[50%] lg:w-[60%] md:w-[80%] w-[90%] h-[80vh] px-6 py-10 overflow-y-scroll relative animate-fadeIn">
                                         {/* Close Button */}
                                         <button
-                                            className="absolute top-1 right-2 text-gray-600 hover:text-black"
+                                            className="absolute top-0 right-0 text-gray-600 hover:text-black text-xl font-bold border px-1"
                                             onClick={() =>
                                                 setSelectedCard(null)
                                             }
@@ -164,41 +169,57 @@ export default function Milestones() {
                                         </button>
 
                                         {/* Dynamic content from clicked card */}
-                                        <div className="text-lg font-semibold h-16 bg-blue-900 text-white rounded-md flex items-center justify-center mb-4">
+                                        <div className="text-lg font-semibold h-10 bg-blue-900 text-white rounded-md flex items-center justify-center mb-4">
                                             {selectedCard.title}
                                         </div>
+                                        {selectedCard.month && (
+                                            <div className="text-md font-semibold h-8 bg-green-700 text-white rounded-md flex items-center justify-center mb-4">
+                                                {selectedCard.month}
+                                            </div>
+                                        )}
                                         {selectedCard.Img && (
                                             <div className="w-full flex items-center justify-center mb-4">
                                                 <img
                                                     src={selectedCard.Img}
-                                                    alt={selectedCard.title}
-                                                    className="w-full h-40 object-contain"
+                                                    alt={selectedCard.subtitle}
+                                                    className="w-full object-contain"
                                                 />
                                             </div>
                                         )}
-                                        {selectedCard.month && (
-                                            <div className="text-md font-semibold h-10 bg-green-700 text-white rounded-md flex items-center justify-center mb-4">
-                                                {selectedCard.month}
-                                            </div>
-                                        )}
-                                        <div className="text-md px-2 font-semibold mb-2 text-center">
+                                        <div className="text-md px-2 font-semibold mb-2 text-center text-blue-900 lg:text-2xl">
                                             {selectedCard.subtitle}
                                         </div>
-                                        <div className="text-sm px-2 text-gray-600">
+                                        <div className="lg:text-lg text-sm px-2">
                                             {selectedCard.desc}
                                         </div>
                                         {selectedCard.submenu && (
                                             <div className="mt-4">
-                                                <div className="text-md font-semibold h-10 bg-green-700 text-white rounded-md flex items-center justify-center mb-4">
+                                                <div className="text-md font-semibold h-8 bg-green-700 text-white rounded-md flex items-center justify-center mb-4">
                                                     {selectedCard.submenu.month}
                                                 </div>
-                                                <div className="text-md px-2 font-semibold mb-2 text-center">
+                                                {selectedCard.submenu.Img && (
+                                                    <div className="w-full flex items-center justify-center mb-4">
+                                                        <img
+                                                            src={
+                                                                selectedCard
+                                                                    .submenu.Img
+                                                            }
+                                                            alt={
+                                                                selectedCard
+                                                                    .submenu
+                                                                    .subtitle
+                                                            }
+                                                            className="w-full object-contain"
+                                                        />
+                                                    </div>
+                                                )}
+                                                <div className="text-md px-2 font-semibold mb-2 text-center text-blue-900 lg:text-2xl">
                                                     {
                                                         selectedCard.submenu
                                                             .subtitle
                                                     }
                                                 </div>
-                                                <div className="text-sm px-2 text-gray-600">
+                                                <div className="lg:text-lg text-sm px-2">
                                                     {selectedCard.submenu.desc}
                                                 </div>
                                             </div>

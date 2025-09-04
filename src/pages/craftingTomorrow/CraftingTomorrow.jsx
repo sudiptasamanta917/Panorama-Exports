@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import craftingTomorrowImage from "../../assets/CraftingTomorrow/01.png";
+import craftingTomorrowImage from "../../assets/CraftingTomorrow/01.webp";
 import { CiPlay1 } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 

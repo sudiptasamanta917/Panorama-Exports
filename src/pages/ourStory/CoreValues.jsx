@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import Img1 from "../../assets/OurStory/coreValues/Crafted with Excellence.jpg";
-import Img2 from "../../assets/OurStory/coreValues/One Team One Drea.jpg";
-import Img3 from "../../assets/OurStory/coreValues/Innovating with Purpose.png";
-import Img4 from "../../assets/OurStory/coreValues/Planet first Process.jpeg";
-import Img5 from "../../assets/OurStory/coreValues/Proudly Made in India.jpg";
+import Img1 from "../../assets/OurStory/coreValues/Crafted with Excellence.webp";
+import Img2 from "../../assets/OurStory/coreValues/One Team One Drea.webp";
+import Img3 from "../../assets/OurStory/coreValues/Innovating with Purpose.webp";
+import Img4 from "../../assets/OurStory/coreValues/Planet first Process.webp";
+import Img5 from "../../assets/OurStory/coreValues/Proudly Made in India.webp";
 
 //hello
 
@@ -48,12 +48,12 @@ const CoreValues = () => {
 
     return (
         <>
-            <div className="w-[90%] mx-auto py-16 px-6 lg:px-20">
-                <h2 className="text-3xl pb-16 sm:text-4xl md:text-5xl text-blue-950 tracking-widest text-center font-semibold">
+            <div className="py-10">
+                <h2 className="w-[90%] mx-auto py-5 px-6 lg:px-20 text-3xl pb-16 sm:text-4xl md:text-5xl text-blue-950 tracking-widest text-center font-semibold">
                     CORE VALUE
                 </h2>
 
-                <div className="w-full mx-auto grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-5 xl:gap-10 lg:gap-8 md:gap-8 gap-6">
+                <div className="w-[90%] mx-auto py-5 mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:gap-10 lg:gap-8 md:gap-7 gap-6">
                     {values.map((value, index) => (
                         <motion.div
                             key={index}
@@ -74,13 +74,13 @@ const CoreValues = () => {
                                     }}
                                 ></div>
                                 <div className="p-4">
-                                        <h3 className="lg:text-xl md:text-lg text-sm text-blue-900 font-semibold mb-2">
-                                            {value.title}
-                                        </h3>
-                                        <p className="md:text-sm text-[8px] text-gray-600">
-                                            {value.description}
-                                        </p>
-                                    </div>
+                                    <h3 className="lg:text-xl md:text-lg text-sm text-blue-900 font-semibold mb-2">
+                                        {value.title}
+                                    </h3>
+                                    <p className="md:text-sm text-[8px] text-gray-600">
+                                        {value.description}
+                                    </p>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

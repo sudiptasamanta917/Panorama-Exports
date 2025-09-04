@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MdLocationPin } from "react-icons/md";
-import globalMap from "../assets/GlobalFootprint/MAP PNG.png";
+import globalMap from "../assets/GlobalFootprint/MAP PNG.webp";
 
 
 //marker positions in percentages (relative to map div)
