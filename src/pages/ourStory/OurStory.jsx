@@ -203,6 +203,20 @@ export default function OurStory() {
                     </div>
                 </div>
             </section>
+            {/* Directors's Message Sections */}
+            <section id="director-message" className="bg-white">
+                <h2 className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                    Director's Message
+                </h2>
+                <div></div>
+            </section>
+            {/* Executive Directors's Message Sections */}
+            <section id="director-message" className="bg-white">
+                <h2 className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                    Executive Director's Message
+                </h2>
+                <div></div>
+            </section>
 
             {/* MileStones Sections */}
             <section id="milestones" className="bg-white">
