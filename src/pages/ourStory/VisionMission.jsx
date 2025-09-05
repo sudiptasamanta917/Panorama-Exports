@@ -22,7 +22,7 @@ import DirectorBg2 from "../../assets/Founders/bg 02.png";
 import RajanPng from "../../assets/Founders/rajan.png";
 import NavinPng from "../../assets/Founders/navin.png";
 import ShivaanPng from "../../assets/Founders/shivaan.png";
-import SidharthPng from "../../assets/Founders/Sidharth1.png";
+import SidharthPng from "../../assets/Founders/sidharth1.png";
 
 const labels = {
     "#vision-values": "VisionValues",
