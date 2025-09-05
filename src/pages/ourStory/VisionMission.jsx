@@ -15,14 +15,19 @@ import visionMission from "../../assets/OurStory/visionMission/vision-mission.we
 import CoreValues from "./CoreValues";
 import DirectorBg1 from "../../assets/Founders/bg 03.png";
 import DirectorBg2 from "../../assets/Founders/bg 02.png";
-import RajanPng from "../../assets/Founders/rajan copy.png";
-import NavinPng from "../../assets/Founders/Navin copy.png";
-import ShivaanPng from "../../assets/Founders/shivaan copy.png";
-import SidharthPng from "../../assets/Founders/Sidharth.png";
+// import RajanPng from "../../assets/Founders/rajan copy.png";
+// import NavinPng from "../../assets/Founders/Navin copy.png";
+// import ShivaanPng from "../../assets/Founders/shivaan copy.png";
+// import SidharthPng from "../../assets/Founders/Sidharth.png";
+import RajanPng from "../../assets/Founders/rajan.png";
+import NavinPng from "../../assets/Founders/navin.png";
+import ShivaanPng from "../../assets/Founders/shivaan.png";
+import SidharthPng from "../../assets/Founders/Sidharth1.png";
 
 const labels = {
     "#vision-values": "VisionValues",
     "#core-values": "CoreValues",
+    "#leadership": "leadership",
 };
 
 const directors = [
@@ -30,7 +35,7 @@ const directors = [
         id: 1,
         name: "Rajan Sahni",
         role: "Director",
-        bg: DirectorBg1,
+        bg: RajanPng,
         img: RajanPng,
         message: `Innovation is our language—spoken through
               designs that inspire and lead globally. We
@@ -43,7 +48,7 @@ const directors = [
         id: 2,
         name: "Navin Sahni",
         role: "Director",
-        bg: DirectorBg2,
+        bg: NavinPng,
         img: NavinPng,
         message: `Our identity is crafted through integrity and defined by an unwavering commitment to brilliance & values that shape every garment, every partnership, and every milestone on our global journey.`,
     },
@@ -54,7 +59,7 @@ const executiveDirectors = [
         id: 1,
         name: "Shivaan Sahni ",
         role: "Executive Director",
-        bg: DirectorBg1,
+        bg: ShivaanPng,
         img: ShivaanPng,
         message: `Each thread tells a story of trust, transformation, and thoughtful design. We’re weaving a future of equity, innovation, and sustainability. Excellence isn’t just an outcome—it’s our mindset, culture, and commitment.`,
     },
@@ -62,7 +67,7 @@ const executiveDirectors = [
         id: 2,
         name: "Sidharth Sahni",
         role: "Executive Director",
-        bg: DirectorBg2,
+        bg: SidharthPng,
         img: SidharthPng,
         message: `Panorama is a harmony of team strength and individual mastery—each creation rooted in emotion, unity, and excellence. Our legacy is built not just in factories, but in the future, we help uplift.`,
     },
@@ -300,7 +305,7 @@ export default function VisionMission() {
             </section>
             {/* Directors's Message Sections */}
             <section
-                id="director-message"
+                id="leadership"
                 className="bg-white w-[90%] mx-auto px-6 md:px-20"
             >
                 <h2 className="sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
@@ -338,7 +343,7 @@ export default function VisionMission() {
                                     alt="Director background"
                                     className="w-full object-contain"
                                 />
-                                <div className="absolute top-0 left-0 inset-0 bg-transparent w-full h-full">
+                                {/* <div className="absolute top-0 left-0 inset-0 bg-transparent w-full h-full">
                                     <img
                                         src={director.img}
                                         alt={director.name}
@@ -378,7 +383,7 @@ export default function VisionMission() {
                                             </h3>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </SwiperSlide>
                     ))}
@@ -466,7 +471,7 @@ export default function VisionMission() {
                                     alt="Director background"
                                     className="w-full object-contain"
                                 />
-                                <div className="absolute top-0 left-0 inset-0 bg-transparent w-full h-full">
+                                {/* <div className="absolute top-0 left-0 inset-0 bg-transparent w-full h-full">
                                     <img
                                         src={director.img}
                                         alt={director.name}
@@ -506,7 +511,7 @@ export default function VisionMission() {
                                             </h3>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </SwiperSlide>
                     ))}

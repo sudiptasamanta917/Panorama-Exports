@@ -32,7 +32,7 @@ export default function Navbar() {
                 },
                 {
                     label: "Leadership",
-                    path: "/vision-values#core-values",
+                    path: "/vision-values#leadership",
                     image: fourthImg,
                 },
                 {

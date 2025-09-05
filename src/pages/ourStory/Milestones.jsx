@@ -115,6 +115,18 @@ export default function Milestones() {
         };
     }, [inView]);
 
+    useEffect(() => {
+        if (selectedCard) {
+            document.body.style.overflow = "hidden"; // disable background scroll
+        } else {
+            document.body.style.overflow = "auto"; // enable again
+        }
+
+        return () => {
+            document.body.style.overflow = "auto"; // cleanup
+        };
+    }, [selectedCard]);
+
     return (
         <div
             ref={ref}
@@ -157,7 +169,7 @@ export default function Milestones() {
                             {/* Popup Modal */}
                             {selectedCard && (
                                 <div className="fixed inset-0 flex items-center justify-center bg-black/15 z-50">
-                                    <div className="bg-white rounded-lg shadow-lg 2xl:w-[40%] xl:w-[50%] lg:w-[60%] md:w-[80%] w-[90%] h-[80vh] px-6 py-10 overflow-y-scroll relative animate-fadeIn">
+                                    <div className="bg-white rounded-lg shadow-lg 2xl:w-[40%] xl:w-[50%] lg:w-[60%] md:w-[80%] w-[90%] h-[80vh] px-6 py-10 overflow-y-auto thin-scrollbar relative animate-fadeIn">
                                         {/* Close Button */}
                                         <button
                                             className="absolute top-0 right-0 text-gray-600 hover:text-black text-xl font-bold border px-1"

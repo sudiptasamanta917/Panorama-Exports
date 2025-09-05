@@ -63,9 +63,35 @@
     </style>
     <style>
       body {
-        font-family: 'Montserrat', 'Roboto', sans-serif;
+        font-family: 'Montserrat';
       }
     </style>
+    <style>
+      /* Firefox */
+      .thin-scrollbar {
+        scrollbar-width: thin;                    
+        scrollbar-color: #e5e7eb transparent;     
+      }
+
+      /* WebKit (Chrome/Edge/Safari) */
+      .thin-scrollbar::-webkit-scrollbar {
+        width: 4px;                              
+      }
+      .thin-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .thin-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #e5e7eb;               
+        border-radius: 9999px;
+        border: 1.5px solid transparent;          
+        background-clip: content-box;             
+      }
+      .thin-scrollbar:hover::-webkit-scrollbar-thumb {
+        background-color: #d1d5db;              
+        border-width: 2px;             
+      }
+    </style>
+
 
 
   </head>
