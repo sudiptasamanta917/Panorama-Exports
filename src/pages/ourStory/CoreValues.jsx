@@ -53,7 +53,7 @@ const CoreValues = () => {
                     CORE VALUE
                 </h2>
 
-                <div className="w-[90%] mx-auto py-5 mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:gap-10 lg:gap-8 md:gap-7 gap-6">
+                <div className="w-[90%] mx-auto py-5 mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:gap-10 xl:gap-8 lg:gap-6 md:gap-8 gap-6">
                     {values.map((value, index) => (
                         <motion.div
                             key={index}
@@ -66,7 +66,7 @@ const CoreValues = () => {
                             viewport={{ once: false }}
                             className="border border-amber-700/30 shadow-[0_0_20px_#ab9777] rounded-sm overflow-hidden"
                         >
-                            <div className="border-[20px] border-white h-full w-full">
+                            <div className="2xl:border-[20px] xl:border-[16px] lg:border-[12px] md:border-[15px] border-[10px] border-white h-full w-full">
                                 <div
                                     className={`p-6 md:h-[200px] h-[100px] flex justify-center items-center bg-center bg-cover`}
                                     style={{
@@ -74,10 +74,10 @@ const CoreValues = () => {
                                     }}
                                 ></div>
                                 <div className="p-4">
-                                    <h3 className="lg:text-xl md:text-lg text-sm text-blue-900 font-semibold mb-2">
+                                    <h3 className="2xl:h-16 xl:h-14 lg:h-12 md:h-12 h-10 2xl:text-xl xl:text-lg lg:text-sm md:text-md md:text-md sm:text-sm text-[12px] text-blue-900 font-semibold mb-2">
                                         {value.title}
                                     </h3>
-                                    <p className="md:text-sm text-[8px] text-gray-600">
+                                    <p className="2xl:text-sm xl:text-[12px] lg:text-[10px] md:text-[9px] text-[8px] text-gray-600">
                                         {value.description}
                                     </p>
                                 </div>

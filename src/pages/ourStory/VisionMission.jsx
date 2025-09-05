@@ -17,6 +17,8 @@ import DirectorBg1 from "../../assets/Founders/bg 03.png";
 import DirectorBg2 from "../../assets/Founders/bg 02.png";
 import RajanPng from "../../assets/Founders/rajan copy.png";
 import NavinPng from "../../assets/Founders/Navin copy.png";
+import ShivaanPng from "../../assets/Founders/shivaan copy.png";
+import SidharthPng from "../../assets/Founders/Sidharth.png";
 
 const labels = {
     "#vision-values": "VisionValues",
@@ -50,30 +52,26 @@ const directors = [
 const executiveDirectors = [
     {
         id: 1,
-        name: "Rajan Sahni",
-        role: "Director",
+        name: "Shivaan Sahni ",
+        role: "Executive Director",
         bg: DirectorBg1,
-        img: RajanPng,
-        message: `Innovation is our language—spoken through
-              designs that inspire and lead globally. We
-              don't just follow trends—we anticipate them,
-              crafting future-ready fashion with purpose.
-              Every creation is a translation of insight,
-              technology, and timeless craftsmanship.`,
+        img: ShivaanPng,
+        message: `Each thread tells a story of trust, transformation, and thoughtful design. We’re weaving a future of equity, innovation, and sustainability. Excellence isn’t just an outcome—it’s our mindset, culture, and commitment.`,
     },
     {
         id: 2,
-        name: "Navin Sahni",
-        role: "Director",
+        name: "Sidharth Sahni",
+        role: "Executive Director",
         bg: DirectorBg2,
-        img: NavinPng,
-        message: `Our identity is crafted through integrity and defined by an unwavering commitment to brilliance & values that shape every garment, every partnership, and every milestone on our global journey.`,
+        img: SidharthPng,
+        message: `Panorama is a harmony of team strength and individual mastery—each creation rooted in emotion, unity, and excellence. Our legacy is built not just in factories, but in the future, we help uplift.`,
     },
 ];
 
 export default function VisionMission() {
     const swiperRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const [currentSlideIndex1, setCurrentSlideIndex1] = useState(0);
     const location = useLocation();
     const { ref, inView } = useInView({
         triggerOnce: false,
@@ -99,38 +97,38 @@ export default function VisionMission() {
         }
     }, [location]);
 
-    // swiper for director and 
+    // swiper for directors...........
     useEffect(() => {
         const swiper = swiperRef.current?.swiper;
         if (!swiper) return;
 
         // Set initial slide index
         setCurrentSlideIndex(0);
-        
+
         // Initialize autoplay with a slight delay
         const autoplayTimer = setTimeout(() => {
             if (swiper.autoplay) {
                 swiper.autoplay.start();
             }
         }, 100);
-        
-        // Handle slide changes
+
+        // Handle slide change for directors................
         const handleSlideChange = () => {
             const newIndex = swiper.realIndex;
             setCurrentSlideIndex(newIndex);
-            
+
             // Announce slide changes for screen readers
             const activeSlide = directors[newIndex];
             if (activeSlide) {
-                const announcement = document.createElement('div');
-                announcement.setAttribute('aria-live', 'polite');
-                announcement.setAttribute('aria-atomic', 'true');
-                announcement.className = 'sr-only';
+                const announcement = document.createElement("div");
+                announcement.setAttribute("aria-live", "polite");
+                announcement.setAttribute("aria-atomic", "true");
+                announcement.className = "sr-only";
                 announcement.textContent = `Slide ${newIndex + 1} of ${
                     directors.length
                 }: PANORAMA ${activeSlide.dynamicText}`;
                 document.body.appendChild(announcement);
-                
+
                 // Clean up announcement after screen reader has time to read it
                 setTimeout(() => {
                     if (document.body.contains(announcement)) {
@@ -139,13 +137,63 @@ export default function VisionMission() {
                 }, 1000);
             }
         };
-        
-        swiper.on('slideChange', handleSlideChange);
-        
+
+        swiper.on("slideChange", handleSlideChange);
+
         // Cleanup function
         return () => {
             clearTimeout(autoplayTimer);
-            swiper.off('slideChange', handleSlideChange);
+            swiper.off("slideChange", handleSlideChange);
+        };
+    }, []);
+
+    // swiper for executive-directors...........
+    useEffect(() => {
+        const swiper = swiperRef.current?.swiper;
+        if (!swiper) return;
+
+        // Set initial slide index
+        setCurrentSlideIndex1(0);
+
+        // Initialize autoplay with a slight delay
+        const autoplayTimer = setTimeout(() => {
+            if (swiper.autoplay) {
+                swiper.autoplay.start();
+            }
+        }, 100);
+
+        // Handle slide change for executive-directors................
+        const handleSlideChange1 = () => {
+            const newIndex = swiper.realIndex;
+            setCurrentSlideIndex1(newIndex);
+
+            // Announce slide changes for screen readers
+            const activeSlide = executiveDirectors[newIndex];
+            if (activeSlide) {
+                const announcement = document.createElement("div");
+                announcement.setAttribute("aria-live", "polite");
+                announcement.setAttribute("aria-atomic", "true");
+                announcement.className = "sr-only";
+                announcement.textContent = `Slide ${newIndex + 1} of ${
+                    executiveDirectors.length
+                }: PANORAMA ${activeSlide.dynamicText}`;
+                document.body.appendChild(announcement);
+
+                // Clean up announcement after screen reader has time to read it
+                setTimeout(() => {
+                    if (document.body.contains(announcement)) {
+                        document.body.removeChild(announcement);
+                    }
+                }, 1000);
+            }
+        };
+
+        swiper.on("slideChange", handleSlideChange1);
+
+        // Cleanup function
+        return () => {
+            clearTimeout(autoplayTimer);
+            swiper.off("slideChange", handleSlideChange1);
         };
     }, []);
 
@@ -265,9 +313,9 @@ export default function VisionMission() {
                     slidesPerView={1}
                     loop={true}
                     initialSlide={0}
-                    speed={800}
+                    speed={600}
                     autoplay={{
-                        delay: 2000,
+                        delay: 4000,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: false,
                         waitForTransition: true,
@@ -288,7 +336,7 @@ export default function VisionMission() {
                                 <img
                                     src={director.bg}
                                     alt="Director background"
-                                    className="w-full object-contain rounded-md"
+                                    className="w-full object-contain"
                                 />
                                 <div className="absolute top-0 left-0 inset-0 bg-transparent w-full h-full">
                                     <img
@@ -393,9 +441,9 @@ export default function VisionMission() {
                     slidesPerView={1}
                     loop={true}
                     initialSlide={0}
-                    speed={800}
+                    speed={600}
                     autoplay={{
-                        delay: 2000,
+                        delay: 4000,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: false,
                         waitForTransition: true,
@@ -409,14 +457,14 @@ export default function VisionMission() {
                     }}
                     className="h-full rounded-md overflow-hidden"
                 >
-                    {directors.map((director, i) => (
+                    {executiveDirectors.map((director, i) => (
                         <SwiperSlide key={i}>
                             <div className="relative">
                                 {/* background image */}
                                 <img
                                     src={director.bg}
                                     alt="Director background"
-                                    className="w-full object-contain rounded-md"
+                                    className="w-full object-contain"
                                 />
                                 <div className="absolute top-0 left-0 inset-0 bg-transparent w-full h-full">
                                     <img
