@@ -304,11 +304,8 @@ export default function VisionMission() {
                 <CoreValues />
             </section>
             {/* Directors's Message Sections */}
-            <section
-                id="leadership"
-                className="bg-white w-[90%] mx-auto px-6 md:px-20"
-            >
-                <h2 className="sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+            <section id="leadership" className="bg-white">
+                <h2 className="w-[90%] mx-auto px-6 md:px-20 sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Director's Message
                 </h2>
                 <Swiper
@@ -332,7 +329,7 @@ export default function VisionMission() {
                         bulletClass: "swiper-pagination-bullet",
                         bulletActiveClass: "swiper-pagination-bullet-active",
                     }}
-                    className="h-full rounded-md overflow-hidden"
+                    className="h-full overflow-hidden bg-[#5b4e39]"
                 >
                     {directors.map((director, i) => (
                         <SwiperSlide key={i}>
@@ -432,11 +429,8 @@ export default function VisionMission() {
                 <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex space-x-2"></div>
             </section>
             {/* Executive Directors's Message Sections */}
-            <section
-                id="director-message"
-                className="bg-white w-[90%] mx-auto px-6 md:px-20 pb-16"
-            >
-                <h2 className="sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+            <section id="director-message" className="bg-white">
+                <h2 className="w-[90%] mx-auto px-6 md:px-20 sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Executive Director's Message
                 </h2>
                 <Swiper
@@ -460,7 +454,7 @@ export default function VisionMission() {
                         bulletClass: "swiper-pagination-bullet",
                         bulletActiveClass: "swiper-pagination-bullet-active",
                     }}
-                    className="h-full rounded-md overflow-hidden"
+                    className="h-full overflow-hidden bg-[#5b4e39]"
                 >
                     {executiveDirectors.map((director, i) => (
                         <SwiperSlide key={i}>
