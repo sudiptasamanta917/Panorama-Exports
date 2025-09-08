@@ -123,7 +123,11 @@ function MfgExcellence() {
                     </Swiper>
                 </div>
                 <div className="my-16 text-center w-[90%] mx-auto text-xl text-blue-950">
-                    <p className="font-bold">5 Integrated Units</p> Seamless cut-to-pack capabilities for quality and speed.
+                    <p className="font-bold">Manufacturing Excellence </p>Five
+                    high-tech cut-to-pack production units form the core of our
+                    capabilities—driven by cutting-edge technology and the
+                    craftsmanship of our talented teams, ensuring precision from
+                    first cut to final pack.
                 </div>
             </section>
         </>
