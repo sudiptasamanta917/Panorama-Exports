@@ -4,6 +4,10 @@ import OurStory from "../pages/ourStory/OurStory";
 import VisionMission from "../pages/ourStory/VisionMission";
 import OurPurpose from "../pages/ourStory/OurPurpose";
 
+import CraftedPrecision from "../pages/CraftedPrecision/CraftedPrecision";
+import MfgExcellence from "../pages/CraftedPrecision/MfgExcellence";
+import SmartWarehousing from "../pages/CraftedPrecision/SmartWarehousing";
+
 import Innovation from "../pages/Innovation";
 import WeavingStories from "../pages/WeavingStories";
 import ElevatedCraft from "../pages/ElevatedCraft";
@@ -15,14 +19,6 @@ import OurInfrastructure from "../pages/OurInfrastructure";
 import Media from "../pages/media/Media";
 import UnitLocationMap from "../components/UnitLocationMap";
 
-
-import MfgExcellence from "../pages/CraftedPrecision/MfgExcellence";
-import SmartWarehousing from "../pages/CraftedPrecision/SmartWarehousing";
-import ArtInEveryThread from "../pages/CraftedPrecision/ArtInEveryThread";
-import ExactingStandards from "../pages/CraftedPrecision/ExactingStandards";
-import SustainableDesigns from "../pages/CraftedPrecision/SustainableDesigns";
-import AdvancedWashing from "../pages/CraftedPrecision/AdvancedWashing";
-import AdaptiveCapacity from "../pages/CraftedPrecision/AdaptiveCapacity";
 import InnovationThatLeads from "../pages/Innovation/InnovationThatLeads";
 import StandardOfPerfection from "../pages/Innovation/StandardOfPerfection";
 import HandcraftedLuxury from "../pages/Innovation/HandcraftedLuxury";
@@ -40,6 +36,10 @@ export default function AppRoutes() {
             <Route path="/vision-values" element={<VisionMission />} />
             <Route path="/our-purpose" element={<OurPurpose />} />
 
+            <Route path="/craftedprecision" element={<CraftedPrecision />} />
+            <Route path="/mfg-excellence" element={<MfgExcellence />} />
+            <Route path="/smart-warehousing" element={<SmartWarehousing />} />
+
             <Route path="/innovation" element={<Innovation />} />
             <Route path="/weavingstories" element={<WeavingStories />} />
             <Route path="/elevatedcraft" element={<ElevatedCraft />} />
@@ -51,34 +51,6 @@ export default function AppRoutes() {
             <Route path="/media" element={<Media />} />
             <Route path="/unitmap" element={<UnitLocationMap />} />
 
-            <Route
-                path="/craftedprecision/manufacturingexcellence"
-                element={<MfgExcellence />}
-            />
-            <Route
-                path="/craftedprecision/smartwarehousing"
-                element={<SmartWarehousing />}
-            />
-            <Route
-                path="/craftedprecision/artthread"
-                element={<ArtInEveryThread />}
-            />
-            <Route
-                path="/craftedprecision/exactingstandards"
-                element={<ExactingStandards />}
-            />
-            <Route
-                path="/craftedprecision/sustainabledesigns"
-                element={<SustainableDesigns />}
-            />
-            <Route
-                path="/craftedprecision/advancedwashing"
-                element={<AdvancedWashing />}
-            />
-            <Route
-                path="/craftedprecision/adaptivecapacity"
-                element={<AdaptiveCapacity />}
-            />
             <Route
                 path="/innovation/innovationleads"
                 element={<InnovationThatLeads />}

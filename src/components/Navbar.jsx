@@ -49,16 +49,16 @@ export default function Navbar() {
         },
         {
             label: "CRAFTED PRECISION",
-            path: "",
+            path: "/craftedprecision",
             subItems: [
                 {
                     label: "Mfg. Excellence",
-                    path: "",
+                    path: "/mfg-excellence",
                     image: firstImg,
                 },
                 {
                     label: "Smart Warehousing",
-                    path: "",
+                    path: "/smart-warehousing",
                     image: secondImg,
                 },
                 {

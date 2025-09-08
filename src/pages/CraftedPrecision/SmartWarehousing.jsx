@@ -1,69 +1,133 @@
-import React from "react";
-import { Warehouse, PackageSearch, Truck, Cpu } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-const SmartWarehousing = () => {
+import mfg1 from "../../assets/Crafted Precision/2 Smart Warehousing/01.jpg";
+import mfg2 from "../../assets/Crafted Precision/2 Smart Warehousing/02.jpg";
+import mfg3 from "../../assets/Crafted Precision/2 Smart Warehousing/03.jpg";
+
+const mfgImages = [
+    {
+        title: "Smart Warehousing",
+        img: mfg1,
+    },
+    {
+        title: "Smart Warehousing",
+        img: mfg2,
+    },
+    {
+        title: "Smart Warehousing",
+        img: mfg3,
+    },
+];
+
+function SmartWarehousing() {
+    const swiperRef = useRef(null);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+    useEffect(() => {
+        const swiper = swiperRef.current?.swiper;
+        if (!swiper) return;
+
+        // Set initial slide index
+        setCurrentSlideIndex(0);
+
+        // Initialize autoplay with a slight delay
+        const autoplayTimer = setTimeout(() => {
+            if (swiper.autoplay) {
+                swiper.autoplay.start();
+            }
+        }, 100);
+
+        // Handle slide change for mfgImages................
+        const handleSlideChange = () => {
+            const newIndex = swiper.realIndex;
+            setCurrentSlideIndex(newIndex);
+
+            // Announce slide changes for screen readers
+            const activeSlide = mfgImages[newIndex];
+            if (activeSlide) {
+                const announcement = document.createElement("div");
+                announcement.setAttribute("aria-live", "polite");
+                announcement.setAttribute("aria-atomic", "true");
+                announcement.className = "sr-only";
+                announcement.textContent = `Slide ${newIndex + 1} of ${
+                    mfgImages.length
+                }: PANORAMA ${activeSlide.dynamicText}`;
+                document.body.appendChild(announcement);
+
+                // Clean up announcement after screen reader has time to read it
+                setTimeout(() => {
+                    if (document.body.contains(announcement)) {
+                        document.body.removeChild(announcement);
+                    }
+                }, 1000);
+            }
+        };
+
+        swiper.on("slideChange", handleSlideChange);
+
+        // Cleanup function
+        return () => {
+            clearTimeout(autoplayTimer);
+            swiper.off("slideChange", handleSlideChange);
+        };
+    }, []);
+
     return (
-        <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
-            {/* Glow effect background */}
-            <div className="absolute inset-0 -z-10">
-                <div className="absolute top-40 left-1/4 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl animate-pulse"></div>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-6 py-20">
-                {/* Header Section */}
-                <div className="text-center space-y-6">
-                    <h1 className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+        <>
+            <section className="bg-white">
+                <div className="w-full h-20 bg-gray-900"></div>
+                <div className="w-[90%] mx-auto py-16 px-6 md:px-20">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                         Smart Warehousing
-                    </h1>
-                    <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        Hi-tech systems streamline <span className="font-semibold text-purple-300">storage</span> and{" "}
-                        <span className="font-semibold text-indigo-300">shipping</span>, redefining speed and efficiency
-                        with precision logistics.
-                    </p>
+                    </h2>
+                    {/* <h3 className="mt-5">
+                      To enrich lives by building a dynamic, responsible, and
+                      trusted global enterprise.
+                  </h3> */}
                 </div>
-
-                {/* Features Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
-                    {/* Card 1 */}
-                    <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <Warehouse className="w-12 h-12 text-purple-400 mb-4" />
-                        <h3 className="text-xl font-semibold mb-2">Automated Storage</h3>
-                        <p className="text-gray-300 text-sm">
-                            AI-driven layouts for optimized space utilization and faster inventory access.
-                        </p>
-                    </div>
-
-                    {/* Card 2 */}
-                    <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <PackageSearch className="w-12 h-12 text-indigo-400 mb-4" />
-                        <h3 className="text-xl font-semibold mb-2">Real-time Tracking</h3>
-                        <p className="text-gray-300 text-sm">
-                            Smart scanners ensure 100% traceability of every package in motion.
-                        </p>
-                    </div>
-
-                    {/* Card 3 */}
-                    <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <Truck className="w-12 h-12 text-pink-400 mb-4" />
-                        <h3 className="text-xl font-semibold mb-2">Seamless Shipping</h3>
-                        <p className="text-gray-300 text-sm">
-                            AI-powered routing accelerates deliveries while cutting logistics costs.
-                        </p>
-                    </div>
-
-                    {/* Card 4 */}
-                    <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <Cpu className="w-12 h-12 text-green-400 mb-4" />
-                        <h3 className="text-xl font-semibold mb-2">Smart Analytics</h3>
-                        <p className="text-gray-300 text-sm">
-                            Data-driven insights for predictive demand planning and flawless operations.
-                        </p>
-                    </div>
+                <div className="mb-10">
+                    <Swiper
+                        ref={swiperRef}
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={0}
+                        slidesPerView={1}
+                        loop={true}
+                        initialSlide={0}
+                        speed={600}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: false,
+                            waitForTransition: true,
+                            enabled: true,
+                        }}
+                        className="h-full overflow-hidden bg-[#5b4e39]"
+                    >
+                        {mfgImages.map((mfg, i) => (
+                            <SwiperSlide key={i}>
+                                <div className="relative">
+                                    {/* background image */}
+                                    <img
+                                        src={mfg.img}
+                                        alt={mfg.title}
+                                        className="w-full h-[60vh] object-cover"
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
-            </div>
-        </div>
+                <div className="my-16 text-center w-[90%] mx-auto text-xl font-bold text-xl text-blue-950">
+                    Hi-tech systems streamline storage and shipping.
+                </div>
+            </section>
+        </>
     );
-};
+}
 
 export default SmartWarehousing;
