@@ -7,11 +7,18 @@ import OurPurpose from "../pages/ourStory/OurPurpose";
 import CraftedPrecision from "../pages/CraftedPrecision/CraftedPrecision";
 import MfgExcellence from "../pages/CraftedPrecision/MfgExcellence";
 import SmartWarehousing from "../pages/CraftedPrecision/SmartWarehousing";
+import ArtInEveryThread from "../pages/CraftedPrecision/ArtInEveryThread";
+import ExactingStandards from "../pages/CraftedPrecision/ExactingStandards";
+import SustainableDesigns from "../pages/CraftedPrecision/SustainableDesigns";
+import AdvancedWashing from "../pages/CraftedPrecision/AdvancedWashing";
+import AdaptiveCapacity from "../pages/CraftedPrecision/AdaptiveCapacity";
 
 import Innovation from "../pages/Innovation";
+
+import Peoples from "../pages/People/Peoples";
+
 import WeavingStories from "../pages/WeavingStories";
 import ElevatedCraft from "../pages/ElevatedCraft";
-import OurPeople from "../pages/OurPeople";
 import Sustainability from "../pages/Sustainability";
 import CraftingTomorrow from "../pages/craftingTomorrow/CraftingTomorrow";
 import GlobalFootprint from "../pages/globalFootprint/GlobalFootprint";
@@ -39,8 +46,19 @@ export default function AppRoutes() {
             <Route path="/craftedprecision" element={<CraftedPrecision />} />
             <Route path="/mfg-excellence" element={<MfgExcellence />} />
             <Route path="/smart-warehousing" element={<SmartWarehousing />} />
+            <Route path="/art-thread" element={<ArtInEveryThread />} />
+            <Route path="/exacting-standards" element={<ExactingStandards />} />
+            <Route
+                path="/sustainable-designs"
+                element={<SustainableDesigns />}
+            />
+            <Route path="/advanced-washing" element={<AdvancedWashing />} />
+            <Route path="/adaptive-capacity" element={<AdaptiveCapacity />} />
 
             <Route path="/innovation" element={<Innovation />} />
+
+            <Route path="/peoples" element={<Peoples />} />
+
             <Route path="/weavingstories" element={<WeavingStories />} />
             <Route path="/elevatedcraft" element={<ElevatedCraft />} />
             <Route path="/ourpeople" element={<OurPeople />} />

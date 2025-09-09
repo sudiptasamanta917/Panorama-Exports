@@ -63,27 +63,27 @@ export default function Navbar() {
                 },
                 {
                     label: "Art in Every Thread",
-                    path: "",
+                    path: "/art-thread",
                     image: thirdImg,
                 },
                 {
                     label: "Exacting Standards",
-                    path: "",
+                    path: "/exacting-standards",
                     image: fourthImg,
                 },
                 {
                     label: "Sustainable Designs",
-                    path: "",
+                    path: "/sustainable-designs",
                     image: fifthImg,
                 },
                 {
                     label: "Advanced Washing",
-                    path: "",
+                    path: "/advanced-washing",
                     image: sixthImg,
                 },
                 {
                     label: "Adaptive Capacity",
-                    path: "",
+                    path: "/adaptive-capacity",
                     image: sixthImg,
                 },
             ],
@@ -115,7 +115,7 @@ export default function Navbar() {
         },
         {
             label: "PEOPLE",
-            path: "",
+            path: "/peoples",
         },
         {
             label: "RESPONSIBILITY",

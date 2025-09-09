@@ -25,27 +25,27 @@ const craftedP = [
     {
         title: "Art in Every Thread",
         img: AetImage,
-        path: "",
+        path: "/art-thread",
     },
     {
         title: "Exacting Standards",
         img: ExstImage,
-        path: "",
+        path: "/exacting-standards",
     },
     {
         title: "Sustainable Designs",
         img: SusDImage,
-        path: "",
+        path: "/sustainable-designs",
     },
     {
         title: "Advanced Washing",
         img: AdwImage,
-        path: "",
+        path: "/advanced-washing",
     },
     {
         title: "Adaptive Capacity",
         img: AdcapImage,
-        path: "",
+        path: "/adaptive-capacity",
     },
 ];
 
@@ -103,14 +103,14 @@ function CraftedPrecision() {
                                 className={`absolute inset-0 pointer-events-none ${
                                     activeIndex === i
                                         ? "bg-transparent"
-                                        : "bg-white/60 text-blue-950"
+                                        : "bg-white/40 text-blue-950"
                                 }`}
                             ></div>
                             <div
                                 className={`absolute inset-y-0 right-0 flex flex-col justify-center items-start p-3 sm:p-4 md:p-6 transition-opacity duration-700 ${
                                     activeIndex === i
-                                        ? "opacity-100 text-white bg-gradient-to-tl from-pink-800/90 via-blue-500/30 via-transparent to-transparent bg-right w-[40%]"
-                                        : "opacity-80 text-blue-950 text-blue-950"
+                                        ? "opacity-100 text-white bg-gradient-to-tl from-black/70 via-black/50 via-black/30 to-transparent bg-right w-[40%] flex flex-col items-center justify-center text-center"
+                                        : "opacity-90 text-blue-950"
                                 }`}
                             >
                                 <h2 className="text-md sm:text-lg md:text-xl font-semibold">

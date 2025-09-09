@@ -1,91 +1,135 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-const ArtInEveryThread = () => {
-  return (
-    <div
-      className="relative w-full min-h-screen flex items-center justify-center bg-fixed bg-center bg-cover"
-      style={{
-        backgroundImage: "url('/images/art-thread-bg.jpg')", // replace with your image path
-      }}
-    >
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+import aet1 from "../../assets/Crafted Precision/3 Art in Every Thread/01.jpg";
+import aet2 from "../../assets/Crafted Precision/3 Art in Every Thread/02.jpg";
+import aet3 from "../../assets/Crafted Precision/3 Art in Every Thread/03.jpg";
 
-      {/* Content Section */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
-        {/* Heading */}
-        <h1 className="text-4xl md:text-6xl font-bold tracking-wide mb-6 animate-fadeInDown">
-          Art in Every Thread
-        </h1>
+const mfgImages = [
+    {
+        title: "manufacturing excellence",
+        img: aet1,
+    },
+    {
+        title: "manufacturing excellence",
+        img: aet2,
+    },
+    {
+        title: "manufacturing excellence",
+        img: aet3,
+    },
+];
 
-        {/* Subheading */}
-        <p className="text-lg md:text-2xl leading-relaxed font-light mb-10 animate-fadeInUp">
-          State-of-the-art embroidery units for{" "}
-          <span className="font-semibold text-yellow-300">
-            intricate craftsmanship
-          </span>{" "}
-          & revolutionary quality.
-        </p>
+function ArtInEveryThread() {
+    const swiperRef = useRef(null);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
-        {/* Decorative line */}
-        <div className="w-32 h-1 bg-yellow-400 mx-auto mb-10 animate-scaleIn"></div>
+    useEffect(() => {
+        const swiper = swiperRef.current?.swiper;
+        if (!swiper) return;
 
-        {/* Feature Section */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:scale-105 transform transition duration-300 animate-fadeInLeft">
-            <h3 className="text-2xl font-semibold text-yellow-300 mb-4">
-              Intricate Craftsmanship
-            </h3>
-            <p className="text-gray-200 leading-relaxed">
-              Our embroidery units merge heritage artistry with modern design,
-              ensuring each garment carries a story of dedication and detail.
-            </p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:scale-105 transform transition duration-300 animate-fadeInRight">
-            <h3 className="text-2xl font-semibold text-yellow-300 mb-4">
-              Revolutionary Quality
-            </h3>
-            <p className="text-gray-200 leading-relaxed">
-              With advanced machines and skilled artisans, we achieve precision
-              that redefines embroidery for global fashion.
-            </p>
-          </div>
-        </div>
-      </div>
+        // Set initial slide index
+        setCurrentSlideIndex(0);
 
-      {/* Custom Animations */}
-      <style>
-        {`
-          @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-          }
-          @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-          }
-          @keyframes scaleIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-          }
+        // Initialize autoplay with a slight delay
+        const autoplayTimer = setTimeout(() => {
+            if (swiper.autoplay) {
+                swiper.autoplay.start();
+            }
+        }, 100);
 
-          .animate-fadeInDown { animation: fadeInDown 1s ease forwards; }
-          .animate-fadeInUp { animation: fadeInUp 1s ease forwards 0.3s; }
-          .animate-fadeInLeft { animation: fadeInLeft 1s ease forwards 0.5s; }
-          .animate-fadeInRight { animation: fadeInRight 1s ease forwards 0.7s; }
-          .animate-scaleIn { animation: scaleIn 1s ease forwards 0.9s; }
-        `}
-      </style>
-    </div>
-  );
-};
+        // Handle slide change for mfgImages................
+        const handleSlideChange = () => {
+            const newIndex = swiper.realIndex;
+            setCurrentSlideIndex(newIndex);
+
+            // Announce slide changes for screen readers
+            const activeSlide = mfgImages[newIndex];
+            if (activeSlide) {
+                const announcement = document.createElement("div");
+                announcement.setAttribute("aria-live", "polite");
+                announcement.setAttribute("aria-atomic", "true");
+                announcement.className = "sr-only";
+                announcement.textContent = `Slide ${newIndex + 1} of ${
+                    mfgImages.length
+                }: PANORAMA ${activeSlide.dynamicText}`;
+                document.body.appendChild(announcement);
+
+                // Clean up announcement after screen reader has time to read it
+                setTimeout(() => {
+                    if (document.body.contains(announcement)) {
+                        document.body.removeChild(announcement);
+                    }
+                }, 1000);
+            }
+        };
+
+        swiper.on("slideChange", handleSlideChange);
+
+        // Cleanup function
+        return () => {
+            clearTimeout(autoplayTimer);
+            swiper.off("slideChange", handleSlideChange);
+        };
+    }, []);
+
+    return (
+        <>
+            <section className="bg-white">
+                <div className="w-full h-20 bg-gray-900"></div>
+                <div className="w-[90%] mx-auto py-16 px-6 md:px-20">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                        Art in Every Thread
+                    </h2>
+                    {/* <h3 className="mt-5">
+                      To enrich lives by building a dynamic, responsible, and
+                      trusted global enterprise.
+                  </h3> */}
+                </div>
+                <div className="mb-10">
+                    <Swiper
+                        ref={swiperRef}
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={0}
+                        slidesPerView={1}
+                        loop={true}
+                        initialSlide={0}
+                        speed={600}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: false,
+                            waitForTransition: true,
+                            enabled: true,
+                        }}
+                        className="h-full overflow-hidden bg-[#5b4e39]"
+                    >
+                        {mfgImages.map((mfg, i) => (
+                            <SwiperSlide key={i}>
+                                <div className="relative">
+                                    {/* background image */}
+                                    <img
+                                        src={mfg.img}
+                                        alt={mfg.title}
+                                        className="w-full h-[60vh] object-cover"
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+                <div className="my-16 text-center w-[90%] mx-auto text-xl text-blue-950">
+                    <p className="font-bold">Art in Every Thread</p>
+                    State-of-the-art embroidery units for intricate
+                    craftsmanship & revolutionary quality.
+                </div>
+            </section>
+        </>
+    );
+}
 
 export default ArtInEveryThread;

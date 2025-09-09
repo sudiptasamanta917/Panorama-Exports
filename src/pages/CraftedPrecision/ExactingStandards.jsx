@@ -1,100 +1,137 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-const ExactingStandards = () => {
-  return (
-    <div
-      className="relative w-full min-h-screen flex items-center justify-center bg-fixed bg-center bg-cover"
-      style={{
-        backgroundImage: "url('/images/exacting-standards-bg.jpg')", // replace with your image path
-      }}
-    >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+import aet1 from "../../assets/Crafted Precision/4 Exacting Standards/01.png";
+import aet2 from "../../assets/Crafted Precision/4 Exacting Standards/02.jpg";
+import aet3 from "../../assets/Crafted Precision/4 Exacting Standards/03.png";
 
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center text-white">
-        {/* Heading */}
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide mb-6 animate-fadeInDown">
-          Exacting Standards
-        </h1>
+const mfgImages = [
+    {
+        title: "manufacturing excellence",
+        img: aet1,
+    },
+    {
+        title: "manufacturing excellence",
+        img: aet2,
+    },
+    {
+        title: "manufacturing excellence",
+        img: aet3,
+    },
+];
 
-        {/* Subheading */}
-        <p className="text-lg md:text-2xl leading-relaxed font-light mb-12 animate-fadeInUp">
-          Each garment tells its own{" "}
-          <span className="text-yellow-400 font-semibold">unique sourcing story</span>{" "}
-          and travels a carefully managed journey from start to finish—
-          passing through{" "}
-          <span className="text-yellow-400 font-semibold">multi-stage quality checks</span>{" "}
-          to meet our uncompromising standards.
-        </p>
+function ExactingStandards() {
+    const swiperRef = useRef(null);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
-        {/* Steps Section */}
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
-          {/* Step 1 */}
-          <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:scale-105 transform transition duration-300 animate-fadeInLeft">
-            <h3 className="text-2xl font-semibold text-yellow-300 mb-3">
-              1. Sourcing
-            </h3>
-            <p className="text-gray-200 leading-relaxed">
-              Carefully chosen raw materials from trusted partners, ensuring authenticity and sustainability.
-            </p>
-          </div>
+    useEffect(() => {
+        const swiper = swiperRef.current?.swiper;
+        if (!swiper) return;
 
-          {/* Step 2 */}
-          <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:scale-105 transform transition duration-300 animate-scaleIn">
-            <h3 className="text-2xl font-semibold text-yellow-300 mb-3">
-              2. Crafting
-            </h3>
-            <p className="text-gray-200 leading-relaxed">
-              Skilled artisans and modern technology combine to shape garments with precision and care.
-            </p>
-          </div>
+        // Set initial slide index
+        setCurrentSlideIndex(0);
 
-          {/* Step 3 */}
-          <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:scale-105 transform transition duration-300 animate-fadeInRight">
-            <h3 className="text-2xl font-semibold text-yellow-300 mb-3">
-              3. Quality Checks
-            </h3>
-            <p className="text-gray-200 leading-relaxed">
-              Multiple inspection stages guarantee durability, comfort, and flawless finishing.
-            </p>
-          </div>
-        </div>
-      </div>
+        // Initialize autoplay with a slight delay
+        const autoplayTimer = setTimeout(() => {
+            if (swiper.autoplay) {
+                swiper.autoplay.start();
+            }
+        }, 100);
 
-      {/* Animations */}
-      <style>
-        {`
-          @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-          }
-          @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(30px); }
-            to { opacity: 1; transform: translateX(0); }
-          }
-          @keyframes scaleIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-          }
+        // Handle slide change for mfgImages................
+        const handleSlideChange = () => {
+            const newIndex = swiper.realIndex;
+            setCurrentSlideIndex(newIndex);
 
-          .animate-fadeInDown { animation: fadeInDown 1s ease forwards; }
-          .animate-fadeInUp { animation: fadeInUp 1s ease forwards 0.3s; }
-          .animate-fadeInLeft { animation: fadeInLeft 1s ease forwards 0.5s; }
-          .animate-fadeInRight { animation: fadeInRight 1s ease forwards 0.7s; }
-          .animate-scaleIn { animation: scaleIn 1s ease forwards 0.9s; }
-        `}
-      </style>
-    </div>
-  );
-};
+            // Announce slide changes for screen readers
+            const activeSlide = mfgImages[newIndex];
+            if (activeSlide) {
+                const announcement = document.createElement("div");
+                announcement.setAttribute("aria-live", "polite");
+                announcement.setAttribute("aria-atomic", "true");
+                announcement.className = "sr-only";
+                announcement.textContent = `Slide ${newIndex + 1} of ${
+                    mfgImages.length
+                }: PANORAMA ${activeSlide.dynamicText}`;
+                document.body.appendChild(announcement);
+
+                // Clean up announcement after screen reader has time to read it
+                setTimeout(() => {
+                    if (document.body.contains(announcement)) {
+                        document.body.removeChild(announcement);
+                    }
+                }, 1000);
+            }
+        };
+
+        swiper.on("slideChange", handleSlideChange);
+
+        // Cleanup function
+        return () => {
+            clearTimeout(autoplayTimer);
+            swiper.off("slideChange", handleSlideChange);
+        };
+    }, []);
+
+    return (
+        <>
+            <section className="bg-white">
+                <div className="w-full h-20 bg-gray-900"></div>
+                <div className="w-[90%] mx-auto py-16 px-6 md:px-20">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                        Exacting Standards
+                    </h2>
+                    {/* <h3 className="mt-5">
+                      To enrich lives by building a dynamic, responsible, and
+                      trusted global enterprise.
+                  </h3> */}
+                </div>
+                <div className="mb-10">
+                    <Swiper
+                        ref={swiperRef}
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={0}
+                        slidesPerView={1}
+                        loop={true}
+                        initialSlide={0}
+                        speed={600}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: false,
+                            waitForTransition: true,
+                            enabled: true,
+                        }}
+                        className="h-full overflow-hidden bg-[#5b4e39]"
+                    >
+                        {mfgImages.map((mfg, i) => (
+                            <SwiperSlide key={i}>
+                                <div className="relative">
+                                    {/* background image */}
+                                    <img
+                                        src={mfg.img}
+                                        alt={mfg.title}
+                                        className="w-full h-[70vh] object-cover"
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+                <div className="my-16 text-center w-[90%] mx-auto text-xl text-blue-950">
+                    <p className="font-bold">Exacting Standards</p>
+                    Each garment tells its own unique sourcing story and travels
+                    a carefully managed journey from start to finish—passing
+                    through multi-stage quality checks to meet our
+                    uncompromising standards
+                </div>
+            </section>
+        </>
+    );
+}
 
 export default ExactingStandards;

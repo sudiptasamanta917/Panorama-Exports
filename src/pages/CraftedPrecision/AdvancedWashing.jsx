@@ -1,99 +1,135 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-const AdvancedWashing = () => {
+import aet1 from "../../assets/Crafted Precision/5 Advanced washing/01.jpg";
+import aet2 from "../../assets/Crafted Precision/5 Advanced washing/02.jpg";
+import aet3 from "../../assets/Crafted Precision/5 Advanced washing/03.jpg";
+
+const mfgImages = [
+    {
+        title: "Advanced Washing",
+        img: aet1,
+    },
+    {
+        title: "Advanced Washing",
+        img: aet2,
+    },
+    {
+        title: "Advanced Washing",
+        img: aet3,
+    },
+];
+
+function AdvancedWashing() {
+    const swiperRef = useRef(null);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+    useEffect(() => {
+        const swiper = swiperRef.current?.swiper;
+        if (!swiper) return;
+
+        // Set initial slide index
+        setCurrentSlideIndex(0);
+
+        // Initialize autoplay with a slight delay
+        const autoplayTimer = setTimeout(() => {
+            if (swiper.autoplay) {
+                swiper.autoplay.start();
+            }
+        }, 100);
+
+        // Handle slide change for mfgImages................
+        const handleSlideChange = () => {
+            const newIndex = swiper.realIndex;
+            setCurrentSlideIndex(newIndex);
+
+            // Announce slide changes for screen readers
+            const activeSlide = mfgImages[newIndex];
+            if (activeSlide) {
+                const announcement = document.createElement("div");
+                announcement.setAttribute("aria-live", "polite");
+                announcement.setAttribute("aria-atomic", "true");
+                announcement.className = "sr-only";
+                announcement.textContent = `Slide ${newIndex + 1} of ${
+                    mfgImages.length
+                }: PANORAMA ${activeSlide.dynamicText}`;
+                document.body.appendChild(announcement);
+
+                // Clean up announcement after screen reader has time to read it
+                setTimeout(() => {
+                    if (document.body.contains(announcement)) {
+                        document.body.removeChild(announcement);
+                    }
+                }, 1000);
+            }
+        };
+
+        swiper.on("slideChange", handleSlideChange);
+
+        // Cleanup function
+        return () => {
+            clearTimeout(autoplayTimer);
+            swiper.off("slideChange", handleSlideChange);
+        };
+    }, []);
+
     return (
-        <div className="relative min-h-screen w-full bg-gradient-to-b from-blue-50 via-white to-blue-100 flex items-center justify-center">
-            <div className="max-w-6xl mx-auto px-6 py-16 text-center">
-                {/* Heading */}
-                <h1 className="text-4xl md:text-6xl font-extrabold text-blue-800 tracking-wide mb-6 animate-fadeInDown">
-                    Advanced Washing
-                </h1>
-
-                {/* Subheading */}
-                <p className="text-lg md:text-2xl text-gray-700 leading-relaxed font-light mb-12 animate-fadeInUp">
-                    From <span className="text-blue-600 font-semibold">enzyme washes</span> to{" "}
-                    <span className="text-blue-600 font-semibold">complex finishes</span>, our
-                    technology ensures <span className="font-bold text-gray-800">consistency</span>{" "}
-                    at every step.
-                </p>
-
-                {/* 3 Tech Process Highlights */}
-                <div className="grid md:grid-cols-3 gap-8 mt-12">
-                    {/* Step 1 */}
-                    <div className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 animate-fadeInLeft">
-                        <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-blue-100">
-                            🧪
-                        </div>
-                        <h3 className="text-xl font-semibold text-blue-700 mb-3">
-                            Enzyme Precision
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Controlled enzyme applications enhance softness while preserving fabric strength.
-                        </p>
-                    </div>
-
-                    {/* Step 2 */}
-                    <div className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 animate-scaleIn">
-                        <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-blue-100">
-                            ⚙️
-                        </div>
-                        <h3 className="text-xl font-semibold text-blue-700 mb-3">
-                            Complex Finishes
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            From stone-wash to advanced coatings, our processes bring durability and
-                            unique textures.
-                        </p>
-                    </div>
-
-                    {/* Step 3 */}
-                    <div className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 animate-fadeInRight">
-                        <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-blue-100">
-                            📏
-                        </div>
-                        <h3 className="text-xl font-semibold text-blue-700 mb-3">
-                            Consistent Quality
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Every batch is monitored with precision, ensuring uniformity and reliability.
-                        </p>
-                    </div>
+        <>
+            <section className="bg-white">
+                <div className="w-full h-20 bg-gray-900"></div>
+                <div className="w-[90%] mx-auto py-16 px-6 md:px-20">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                        Advanced Washing
+                    </h2>
+                    {/* <h3 className="mt-5">
+                      To enrich lives by building a dynamic, responsible, and
+                      trusted global enterprise.
+                  </h3> */}
                 </div>
-            </div>
-
-            {/* Animations */}
-            <style>
-                {`
-          @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-          }
-          @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(30px); }
-            to { opacity: 1; transform: translateX(0); }
-          }
-          @keyframes scaleIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-          }
-
-          .animate-fadeInDown { animation: fadeInDown 1s ease forwards; }
-          .animate-fadeInUp { animation: fadeInUp 1s ease forwards 0.3s; }
-          .animate-fadeInLeft { animation: fadeInLeft 1s ease forwards 0.5s; }
-          .animate-fadeInRight { animation: fadeInRight 1s ease forwards 0.7s; }
-          .animate-scaleIn { animation: scaleIn 1s ease forwards 0.9s; }
-        `}
-            </style>
-        </div>
+                <div className="mb-10">
+                    <Swiper
+                        ref={swiperRef}
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={0}
+                        slidesPerView={1}
+                        loop={true}
+                        initialSlide={0}
+                        speed={600}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: false,
+                            waitForTransition: true,
+                            enabled: true,
+                        }}
+                        className="h-full overflow-hidden bg-[#5b4e39]"
+                    >
+                        {mfgImages.map((mfg, i) => (
+                            <SwiperSlide key={i}>
+                                <div className="relative">
+                                    {/* background image */}
+                                    <img
+                                        src={mfg.img}
+                                        alt={mfg.title}
+                                        className="w-full h-[60vh] object-cover"
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+                <div className="my-16 text-center w-[90%] mx-auto text-xl text-blue-950">
+                    <p className="font-bold">Advanced Washing</p>
+                    From enzyme washes to complex finishes, our tech ensures
+                    consistency.
+                </div>
+            </section>
+        </>
     );
-};
+}
 
 export default AdvancedWashing;
