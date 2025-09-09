@@ -385,45 +385,6 @@ export default function VisionMission() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                {/* Custom Navigation Arrows */}
-                <button
-                    className="hidden absolute left-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full sm:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
-                    aria-label="Previous slide"
-                    onClick={() => swiperRef.current?.swiper?.slidePrev()}
-                >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 19l-7-7 7-7"
-                        />
-                    </svg>
-                </button>
-                <button
-                    className="hidden absolute right-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full sm:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
-                    aria-label="Next slide"
-                    onClick={() => swiperRef.current?.swiper?.slideNext()}
-                >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                        />
-                    </svg>
-                </button>
 
                 {/* Custom Pagination Dots */}
                 <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex space-x-2"></div>
@@ -465,90 +426,11 @@ export default function VisionMission() {
                                     alt="Director background"
                                     className="w-full object-contain"
                                 />
-                                {/* <div className="absolute top-0 left-0 inset-0 bg-transparent w-full h-full">
-                                    <img
-                                        src={director.img}
-                                        alt={director.name}
-                                        className="h-full w-full"
-                                    />
-                                    <div
-                                        className={`w-[50%] ${
-                                            director.id === 2 ? "hidden" : ""
-                                        } absolute top-0 inset-0 py-10 flex items-center`}
-                                    >
-                                        <div className="w-[90%] ml-auto flex flex-col items-end justify-center">
-                                            <div className="2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-[8px] text-white md:font-semibold text-justify leading-relaxed 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
-                                                {director.message}
-                                            </div>
-                                            <h1 className="text-white w-full text-end 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-lg font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
-                                                {director.name}
-                                            </h1>
-                                            <h3 className="text-white w-full text-end 2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-[8px] md:font-semibold xl:mt-5 md:mt-2">
-                                                {director.role}
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div
-                                        className={`w-[50%] ml-auto ${
-                                            director.id === 1 ? "hidden" : ""
-                                        } absolute top-0 inset-0 py-10 flex items-center`}
-                                    >
-                                        <div className="w-[90%] mr-auto flex flex-col items-start justify-center">
-                                            <div className="2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-[8px] text-white md:font-semibold text-justify leading-relaxed 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
-                                                {director.message}
-                                            </div>
-                                            <h1 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-lg font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
-                                                {director.name}
-                                            </h1>
-                                            <h3 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-[8px] md:font-semibold xl:mt-5 md:mt-2">
-                                                {director.role}
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div> */}
+                                
                             </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                {/* Custom Navigation Arrows */}
-                <button
-                    className="hidden absolute left-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full sm:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
-                    aria-label="Previous slide"
-                    onClick={() => swiperRef.current?.swiper?.slidePrev()}
-                >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 19l-7-7 7-7"
-                        />
-                    </svg>
-                </button>
-                <button
-                    className="hidden absolute right-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full sm:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
-                    aria-label="Next slide"
-                    onClick={() => swiperRef.current?.swiper?.slideNext()}
-                >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                        />
-                    </svg>
-                </button>
 
                 {/* Custom Pagination Dots */}
                 <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex space-x-2"></div>

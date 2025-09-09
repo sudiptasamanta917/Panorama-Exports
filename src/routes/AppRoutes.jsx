@@ -30,7 +30,6 @@ import InnovationThatLeads from "../pages/Innovation/InnovationThatLeads";
 import StandardOfPerfection from "../pages/Innovation/StandardOfPerfection";
 import HandcraftedLuxury from "../pages/Innovation/HandcraftedLuxury";
 import Products from "../pages/Product/Products";
-import Peoples from "../pages/People/Peoples";
 import ResponsibilityRoute from "../pages/Responsibility/ResponsibilityRoute";
 
 
