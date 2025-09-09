@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet1 from "../../assets/Crafted Precision/5 Advanced washing/01.jpg";
-import aet2 from "../../assets/Crafted Precision/5 Advanced washing/02.jpg";
-import aet3 from "../../assets/Crafted Precision/5 Advanced washing/03.jpg";
+import aet1 from "../../assets/Crafted_Precision/Advanced_washing/01.jpg";
+import aet2 from "../../assets/Crafted_Precision/Advanced_washing/02.jpg";
+import aet3 from "../../assets/Crafted_Precision/Advanced_washing/03.jpg";
 
 const mfgImages = [
     {

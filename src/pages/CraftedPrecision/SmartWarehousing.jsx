@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import mfg1 from "../../assets/Crafted Precision/2 Smart Warehousing/01.jpg";
-import mfg2 from "../../assets/Crafted Precision/2 Smart Warehousing/02.jpg";
-import mfg3 from "../../assets/Crafted Precision/2 Smart Warehousing/03.jpg";
+import mfg1 from "../../assets/Crafted_Precision/Smart_Warehousing/01.jpg";
+import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/02.jpg";
+import mfg3 from "../../assets/Crafted_Precision/Smart_Warehousing/03.jpg";
 
 const mfgImages = [
     {

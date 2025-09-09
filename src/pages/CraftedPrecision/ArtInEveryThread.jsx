@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet1 from "../../assets/Crafted Precision/3 Art in Every Thread/01.jpg";
-import aet2 from "../../assets/Crafted Precision/3 Art in Every Thread/02.jpg";
-import aet3 from "../../assets/Crafted Precision/3 Art in Every Thread/03.jpg";
+import aet1 from "../../assets/Crafted_Precision/Art_in_Every_Thread/01.jpg";
+import aet2 from "../../assets/Crafted_Precision/Art_in_Every_Thread/02.jpg";
+import aet3 from "../../assets/Crafted_Precision/Art_in_Every_Thread/03.jpg";
 
 const mfgImages = [
     {

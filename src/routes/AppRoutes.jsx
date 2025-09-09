@@ -60,7 +60,6 @@ export default function AppRoutes() {
 
             <Route path="/weavingstories" element={<WeavingStories />} />
             <Route path="/elevatedcraft" element={<ElevatedCraft />} />
-            <Route path="/ourpeople" element={<OurPeople />} />
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/craftingtomorrow" element={<CraftingTomorrow />} />
             <Route path="/globalfootprint" element={<GlobalFootprint />} />
@@ -81,7 +80,6 @@ export default function AppRoutes() {
                 element={<HandcraftedLuxury />}
             />
             <Route path="/products" element={<Products />} />
-            <Route path="/peoples" element={<Peoples />} />
             <Route
                 path="/responsibilityroute"
                 element={<ResponsibilityRoute />}

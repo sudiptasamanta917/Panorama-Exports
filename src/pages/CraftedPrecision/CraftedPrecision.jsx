@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import MfgImage from "../../assets/Crafted Precision/Opening Images/Mfg.jpeg";
-import SmwImage from "../../assets/Crafted Precision/Opening Images/Smw.jpg";
-import AetImage from "../../assets/Crafted Precision/Opening Images/Aet.jpg";
-import SusDImage from "../../assets/Crafted Precision/Opening Images/SusD.png";
-import ExstImage from "../../assets/Crafted Precision/Opening Images/Exs.png";
-import AdwImage from "../../assets/Crafted Precision/Opening Images/Adw.jpg";
-import AdcapImage from "../../assets/Crafted Precision/Opening Images/Adc.png";
+import MfgImage from "../../assets/Crafted_Precision/Opening_Images/Mfg.jpeg";
+import SmwImage from "../../assets/Crafted_Precision/Opening_Images/Smw.jpg";
+import AetImage from "../../assets/Crafted_Precision/Opening_Images/Aet.jpg";
+import SusDImage from "../../assets/Crafted_Precision/Opening_Images/SusD.png";
+import ExstImage from "../../assets/Crafted_Precision/Opening_Images/Exs.png";
+import AdwImage from "../../assets/Crafted_Precision/Opening_Images/Adw.jpg";
+import AdcapImage from "../../assets/Crafted_Precision/Opening_Images/Adc.png";
 
 const craftedP = [
     {

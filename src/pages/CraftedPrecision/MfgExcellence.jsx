@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import mfg1 from "../../assets/Crafted Precision/1 Manufacturing Excellence/01.png";
-import mfg2 from "../../assets/Crafted Precision/1 Manufacturing Excellence/02.png";
-import mfg3 from "../../assets/Crafted Precision/1 Manufacturing Excellence/03.png";
+import mfg1 from "../../assets/Crafted_Precision/Manufacturing_Excellence/01.png";
+import mfg2 from "../../assets/Crafted_Precision/Manufacturing_Excellence/02.png";
+import mfg3 from "../../assets/Crafted_Precision/Manufacturing_Excellence/03.png";
 
 const mfgImages = [
     {

@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet1 from "../../assets/Crafted Precision/3 Sustainable Designs/01.jpg";
-import aet2 from "../../assets/Crafted Precision/3 Sustainable Designs/02.jpg";
-import aet3 from "../../assets/Crafted Precision/3 Sustainable Designs/03.jpeg";
+import aet1 from "../../assets/Crafted_Precision/Sustainable_Designs/01.jpg";
+import aet2 from "../../assets/Crafted_Precision/Sustainable_Designs/02.jpg";
+import aet3 from "../../assets/Crafted_Precision/Sustainable_Designs/03.jpeg";
 
 const mfgImages = [
     {

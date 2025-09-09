@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet1 from "../../assets/Crafted Precision/6 Adaptive Capacity/01.jpg";
-import aet2 from "../../assets/Crafted Precision/6 Adaptive Capacity/02.jpg";
-import aet3 from "../../assets/Crafted Precision/6 Adaptive Capacity/03.jpg";
+import aet1 from "../../assets/Crafted_Precision/Adaptive_Capacity/01.jpg";
+import aet2 from "../../assets/Crafted_Precision/Adaptive_Capacity/02.jpg";
+import aet3 from "../../assets/Crafted_Precision/Adaptive_Capacity/03.jpg";
 
 const mfgImages = [
     {
