@@ -1,41 +1,43 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+// import { useState } from "react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import p1 from "../../assets/People/Human_Resources/01.jpg";
-import p2 from "../../assets/People/Human_Resources/02.jpg";
-import p3 from "../../assets/People/Human_Resources/03.jpg";
-import p4 from "../../assets/People/Human_Resources/05.jpg";
+// import p1 from "../../assets/People/Human_Resources/01.jpg";
+// import p2 from "../../assets/People/Human_Resources/02.jpg";
+// import p3 from "../../assets/People/Human_Resources/03.jpg";
+// import p4 from "../../assets/People/Human_Resources/05.jpg";
 import HumanResources from "./HumanResources";
+import HealthSafety from "./HealthSafety";
+import PeoplePurpose from "./PeopleProgPurpose";
 
-const peopleImages = [
-    {
-        src: p1,
-        alt: "Human_Resources 1",
-    },
-    {
-        src: p2,
-        alt: "Human_Resources 2",
-    },
-    {
-        src: p3,
-        alt: "Human_Resources 3",
-    },
-    {
-        src: p4,
-        alt: "Human_Resources 3",
-    },
-];
+// const peopleImages = [
+//     {
+//         src: p1,
+//         alt: "Human_Resources 1",
+//     },
+//     {
+//         src: p2,
+//         alt: "Human_Resources 2",
+//     },
+//     {
+//         src: p3,
+//         alt: "Human_Resources 3",
+//     },
+//     {
+//         src: p4,
+//         alt: "Human_Resources 3",
+//     },
+// ];
 
 function Peoples() {
-    const [index, setIndex] = useState(0);
+    // const [index, setIndex] = useState(0);
 
-    const prevSlide = () => {
-        setIndex((prev) => (prev === 0 ? peopleImages.length - 1 : prev - 1));
-    };
+    // const prevSlide = () => {
+    //     setIndex((prev) => (prev === 0 ? peopleImages.length - 1 : prev - 1));
+    // };
 
-    const nextSlide = () => {
-        setIndex((prev) => (prev === peopleImages.length - 1 ? 0 : prev + 1));
-    };
+    // const nextSlide = () => {
+    //     setIndex((prev) => (prev === peopleImages.length - 1 ? 0 : prev + 1));
+    // };
 
   return (
       <>
@@ -43,12 +45,14 @@ function Peoples() {
               <div className="w-full h-20 bg-gray-900"></div>
               <div className="w-[90%] mx-auto py-16 px-6 md:px-20">
                   <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                      Human Resources
+                      People
                   </h2>
               </div>
               <HumanResources />
+              <HealthSafety />
+              <PeoplePurpose />
           </section>
-          <section className="bg-white">
+          {/* <section className="bg-white">
               <div className="w-[90%] mx-auto py-16 px-6 md:px-20">
                   <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                       Human Resources
@@ -136,7 +140,7 @@ function Peoples() {
                       </button>
                   </div>
               </div>
-          </section>
+          </section> */}
       </>
   );
 }

@@ -46,76 +46,93 @@ function HumanResources() {
   };
 
   return (
-      <div
-          className="relative flex items-center justify-center w-full h-[400px]"
-          style={{ perspective: "2000px" }}
-      >
-          {peopleImages.map((pImg, i) => {
-              let style = {};
-              let classNames =
-                  "absolute transition-all duration-700 ease-in-out transform-gpu w-[40%]";
+      <>
+          <div
+              className="relative flex items-center justify-center w-full h-[400px] my-16"
+              style={{ perspective: "2000px" }}
+          >
+              {peopleImages.map((pImg, i) => {
+                  let style = {};
+                  let classNames =
+                      "absolute transition-all duration-700 ease-in-out transform-gpu w-[40%]";
 
-              if (i === index) {
-                  // center
-                  style = {
-                      transform: "translateX(0) rotateY(0deg) scale(1)",
-                      opacity: 1,
-                      zIndex: 20,
-                  };
-                  classNames += " shadow-2xl border-[12px] border-blue-900";
-              } else if (i === (index + 1) % peopleImages.length) {
-                  // right card
-                  style = {
-                      transform: "translateX(82%) rotateY(-40deg) scale(0.85)",
-                      opacity: 1,
-                      zIndex: 10,
-                  };
-              } else if (
-                  i ===
-                  (index - 1 + peopleImages.length) % peopleImages.length
-              ) {
-                  // left card
-                  style = {
-                      transform: "translateX(-82%) rotateY(40deg) scale(0.85)",
-                      opacity: 1,
-                      zIndex: 10,
-                  };
-              } else {
-                  // keep them mounted but invisible
-                  style = {
-                      transform: "translateX(0) rotateY(0deg) scale(0.8)",
-                      opacity: 0,
-                      zIndex: 0,
-                  };
-              }
+                  if (i === index) {
+                      // center
+                      style = {
+                          transform: "translateX(0) rotateY(0deg) scale(1)",
+                          opacity: 1,
+                          zIndex: 20,
+                      };
+                      classNames += " shadow-2xl border-[12px] border-blue-900";
+                  } else if (i === (index + 1) % peopleImages.length) {
+                      // right card
+                      style = {
+                          transform:
+                              "translateX(82%) rotateY(-40deg) scale(0.85)",
+                          opacity: 1,
+                          zIndex: 10,
+                      };
+                  } else if (
+                      i ===
+                      (index - 1 + peopleImages.length) % peopleImages.length
+                  ) {
+                      // left card
+                      style = {
+                          transform:
+                              "translateX(-82%) rotateY(40deg) scale(0.85)",
+                          opacity: 1,
+                          zIndex: 10,
+                      };
+                  } else {
+                      // keep them mounted but invisible
+                      style = {
+                          transform: "translateX(0) rotateY(0deg) scale(0.8)",
+                          opacity: 0,
+                          zIndex: 0,
+                      };
+                  }
 
-              return (
-                  <div key={i} className={classNames} style={style}>
-                      <img
-                          src={pImg.src}
-                          alt={pImg.alt}
-                          className="w-full h-[310px] object-cover"
-                      />
-                  </div>
-              );
-          })}
+                  return (
+                      <div key={i} className={classNames} style={style}>
+                          <img
+                              src={pImg.src}
+                              alt={pImg.alt}
+                              className="w-full h-[310px] object-cover"
+                          />
+                      </div>
+                  );
+              })}
 
-          {/* buttons */}
-          <div className="absolute top-[100%] flex gap-8 mb-10 border">
-              <button
-                  onClick={prevSlide}
-                  className="px-1 py-[2px] flex items-center justify-center border border-gray-400 hover:bg-gray-100"
-              >
-                  <ChevronLeft />
-              </button>
-              <button
-                  onClick={nextSlide}
-                  className="px-1 py-[2px] flex items-center justify-center border border-gray-400 hover:bg-gray-100"
-              >
-                  <ChevronRight />
-              </button>
+              {/* buttons */}
+              <div className="absolute top-[100%] flex gap-8 mb-10">
+                  <button
+                      onClick={prevSlide}
+                      className="px-1 py-[2px] flex items-center justify-center border border-gray-400 hover:bg-gray-100"
+                  >
+                      <ChevronLeft />
+                  </button>
+                  <button
+                      onClick={nextSlide}
+                      className="px-1 py-[2px] flex items-center justify-center border border-gray-400 hover:bg-gray-100"
+                  >
+                      <ChevronRight />
+                  </button>
+              </div>
           </div>
-      </div>
+          <div className="lg:w-[60%] mx-auto text-center">
+              <h1 className="lg:text-3xl font-semibold text-blue-950 mb-5">Human Resources</h1>
+              <p className="lg:text-xl leading-relaxed text-justify">
+                  Our People The soul of Panorama is its people. 7,000+
+                  individuals, 50% women, all united by passion, purpose, and
+                  creativity. We foster safe, inclusive spaces, invest in
+                  skill-building, and champion equal opportunity—growing
+                  together, every step of the way. We encourage every voice to
+                  be a part of our shared journey–building a company where
+                  success is measured not just in output but in the lives we
+                  enrich continuously.
+              </p>
+          </div>
+      </>
   );
 }
 
