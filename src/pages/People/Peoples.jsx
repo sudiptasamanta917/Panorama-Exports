@@ -7,7 +7,7 @@
 // import p4 from "../../assets/People/Human_Resources/05.jpg";
 import HumanResources from "./HumanResources";
 import HealthSafety from "./HealthSafety";
-import PeoplePurpose from "./PeopleProgPurpose";
+import PeoplePurpose from "./PeoplePurpose";
 
 // const peopleImages = [
 //     {
