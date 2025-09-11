@@ -22,7 +22,7 @@ import DirectorBg2 from "../../assets/Founders/bg 02.png";
 import RajanPng from "../../assets/Founders/rajan.png";
 import NavinPng from "../../assets/Founders/navin.png";
 import ShivaanPng from "../../assets/Founders/shivaan.png";
-import SidharthPng from "../../assets/Founders/sidharth1.png";
+import SidharthPng from "../../assets/Founders/Sidharth.png";
 
 const labels = {
     "#vision-values": "VisionValues",
@@ -250,9 +250,6 @@ export default function VisionMission() {
                         </motion.div>
                     </div>
                 </div>
-                {/* <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Vision & Mission
-                </h2> */}
                 <div
                     className="relative w-full h-[100vh] mt-4 flex items-center justify-center bg-cover bg-center"
                     style={{ backgroundImage: `url(${visionMission})` }}
@@ -333,32 +330,33 @@ export default function VisionMission() {
                 >
                     {directors.map((director, i) => (
                         <SwiperSlide key={i}>
-                            <div className="relative">
-                                {/* background image */}
-                                <img
-                                    src={director.bg}
-                                    alt="Director background"
-                                    className="w-full object-contain"
-                                />
-                                {/* <div className="absolute top-0 left-0 inset-0 bg-transparent w-full h-full">
-                                    <img
-                                        src={director.img}
-                                        alt={director.name}
-                                        className="h-full w-full"
-                                    />
+                            <div
+                                className="w-full bg-contain bg-center"
+                                style={{
+                                    backgroundImage: `url(${director.bg})`,
+                                    aspectRatio: "16/9", // image ratio wise height ...................
+                                }}
+                            >
+                                <div className="bg-transparent w-full h-full flex items-center">
                                     <div
                                         className={`w-[50%] ${
                                             director.id === 2 ? "hidden" : ""
-                                        } absolute top-0 inset-0 py-10 flex items-center`}
+                                        } py-10 flex items-center`}
                                     >
                                         <div className="w-[90%] ml-auto flex flex-col items-end justify-center">
-                                            <div className="2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-[8px] text-white md:font-semibold text-justify leading-relaxed 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
+                                                    “
+                                                </span>
                                                 {director.message}
+                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
+                                                    ”
+                                                </span>
                                             </div>
-                                            <h1 className="text-white w-full text-end 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-lg font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white w-full text-end 2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-[8px] md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
                                                 {director.role}
                                             </h3>
                                         </div>
@@ -366,21 +364,27 @@ export default function VisionMission() {
                                     <div
                                         className={`w-[50%] ml-auto ${
                                             director.id === 1 ? "hidden" : ""
-                                        } absolute top-0 inset-0 py-10 flex items-center`}
+                                        } py-10 flex items-center`}
                                     >
                                         <div className="w-[90%] mr-auto flex flex-col items-start justify-center">
-                                            <div className="2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-[8px] text-white md:font-semibold text-justify leading-relaxed 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
+                                                    “
+                                                </span>
                                                 {director.message}
+                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
+                                                    ”
+                                                </span>
                                             </div>
-                                            <h1 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-lg font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-[8px] md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
                                                 {director.role}
                                             </h3>
                                         </div>
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}
@@ -419,14 +423,61 @@ export default function VisionMission() {
                 >
                     {executiveDirectors.map((director, i) => (
                         <SwiperSlide key={i}>
-                            <div className="relative">
-                                {/* background image */}
-                                <img
-                                    src={director.bg}
-                                    alt="Director background"
-                                    className="w-full object-contain"
-                                />
-                                
+                            <div
+                                className="w-full bg-contain bg-center"
+                                style={{
+                                    backgroundImage: `url(${director.bg})`,
+                                    aspectRatio: "16/9", // image ratio wise height ...................
+                                }}
+                            >
+                                <div className="bg-transparent w-full h-full flex items-center">
+                                    <div
+                                        className={`w-[50%] ${
+                                            director.id === 2 ? "hidden" : ""
+                                        } py-10 flex items-center`}
+                                    >
+                                        <div className="w-[90%] ml-auto flex flex-col items-end justify-center">
+                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
+                                                    “
+                                                </span>
+                                                {director.message}
+                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
+                                                    ”
+                                                </span>
+                                            </div>
+                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                                {director.name}
+                                            </h1>
+                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                                {director.role}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className={`w-[50%] ml-auto ${
+                                            director.id === 1 ? "hidden" : ""
+                                        } py-10 flex items-center`}
+                                    >
+                                        <div className="w-[90%] mr-auto flex flex-col items-start justify-center">
+                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
+                                                    “
+                                                </span>
+                                                {director.message}
+                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
+                                                    ”
+                                                </span>
+                                            </div>
+                                            <h1 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                                {director.name}
+                                            </h1>
+                                            <h3 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                                {director.role}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}
