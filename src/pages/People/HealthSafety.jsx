@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import p1 from "../../assets/People/Health_Safety/01.jpg";
-import p2 from "../../assets/People/Health_Safety/02.jpg";
-import p3 from "../../assets/People/Health_Safety/03.jpg";
-import p4 from "../../assets/People/Health_Safety/04.jpg";
+import p1 from "../../assets/People/HealthSafety/01.jpg";
+import p2 from "../../assets/People/HealthSafety/02.jpg";
+import p3 from "../../assets/People/HealthSafety/03.jpg";
+import p4 from "../../assets/People/HealthSafety/04.jpg";
 
 function HealthSafety() {
     const [index, setIndex] = useState(0);

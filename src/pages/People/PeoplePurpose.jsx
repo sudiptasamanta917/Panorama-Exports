@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import p1 from "../../assets/People/Progress_with_Purpose/01.jpg";
-import p2 from "../../assets/People/Progress_with_Purpose/02.jpg";
-import p3 from "../../assets/People/Progress_with_Purpose/03.jpg";
-import p4 from "../../assets/People/Progress_with_Purpose/04.jpg";
+import p1 from "../../assets/People/ProgressPurpose/01.jpg";
+import p2 from "../../assets/People/ProgressPurpose/02.jpg";
+import p3 from "../../assets/People/ProgressPurpose/03.jpg";
+import p4 from "../../assets/People/ProgressPurpose/04.jpg";
 
 function PeoplePurpose() {
     const [index, setIndex] = useState(0);
