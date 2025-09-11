@@ -68,11 +68,11 @@ const CoreValues = () => {
                         >
                             <div className="2xl:border-[20px] xl:border-[16px] lg:border-[12px] md:border-[15px] border-[10px] border-white h-full w-full">
                                 <div
-                                    className={`p-6 md:h-[200px] h-[100px] flex justify-center items-center bg-center bg-cover`}
-                                    style={{
-                                        backgroundImage: `url(${value.img})`,
-                                    }}
-                                ></div>
+                                    className={``}
+                                    
+                                >
+                                    <img src={value.img} alt="" className="image-contain" />
+                                </div>
                                 <div className="p-4">
                                     <h3 className="2xl:h-16 xl:h-14 lg:h-12 md:h-12 h-10 2xl:text-xl xl:text-lg lg:text-sm md:text-md md:text-md sm:text-sm text-[12px] text-blue-900 font-semibold mb-2">
                                         {value.title}

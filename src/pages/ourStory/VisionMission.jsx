@@ -37,9 +37,9 @@ const directors = [
         role: "Director",
         bg: RajanPng,
         img: RajanPng,
-        message: `Innovation is our language—spoken through
+        message: `Innovation is our language-spoken through
               designs that inspire and lead globally. We
-              don't just follow trends—we anticipate them,
+              don't just follow trends-we anticipate them,
               crafting future-ready fashion with purpose.
               Every creation is a translation of insight,
               technology, and timeless craftsmanship.`,
@@ -61,7 +61,7 @@ const executiveDirectors = [
         role: "Executive Director",
         bg: ShivaanPng,
         img: ShivaanPng,
-        message: `Each thread tells a story of trust, transformation, and thoughtful design. We’re weaving a future of equity, innovation, and sustainability. Excellence isn’t just an outcome—it’s our mindset, culture, and commitment.`,
+        message: `Each thread tells a story of trust, transformation, and thoughtful design. We’re weaving a future of equity, innovation, and sustainability. Excellence isn’t just an outcome-it’s our mindset, culture, and commitment.`,
     },
     {
         id: 2,
@@ -69,7 +69,7 @@ const executiveDirectors = [
         role: "Executive Director",
         bg: SidharthPng,
         img: SidharthPng,
-        message: `Panorama is a harmony of team strength and individual mastery—each creation rooted in emotion, unity, and excellence. Our legacy is built not just in factories, but in the future, we help uplift.`,
+        message: `Panorama is a harmony of team strength and individual mastery-each creation rooted in emotion, unity, and excellence. Our legacy is built not just in factories, but in the future, we help uplift.`,
     },
 ];
 
@@ -211,44 +211,30 @@ export default function VisionMission() {
                     className="w-full h-[100vh] bg-cover bg-center flex flex-col items-start justify-end"
                     style={{ backgroundImage: `url(${bgImage})` }}
                 >
-                    <div className="text-white font-medium bg-black/80 px-[10%] pb-[4%] pt-[2%]">
-                        <motion.h1
-                            className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl"
-                            variants={{
-                                hidden: { opacity: 0, y: 1 },
-                                visible: { opacity: 1, y: 0 },
-                            }}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: false, amount: 0.8 }}
-                            transition={{
-                                duration: 2,
-                                ease: "easeInOut",
-                            }}
-                        >
+                    <motion.div
+                        className="text-white bg-gradient-to-t from-black/90 via-black/80 via-black/70 to-transparent px-[10%] pb-[4%] pt-[10%]"
+                        variants={{
+                            hidden: { opacity: 0, y: 100 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.8 }}
+                        transition={{
+                            duration: 1.5,
+                            ease: "easeOut",
+                        }}
+                    >
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold">
                             Woven into Every Thread
-                        </motion.h1>
-                        <motion.div
-                            className="2xl:text-3xl lg:text-2xl md:text-xl text-lg mt-4"
-                            variants={{
-                                hidden: { opacity: 0, y: 1 },
-                                visible: { opacity: 1, y: 0 },
-                            }}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: false, amount: 0.3 }}
-                            transition={{
-                                duration: 2,
-                                delay: 1,
-                                ease: "easeInOut",
-                            }}
-                        >
+                        </h1>
+                        <div className="text-xl sm:text-2xl md:text-3xl font-light mt-4">
                             Our vision shapes the future of fashion; our values
-                            guide every stitch. We don’t just make clothing—we
+                            guide every stitch. We don’t just make clothing-we
                             build trust, innovate with intent, and create with
                             heart.
-                        </motion.div>
-                    </div>
+                        </div>
+                    </motion.div>
                 </div>
                 <div
                     className="relative w-full h-[100vh] mt-4 flex items-center justify-center bg-cover bg-center"

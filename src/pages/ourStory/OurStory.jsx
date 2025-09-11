@@ -119,33 +119,28 @@ export default function OurStory() {
                         <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5">
                             Legacy
                         </h1>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl underline underline-offset-8">
-                            <span className="text-xl sm:text-2xl md:text-3xl font-normal">
-                                Where
-                            </span>{" "}
-                            Heritage{" "}
-                            <span className="text-xl sm:text-2xl md:text-3xl font-normal">
-                                Meets
-                            </span>{" "}
-                            Modern Luxury
+                        <h2 className="text-xl sm:text-2xl md:text-3xl">
+                            <span className="font-light">Where</span> Heritage{" "}
+                            <span className="font-light">Meets</span> Modern
+                            Luxury
                         </h2>
                     </div>
                 </div>
                 <div className="bg-white sm:pt-16 pt-5 pb-10 px-6 ">
                     <div className="">
                         {/* Heading */}
-                        <h2 className="2xl:text-7xl lg:text-5xl text-4xl text-gray-600 text-center md:mb-10 mb-4">
+                        {/* <h2 className="2xl:text-7xl lg:text-5xl text-4xl text-gray-600 text-center md:mb-10 mb-4">
                             Legacy
-                        </h2>
+                        </h2> */}
 
                         {/* Subheading */}
-                        <p className="2xl:text-4xl lg:text-3xl md:text-2xl text-lg text-blue-900 text-justify max-w-[70%] mx-auto leading-relaxed">
+                        <p className="2xl:text-3xl lg:text-2xl md:text-xl text-md text-blue-900 text-justify max-w-[70%] mx-auto leading-relaxed">
                             Since 1973, Panorama Exports has transformed fabrics
                             into fashion blending Indian craftsmanship with
                             advanced manufacturing. Today, our garments travel
                             from India to global wardrobes, each piece echoing
                             artistry, innovation, and timeless tradition. More
-                            than fashion — it's handcrafted legacy.
+                            than fashion - it's handcrafted legacy.
                         </p>
                     </div>
                 </div>
@@ -166,40 +161,42 @@ export default function OurStory() {
 
                     {/* Quote Section */}
                     <div className="flex flex-col justify-start items-end w-[100vw] h-[26vh] bg-[#96785e] text-white xl:px-10 px-5 py-2">
-                        {/* Define variants for cleaner animation control */}
-                        <motion.p
-                            className="xl:mt-4 text-[10px] lg:text-sm xl:text-md 2xl:text-xl font-semibold md:leading-relaxed 2xl:mb-6 lg:mb-3 mb-2 2xl:w-[500px] xl:w-[450px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full sm:tracking-wide"
-                            variants={{
-                                hidden: { opacity: 0, y: 1 },
-                                visible: { opacity: 1, y: 0 },
-                            }}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: false, amount: 0.3 }}
-                            transition={{ duration: 2, ease: "easeInOut" }}
-                        >
-                            “Fashion is a dialogue between tradition and
-                            tomorrow. Let’s keep shaping that conversation-one
-                            inspired creation at a time.”
-                        </motion.p>
-
-                        <motion.h2
-                            className="text-[10px] lg:text-sm xl:text-md 2xl:text-xl font-semibold flex justify-end 2xl:w-[500px] xl:w-[450px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full"
-                            variants={{
-                                hidden: { opacity: 0, y: 1 },
-                                visible: { opacity: 1, y: 0 },
-                            }}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: false, amount: 0.8 }}
-                            transition={{
-                                duration: 2,
-                                delay: 2,
-                                ease: "easeInOut",
-                            }}
-                        >
-                            — Shri Shyam Sahni & Smt. Veena Sahni
-                        </motion.h2>
+                        <div className="2xl:w-[40%]">
+                            <motion.p
+                                className="xl:mt-4 text-[10px] lg:text-sm xl:text-md 2xl:text-xl font-semibold md:leading-relaxed 2xl:mb-4 mb-2 2xl:w-[650px] xl:w-[450px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full sm:tracking-wide"
+                                variants={{
+                                    hidden: { opacity: 0, y: 1 },
+                                    visible: { opacity: 1, y: 0 },
+                                }}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: false, amount: 0.3 }}
+                                transition={{ duration: 2, ease: "easeInOut" }}
+                            >
+                                “Our journey in fashion has always been guided
+                                by respect for tradition and a commitment to the
+                                future. With each creation we uphold our pride &
+                                values. We continue to shape this
+                                conversation-one inspired creation at a time.”
+                            </motion.p>
+                            <motion.h2
+                                className="text-[10px] lg:text-sm xl:text-md 2xl:text-xl font-semibold flex justify-end 2xl:w-[500px] xl:w-[450px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full"
+                                variants={{
+                                    hidden: { opacity: 0, y: 1 },
+                                    visible: { opacity: 1, y: 0 },
+                                }}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: false, amount: 0.8 }}
+                                transition={{
+                                    duration: 2,
+                                    delay: 2,
+                                    ease: "easeInOut",
+                                }}
+                            >
+                                — Shri Shyam Sahni & Smt. Veena Sahni
+                            </motion.h2>
+                        </div>
                     </div>
                 </div>
             </section>
