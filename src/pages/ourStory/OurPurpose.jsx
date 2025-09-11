@@ -1,25 +1,35 @@
 import React from "react";
-import EnrichingLives from "../../assets/OurPurpose/01.png";
-import DynamicHeart from "../../assets/OurPurpose/Dynamic at Heart.png";
-import ResponsibleReverence from "../../assets/OurPurpose/Responsible Reverence.png";
-import TrustCore from "../../assets/OurPurpose/Trust at the Core.png";
+import { motion } from "framer-motion";
+import EnrichingLives from "../../assets/OurPurpose/EnrichingLives.jpg";
+import DynamicHeart from "../../assets/OurPurpose/DynamicHeart.jpg";
+import ResponsibleReverence from "../../assets/OurPurpose/ResponsibleReverence.jpg";
+import TrustCore from "../../assets/OurPurpose/TrustCore.jpg";
+
+import EnrichingText from "../../assets/OurPurpose/enrichingLivesText.png";
+import DynamoText from "../../assets/OurPurpose/dynamicHeartText.png";
+import TrustCoreText from "../../assets/OurPurpose/trustCoreText.png";
+import ResponsibleText from "../../assets/OurPurpose/responsibleReverenceText.png";
 
 const purposes = [
     {
         title: "Enriching Lives",
         img: EnrichingLives,
+        textImg: EnrichingText,
     },
     {
         title: "DynamicHeart",
         img: DynamicHeart,
+        textImg: DynamoText,
     },
     {
         title: "TrustCore",
         img: TrustCore,
+        textImg: TrustCoreText,
     },
     {
         title: "ResponsibleReverence",
         img: ResponsibleReverence,
+        textImg: ResponsibleText,
     },
 ];
 
@@ -39,8 +49,26 @@ const OurPurpose = () => {
                 </div>
                 <div>
                     {purposes.map((purpose, index) => (
-                        <div>
-                            <img src={purpose.img} alt={purpose.title} className="w-full object-contain"/>
+                        <div
+                            className="w-full bg-center bg-contain"
+                            style={{
+                                backgroundImage: `url(${purpose.img})`,
+                                aspectRatio: "21/8.83",
+                            }}
+                        >
+                            <motion.img
+                                src={purpose.textImg}
+                                alt={purpose.title}
+                                className="w-full object-contain"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{
+                                    duration: 2.5,
+                                    ease: "easeInOut",
+                                }}
+                                viewport={{ once: false, amount: 0.3 }} // 👈 triggers every scroll into view
+                            />
                         </div>
                     ))}
                 </div>

@@ -343,7 +343,20 @@ export default function VisionMission() {
                                             director.id === 2 ? "hidden" : ""
                                         } py-10 flex items-center`}
                                     >
-                                        <div className="w-[90%] ml-auto flex flex-col items-end justify-center">
+                                        <motion.div
+                                            className="w-[90%] ml-auto flex flex-col items-end justify-center"
+                                            initial={{ opacity: 0 }}
+                                            whileInView={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{
+                                                duration: 1.5,
+                                                ease: "easeInOut",
+                                            }}
+                                            viewport={{
+                                                once: false,
+                                                amount: 0.3,
+                                            }}
+                                        >
                                             <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
@@ -359,14 +372,27 @@ export default function VisionMission() {
                                             <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
                                                 {director.role}
                                             </h3>
-                                        </div>
+                                        </motion.div>
                                     </div>
                                     <div
                                         className={`w-[50%] ml-auto ${
                                             director.id === 1 ? "hidden" : ""
                                         } py-10 flex items-center`}
                                     >
-                                        <div className="w-[90%] mr-auto flex flex-col items-start justify-center">
+                                        <motion.div
+                                            className="w-[90%] mr-auto flex flex-col items-start justify-center"
+                                            initial={{ opacity: 0 }}
+                                            whileInView={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{
+                                                duration: 1.5,
+                                                ease: "easeInOut",
+                                            }}
+                                            viewport={{
+                                                once: false,
+                                                amount: 0.3,
+                                            }}
+                                        >
                                             <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
@@ -376,13 +402,13 @@ export default function VisionMission() {
                                                     ”
                                                 </span>
                                             </div>
-                                            <h1 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
                                                 {director.role}
                                             </h3>
-                                        </div>
+                                        </motion.div>
                                     </div>
                                 </div>
                             </div>
@@ -436,7 +462,20 @@ export default function VisionMission() {
                                             director.id === 2 ? "hidden" : ""
                                         } py-10 flex items-center`}
                                     >
-                                        <div className="w-[90%] ml-auto flex flex-col items-end justify-center">
+                                        <motion.div
+                                            className="w-[90%] ml-auto flex flex-col items-end justify-center"
+                                            initial={{ opacity: 0 }}
+                                            whileInView={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{
+                                                duration: 1.5,
+                                                ease: "easeInOut",
+                                            }}
+                                            viewport={{
+                                                once: false,
+                                                amount: 0.3,
+                                            }}
+                                        >
                                             <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
@@ -452,14 +491,27 @@ export default function VisionMission() {
                                             <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
                                                 {director.role}
                                             </h3>
-                                        </div>
+                                        </motion.div>
                                     </div>
                                     <div
                                         className={`w-[50%] ml-auto ${
                                             director.id === 1 ? "hidden" : ""
                                         } py-10 flex items-center`}
                                     >
-                                        <div className="w-[90%] mr-auto flex flex-col items-start justify-center">
+                                        <motion.div
+                                            className="w-[90%] mr-auto flex flex-col items-start justify-center"
+                                            initial={{ opacity: 0 }}
+                                            whileInView={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{
+                                                duration: 1.5,
+                                                ease: "easeInOut",
+                                            }}
+                                            viewport={{
+                                                once: false,
+                                                amount: 0.3,
+                                            }}
+                                        >
                                             <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
@@ -469,13 +521,13 @@ export default function VisionMission() {
                                                     ”
                                                 </span>
                                             </div>
-                                            <h1 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
                                                 {director.role}
                                             </h3>
-                                        </div>
+                                        </motion.div>
                                     </div>
                                 </div>
                             </div>
