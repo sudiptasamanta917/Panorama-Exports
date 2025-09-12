@@ -63,7 +63,7 @@ function HumanResources() {
                           opacity: 1,
                           zIndex: 20,
                       };
-                      classNames += " shadow-2xl border-[12px] border-blue-900";
+                      classNames += " shadow-2xl border-[8px] border-blue-900";
                   } else if (i === (index + 1) % peopleImages.length) {
                       // right card
                       style = {
