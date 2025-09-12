@@ -119,7 +119,7 @@ export default function OurStory() {
                         <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5">
                             Legacy
                         </h1>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-normal">
                             <span className="font-light">Where</span> Heritage{" "}
                             <span className="font-light">Meets</span> Modern
                             Luxury

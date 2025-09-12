@@ -50,7 +50,7 @@ const OurPurpose = () => {
                 <div>
                     {purposes.map((purpose, index) => (
                         <div
-                            className="w-full bg-center bg-contain"
+                            className="w-full bg-center bg-contain flex items-end justify-end"
                             style={{
                                 backgroundImage: `url(${purpose.img})`,
                                 aspectRatio: "21/8.83",
@@ -59,7 +59,7 @@ const OurPurpose = () => {
                             <motion.img
                                 src={purpose.textImg}
                                 alt={purpose.title}
-                                className="w-full object-contain"
+                                className="w-[85%] object-contain"
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
@@ -67,7 +67,7 @@ const OurPurpose = () => {
                                     duration: 2.5,
                                     ease: "easeInOut",
                                 }}
-                                viewport={{ once: false, amount: 0.3 }} // 👈 triggers every scroll into view
+                                viewport={{ once: false, amount: 0.3 }}
                             />
                         </div>
                     ))}

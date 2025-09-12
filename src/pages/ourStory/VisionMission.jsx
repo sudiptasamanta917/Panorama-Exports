@@ -225,10 +225,10 @@ export default function VisionMission() {
                             ease: "easeOut",
                         }}
                     >
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                             Woven into Every Thread
                         </h1>
-                        <div className="text-xl sm:text-2xl md:text-3xl font-light mt-4">
+                        <div className="text-lg sm:text-xl md:text-xl xl:text-2xl mt-4 w-[60%] text-justify font-relaxed">
                             Our vision shapes the future of fashion; our values
                             guide every stitch. We don’t just make clothing-we
                             build trust, innovate with intent, and create with
