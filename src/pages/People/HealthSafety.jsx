@@ -48,7 +48,7 @@ function HealthSafety() {
     return (
         <>
             <div
-                className="relative flex items-center justify-center w-full h-[400px] my-16"
+                className="relative flex items-center justify-center w-full 2xl:min-h-[400px] xl:min-h-[350px] lg:min-h-[300px] md:min-h-[250px] min-h-[200px] h-auto 2xl:my-16"
                 style={{ perspective: "2000px" }}
             >
                 {peopleImages.map((pImg, i) => {
@@ -98,14 +98,14 @@ function HealthSafety() {
                             <img
                                 src={pImg.src}
                                 alt={pImg.alt}
-                                className="w-full h-[310px] object-cover"
+                                className="w-full object-contain"
                             />
                         </div>
                     );
                 })}
 
                 {/* buttons */}
-                <div className="absolute top-[100%] flex gap-8 mb-10">
+                <div className="absolute top-[100%] flex gap-8 mb-10 2xl:mt-20 xl:mt-16 lg:mt-10 mt-5">
                     <button
                         onClick={prevSlide}
                         className="px-1 py-[2px] flex items-center justify-center border border-gray-400 hover:bg-gray-100"
@@ -120,7 +120,7 @@ function HealthSafety() {
                     </button>
                 </div>
             </div>
-            <div className="lg:w-[60%] mx-auto text-center">
+            <div className="lg:w-[60%] mx-auto text-center 2xl:mt-36 mt-28 2xl:mb-20 mb-14">
                 <h1 className="lg:text-3xl font-semibold text-blue-950 mb-5">
                     Health, Safety & Compliance
                 </h1>

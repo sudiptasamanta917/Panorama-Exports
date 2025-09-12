@@ -160,10 +160,10 @@ export default function OurStory() {
                     </div>
 
                     {/* Quote Section */}
-                    <div className="flex flex-col justify-start items-end w-[100vw] h-[26vh] bg-[#96785e] text-white xl:px-10 px-5 py-2">
-                        <div className="2xl:w-[40%]">
+                    <div className="flex flex-col justify-start items-end w-[100vw] h-[26vh] bg-[#96785e] text-white px-2 py-2">
+                        <div className="2xl:w-[45%] xl:w-[38%] w-[40%] 2xl:mt-2">
                             <motion.p
-                                className="xl:mt-4 text-[10px] lg:text-sm xl:text-md 2xl:text-xl font-semibold md:leading-relaxed 2xl:mb-4 mb-2 2xl:w-[650px] xl:w-[450px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-full sm:tracking-wide"
+                                className="text-[10px] lg:text-sm xl:text-md 2xl:text-lg text-justify md:leading-relaxed 2xl:mb-4 mb-2 w-full sm:tracking-wide"
                                 variants={{
                                     hidden: { opacity: 0, y: 1 },
                                     visible: { opacity: 1, y: 0 },

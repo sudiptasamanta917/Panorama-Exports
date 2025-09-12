@@ -50,7 +50,7 @@ const OurPurpose = () => {
                 <div>
                     {purposes.map((purpose, index) => (
                         <div
-                            className="w-full bg-center bg-contain flex items-end justify-end"
+                            className="w-full bg-center bg-contain flex items-end justify-end pr-[5%]"
                             style={{
                                 backgroundImage: `url(${purpose.img})`,
                                 aspectRatio: "21/8.83",

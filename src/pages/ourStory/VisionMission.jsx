@@ -221,7 +221,7 @@ export default function VisionMission() {
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.8 }}
                         transition={{
-                            duration: 1.5,
+                            duration: 1,
                             ease: "easeOut",
                         }}
                     >
