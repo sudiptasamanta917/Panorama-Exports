@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet1 from "../../assets/Crafted_Precision/Advanced_washing/01.jpg";
-import aet2 from "../../assets/Crafted_Precision/Advanced_washing/02.jpg";
-import aet3 from "../../assets/Crafted_Precision/Advanced_washing/03.jpg";
+import aet1 from "../../assets/Crafted_Precision/Advanced_washing/1.png";
+import aet2 from "../../assets/Crafted_Precision/Advanced_washing/2.png";
+import aet3 from "../../assets/Crafted_Precision/Advanced_washing/3.png";
 
 const mfgImages = [
     {
@@ -106,7 +106,7 @@ function AdvancedWashing() {
                             waitForTransition: true,
                             enabled: true,
                         }}
-                        className="h-full overflow-hidden bg-[#5b4e39]"
+                        className="w-full overflow-hidden bg-[#5b4e39]"
                     >
                         {mfgImages.map((mfg, i) => (
                             <SwiperSlide key={i}>
@@ -115,7 +115,7 @@ function AdvancedWashing() {
                                     <img
                                         src={mfg.img}
                                         alt={mfg.title}
-                                        className="w-full h-[60vh] object-cover"
+                                        className="w-full object-contain"
                                     />
                                 </div>
                             </SwiperSlide>

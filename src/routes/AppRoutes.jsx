@@ -17,6 +17,8 @@ import Innovation from "../pages/Innovation";
 
 import Peoples from "../pages/People/Peoples";
 
+import Responsibility from "../pages/Responsibility/Responsibility";
+
 import WeavingStories from "../pages/WeavingStories";
 import ElevatedCraft from "../pages/ElevatedCraft";
 import Sustainability from "../pages/Sustainability";
@@ -30,7 +32,6 @@ import InnovationThatLeads from "../pages/Innovation/InnovationThatLeads";
 import StandardOfPerfection from "../pages/Innovation/StandardOfPerfection";
 import HandcraftedLuxury from "../pages/Innovation/HandcraftedLuxury";
 import Products from "../pages/Product/Products";
-import ResponsibilityRoute from "../pages/Responsibility/ResponsibilityRoute";
 
 
 export default function AppRoutes() {
@@ -57,6 +58,7 @@ export default function AppRoutes() {
             <Route path="/innovation" element={<Innovation />} />
 
             <Route path="/peoples" element={<Peoples />} />
+            <Route path="/responsibility" element={<Responsibility />} />
 
             <Route path="/weavingstories" element={<WeavingStories />} />
             <Route path="/elevatedcraft" element={<ElevatedCraft />} />
@@ -80,10 +82,6 @@ export default function AppRoutes() {
                 element={<HandcraftedLuxury />}
             />
             <Route path="/products" element={<Products />} />
-            <Route
-                path="/responsibilityroute"
-                element={<ResponsibilityRoute />}
-            />
         </Routes>
     );
 }

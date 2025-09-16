@@ -48,7 +48,7 @@ function HumanResources() {
   return (
       <>
           <div
-              className="relative flex items-center justify-center w-full 2xl:min-h-[400px] xl:min-h-[350px] lg:min-h-[300px] md:min-h-[250px] min-h-[200px] h-auto 2xl:my-16"
+              className="relative flex items-center justify-center w-full 2xl:min-h-[400px] xl:min-h-[350px] lg:min-h-[300px] md:min-h-[250px] min-h-[200px] h-auto 2xl:my-5"
               style={{ perspective: "2000px" }}
           >
               {peopleImages.map((pImg, i) => {

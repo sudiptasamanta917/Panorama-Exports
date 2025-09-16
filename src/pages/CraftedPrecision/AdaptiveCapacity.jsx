@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet1 from "../../assets/Crafted_Precision/Adaptive_Capacity/01.jpg";
-import aet2 from "../../assets/Crafted_Precision/Adaptive_Capacity/02.jpg";
-import aet3 from "../../assets/Crafted_Precision/Adaptive_Capacity/03.jpg";
+import aet1 from "../../assets/Crafted_Precision/Adaptive_Capacity/3.png";
+import aet2 from "../../assets/Crafted_Precision/Adaptive_Capacity/2.png";
+import aet3 from "../../assets/Crafted_Precision/Adaptive_Capacity/1.png";
 
 const mfgImages = [
     {
@@ -106,7 +106,7 @@ function AdaptiveCapacity() {
                             waitForTransition: true,
                             enabled: true,
                         }}
-                        className="h-full overflow-hidden bg-[#5b4e39]"
+                        className="w-full overflow-hidden bg-[#5b4e39]"
                     >
                         {mfgImages.map((mfg, i) => (
                             <SwiperSlide key={i}>
@@ -115,7 +115,7 @@ function AdaptiveCapacity() {
                                     <img
                                         src={mfg.img}
                                         alt={mfg.title}
-                                        className="w-full h-[60vh] object-cover"
+                                        className="w-full object-contain"
                                     />
                                 </div>
                             </SwiperSlide>

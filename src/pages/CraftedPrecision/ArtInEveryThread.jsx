@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet1 from "../../assets/Crafted_Precision/Art_in_Every_Thread/01.jpg";
-import aet2 from "../../assets/Crafted_Precision/Art_in_Every_Thread/02.jpg";
-import aet3 from "../../assets/Crafted_Precision/Art_in_Every_Thread/03.jpg";
+import aet1 from "../../assets/Crafted_Precision/Art_in_Every_Thread/1.png";
+import aet2 from "../../assets/Crafted_Precision/Art_in_Every_Thread/2.png";
+import aet3 from "../../assets/Crafted_Precision/Art_in_Every_Thread/3.png";
 
 const mfgImages = [
     {
@@ -106,7 +106,7 @@ function ArtInEveryThread() {
                             waitForTransition: true,
                             enabled: true,
                         }}
-                        className="h-full overflow-hidden bg-[#5b4e39]"
+                        className="w-full overflow-hidden bg-[#5b4e39]"
                     >
                         {mfgImages.map((mfg, i) => (
                             <SwiperSlide key={i}>
@@ -115,7 +115,7 @@ function ArtInEveryThread() {
                                     <img
                                         src={mfg.img}
                                         alt={mfg.title}
-                                        className="w-full h-[60vh] object-cover"
+                                        className="w-full object-contain"
                                     />
                                 </div>
                             </SwiperSlide>

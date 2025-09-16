@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import mfg1 from "../../assets/Crafted_Precision/Smart_Warehousing/01.jpg";
-import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/02.jpg";
-import mfg3 from "../../assets/Crafted_Precision/Smart_Warehousing/03.jpg";
+import mfg1 from "../../assets/Crafted_Precision/Smart_Warehousing/1.png";
+import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/2.png";
+import mfg3 from "../../assets/Crafted_Precision/Smart_Warehousing/3.png";
 
 const mfgImages = [
     {
@@ -106,7 +106,7 @@ function SmartWarehousing() {
                             waitForTransition: true,
                             enabled: true,
                         }}
-                        className="h-full overflow-hidden bg-[#5b4e39]"
+                        className="w-full overflow-hidden bg-[#5b4e39]"
                     >
                         {mfgImages.map((mfg, i) => (
                             <SwiperSlide key={i}>
@@ -115,7 +115,7 @@ function SmartWarehousing() {
                                     <img
                                         src={mfg.img}
                                         alt={mfg.title}
-                                        className="w-full h-[60vh] object-cover"
+                                        className="w-full object-contain"
                                     />
                                 </div>
                             </SwiperSlide>

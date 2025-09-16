@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import mfg1 from "../../assets/Crafted_Precision/Manufacturing_Excellence/01.png";
-import mfg2 from "../../assets/Crafted_Precision/Manufacturing_Excellence/02.png";
-import mfg3 from "../../assets/Crafted_Precision/Manufacturing_Excellence/03.png";
+import mfg1 from "../../assets/Crafted_Precision/Manufacturing_Excellence/1.png";
+import mfg2 from "../../assets/Crafted_Precision/Manufacturing_Excellence/2.png";
+import mfg3 from "../../assets/Crafted_Precision/Manufacturing_Excellence/3.png";
 
 const mfgImages = [
     {
@@ -106,7 +106,7 @@ function MfgExcellence() {
                             waitForTransition: true,
                             enabled: true,
                         }}
-                        className="h-full overflow-hidden bg-[#5b4e39]"
+                        className="w-full overflow-hidden bg-[#5b4e39]"
                     >
                         {mfgImages.map((mfg, i) => (
                             <SwiperSlide key={i}>
@@ -115,7 +115,7 @@ function MfgExcellence() {
                                     <img
                                         src={mfg.img}
                                         alt={mfg.title}
-                                        className="w-full h-[60vh] object-cover"
+                                        className="w-full object-contain"
                                     />
                                 </div>
                             </SwiperSlide>

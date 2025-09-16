@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 import firstImg from "../assets/images/first.jpg";
@@ -10,10 +10,16 @@ import fifthImg from "../assets/images/first.jpg";
 import sixthImg from "../assets/images/first.jpg";
 
 export default function Navbar() {
+    const location = useLocation();
+
     const navItems = [
         {
+            label: "HOME",
+            path: "/",
+        },
+        {
             label: "OUR STORY",
-            path: "",
+            path: "/ourstory#legacy",
             subItems: [
                 {
                     label: "Legacy",
@@ -119,7 +125,7 @@ export default function Navbar() {
         },
         {
             label: "RESPONSIBILITY",
-            path: "",
+            path: "/responsibility",
         },
         {
             label: "MEDIA",
@@ -159,50 +165,57 @@ export default function Navbar() {
 
                 {/* Navigation Links */}
                 <ul className="2xl:w-[62%] xl:w-[70%] w-[80%] hidden lg:flex xl:gap-8 gap-6 justify-end items-center relative text-white 2xl:text-base text-sm mr-5">
-                    {navItems.map((item, index) => (
-                        <li key={index} className="relative group">
-                            <Link
-                                to={item.path}
-                                className={`${
-                                    scrolled
-                                        ? "text-[#073281] hover:text-[#073281]"
-                                        : "text-white hover:text-red-300"
-                                } transition-colors duration-500 font-medium hover:underline underline-offset-4`}
-                            >
-                                {item.label}
-                            </Link>
+                    {navItems.map((item, index) => {
+                        // Skip rendering if item is Home and current path is "/"
+                        if (item.label === "HOME" && location.pathname === "/") {
+                        return null;
+                        }
 
-                            {item.subItems && (
-                                <ul className="absolute left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col shadow-lg rounded-sm text-base z-10 w-[220px]">
-                                    <div
-                                        className={`flex justify-center xl:text-2xl text-lg ${
-                                            scrolled
-                                                ? "text-[#073281] hover:text-[#073281]"
-                                                : "text-white hover:text-red-300"
-                                        } transition-colors duration-500`}
-                                    >
-                                        <IoMdArrowDropdown />
-                                    </div>
-                                    <div className="bg-[#beaf8e]/70 text-white rounded-sm grid grid-cols-1 border-t">
-                                        {item.subItems.map(
-                                            (subItem, subIndex) => (
-                                                <li
-                                                    key={subIndex}
-                                                    className="hover:bg-[#beaf8e] hover:text-white px-2 whitespace-nowrap border-b"
-                                                >
-                                                    <Link to={subItem.path}>
-                                                        <h3 className="py-2">
-                                                            {subItem.label}
-                                                        </h3>
-                                                    </Link>
-                                                </li>
-                                            )
-                                        )}
-                                    </div>
-                                </ul>
-                            )}
-                        </li>
-                    ))}
+                        return (
+                            <li key={index} className="relative group">
+                                <Link
+                                    to={item.path}
+                                    className={`${
+                                        scrolled
+                                            ? "text-[#073281] hover:text-[#073281]"
+                                            : "text-white hover:text-red-300"
+                                    } transition-colors duration-500 font-medium hover:underline underline-offset-4`}
+                                >
+                                    {item.label}
+                                </Link>
+
+                                {item.subItems && (
+                                    <ul className="absolute left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col shadow-lg rounded-sm text-base z-10 w-[220px]">
+                                        <div
+                                            className={`flex justify-center xl:text-2xl text-lg ${
+                                                scrolled
+                                                    ? "text-[#073281] hover:text-[#073281]"
+                                                    : "text-white hover:text-red-300"
+                                            } transition-colors duration-500`}
+                                        >
+                                            <IoMdArrowDropdown />
+                                        </div>
+                                        <div className="bg-[#beaf8e]/70 text-white rounded-sm grid grid-cols-1 border-t">
+                                            {item.subItems.map(
+                                                (subItem, subIndex) => (
+                                                    <li
+                                                        key={subIndex}
+                                                        className="hover:bg-[#beaf8e] hover:text-white px-2 whitespace-nowrap border-b"
+                                                    >
+                                                        <Link to={subItem.path}>
+                                                            <h3 className="py-2">
+                                                                {subItem.label}
+                                                            </h3>
+                                                        </Link>
+                                                    </li>
+                                                )
+                                            )}
+                                        </div>
+                                    </ul>
+                                )}
+                            </li>
+                        );
+                    })}
                 </ul>
 
                 <div className="flex">
