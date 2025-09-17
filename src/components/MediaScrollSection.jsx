@@ -7,7 +7,7 @@ import Media3 from "../assets/Media/media_3.webp";
 const stats = [
     { number: "4759+", label: "EMPLOYEES" },
     { number: "40%", label: "WOMEN" },
-    { number: "10 Lack PCs", label: "CAPACITY" },
+    { number: "1 Million", label: "GARMENTS" },
     { number: "6", label: "UNITS" },
 ];
 
