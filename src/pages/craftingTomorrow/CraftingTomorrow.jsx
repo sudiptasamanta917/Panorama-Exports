@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import craftingTomorrowImage from "../../assets/CraftingTomorrow/01.webp";
 import { CiPlay1 } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
+import { FaCloudDownloadAlt } from "react-icons/fa";
 
 export default function CraftingTomorrow() {
     const [showModal, setShowModal] = useState(false);
@@ -14,6 +15,15 @@ export default function CraftingTomorrow() {
         setShowModal(!showModal);
     };
 
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/Panorama company profile.pptx";
+        link.download = "Panorama company profile.pptx";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <>
             {/* Crafting Tomorrow Content */}
@@ -22,7 +32,7 @@ export default function CraftingTomorrow() {
                     backgroundImage: `url(${craftingTomorrowImage})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    position: "relative"
+                    position: "relative",
                 }}
                 className="pt-4 w-full h-screen text-white flex flex-col items-center justify-center relative"
             >
@@ -34,19 +44,28 @@ export default function CraftingTomorrow() {
                     </h1>
 
                     <div className="mt-4 text-2xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] text-center max-w-5xl">
-                        True fashion tells a bigger story—of people, purpose, and
-                        planet. With every thread, we strive to weave dignity into
-                        design, merging timeless artistry with a future-forward
-                        responsibility.
+                        True fashion tells a bigger story—of people, purpose,
+                        and planet. With every thread, we strive to weave
+                        dignity into design, merging timeless artistry with a
+                        future-forward responsibility.
                     </div>
 
-                    <button
-                        onClick={handleToggleModal}
-                        className="mt-10 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-blue-900 text-lg font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
-                    >
-                        Watch Now
-                        <CiPlay1 className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
-                    </button>
+                    <div className="flex gap-5 lg:gap-10">
+                        <button
+                            onClick={handleToggleModal}
+                            className="mt-10 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-blue-900 text-lg font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
+                        >
+                            Watch Now
+                            <CiPlay1 className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
+                        </button>
+                        <button
+                            onClick={handleDownload}
+                            className="mt-10 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-blue-900 text-lg font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
+                        >
+                            Download PPT
+                            <FaCloudDownloadAlt className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
+                        </button>
+                    </div>
                 </div>
             </div>
 

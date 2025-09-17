@@ -164,7 +164,7 @@ export default function Navbar() {
                 </Link> */}
 
                 {/* Navigation Links */}
-                <ul className="2xl:w-[62%] xl:w-[70%] w-[80%] hidden lg:flex xl:gap-8 gap-6 justify-end items-center relative text-white 2xl:text-base text-sm mr-5">
+                <ul className="xl:w-[80%] w-[90%] hidden lg:flex xl:gap-8 gap-6 justify-end items-center relative text-white 2xl:text-base text-sm mr-5">
                     {navItems.map((item, index) => {
                         // Skip rendering if item is Home and current path is "/"
                         if (item.label === "HOME" && location.pathname === "/") {

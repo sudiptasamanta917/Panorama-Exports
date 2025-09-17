@@ -43,7 +43,8 @@ function Slider2() {
                         backgroundRepeat: "no-repeat",
                     }}
                 >
-                    <h2 className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-2xl sm:text-3xl font-bold text-white py-[5%] 2xl:w-[800px] lg:w-[600px] w-[400px] text-justify font-loose">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black-50 via-black-10 to-transparent"></div>
+                    <h2 className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-3xl sm:text-4xl font-medium text-white py-[5%] 2xl:w-[800px] lg:w-[600px] w-[400px] font-loose">
                         Solar power, efficient logistics, and eco-conscious
                         facilities/infrastructure
                     </h2>

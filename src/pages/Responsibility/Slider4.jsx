@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import s1 from "../../assets/Responsible/Slider4/1.jpg";
-import s2 from "../../assets/Responsible/Slider4/2.jpeg";
+import s2 from "../../assets/Responsible/Slider4/2.jpg";
 import s3 from "../../assets/Responsible/Slider4/3.jpg";
 
 function Slider4() {
@@ -43,7 +43,8 @@ function Slider4() {
                         backgroundRepeat: "no-repeat",
                     }}
                 >
-                    <h2 className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-2xl sm:text-3xl font-bold text-white py-[5%] 2xl:w-[800px] lg:w-[600px] w-[400px] text-justify font-loose">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black-50 via-black-10 to-transparent"></div>
+                    <h2 className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-3xl sm:text-4xl font-medium text-white py-[5%] 2xl:w-[800px] lg:w-[600px] w-[400px] font-loose">
                         Transparency, integrity, and circular practices at every
                         level
                     </h2>
