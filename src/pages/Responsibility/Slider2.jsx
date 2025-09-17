@@ -7,7 +7,7 @@ import s2 from "../../assets/Responsible/Slider2/2.png";
 import s3 from "../../assets/Responsible/Slider2/3.png";
 
 function Slider2() {
-    const slider1 = [
+    const slider2 = [
         {
             url: s1,
         },
@@ -26,14 +26,14 @@ function Slider2() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % slider1.length);
+            setCurrentIndex((prev) => (prev + 1) % slider2.length);
         }, 3000);
         return () => clearInterval(interval);
-    }, [slider1.length]);
+    }, [slider2.length]);
 
     return (
-        <div className="relative w-full aspect-[16/7.5] overflow-hidden bg-black">
-            {slider1.map((slide, index) => (
+        <div className="relative w-full aspect-[16/7.5] bg-black">
+            {slider2.map((slide, index) => (
                 <div
                     key={index}
                     className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 ${
@@ -48,7 +48,7 @@ function Slider2() {
                 >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black-50 via-black-10 to-transparent"></div>
                     <motion.h2
-                        className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-3xl sm:text-4xl font-medium text-white py-[5%] 2xl:w-[800px] lg:w-[600px] w-[400px] font-loose"
+                        className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-2xl md:text-3xl lg:text-4xl font-medium text-white py-[5%] 2xl:w-[800px] lg:w-[600px] w-[400px] font-loose"
                         initial={{ y: 200, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
