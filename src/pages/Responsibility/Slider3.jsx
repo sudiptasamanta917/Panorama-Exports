@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useLocation } from "react-router-dom";
 import s1 from "../../assets/Responsible/Slider3/1.png";
 import s2 from "../../assets/Responsible/Slider3/2.jpg";
 import s3 from "../../assets/Responsible/Slider3/3.jpg";
@@ -44,9 +47,15 @@ function Slider3() {
                     }}
                 >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black-50 via-black-10 to-transparent"></div>
-                    <h2 className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-3xl sm:text-4xl font-medium text-white py-[5%] 2xl:w-[800px] lg:w-[600px] w-[400px] font-loose">
+                    <motion.h2
+                        className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-3xl sm:text-4xl font-medium text-white py-[5%] 2xl:w-[800px] lg:w-[600px] w-[400px] font-loose"
+                        initial={{ y: 200, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                    >
                         Fair wages, safe workplaces, and community upliftment
-                    </h2>
+                    </motion.h2>
                 </div>
             ))}
         </div>
