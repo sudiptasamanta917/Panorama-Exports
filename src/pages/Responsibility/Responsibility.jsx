@@ -3,10 +3,10 @@ import Slider2 from "./Slider2";
 import Slider3 from "./Slider3";
 import Slider4 from "./Slider4";
 
-import icon1 from "../../assets/Responsible/icons/ReduceEmission.png";
-import icon2 from "../../assets/Responsible/icons/SaveGreenery.png";
-import icon3 from "../../assets/Responsible/icons/BuildingCommunity.png";
-import icon4 from "../../assets/Responsible/icons/RespectWater.png";
+import icon1 from "../../assets/Responsible/Icons/ReduceEmission.png";
+import icon2 from "../../assets/Responsible/Icons/SaveGreenery.png";
+import icon3 from "../../assets/Responsible/Icons/BuildingCommunity.png";
+import icon4 from "../../assets/Responsible/Icons/RespectWater.png";
 
 function Responsibility() {
     const icons = [
