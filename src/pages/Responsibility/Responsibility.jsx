@@ -13,18 +13,22 @@ function Responsibility() {
         {
             id: 1,
             icon: icon1,
+            header: "Reduce Emission",
         },
         {
             id: 2,
             icon: icon2,
+            header: "Save Greenery",
         },
         {
             id: 3,
             icon: icon3,
+            header: "Building Community",
         },
         {
             id: 4,
             icon: icon4,
+            header: "Respect Water",
         },
     ];
 
@@ -50,14 +54,24 @@ function Responsibility() {
             {/* Slider2 wrapper */}
             <Slider4 />
 
-            <div className="flex items-center justify-center bg-[#4B3B2A]">
+            <div className="flex items-center justify-center bg-white">
                 <div className="grid grid-cols-4 gap-6 mx-auto w-[70%] my-10">
                     {icons.map((item) => (
                         <div
                             key={item.id}
-                            className={`flex items-center justify-center rounded-lg shadow-lg`}
+                            className={`flex flex-col items-center justify-center `}
                         >
-                            <img src={item.icon} alt="image" className="" />
+                            <img
+                                src={item.icon}
+                                alt="image"
+                                className="rounded-lg"
+                                style={{
+                                    boxShadow: "0 0 15px rgba(0, 0, 0, 0.3)",
+                                }}
+                            />
+                            <h2 className="text-blue-950 font-semibold my-4">
+                                {item.header}
+                            </h2>
                         </div>
                     ))}
                 </div>
