@@ -17,13 +17,13 @@ function Responsibility() {
 
             {/* Slider1 wrapper */}
             <Slider1 />
-            <div className="w-full h-14 bg-gray-900"></div>
+            <div className="w-full h-10 bg-white"></div>
             {/* Slider2 wrapper */}
             <Slider2 />
-            <div className="w-full h-14 bg-gray-900"></div>
+            <div className="w-full h-10 bg-white"></div>
             {/* Slider2 wrapper */}
             <Slider3 />
-            <div className="w-full h-14 bg-gray-900"></div>
+            <div className="w-full h-10 bg-white"></div>
             {/* Slider2 wrapper */}
             <Slider4 />
         </section>

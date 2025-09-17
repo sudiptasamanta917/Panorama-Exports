@@ -130,7 +130,7 @@ export default function Milestones() {
     return (
         <div
             ref={ref}
-            className="md:w-[90%] w-full mx-auto h-[80vh] mb-10 bg-gradient-to-br from-gray-50 to-white overflow-hidden flex items-end"
+            className="hidden md:w-[90%] w-full mx-auto h-[80vh] mb-10 bg-gradient-to-br from-gray-50 to-white overflow-hidden flex items-end"
         >
             <div className="relative w-full h-[40%]">
                 {/* Curved Path Image */}

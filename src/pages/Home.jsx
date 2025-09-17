@@ -70,8 +70,6 @@ import brand6 from "../assets/GlobalFootprint/brands/channels4_profile.jpg";
 import brand7 from "../assets/GlobalFootprint/brands/DKNY-Donna-Karan-New-York-logo.webp";
 import brand8 from "../assets/GlobalFootprint/brands/Etam-logo.jpg";
 import brand9 from "../assets/GlobalFootprint/brands/Falabella_Logo.png";
-import brand10 from "../assets/GlobalFootprint/brands/george (1).svg";
-import brand11 from "../assets/GlobalFootprint/brands/george.svg";
 import brand12 from "../assets/GlobalFootprint/brands/images (1).png";
 import brand13 from "../assets/GlobalFootprint/brands/images.jpg";
 import brand14 from "../assets/GlobalFootprint/brands/images.png";
@@ -86,7 +84,7 @@ import brand22 from "../assets/GlobalFootprint/brands/Shinsegae_logo.svg.png";
 import brand23 from "../assets/GlobalFootprint/brands/street-one-logo-png_seeklo.png";
 import brand24 from "../assets/GlobalFootprint/brands/Tesco_Logo.svg.png";
 
-const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20, brand21, brand22, brand23, brand24];
+const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20, brand21, brand22, brand23, brand24];
 
 // Crafting Tomorrow images
 import img1 from "../assets/CraftingTomorrow/01.webp";
