@@ -6,9 +6,9 @@ import { useLocation } from "react-router-dom";
 import bgImage from "../../assets/Innovation/Header/frontbg.jpg";
 import FlipCard from "../../components/flipCard/FlipCard";
 
-import CadImg1 from "../../assets/Innovation/CadDraping/01.jpg";
-import CadImg2 from "../../assets/Innovation/CadDraping/02.jpg";
-import CadImg3 from "../../assets/Innovation/CadDraping/03.jpg";
+import CadImg1 from "../../assets/Innovation/CAD&3DDraping/1.jpg";
+import CadImg2 from "../../assets/Innovation/CAD&3DDraping/2.jpg";
+import CadImg3 from "../../assets/Innovation/CAD&3DDraping/3.jpg";
 
 const CadImages = [
     {
