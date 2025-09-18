@@ -462,7 +462,7 @@ export default function Home() {
                             Human Touch
                         </div>
                         <div className="w-[50%] mx-4 hidden sm:flex items-center justify-center">
-                            <Link to="">
+                            <Link to="/responsibility">
                                 <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg text-sm">
                                     Visit Responsibility
                                     <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -473,7 +473,11 @@ export default function Home() {
                 </div>
                 <div className="pt-20 bg-[#fcfbf7]">
                     <div className="w-[90%] mx-auto px-6 md:px-20 mb-1">
-                        <img src={HumanTouch2} alt="Human Touch" className="rounded-t-md shadow-sm" />
+                        <img
+                            src={HumanTouch2}
+                            alt="Human Touch"
+                            className="rounded-t-md shadow-sm"
+                        />
                     </div>
                     <div
                         className="w-full h-[50vh] flex lg:items-center items-start justify-end 2xl:px-[10%] xl:px-[8%] lg:px-[5%] md:px-[2%] px-[5%] lg:pt-[0px] md:pt-[50px] pt-[20px] "

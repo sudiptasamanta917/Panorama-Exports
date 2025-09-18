@@ -48,7 +48,7 @@ function Slider1() {
                 >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black-50 via-black-10 to-transparent"></div>
                     <motion.h2
-                        className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-2xl md:text-3xl lg:text-4xl font-medium text-white py-[5%] 2xl:w-[800px] lg:w-[600px] w-[400px] font-loose"
+                        className="absolute bottom-[5%] xl:left-[10%] left-[5%] text-2xl md:text-3xl 2xl:text-4xl font-medium text-white py-[5%] font-loose"
                         initial={{ y: 200, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}

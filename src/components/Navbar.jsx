@@ -100,17 +100,17 @@ export default function Navbar() {
             subItems: [
                 {
                     label: "Innovation that Leads",
-                    path: "",
+                    path: "/innovation#innovation-leads",
                     image: firstImg,
                 },
                 {
                     label: "Standard Of Perfection",
-                    path: "",
+                    path: "/innovation#standard-perfection",
                     image: secondImg,
                 },
                 {
                     label: "Handcrafted Luxury",
-                    path: "",
+                    path: "/innovation#handcrafted-luxury",
                     image: thirdImg,
                 },
             ],

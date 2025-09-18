@@ -24,11 +24,27 @@ import NavinPng from "../../assets/Founders/navin.png";
 import ShivaanPng from "../../assets/Founders/shivaan.png";
 import SidharthPng from "../../assets/Founders/Sidharth.png";
 
+import VisionImage from "../../assets/OurStory/visionMission/Vision.jpeg";
+import MissionImage from "../../assets/OurStory/visionMission/Mission.jpg";
+
 const labels = {
     "#vision-values": "VisionValues",
     "#core-values": "CoreValues",
     "#leadership": "leadership",
 };
+
+const VisionImages = [
+    {
+        id: 1,
+        image: VisionImage,
+        text: "Vision",
+    },
+    {
+        id: 2,
+        image: MissionImage,
+        text: "Mission",
+    },
+];
 
 const directors = [
     {
@@ -219,7 +235,7 @@ export default function VisionMission() {
                         }}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.8 }}
+                        viewport={{ once: false, amount: 1 }}
                         transition={{
                             duration: 1,
                             ease: "easeOut",
@@ -236,15 +252,38 @@ export default function VisionMission() {
                         </div>
                     </motion.div>
                 </div>
-                <div
+
+                <div className="w-[70%] mx-auto px-6 md:px-20 sm:py-16 py-5 grid md:grid-cols-2 xl:gap-20 gap-10">
+                    {VisionImages.map((item) => (
+                        <div
+                            key={item.id}
+                            className="relative overflow-hidden shadow-lg group"
+                        >
+                            <img
+                                src={item.image}
+                                alt="vision"
+                                className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
+                            />
+                            {/* Overlay */}
+                            <div className="absolute inset-0 py-[10%] bg-gradient-to-t from-blue-950/50 via-blue-950/40 via-blue-950/30 via-blue-950/20 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-950/80 group-hover:via-blue-950/50 group-hover:via-blue-950/40 group-hover:to-transparent transition-all duration-500 flex flex-col justify-end p-6">
+                                <p className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mx-[10%]">
+                                    {item.text}
+                                </p>
+                                <p className="mx-[10%] mt-4 text-white">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Laboriosam, quia.
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* <div
                     className="relative w-full h-[100vh] mt-4 flex items-center justify-center bg-cover bg-center"
                     style={{ backgroundImage: `url(${visionMission})` }}
                 >
-                    {/* Overlay black */}
                     <div className="absolute inset-0 lg:bg-black/10 md:bg-black/20 bg-black/60" />
-
                     <div className="relative z-10 w-[90%] mx-auto flex justify-between text-center text-white">
-                        {/* Vision */}
                         <motion.div
                             className="2xl:w-[35%] w-[30%] flex flex-col items-center justify-center font-semibold mb-8 md:mb-0"
                             initial={{ y: 200, opacity: 0 }}
@@ -262,7 +301,6 @@ export default function VisionMission() {
                             </p>
                         </motion.div>
 
-                        {/* Mission */}
                         <motion.div
                             className="2xl:w-[35%] w-[30%] flex flex-col items-center justify-center font-semibold"
                             initial={{ y: 200, opacity: 0 }}
@@ -280,7 +318,7 @@ export default function VisionMission() {
                             </p>
                         </motion.div>
                     </div>
-                </div>
+                </div> */}
             </section>
             {/* Values Sections */}
             <section id="core-values" className="w-full bg-[#f3ebdf]">

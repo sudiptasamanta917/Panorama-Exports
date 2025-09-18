@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import Slider1 from "./Slider1";
 import Slider2 from "./Slider2";
 import Slider3 from "./Slider3";
@@ -31,6 +33,11 @@ function Responsibility() {
             header: "Respect Water",
         },
     ];
+
+    // Scroll to top when opening the page.....................
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <section className="w-full">
