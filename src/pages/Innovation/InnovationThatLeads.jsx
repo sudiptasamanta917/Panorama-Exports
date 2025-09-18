@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLocation } from "react-router-dom";
 
-import bgImage from "../../assets/Innovation/Header/1.jpg";
+import bgImage from "../../assets/Innovation/Header/frontbg.jpg";
 import FlipCard from "../../components/flipCard/FlipCard";
 
 import CadImg1 from "../../assets/Innovation/CadDraping/01.jpg";
