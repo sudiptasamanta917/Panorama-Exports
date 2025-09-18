@@ -65,9 +65,9 @@ function Responsibility() {
                                 src={item.icon}
                                 alt="image"
                                 className="rounded-lg"
-                                style={{
-                                    boxShadow: "0 0 15px rgba(0, 0, 0, 0.3)",
-                                }}
+                                // style={{
+                                //     boxShadow: "0 0 15px rgba(0, 0, 0, 0.3)",
+                                // }}
                             />
                             <h2 className="text-blue-950 font-semibold my-4">
                                 {item.header}

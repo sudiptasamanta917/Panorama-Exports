@@ -1,26 +1,59 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useLocation } from "react-router-dom";
+
+import bgImage from "../../assets/Innovation/header/1.jpg";
+import FlipCard from "../../components/flipCard/FlipCard";
+
+import CadImg1 from "../../assets/Innovation/CadDraping/01.jpg";
+import CadImg2 from "../../assets/Innovation/CadDraping/02.jpg";
+import CadImg3 from "../../assets/Innovation/CadDraping/03.jpg";
+
+const CadImages = [
+    {
+        id: 1,
+        image: CadImg1,
+        title: "AI & Automation",
+    },
+    {
+        id: 2,
+        image: CadImg2,
+        title: "Cloud Computing",
+    },
+    {
+        id: 3,
+        image: CadImg3,
+        title: "Cyber Security",
+    },
+];
 
 const HandcraftedLuxury = () => {
+    const location = useLocation();
+          const { ref, inView } = useInView({
+              triggerOnce: false,
+              threshold: 0.2,
+          });
     return (
-        <div
-            className="relative bg-cover bg-center min-h-screen flex items-center justify-center"
-            style={{
-                backgroundImage:
-                    "url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?auto=format&fit=crop&w=1740&q=80')",
-            }}
-        >
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-
-            <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-white text-center">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-wide">
-                    Handcrafted Luxury
-                </h2>
-                <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-                    Rooted in tradition, designed for tomorrow. Each piece reflects
-                    generational wisdom, modern refinement, and the soulful artistry of
-                    <span className="font-semibold"> “Made in India.”</span>
-                </p>
+        <div>
+            <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                Handcrafted Luxury
+                <div className="mt-10 flex flex-col items-center">
+                    <h1 className="text-md md:text-xl font-semibold text-gray-600 ml-1">
+                        Rooted in tradition, designed for tomorrow.
+                    </h1>
+                    <p className="text-sm md:text-lg mt-3 md:mb-14 text-gray-600 ml-1">
+                        Each piece reflects generational wisdom, modern
+                        refinement, and the soulful artistry of “Made in India.”
+                    </p>
+                </div>
+            </div>
+            <div className="w-[90%] mx-auto px-6 md:px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-2 mb-6 rounded-b-md h-auto">
+                {CadImages.map((img, index) => (
+                    <div key={index} className="">
+                        <FlipCard imageUrl={img.image} id={img.id} />
+                    </div>
+                ))}
             </div>
         </div>
     );

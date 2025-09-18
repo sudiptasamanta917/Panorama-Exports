@@ -13,7 +13,7 @@ import SustainableDesigns from "../pages/CraftedPrecision/SustainableDesigns";
 import AdvancedWashing from "../pages/CraftedPrecision/AdvancedWashing";
 import AdaptiveCapacity from "../pages/CraftedPrecision/AdaptiveCapacity";
 
-import Innovation from "../pages/Innovation";
+import Innovation from "../pages/Innovation/Innovation";
 
 import Peoples from "../pages/People/Peoples";
 

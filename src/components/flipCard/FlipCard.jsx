@@ -43,16 +43,27 @@ const FlipCard = ({ imageUrl, title, address, locationUrl, text }) => {
             <div className="flip-card">
                 <div className="flip-card-inner">
                     <div className="flip-card-front">
-                        <div
-                            className="flip-card-image"
-                            style={{ backgroundImage: `url(${imageUrl})` }}
-                        />
+                        <div className="flip-card-image">
+                            <img
+                                src={imageUrl}
+                                alt={title}
+                                className="w-full object-contain"
+                            />
+                        </div>
                     </div>
                     <div
-                        className="flip-card-image flip-card-back relative w-full bg-cover bg-center"
-                        style={{ backgroundImage: `url(${imageUrl})` }}
+                        className="flip-card-back relative w-full"
+                        // style={{ backgroundImage: `url(${imageUrl})` }}
                     >
-                        <div className="absolute inset-0 flex flex-col items-start justify-end pb-5 px-5 bg-gradient-to-t from-black/60 via-black/50 to-black/10">
+                        <div className="flip-card-image">
+                            <img
+                                src={imageUrl}
+                                alt={title}
+                                className="w-full object-contain"
+                            />
+                        </div>
+
+                        {/* <div className="absolute inset-0 flex flex-col items-start justify-end pb-5 px-5">
                             <p className="font-bold text-lg text-white rounded-md px-2 py-1 mt-2">
                                 {title}
                             </p>
@@ -62,7 +73,7 @@ const FlipCard = ({ imageUrl, title, address, locationUrl, text }) => {
                             <button className="font-semibold text-black bg-white hover:text-white hover:bg-blue-900 rounded-md px-2 py-1 mt-2">
                                 {text}
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

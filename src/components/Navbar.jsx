@@ -96,7 +96,7 @@ export default function Navbar() {
         },
         {
             label: "INNOVATION",
-            path: "",
+            path: "/innovation",
             subItems: [
                 {
                     label: "Innovation that Leads",
