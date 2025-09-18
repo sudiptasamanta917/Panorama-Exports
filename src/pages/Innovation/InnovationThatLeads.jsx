@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLocation } from "react-router-dom";
 
-import bgImage from "../../assets/Innovation/header/1.jpg";
+import bgImage from "../../assets/Innovation/Header/1.jpg";
 import FlipCard from "../../components/flipCard/FlipCard";
 
 import CadImg1 from "../../assets/Innovation/CadDraping/01.jpg";
@@ -14,17 +14,17 @@ const CadImages = [
     {
         id: 1,
         image: CadImg1,
-        title: "AI & Automation",
+        title: "CadDraping",
     },
     {
         id: 2,
         image: CadImg2,
-        title: "Cloud Computing",
+        title: "CadDraping",
     },
     {
         id: 3,
         image: CadImg3,
-        title: "Cyber Security",
+        title: "CadDraping",
     },
 ];
 
