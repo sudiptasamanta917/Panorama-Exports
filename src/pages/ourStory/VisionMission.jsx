@@ -38,11 +38,13 @@ const VisionImages = [
         id: 1,
         image: VisionImage,
         text: "Vision",
+        subtext: "To be the world’s most trusted apparel partner, championing technology, sustainability, and design excellence.",
     },
     {
         id: 2,
         image: MissionImage,
         text: "Mission",
+        subtext: "To exceed expectations through innovation, efficiency, and a people-first culture-redefining global apparel manufacturing.",
     },
 ];
 
@@ -270,8 +272,7 @@ export default function VisionMission() {
                                     {item.text}
                                 </p>
                                 <p className="mx-[10%] mt-4 text-white">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Laboriosam, quia.
+                                    {item.subtext}
                                 </p>
                             </div>
                         </div>
