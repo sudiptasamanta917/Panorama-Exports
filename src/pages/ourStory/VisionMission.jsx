@@ -232,12 +232,12 @@ export default function VisionMission() {
                     <motion.div
                         className="text-white bg-gradient-to-t from-black/90 via-black/80 via-black/70 to-transparent px-[10%] pb-[4%] pt-[10%]"
                         variants={{
-                            hidden: { opacity: 0, y: 100 },
+                            hidden: { opacity: 0, y: 50 },
                             visible: { opacity: 1, y: 0 },
                         }}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 1 }}
+                        viewport={{ once: false, amount: 0.6 }}
                         transition={{
                             duration: 1,
                             ease: "easeOut",
