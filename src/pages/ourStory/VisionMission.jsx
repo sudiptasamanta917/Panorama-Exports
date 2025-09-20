@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -91,6 +91,12 @@ const executiveDirectors = [
     },
 ];
 
+const crumbs = [
+    { label: "Vision & Values", path: "/vision-values" },
+    { label: "Core Values", path: "/vision-values#core-values" },
+    { label: "Leadership", path: "/vision-values#leadership" },
+];
+
 export default function VisionMission() {
     const swiperRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -100,6 +106,19 @@ export default function VisionMission() {
         triggerOnce: false,
         threshold: 0.2,
     });
+
+    const { ref: visionRef, inView: visionInView } = useInView({
+        threshold: 0.3, // 30% of vision & values visible = considered "in view", this for breadcrums control............
+    });
+    const { ref: corevalueRef, inView: corevalueInView } = useInView({
+        threshold: 0.3, // same for core values for breadcrums control............
+    });
+    const { ref: leadershipRef, inView: leadershipInView } = useInView({
+        threshold: 0.3, // same for leadership for breadcrums control............
+    });
+    
+    // Determine which breadcrumb is active
+    const activeCrumb = visionInView ? "Vision & Values" : corevalueInView ? "Core Values" : leadershipInView ? "Leadership" : null;
 
     // Smooth scroll on hash change
     useEffect(() => {
@@ -222,39 +241,61 @@ export default function VisionMission() {
 
     return (
         <>
-            {/* Vision Sections */}
-            <section id="vision-values" className="bg-white">
-                <div
-                    ref={ref}
-                    className="w-full h-[100vh] bg-cover bg-center flex flex-col items-start justify-end"
-                    style={{ backgroundImage: `url(${bgImage})` }}
+            <div
+                ref={ref}
+                className="w-full h-[100vh] bg-cover bg-center flex flex-col items-start justify-end"
+                style={{ backgroundImage: `url(${bgImage})` }}
+            >
+                <motion.div
+                    className="text-white bg-gradient-to-t from-black/90 via-black/80 via-black/70 to-transparent px-[10%] pb-[4%] pt-[10%]"
+                    variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        visible: { opacity: 1, y: 0 },
+                    }}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.6 }}
+                    transition={{
+                        duration: 1,
+                        ease: "easeOut",
+                    }}
                 >
-                    <motion.div
-                        className="text-white bg-gradient-to-t from-black/90 via-black/80 via-black/70 to-transparent px-[10%] pb-[4%] pt-[10%]"
-                        variants={{
-                            hidden: { opacity: 0, y: 50 },
-                            visible: { opacity: 1, y: 0 },
-                        }}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: false, amount: 0.6 }}
-                        transition={{
-                            duration: 1,
-                            ease: "easeOut",
-                        }}
-                    >
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-                            Woven into Every Thread
-                        </h1>
-                        <div className="text-lg sm:text-xl md:text-xl xl:text-2xl mt-4 w-[60%] text-justify font-relaxed">
-                            Our vision shapes the future of fashion; our values
-                            guide every stitch. We don’t just make clothing-we
-                            build trust, innovate with intent, and create with
-                            heart.
-                        </div>
-                    </motion.div>
-                </div>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+                        Woven into Every Thread
+                    </h1>
+                    <div className="text-lg sm:text-xl md:text-xl xl:text-2xl mt-4 w-[60%] text-justify font-relaxed">
+                        Our vision shapes the future of fashion; our values
+                        guide every stitch. We don’t just make clothing-we build
+                        trust, innovate with intent, and create with heart.
+                    </div>
+                </motion.div>
+            </div>
 
+            {/* Breadcrumbs */}
+            <div className="sticky top-20 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
+                <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
+                    {crumbs.map((crumb, index) => (
+                        <span
+                            key={index}
+                            className="flex items-center justify-center"
+                        >
+                            <Link
+                                to={crumb.path}
+                                className={`hover:underline ${
+                                    activeCrumb === crumb.label
+                                        ? "font-semibold text-white"
+                                        : "text-gray-300"
+                                }`}
+                            >
+                                {crumb.label}
+                            </Link>
+                        </span>
+                    ))}
+                </div>
+            </div>
+
+            {/* Vision Sections */}
+            <section id="vision-values" ref={visionRef} className="bg-white">
                 <div className="w-[70%] mx-auto px-6 md:px-20 sm:py-16 py-5 grid md:grid-cols-2 xl:gap-20 gap-10">
                     {VisionImages.map((item) => (
                         <div
@@ -322,11 +363,15 @@ export default function VisionMission() {
                 </div> */}
             </section>
             {/* Values Sections */}
-            <section id="core-values" className="w-full bg-[#f3ebdf]">
+            <section
+                id="core-values"
+                ref={corevalueRef}
+                className="w-full bg-[#f3ebdf]"
+            >
                 <CoreValues />
             </section>
             {/* Directors's Message Sections */}
-            <section id="leadership" className="bg-white">
+            <section id="leadership" ref={leadershipRef} className="bg-white">
                 <h2 className="w-[90%] mx-auto px-6 md:px-20 sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Director's Message
                 </h2>

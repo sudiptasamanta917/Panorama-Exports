@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import Milestones from "./Milestones";
 
@@ -21,6 +21,11 @@ const labels = {
     "#milestones": "Milestones",
 };
 
+const crumbs = [
+    { label: "Legacy", path: "/ourstory#legacy" },
+    { label: "Milestones", path: "/ourstory#milestones" },
+];
+
 export default function OurStory() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const location = useLocation();
@@ -28,9 +33,20 @@ export default function OurStory() {
         triggerOnce: false,
         threshold: 0.2,
     });
+
     const { ref: legacyRef, inView: legacyInView } = useInView({
         threshold: 0.3, // 30% of legacy visible = considered "in view", this for breadcrums control............
     });
+    const { ref: milestonesRef, inView: milestonesInView } = useInView({
+        threshold: 0.3, // same for milestones for breadcrums control............
+    });
+
+    // Determine which breadcrumb is active
+    const activeCrumb = legacyInView
+        ? "Legacy"
+        : milestonesInView
+        ? "Milestones"
+        : null;
 
     const textVariants = {
         hidden: { opacity: 0, x: "-40vw" },
@@ -67,29 +83,8 @@ export default function OurStory() {
         }
     }, [location]);
 
-
-    // Breadcrumb current label
-    const currentLabel = labels[location.hash] || "Legacy";
-
     return (
         <div className="font-sans text-gray-900 bg-white">
-            {/* Breadcrumbs */}
-            {/* <div
-                className={`bg-[#fdf2df] text-lg py-2 transition-all duration-300 ${
-                    legacyInView
-                        ? "hidden" // normal flow when in Legacy section
-                        : "sticky top-[80px] z-40 shadow-md" // adjust top offset = navbar height
-                }`}
-            >
-                <div className="w-[90%] mx-auto px-6 md:px-20">
-                    <span className="text-gray-800">Home</span> &gt;{" "}
-                    <span className="text-gray-800">Our Story</span> &gt;{" "}
-                    <span className="font-semibold text-[#01276a]">
-                        {currentLabel}
-                    </span>
-                </div>
-            </div> */}
-
             {/* Legacy Sections */}
             <section id="legacy" ref={legacyRef} className="bg-white">
                 {/* Hero Section */}
@@ -126,25 +121,47 @@ export default function OurStory() {
                         </h2>
                     </div>
                 </div>
-                <div className="bg-white sm:pt-16 pt-5 pb-10 px-6 ">
-                    <div className="">
-                        {/* Heading */}
-                        {/* <h2 className="2xl:text-7xl lg:text-5xl text-4xl text-gray-600 text-center md:mb-10 mb-4">
+            </section>
+            {/* Breadcrumbs */}
+            <div className="sticky top-20 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
+                <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
+                    {crumbs.map((crumb, index) => (
+                        <span
+                            key={index}
+                            className="flex items-center justify-center"
+                        >
+                            <Link
+                                to={crumb.path}
+                                className={`hover:underline ${
+                                    activeCrumb === crumb.label
+                                        ? "font-semibold text-white"
+                                        : "text-gray-300"
+                                }`}
+                            >
+                                {crumb.label}
+                            </Link>
+                        </span>
+                    ))}
+                </div>
+            </div>
+            <div className="bg-white sm:pt-16 pt-5 pb-10 px-6 ">
+                <div className="">
+                    {/* Heading */}
+                    {/* <h2 className="2xl:text-7xl lg:text-5xl text-4xl text-gray-600 text-center md:mb-10 mb-4">
                             Legacy
                         </h2> */}
 
-                        {/* Subheading */}
-                        <p className="2xl:text-3xl lg:text-2xl md:text-xl text-md text-blue-900 text-justify max-w-[70%] mx-auto leading-relaxed">
-                            Since 1973, Panorama Exports has transformed fabrics
-                            into fashion blending Indian craftsmanship with
-                            advanced manufacturing. Today, our garments travel
-                            from India to global wardrobes, each piece echoing
-                            artistry, innovation, and timeless tradition. More
-                            than fashion - it's handcrafted legacy.
-                        </p>
-                    </div>
+                    {/* Subheading */}
+                    <p className="2xl:text-3xl lg:text-2xl md:text-xl text-md text-blue-900 text-justify max-w-[70%] mx-auto leading-relaxed">
+                        Since 1973, Panorama Exports has transformed fabrics
+                        into fashion blending Indian craftsmanship with advanced
+                        manufacturing. Today, our garments travel from India to
+                        global wardrobes, each piece echoing artistry,
+                        innovation, and timeless tradition. More than fashion -
+                        it's handcrafted legacy.
+                    </p>
                 </div>
-            </section>
+            </div>
             {/* Founder's Message Sections */}
             <section id="founder-message" ref={ref} className="bg-white">
                 <h2 className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
@@ -202,7 +219,7 @@ export default function OurStory() {
             </section>
 
             {/* MileStones Sections */}
-            <section id="milestones" className="bg-white">
+            <section id="milestones" ref={milestonesRef} className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                     Milestones
                 </h2>
