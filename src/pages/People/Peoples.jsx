@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
 import HumanResources from "./HumanResources";
 import HealthSafety from "./HealthSafety";
@@ -22,6 +23,12 @@ import img6 from "../../assets/Responsible/Slider1/3.png";
 
 import MissionImage from "../../assets/OurStory/visionMission/Mission.jpg";
 import VisionImage from "../../assets/OurStory/visionMission/Vision.jpeg";
+
+const crumbs = [
+    { label: "Our Strength", path: "#our-strength" },
+    { label: "Life at Panorama", path: "#life-at-panorama" },
+    { label: "Commitment", path: "#commitment" },
+];
 
 const executiveDirectors = [
     {
@@ -77,6 +84,28 @@ const WeBelieveImages = [
 function Peoples() {
 
     const images = [img1, img2, img3, img4, img5, img6];
+    const location = useLocation();
+    const [activeCrumb, setActiveCrumb] = useState("");
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveCrumb(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.6 } // 60% visible = active
+        );
+
+        crumbs.forEach((crumb) => {
+            const section = document.querySelector(crumb.path);
+            if (section) observer.observe(section);
+        });
+
+        return () => observer.disconnect();
+    }, []);
 
     // Scroll to top when opening the page...........
     useEffect(() => {
@@ -175,6 +204,29 @@ function Peoples() {
                     </div>
                 ))}
             </section>
+
+            <div className="sticky top-20 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
+                <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
+                    {crumbs.map((crumb, index) => (
+                        <span
+                            key={index}
+                            className="flex items-center justify-center"
+                        >
+                            <a
+                                href={crumb.path}
+                                className={`hover:underline ${
+                                    activeCrumb === crumb.path.substring(1)
+                                        ? "font-semibold text-white"
+                                        : "text-gray-300"
+                                }`}
+                            >
+                                {crumb.label}
+                            </a>
+                        </span>
+                    ))}
+                </div>
+            </div>
+
             {/* <section className="bg-blue-950 w-full h-14"></section> */}
             <section>
                 <div className="w-[80%] mx-auto 2xl:pt-16 py-12">
@@ -190,7 +242,10 @@ function Peoples() {
                     </p>
                 </div>
             </section>
-            <section className="w-full bg-blue-950 flex justify-center py-20">
+            <section
+                id="our-strength"
+                className="w-full bg-blue-950 flex justify-center py-20"
+            >
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
                     <div className="w-[45%] pl-10 pr-20 flex flex-col justify-center">
@@ -235,7 +290,7 @@ function Peoples() {
                     </div>
                 </div>
             </section>
-            <section className="py-10">
+            <section id="life-at-panorama" className="py-10 pt-14">
                 <div className="w-[80%] mx-auto 2xl:pt-16 py-12">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
                         Life at Panorama
@@ -309,7 +364,10 @@ function Peoples() {
                 </div>
             </section>
 
-            <section className="w-full bg-blue-950 flex justify-center py-20">
+            <section
+                id="commitment"
+                className="w-full bg-blue-950 flex justify-center py-20"
+            >
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
                     <div className="w-[45%] pl-10 pr-20 flex flex-col justify-center">

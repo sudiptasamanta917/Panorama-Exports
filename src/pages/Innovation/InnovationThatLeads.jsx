@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLocation } from "react-router-dom";
 
-import bgImage from "../../assets/Innovation/Header/frontbg.jpg";
+
 import FlipCard from "../../components/flipCard/FlipCard";
 
 import CadImg1 from "../../assets/Innovation/CAD&3DDraping/1.jpg";
@@ -127,34 +127,6 @@ function InnovationThatLeads() {
 
     return (
         <>
-            <div
-                ref={ref}
-                className="w-full h-[100vh] bg-cover bg-center flex flex-col items-start justify-end"
-                style={{ backgroundImage: `url(${bgImage})` }}
-            >
-                <motion.div
-                    className="text-white bg-gradient-to-t from-blue-950/90 via-blue-950/80 via-blue-900/60 to-transparent px-[10%] pb-[4%] pt-[10%] w-full"
-                    variants={{
-                        hidden: { opacity: 0, y: 50 },
-                        visible: { opacity: 1, y: 0 },
-                    }}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.8 }}
-                    transition={{
-                        duration: 1,
-                        ease: "easeOut",
-                    }}
-                >
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-                        Innovation that Leads
-                    </h1>
-                    <div className="text-lg sm:text-xl md:text-xl xl:text-2xl mt-4 w-[60%] text-justify font-relaxed">
-                        At Panorama, innovation is how we stay ahead-and stay
-                        true.
-                    </div>
-                </motion.div>
-            </div>
             <div>
                 <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
                     CAD & 3D Draping

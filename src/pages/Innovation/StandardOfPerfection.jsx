@@ -4,8 +4,8 @@ import Certifications from '../../components/Certifications';
 function StandardOfPerfection() {
   return (
       <>
-          <div className="py-4 text-[#01276a] mt-6 w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
-              <div className="flex items-center justify-start">
+          <div className="p-4 pt-16 text-[#01276a] mt-6 w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
+              <div className="flex items-center justify-start pt-2">
                   <div className="text-3xl sm:text-4xl md:text-5xl font-semibold">
                       Standard Of Perfection
                       <div className="mt-10 flex flex-col items-center">

@@ -34,7 +34,7 @@ const HandcraftedLuxury = () => {
               threshold: 0.2,
           });
     return (
-        <div>
+        <div className="pt-10">
             <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
                 Handcrafted Luxury
                 <div className="mt-10 flex flex-col items-center">
