@@ -6,23 +6,40 @@ import HumanResources from "./HumanResources";
 import HealthSafety from "./HealthSafety";
 import PeoplePurpose from "./PeoplePurpose";
 import SidharthPng from "../../assets/Founders/Sidharth.png";
-import OurStrengthImg from "../../assets/Innovation/Header/frontbg.jpg";
-import CommitmentImg from "../../assets/Innovation/Header/frontbg.jpg";
+import OurStrengthImg from "../../assets/People/OurStrength.png";
+import CommitmentImg from "../../assets/People/Compliance.jpg";
 import { FaArrowRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import img1 from "../../assets/Responsible/Slider1/1.png";
-import img2 from "../../assets/Responsible/Slider1/2.png";
-import img3 from "../../assets/Responsible/Slider1/3.png";
-import img4 from "../../assets/Responsible/Slider1/1.png";
-import img5 from "../../assets/Responsible/Slider1/2.png";
-import img6 from "../../assets/Responsible/Slider1/3.png";
+import img1 from "../../assets/People/LifePanorama/1.jpeg";
+import img2 from "../../assets/People/LifePanorama/2.jpeg";
+import img3 from "../../assets/People/LifePanorama/3.jpeg";
+import img4 from "../../assets/People/LifePanorama/4.jpeg";
+import img5 from "../../assets/People/LifePanorama/5.jpeg";
+import img6 from "../../assets/People/LifePanorama/6.jpeg";
+import img7 from "../../assets/People/LifePanorama/7.jpeg";
+import img8 from "../../assets/People/LifePanorama/8.jpeg";
+import img9 from "../../assets/People/LifePanorama/9.jpeg";
+import img10 from "../../assets/People/LifePanorama/10.jpeg";
+import img11 from "../../assets/People/LifePanorama/11.jpeg";
+import img12 from "../../assets/People/LifePanorama/12.jpeg";
+import img13 from "../../assets/People/LifePanorama/13.jpeg";
+import img14 from "../../assets/People/LifePanorama/14.jpeg";
+import img15 from "../../assets/People/LifePanorama/15.jpeg";
+import img16 from "../../assets/People/LifePanorama/16.jpeg";
 
 import MissionImage from "../../assets/OurStory/visionMission/Mission.jpg";
 import VisionImage from "../../assets/OurStory/visionMission/Vision.jpeg";
+
+import TeamworkImage from "../../assets/People/Teamwork.jpg";
+import ForwardThinkingImage from "../../assets/People/ForwardThinking.jpg";
+import SpeedActionImage from "../../assets/People/SpeedAction.jpg";
+import CustomerCentricityImage from "../../assets/People/CustomerCentricity.jpg";
+
+import CareerPng from "../../assets/People/Career.jpg";
 
 const crumbs = [
     { label: "Our Strength", path: "#our-strength" },
@@ -35,7 +52,7 @@ const executiveDirectors = [
         id: 1,
         name: "Sidharth Sahni & Shivaan Sahni",
         role: "Executive Director",
-        bg: SidharthPng,
+        bg: CareerPng,
         img: SidharthPng,
         message: `We empower aspirational collaborators with a flexible, globally scaled platform that unlocks potential, nurtures ambition, and enables them to realize their true worth`,
     },
@@ -53,37 +70,33 @@ const industries = [
 const WeBelieveImages = [
     {
         id: 1,
-        image: VisionImage,
+        image: TeamworkImage,
         text: "Team Work",
-        subtext:
-            "",
+        subtext: "",
     },
     {
         id: 2,
-        image: MissionImage,
+        image: ForwardThinkingImage,
         text: "Forward Thinking",
-        subtext:
-            "",
+        subtext: "",
     },
     {
         id: 1,
-        image: VisionImage,
+        image: SpeedActionImage,
         text: "Speed To Action",
-        subtext:
-            "",
+        subtext: "",
     },
     {
         id: 2,
-        image: MissionImage,
+        image: CustomerCentricityImage,
         text: "Customer Centricity",
-        subtext:
-            "",
+        subtext: "",
     },
 ];
 
 function Peoples() {
 
-    const images = [img1, img2, img3, img4, img5, img6];
+    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16];
     const location = useLocation();
     const [activeCrumb, setActiveCrumb] = useState("");
 
