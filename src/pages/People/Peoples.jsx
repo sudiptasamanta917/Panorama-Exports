@@ -34,7 +34,7 @@ import img16 from "../../assets/People/LifePanorama/16.jpeg";
 import MissionImage from "../../assets/OurStory/visionMission/Mission.jpg";
 import VisionImage from "../../assets/OurStory/visionMission/Vision.jpeg";
 
-import TeamworkImage from "../../assets/People/Teamwork.jpg";
+import TeamworkImage from "../../assets/People/TeamWork.jpg";
 import ForwardThinkingImage from "../../assets/People/ForwardThinking.jpg";
 import SpeedActionImage from "../../assets/People/SpeedAction.jpg";
 import CustomerCentricityImage from "../../assets/People/CustomerCentricity.jpg";
