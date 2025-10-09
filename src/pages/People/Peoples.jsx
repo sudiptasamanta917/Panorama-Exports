@@ -14,22 +14,22 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import img1 from "../../assets/People/LifePanorama/1.jpeg";
+import img1 from "../../assets/People/LifePanorama/1.jpg";
 import img2 from "../../assets/People/LifePanorama/2.jpeg";
 import img3 from "../../assets/People/LifePanorama/3.jpeg";
-import img4 from "../../assets/People/LifePanorama/4.jpeg";
-import img5 from "../../assets/People/LifePanorama/5.jpeg";
-import img6 from "../../assets/People/LifePanorama/6.jpeg";
-import img7 from "../../assets/People/LifePanorama/7.jpeg";
-import img8 from "../../assets/People/LifePanorama/8.jpeg";
+import img4 from "../../assets/People/LifePanorama/4.jpg";
+import img5 from "../../assets/People/LifePanorama/5.jpg";
+import img6 from "../../assets/People/LifePanorama/6.jpg";
+import img7 from "../../assets/People/LifePanorama/7.jpg";
+import img8 from "../../assets/People/LifePanorama/8.jpg";
 import img9 from "../../assets/People/LifePanorama/9.jpeg";
 import img10 from "../../assets/People/LifePanorama/10.jpeg";
-import img11 from "../../assets/People/LifePanorama/11.jpeg";
-import img12 from "../../assets/People/LifePanorama/12.jpeg";
-import img13 from "../../assets/People/LifePanorama/13.jpeg";
-import img14 from "../../assets/People/LifePanorama/14.jpeg";
-import img15 from "../../assets/People/LifePanorama/15.jpeg";
-import img16 from "../../assets/People/LifePanorama/16.jpeg";
+import img11 from "../../assets/People/LifePanorama/11.jpg";
+import img12 from "../../assets/People/LifePanorama/12.jpg";
+import img13 from "../../assets/People/LifePanorama/13.jpg";
+import img14 from "../../assets/People/LifePanorama/14.jpg";
+import img15 from "../../assets/People/LifePanorama/15.jpg";
+import img16 from "../../assets/People/LifePanorama/16.jpg";
 
 import MissionImage from "../../assets/OurStory/visionMission/Mission.jpg";
 import VisionImage from "../../assets/OurStory/visionMission/Vision.jpeg";
@@ -413,6 +413,36 @@ function Peoples() {
                             alt="Innovation"
                             className="w-full h-full object-cover"
                         />
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="career"
+                className="relative bg-contain bg-center flex items-center justify-center"
+                style={{
+                    backgroundImage: `url(${CareerPng})`,
+                    aspectRatio: "16/6", // maintain image ratio
+                }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/20"></div>
+
+                {/* Content */}
+                <div className="relative z-10 text-white 2xl:w-[65%] lg:w-[70%] md:w-[75%] sm:w-[80%] w-[90%] px-4">
+                    <h1 className="text-3xl sm:text-5xl font-medium mb-6 w-full">
+                        Explore a career at PANORAMA.
+                    </h1>
+                    <p className="text-sm sm:text-base leading-relaxed mb-8">
+                        Turn your job into a career at Panorama Exports. Learn,
+                        grow, and work alongside driven minds. Join us—contact
+                        HR for openings.
+                    </p>
+
+                    <div className="flex items-center">
+                        <button className="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">
+                            Follow us on LinkedIn
+                        </button>
                     </div>
                 </div>
             </section>
