@@ -143,8 +143,8 @@ function Peoples() {
                         key={director.id}
                         className="w-full bg-contain bg-center"
                         style={{
-                            backgroundImage: `url(${director.bg})`,
-                            aspectRatio: "16/7", // maintain image ratio
+                            backgroundImage: `url(${director.img})`,
+                            aspectRatio: "16/9", // maintain image ratio
                         }}
                     >
                         <div className="bg-transparent w-full h-full flex items-center">
@@ -261,11 +261,11 @@ function Peoples() {
             >
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
-                    <div className="w-[45%] pl-10 pr-20 flex flex-col justify-center">
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-blue-950">
+                    <div className="w-[50%] p-10 flex flex-col justify-center">
+                        <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-medium text-blue-950">
                             Our Strength
                         </h2>
-                        <p className="mt-4 leading-relaxed text-sm md:text-base text-justify">
+                        <p className="mt-4 leading-relaxed 2xl:text-base xl:text-sm lg:text-xs text-[10px] text-justify">
                             The true fabric of Panorama is made of people -
                             5,000 individuals, each adding their own thread of
                             talent, passion, and creativity. With women making
@@ -294,11 +294,11 @@ function Peoples() {
                     </div>
 
                     {/* Right Side Image */}
-                    <div className="w-[55%]">
+                    <div className="w-[50%]">
                         <img
                             src={OurStrengthImg}
                             alt="Innovation"
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-cover"
                         />
                     </div>
                 </div>
@@ -383,11 +383,11 @@ function Peoples() {
             >
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
-                    <div className="w-[45%] pl-10 pr-20 flex flex-col justify-center">
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-blue-950">
+                    <div className="w-[50%] p-10 flex flex-col justify-center">
+                        <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-medium text-blue-950">
                             Commitment to Care & Compliance
                         </h2>
-                        <p className="mt-4 leading-relaxed text-sm md:text-base text-justify">
+                        <p className="mt-4 leading-relaxed xl:text-sm lg:text-xs text-[10px] text-justify">
                             Panorama fosters a culture of accountability,
                             ensuring rigorous compliance with global labour
                             laws, buyer mandates, and ethical business
@@ -407,11 +407,11 @@ function Peoples() {
                     </div>
 
                     {/* Right Side Image */}
-                    <div className="w-[55%]">
+                    <div className="w-[50%]">
                         <img
                             src={CommitmentImg}
                             alt="Innovation"
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-cover"
                         />
                     </div>
                 </div>
