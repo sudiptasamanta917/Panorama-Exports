@@ -164,9 +164,12 @@ export default function OurStory() {
             </div>
             {/* Founder's Message Sections */}
             <section id="founder-message" ref={ref} className="bg-white">
-                <h2 className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Founder's Message
-                </h2>
+                <div className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        FOUNDER'S MESSAGE
+                    </h1>
+                </div>
+
                 <div className="bg-[#b9a686] h-[70vh] relative flex items-center pb-5">
                     <div className="text-white h-[70vh] absolute bottom-0 flex items-center justify-center">
                         <img
@@ -221,7 +224,9 @@ export default function OurStory() {
             {/* MileStones Sections */}
             <section id="milestones" ref={milestonesRef} className="bg-white">
                 <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Milestones
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        MILESTONES
+                    </h1>
                 </h2>
                 <Milestones />
             </section>

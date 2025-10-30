@@ -129,7 +129,10 @@ function InnovationThatLeads() {
         <>
             <div>
                 <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
-                    CAD & 3D Draping
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        CAD & 3D DRAPPING
+                    </h1>
+
                     <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
                         Visualizing designs with precision before production.
                     </div>
@@ -144,7 +147,9 @@ function InnovationThatLeads() {
             </div>
             <div>
                 <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
-                    Textile Ingenuity
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        TEXTILE INGENUITY
+                    </h1>
                     <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
                         From loom to luxury, we unite cutting-edge fabric
                         innovation with eco-conscious materials and refined
@@ -162,7 +167,9 @@ function InnovationThatLeads() {
             </div>
             <div>
                 <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
-                    Lean Manufacturing
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        LEAN MANUFACTURING
+                    </h1>
                     <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
                         Systems for faster, cleaner, better production. It’s an
                         art blending innovation with craftsmanship to reduce
@@ -180,7 +187,9 @@ function InnovationThatLeads() {
             </div>
             <div>
                 <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
-                    UBT Sewing Tech
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        UBT SEWING TECHNOLOGY
+                    </h1>
                     <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
                         Seam integrity meets advanced performance. We engineer
                         resilience into every stitch—using ultra-bond thread
@@ -198,7 +207,9 @@ function InnovationThatLeads() {
             </div>
             <div>
                 <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
-                    Digital Sampling
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        DIGITAL SAMPLING
+                    </h1>
                     <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
                         Speed, accuracy, and minimal waste—designing smarter
                         efficient iterations prior to large-scale production.

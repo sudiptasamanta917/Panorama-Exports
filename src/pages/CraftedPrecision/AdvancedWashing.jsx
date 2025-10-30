@@ -12,15 +12,22 @@ import aet3 from "../../assets/Crafted_Precision/Advanced_washing/3.png";
 const mfgImages = [
     {
         title: "Advanced Washing",
-        img: aet1,
-    },
-    {
-        title: "Advanced Washing",
-        img: aet2,
-    },
-    {
-        title: "Advanced Washing",
         img: aet3,
+    },
+];
+
+const VisionImages = [
+    {
+        id: 1,
+        image: aet2,
+        text: "",
+        subtext: "",
+    },
+    {
+        id: 2,
+        image: aet1,
+        text: "",
+        subtext: "",
     },
 ];
 
@@ -82,9 +89,9 @@ function AdvancedWashing() {
             <section className="bg-white">
                 <div className="w-full h-20 bg-gray-900"></div>
                 <div className="w-[90%] mx-auto py-16 px-6 md:px-20">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                        Advanced Washing
-                    </h2>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        ADVANCED WASHING
+                    </h1>
                     {/* <h3 className="mt-5">
                       To enrich lives by building a dynamic, responsible, and
                       trusted global enterprise.
@@ -122,10 +129,41 @@ function AdvancedWashing() {
                         ))}
                     </Swiper>
                 </div>
-                <div className="my-16 text-center w-[90%] mx-auto text-xl text-blue-950">
-                    <p className="font-bold">Advanced Washing</p>
-                    From enzyme washes to complex finishes, our tech ensures
-                    consistency.
+                <div className="my-16 text-justify md:w-[70%] w-[95%] mx-auto text-xl text-blue-950">
+                    <p className="font-bold text-2xl my-2 text-center">
+                        Advanced Washing
+                    </p>
+                    Through a combination of automated systems and eco-conscious
+                    techniques, our wash units achieve the perfect balance of
+                    finish and sustainability. From enzyme and silicon washes to
+                    advanced softeners, each garment undergoes a carefully
+                    controlled process that enhances texture while conserving
+                    resources.
+                </div>
+            </section>
+            <section className="">
+                <div className="lg:w-[100%] mx-auto px-6 md:px-8 lg:px-10 2xl:px-12 md:py-12 py-5 grid lg:grid-cols-2 2xl:gap-12 lg:gap-10 md:gap-8 gap-6">
+                    {VisionImages.map((item) => (
+                        <div
+                            key={item.id}
+                            className="relative overflow-hidden shadow-lg group"
+                        >
+                            <img
+                                src={item.image}
+                                alt="vision"
+                                className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
+                            />
+                            {/* Overlay */}
+                            <div className="absolute inset-0 py-[10%] bg-gradient-to-t from-blue-950/50 via-blue-950/40 via-blue-950/30 via-blue-950/20 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-950/80 group-hover:via-blue-950/50 group-hover:via-blue-950/40 group-hover:to-transparent transition-all duration-500 flex flex-col justify-end p-6">
+                                <p className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mx-[10%]">
+                                    {item.text}
+                                </p>
+                                <p className="mx-[10%] mt-4 text-white">
+                                    {item.subtext}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </>

@@ -39,9 +39,9 @@ const OurPurpose = () => {
             <section className="bg-white">
                 <div className="w-full h-20 bg-gray-900"></div>
                 <div className="w-[90%] mx-auto py-16 px-6 md:px-20">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                        Our Purpose
-                    </h2>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        OUR PURPOSE
+                    </h1>
                     <h3 className="mt-5">
                         To enrich lives by building a dynamic, responsible, and
                         trusted global enterprise.

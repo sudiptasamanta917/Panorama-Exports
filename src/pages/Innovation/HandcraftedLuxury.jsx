@@ -36,7 +36,9 @@ const HandcraftedLuxury = () => {
     return (
         <div className="pt-10">
             <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                Handcrafted Luxury
+                <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                    HANDCRAFTED LUXURY
+                </h1>
                 <div className="mt-10 flex flex-col items-center">
                     <h1 className="text-lg md:text-2xl xl:text-3xl font-semibold text-blue-900">
                         Rooted in tradition, designed for tomorrow.

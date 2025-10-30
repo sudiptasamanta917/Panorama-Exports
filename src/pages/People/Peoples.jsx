@@ -244,7 +244,7 @@ function Peoples() {
             <section>
                 <div className="w-[80%] mx-auto 2xl:pt-16 py-12">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
-                        People
+                        PEOPLE
                     </h2>
                     <p className="text-sm sm:text-md lg:text-lg py-3 mt-5 text-justify leading-relaxed">
                         Driven by our People First ethos, Panorama Exports
@@ -306,7 +306,7 @@ function Peoples() {
             <section id="life-at-panorama" className="py-10 pt-14">
                 <div className="w-[80%] mx-auto 2xl:pt-16 py-12">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
-                        Life at Panorama
+                        LIFE AT PANORAMA
                     </h2>
                 </div>
                 <div className="w-[80%] mx-auto">
@@ -349,7 +349,7 @@ function Peoples() {
             <section>
                 <div className="w-[80%] mx-auto 2xl:pt-16 py-12">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
-                        We believe in
+                        WE BELIEVE IN
                     </h2>
                 </div>
                 <div className="w-[80%] mx-auto mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 gap-4">

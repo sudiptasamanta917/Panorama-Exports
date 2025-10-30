@@ -33,20 +33,20 @@ const labels = {
     "#leadership": "leadership",
 };
 
-const VisionImages = [
-    {
-        id: 1,
-        image: VisionImage,
-        text: "Vision",
-        subtext: "To be the world’s most trusted apparel partner, championing technology, sustainability, and design excellence.",
-    },
-    {
-        id: 2,
-        image: MissionImage,
-        text: "Mission",
-        subtext: "To exceed expectations through innovation, efficiency, and a people-first culture-redefining global apparel manufacturing.",
-    },
-];
+// const VisionImages = [
+//     {
+//         id: 1,
+//         image: VisionImage,
+//         text: "Vision",
+//         subtext: "To be the world’s most trusted apparel partner, championing technology, sustainability, and design excellence.",
+//     },
+//     {
+//         id: 2,
+//         image: MissionImage,
+//         text: "Mission",
+//         subtext: "To exceed expectations through innovation, efficiency, and a people-first culture-redefining global apparel manufacturing.",
+//     },
+// ];
 
 const directors = [
     {
@@ -296,7 +296,7 @@ export default function VisionMission() {
 
             {/* Vision Sections */}
             <section id="vision-values" ref={visionRef} className="bg-white">
-                <div className="w-[70%] mx-auto px-6 md:px-20 sm:py-16 py-5 grid md:grid-cols-2 xl:gap-20 gap-10">
+                {/* <div className="w-[70%] mx-auto px-6 md:px-20 sm:py-16 py-5 grid md:grid-cols-2 xl:gap-20 gap-10">
                     {VisionImages.map((item) => (
                         <div
                             key={item.id}
@@ -307,7 +307,7 @@ export default function VisionMission() {
                                 alt="vision"
                                 className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
                             />
-                            {/* Overlay */}
+                          
                             <div className="absolute inset-0 py-[10%] bg-gradient-to-t from-blue-950/50 via-blue-950/40 via-blue-950/30 via-blue-950/20 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-950/80 group-hover:via-blue-950/50 group-hover:via-blue-950/40 group-hover:to-transparent transition-all duration-500 flex flex-col justify-end p-6">
                                 <p className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mx-[10%]">
                                     {item.text}
@@ -318,6 +318,72 @@ export default function VisionMission() {
                             </div>
                         </div>
                     ))}
+                </div> */}
+                <div className="bg-white w-full py-16 flex flex-col items-center">
+                    {/* Mission and Vision blocks */}
+                    <div className="w-full my-5 flex flex-col">
+                        <div className="flex gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
+                            <div className="flex justify-end items-center w-[40%]">
+                                <div className="">
+                                    <h2 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-black">
+                                        Our Mission
+                                        <br />& Vision
+                                    </h2>
+
+                                    <div className="mt-2 w-28 lg:w-36 2xl:w-48 h-1 bg-green-600 rounded border" />
+                                    <div className="mt-1 w-28 lg:w-36 2xl:w-48 h-1 bg-green-300 rounded border" />
+                                </div>
+                            </div>
+                            {/* Mission */}
+                            <div className="flex items-center justify-between bg-[#f2f2f2] shadow-xl mb-4 w-[60%]">
+                                <div className="flex items-center w-full">
+                                    <div className="overflow-hidden flex items-center justify-center relative">
+                                        <img
+                                            src={MissionImage}
+                                            alt="Mission"
+                                            className="object-cover w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] 2xl:w-[250px] h-[140px] md:h-[160px] lg:h-[180px] xl:h-[200px] 2xl:h-[250px]"
+                                        />
+                                        <div class="absolute inset-0 bg-green-200 mix-blend-multiply opacity-40"></div>
+                                    </div>
+                                    <div className="mx-8 my-6">
+                                        <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl font-bold text-black">
+                                            Mission
+                                        </h3>
+                                        <p className="text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs mt-1">
+                                            To exceed expectations through
+                                            innovation, efficiency, and a
+                                            people-first culture—redefining
+                                            global apparel manufacturing.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Vision */}
+                        <div className="flex items-center justify-between bg-[#f2f2f2] shadow-xl w-[55%] mt-8 xl:mt-12">
+                            <div className="flex items-center justify-end w-full">
+                                <div className="text-end mx-8 my-6">
+                                    <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl font-bold text-black">
+                                        Vision
+                                    </h3>
+                                    <p className="text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs mt-1">
+                                        To be the world’s most trusted apparel
+                                        partner, championing technology,
+                                        sustainability, and design excellence.
+                                    </p>
+                                </div>
+                                <div className="overflow-hidden flex items-center justify-center relative">
+                                    <img
+                                        src={VisionImage}
+                                        alt="Mission"
+                                        className="object-cover w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] 2xl:w-[250px] h-[140px] md:h-[160px] lg:h-[180px] xl:h-[200px] 2xl:h-[250px]"
+                                    />
+                                    <div class="absolute inset-0 bg-green-300 mix-blend-multiply opacity-60"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* <div
@@ -373,7 +439,9 @@ export default function VisionMission() {
             {/* Directors's Message Sections */}
             <section id="leadership" ref={leadershipRef} className="bg-white">
                 <h2 className="w-[90%] mx-auto px-6 md:px-20 sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Director's Message
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        DIRECTOR'S MESSAGE
+                    </h1>
                 </h2>
                 <Swiper
                     ref={swiperRef}
@@ -492,7 +560,9 @@ export default function VisionMission() {
             {/* Executive Directors's Message Sections */}
             <section id="director-message" className="bg-white">
                 <h2 className="w-[90%] mx-auto px-6 md:px-20 sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    Executive Director's Message
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        EXECUTIVE DIRECTOR'S MESSAGE
+                    </h1>
                 </h2>
                 <Swiper
                     ref={swiperRef}

@@ -372,24 +372,24 @@ export default function Home() {
 
                 {/* Integrated Units section */}
                 <div className="py-8 mt-6 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col items-start justify-center">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular flex flex-wrap gap-4">
                             <p className="font-bold">Manufacturing</p> Units
                             {/* <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
                                 Global-Grade Facilities
                             </div> */}
                         </div>
-                        <div className="w-[50%] mx-4">
+                        <div className="w-[50%] mt-5">
                             <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
                                 Seamless cut-to-pack capabilities for
                                 quality and speed.
                             </p>
-                            <Link to="">
+                            {/* <Link to="">
                                 <button className="my-4 group inline-flex items-center  font-semibold md:text-lg text-sm">
                                     View More
                                     <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>
@@ -431,7 +431,7 @@ export default function Home() {
                                 opportunity—growing together, every step of the
                                 way.
                             </p>
-                            <Link to="">
+                            <Link to="/peoples">
                                 <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg text-sm">
                                     Visit People
                                     <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />

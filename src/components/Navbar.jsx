@@ -58,7 +58,7 @@ export default function Navbar() {
             path: "/craftedprecision",
             subItems: [
                 {
-                    label: "Mfg. Excellence",
+                    label: "Manufacturing Excellence",
                     path: "/mfg-excellence",
                     image: firstImg,
                 },
