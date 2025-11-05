@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet from "../../assets/Crafted_Precision/Art_in_Every_Thread/art.png";
+import aet from "../../assets/Crafted_Precision/Art_in_Every_Thread/Art.png";
 import aet1 from "../../assets/Crafted_Precision/Art_in_Every_Thread/1.jpg";
 import aet2 from "../../assets/Crafted_Precision/Art_in_Every_Thread/3.jpg";
 import aet3 from "../../assets/Crafted_Precision/Art_in_Every_Thread/2.png";
