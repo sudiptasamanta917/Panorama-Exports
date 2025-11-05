@@ -472,7 +472,7 @@ export default function VisionMission() {
                                 className="w-full bg-contain bg-center"
                                 style={{
                                     backgroundImage: `url(${director.bg})`,
-                                    aspectRatio: "16/7", // image ratio wise height ...................
+                                    aspectRatio: "16/6", // image ratio wise height ...................
                                 }}
                             >
                                 <div className="bg-transparent w-full h-full flex items-center">
@@ -593,7 +593,7 @@ export default function VisionMission() {
                                 className="w-full bg-contain bg-center"
                                 style={{
                                     backgroundImage: `url(${director.bg})`,
-                                    aspectRatio: "16/7", // image ratio wise height ...................
+                                    aspectRatio: "16/6", // image ratio wise height ...................
                                 }}
                             >
                                 <div className="bg-transparent w-full h-full flex items-center">

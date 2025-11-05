@@ -10,8 +10,10 @@ import OurStrengthImg from "../../assets/People/OurStrength.png";
 import CommitmentImg from "../../assets/People/Compliance.jpg";
 import { FaArrowRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/navigation";
+import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 
 import img1 from "../../assets/People/LifePanorama/1.jpg";
@@ -155,13 +157,9 @@ function Peoples() {
                                     viewport={{ once: false, amount: 0.3 }}
                                 >
                                     <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
-                                        <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                            
-                                        </span>
+                                        <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold"></span>
                                         {director.message}
-                                        <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                            
-                                        </span>
+                                        <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold"></span>
                                     </div>
                                     <h1 className="text-white w-full text-end 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-lg font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
                                         {director.name}
@@ -267,18 +265,14 @@ function Peoples() {
                         LIFE AT PANORAMA
                     </h2>
                 </div>
-                <div className="w-[80%] mx-auto">
+                <div className="w-[80%] mx-auto relative">
                     <Swiper
-                        modules={[Pagination]}
+                        modules={[Navigation]}
                         slidesPerView={1}
                         spaceBetween={20}
-                        pagination={{
-                            clickable: true,
-                            el: ".custom-pagination",
-                            bulletClass:
-                                "swiper-pagination-bullet !bg-gray-400",
-                            bulletActiveClass:
-                                "swiper-pagination-bullet-active !bg-blue-500",
+                        navigation={{
+                            nextEl: ".swiper-button-next-custom",
+                            prevEl: ".swiper-button-prev-custom",
                         }}
                         breakpoints={{
                             768: { slidesPerView: 2 },
@@ -299,8 +293,13 @@ function Peoples() {
                         ))}
                     </Swiper>
 
-                    {/* Custom pagination container BELOW images */}
-                    <div className="custom-pagination flex justify-center mt-6 space-x-2"></div>
+                    {/* Custom navigation buttons */}
+                    <button className="swiper-button-prev-custom absolute left-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950 hover:bg-blue-700 text-white w-10 h-10 rounded-full shadow-md">
+                        ❮
+                    </button>
+                    <button className="swiper-button-next-custom absolute right-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950 hover:bg-blue-700 text-white w-10 h-10 rounded-full shadow-md">
+                        ❯
+                    </button>
                 </div>
             </section>
 

@@ -11,7 +11,7 @@ import img2 from "../../assets/OurStory/03.webp";
 import img3 from "../../assets/OurStory/04.webp";
 import img4 from "../../assets/OurStory/05.webp";
 
-import LegacyImage from "../../assets/Legacy/Legacy.png";
+import LegacyImage from "../../assets/Legacy/final.png";
 
 import FounderImage from "../../assets/Founders/founderImage.png";
 
