@@ -5,10 +5,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import mfg from "../../assets/Crafted_Precision/Smart_Warehousing/2.png";
+import mfg from "../../assets/Crafted_Precision/Smart_Warehousing/mfg.png";
 import mfg1 from "../../assets/Crafted_Precision/Smart_Warehousing/1.png";
-import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/3.png";
-import mfg3 from "../../assets/Crafted_Precision/Smart_Warehousing/mfg3.jpg";
+import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/2.png";
+import mfg3 from "../../assets/Crafted_Precision/Smart_Warehousing/3.jpg";
 
 const mfgImages = [
     {
@@ -127,11 +127,11 @@ function SmartWarehousing() {
                 </div>
             </section>
             {/* Images Area */}
-            <section className="grid grid-cols-3 gap-0">
+            <section className="grid grid-cols-3 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
                 <div className="">
                     <img src={mfg1} alt="" />
                 </div>
-                <div className="border-x-2 border-blue-800">
+                <div className="">
                     <img src={mfg2} alt="" />
                 </div>
                 <div className="">

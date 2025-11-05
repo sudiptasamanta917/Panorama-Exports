@@ -92,7 +92,7 @@ import img2 from "../assets/CraftingTomorrow/2.webp";
 import img3 from "../assets/CraftingTomorrow/3.webp";
 import img4 from "../assets/CraftingTomorrow/4.png";
 
-const crImages = [img1, img4];
+const crImages = [img2, img4];
 
 export default function Home() {
     const swiperRef = useRef(null);
