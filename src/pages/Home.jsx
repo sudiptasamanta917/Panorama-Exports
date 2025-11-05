@@ -397,21 +397,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                {/* Grid of unit images */}
-                {/* <div className="w-[90%] mx-auto px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-2 mb-6 rounded-b-md">
-                    {units.map((unit, index) => (
-                        <div key={index} className="">
-                            <FlipCard
-                                imageUrl={unit.image}
-                                title={unit.title}
-                                address={unit.address}
-                                locationUrl={unit.locationUrl}
-                                text="View in Map"
-                                id={unit.id}
-                            />
-                        </div>
-                    ))}
-                </div> */}
+                
                 {/* Google Map section */}
                 <div className="">
                     <GoogleMapUnits />
