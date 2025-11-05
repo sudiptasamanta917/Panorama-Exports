@@ -87,12 +87,12 @@ import brand24 from "../assets/GlobalFootprint/brands/Tesco_Logo.svg.png";
 const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20, brand21, brand22, brand23, brand24];
 
 // Crafting Tomorrow images
-import img1 from "../assets/CraftingTomorrow/01.webp";
+import img1 from "../assets/CraftingTomorrow/01.png";
 import img2 from "../assets/CraftingTomorrow/2.webp";
 import img3 from "../assets/CraftingTomorrow/3.webp";
-import img4 from "../assets/CraftingTomorrow/4.webp";
+import img4 from "../assets/CraftingTomorrow/4.png";
 
-const crImages = [img1, img2, img3, img4];
+const crImages = [img1, img4];
 
 export default function Home() {
     const swiperRef = useRef(null);
@@ -156,7 +156,7 @@ export default function Home() {
     return (
         <div className="relative">
             {/* Hero Carousel */}
-            <div className="relative z-10 sm:h-screen h-[380px] md:h-screen">
+            <div className="relative z-10 w-full">
                 <Swiper
                     ref={swiperRef}
                     modules={[Navigation, Pagination, Autoplay]}
@@ -183,7 +183,7 @@ export default function Home() {
                     {heroSlides.map((slide, index) => (
                         <SwiperSlide key={slide.id} className="relative">
                             {/* Background Image */}
-                            <picture className="block w-full h-full">
+                            <picture className="block w-full">
                                 <source
                                     srcSet={`${slide.image}?format=webp`}
                                     type="image/webp"
@@ -191,7 +191,7 @@ export default function Home() {
                                 <img
                                     src={slide.image}
                                     alt={`PANORAMA ${slide.dynamicText}`}
-                                    className="w-full sm:h-screen h-[380px] object-cover"
+                                    className="w-full object-contain"
                                     loading={index === 0 ? "eager" : "lazy"}
                                 />
                             </picture>
@@ -203,7 +203,7 @@ export default function Home() {
                 </Swiper>
 
                 {/* Fixed Text Content - Outside of Swiper */}
-                <div className="absolute 3xl:mt-[65vh] 2xl:mt-[65vh] xl:mt-[65vh] lg:mt-[65vh] md:mt-[65vh] sm:mt-[65vh] mt-[20vh] 2xl:ml-[30px] md:m-[10px] h-[20vh] inset-0 flex items-center justify-start pointer-events-none z-20">
+                <div className="absolute 2xl:mt-[550px] xl:mt-[450px] lg:mt-[350px] md:mt-[250px] sm:mt-[150px] xs:mt-[100px] mt-[50px] 2xl:ml-[30px] md:m-[10px] h-[20vh] inset-0 flex items-center justify-start pointer-events-none z-20">
                     <div className="2xl:w-[65%] xl:w-[70%] lg:w-[90%] w-[97%] sm:ml-20 px-4 md:px-8 flex items-center">
                         <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight flex ">
                             <span className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl flex items-center">
@@ -263,44 +263,7 @@ export default function Home() {
             </div>
 
             <div className="bg-white sm:pt-6 pt-2">
-                {/* Crafting Tomorrow Content */}
-                <div className="relative bg-[#182123] px-6 md:px-20 mb-6 sm:h-[80vh] h-[380px] text-white flex flex-col items-center justify-center overflow-hidden">
-                    {/* Background Slideshow */}
-                    {crImages.map((img, index) => (
-                        <div
-                            key={index}
-                            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                                index === currentIndex
-                                    ? "opacity-100"
-                                    : "opacity-0"
-                            }`}
-                            style={{
-                                backgroundImage: `url(${img})`,
-                                backgroundSize: "cover",
-                                backgroundPosition: "center",
-                            }}
-                        ></div>
-                    ))}
-
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/30 z-0"></div>
-
-                    {/* Text + Button (always fixed on top) */}
-                    <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-                        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-2xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] flex flex-wrap gap-4">
-                            <p className="font-bold">Crafting</p> Tomorrow
-                        </h1>
-
-                        <Link to="/craftingtomorrow">
-                            <button className="mt-10 lg:text-lg md:text-md text-sm md:px-6 px-4 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
-                                Click to Read More
-                                <IoEnterOutline className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
-                            </button>
-                        </Link>
-                    </div>
-                </div>
-
-                {/* Global Footprint Content */}
+                {/* Global presence */}
                 <div className="py-8 mt-6 text-[#01276a] mx-auto px-6 md:px-20 rounded-t-md">
                     <div className="flex items-center justify-center 2xl:px-5 gap-6">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular flex flex-wrap gap-4">
@@ -368,6 +331,47 @@ export default function Home() {
                         </style>
                     </div>
                 </div>
+                {/* Crafting Tomorrow Content */}
+                <div
+                    className="relative bg-[#182123] px-6 md:px-20 mb-6 text-white flex flex-col items-center justify-center overflow-hidden w-full"
+                    style={{ aspectRatio: "16 / 5" }}
+                >
+                    {/* Background Slideshow */}
+                    {crImages.map((img, index) => (
+                        <div
+                            key={index}
+                            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                                index === currentIndex
+                                    ? "opacity-100"
+                                    : "opacity-0"
+                            }`}
+                            style={{
+                                backgroundImage: `url(${img})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                            }}
+                        ></div>
+                    ))}
+
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-black/30 z-0"></div>
+
+                    {/* Text + Button (always fixed on top) */}
+                    <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+                        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-2xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] flex flex-wrap gap-4">
+                            <p className="font-bold">Crafting</p> Tomorrow
+                        </h1>
+
+                        <Link to="/craftingtomorrow">
+                            <button className="md:mt-10 mt-5 lg:text-lg md:text-md text-sm md:px-6 px-4 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
+                                Click to Read More
+                                <IoEnterOutline className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+
+                {/* Global Map section */}
                 <GlobalMap />
 
                 {/* Integrated Units section */}

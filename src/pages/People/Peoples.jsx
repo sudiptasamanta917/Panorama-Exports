@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import HumanResources from "./HumanResources";
 import HealthSafety from "./HealthSafety";
 import PeoplePurpose from "./PeoplePurpose";
-import SidharthPng from "../../assets/Founders/Sidharth.png";
+import PeopleImg from "../../assets/People/ShivaanSidharth.png";
 import OurStrengthImg from "../../assets/People/OurStrength.png";
 import CommitmentImg from "../../assets/People/Compliance.jpg";
 import { FaArrowRight } from "react-icons/fa";
@@ -50,11 +50,11 @@ const crumbs = [
 const executiveDirectors = [
     {
         id: 1,
-        name: "Sidharth Sahni & Shivaan Sahni",
-        role: "Executive Director",
+        name: "",
+        role: "",
         bg: CareerPng,
-        img: SidharthPng,
-        message: `We empower aspirational collaborators with a flexible, globally scaled platform that unlocks potential, nurtures ambition, and enables them to realize their true worth`,
+        img: PeopleImg,
+        message: ``,
     },
 ];
 
@@ -129,58 +129,16 @@ function Peoples() {
         <>
             <section className="bg-white">
                 <div className="w-full h-20 bg-gray-900"></div>
-                {/* <div className="w-[90%] mx-auto 2xl:pt-16  py-12 px-6 md:px-20">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                        People
-                    </h2>
-                </div>
-                <HumanResources />
-                <HealthSafety />
-                <PeoplePurpose /> */}
-
                 {executiveDirectors.map((director) => (
                     <div
                         key={director.id}
                         className="w-full bg-contain bg-center"
                         style={{
                             backgroundImage: `url(${director.img})`,
-                            aspectRatio: "16/9", // maintain image ratio
+                            aspectRatio: "16/7", // maintain image ratio
                         }}
                     >
                         <div className="bg-transparent w-full h-full flex items-center">
-                            {/* Left Side (Hidden for this director id=2) */}
-                            {/* <div
-                                className={`w-[50%] py-10 flex items-center`}
-                            >
-                                <motion.div
-                                    className="w-[90%] ml-auto flex flex-col items-end justify-center"
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{
-                                        duration: 1.5,
-                                        ease: "easeInOut",
-                                    }}
-                                    viewport={{ once: false, amount: 0.3 }}
-                                >
-                                    <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
-                                        <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                            “
-                                        </span>
-                                        {director.message}
-                                        <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                            ”
-                                        </span>
-                                    </div>
-                                    <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
-                                        {director.name}
-                                    </h1>
-                                    <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
-                                        {director.role}
-                                    </h3>
-                                </motion.div>
-                            </div> */}
-
                             {/* Right Side (Visible for id=2) */}
                             <div
                                 className={`w-[50%] ml-auto py-10 flex items-center`}
@@ -198,11 +156,11 @@ function Peoples() {
                                 >
                                     <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                         <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                            “
+                                            
                                         </span>
                                         {director.message}
                                         <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                            ”
+                                            
                                         </span>
                                     </div>
                                     <h1 className="text-white w-full text-end 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-lg font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
@@ -227,7 +185,7 @@ function Peoples() {
                         >
                             <a
                                 href={crumb.path}
-                                className={`hover:underline ${
+                                className={`hover:underline sm:text-xl text-lg sm:my-1 ${
                                     activeCrumb === crumb.path.substring(1)
                                         ? "font-semibold text-white"
                                         : "text-gray-300"
@@ -422,7 +380,7 @@ function Peoples() {
                 className="relative bg-contain bg-center flex items-center justify-center"
                 style={{
                     backgroundImage: `url(${CareerPng})`,
-                    aspectRatio: "16/6", // maintain image ratio
+                    aspectRatio: "16/5", // maintain image ratio
                 }}
             >
                 {/* Overlay */}
@@ -430,7 +388,7 @@ function Peoples() {
 
                 {/* Content */}
                 <div className="relative z-10 text-white 2xl:w-[65%] lg:w-[70%] md:w-[75%] sm:w-[80%] w-[90%] px-4">
-                    <h1 className="text-3xl sm:text-5xl font-medium mb-6 w-full">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium mb-6 w-full">
                         Explore a career at PANORAMA.
                     </h1>
                     <p className="text-sm sm:text-base leading-relaxed mb-8">

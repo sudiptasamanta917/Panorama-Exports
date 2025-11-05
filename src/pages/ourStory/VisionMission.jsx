@@ -263,7 +263,7 @@ export default function VisionMission() {
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                         Woven into Every Thread
                     </h1>
-                    <div className="text-lg sm:text-xl md:text-xl xl:text-2xl mt-4 w-[60%] text-justify font-relaxed">
+                    <div className="text-lg sm:text-xl md:text-xl xl:text-2xl mt-4 w-[100%] text-justify font-relaxed">
                         Our vision shapes the future of fashion; our values
                         guide every stitch. We don’t just make clothing-we build
                         trust, innovate with intent, and create with heart.
@@ -281,7 +281,7 @@ export default function VisionMission() {
                         >
                             <Link
                                 to={crumb.path}
-                                className={`hover:underline ${
+                                className={`hover:underline sm:text-xl text-lg sm:my-1 ${
                                     activeCrumb === crumb.label
                                         ? "font-semibold text-white"
                                         : "text-gray-300"
@@ -330,8 +330,8 @@ export default function VisionMission() {
                                         <br />& Vision
                                     </h2>
 
-                                    <div className="mt-2 w-28 lg:w-36 2xl:w-48 h-1 bg-green-600 rounded border" />
-                                    <div className="mt-1 w-28 lg:w-36 2xl:w-48 h-1 bg-green-300 rounded border" />
+                                    <div className="mt-2 w-28 lg:w-36 2xl:w-48 h-1 bg-blue-800 rounded border" />
+                                    <div className="mt-1 w-28 lg:w-36 2xl:w-48 h-1 bg-gray-400 rounded border" />
                                 </div>
                             </div>
                             {/* Mission */}
@@ -472,7 +472,7 @@ export default function VisionMission() {
                                 className="w-full bg-contain bg-center"
                                 style={{
                                     backgroundImage: `url(${director.bg})`,
-                                    aspectRatio: "16/9", // image ratio wise height ...................
+                                    aspectRatio: "16/7", // image ratio wise height ...................
                                 }}
                             >
                                 <div className="bg-transparent w-full h-full flex items-center">
@@ -593,7 +593,7 @@ export default function VisionMission() {
                                 className="w-full bg-contain bg-center"
                                 style={{
                                     backgroundImage: `url(${director.bg})`,
-                                    aspectRatio: "16/9", // image ratio wise height ...................
+                                    aspectRatio: "16/7", // image ratio wise height ...................
                                 }}
                             >
                                 <div className="bg-transparent w-full h-full flex items-center">

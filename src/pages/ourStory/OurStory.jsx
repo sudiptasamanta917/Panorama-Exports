@@ -11,11 +11,11 @@ import img2 from "../../assets/OurStory/03.webp";
 import img3 from "../../assets/OurStory/04.webp";
 import img4 from "../../assets/OurStory/05.webp";
 
-import LegacyImage from "../../assets/Legacy/01.webp";
+import LegacyImage from "../../assets/Legacy/Legacy.png";
 
 import FounderImage from "../../assets/Founders/founderImage.png";
 
-const heroImages = [LegacyImage, img1, img2, img3, img4];
+const heroImages = [LegacyImage];
 const labels = {
     "#legacy": "Legacy",
     "#milestones": "Milestones",
@@ -84,11 +84,14 @@ export default function OurStory() {
     }, [location]);
 
     return (
-        <div className="font-sans text-gray-900 bg-white">
+        <div className="text-gray-900 bg-white">
             {/* Legacy Sections */}
             <section id="legacy" ref={legacyRef} className="bg-white">
                 {/* Hero Section */}
-                <div className="relative w-full sm:h-[100vh] h-[380px] bg-black overflow-hidden flex flex-col items-start justify-end py-28">
+                <div
+                    className="relative w-full bg-black overflow-hidden flex flex-col items-start justify-end py-28"
+                    style={{ aspectRatio: "16 / 7" }}
+                >
                     {/* Background Dissolve Animations images */}
                     {heroImages.map((img, index) => (
                         <div
@@ -100,7 +103,7 @@ export default function OurStory() {
                             }`}
                             style={{
                                 backgroundImage: `url(${img})`,
-                                backgroundSize: "cover",
+                                backgroundSize: "contain",
                                 backgroundPosition: "center",
                             }}
                         ></div>
@@ -132,7 +135,7 @@ export default function OurStory() {
                         >
                             <Link
                                 to={crumb.path}
-                                className={`hover:underline ${
+                                className={`hover:underline sm:text-xl text-lg sm:my-1 ${
                                     activeCrumb === crumb.label
                                         ? "font-semibold text-white"
                                         : "text-gray-300"
@@ -181,7 +184,7 @@ export default function OurStory() {
 
                     {/* Quote Section */}
                     <div className="flex flex-col justify-start items-end w-[100vw] h-[26vh] bg-[#96785e] text-white px-2 md:px-5 py-2">
-                        <div className="2xl:w-[45%] xl:w-[38%] w-[40%] 2xl:mt-2">
+                        <div className="2xl:w-[45%] xl:w-[38%] w-[40%] 2xl:mt-2 flex flex-col justify-center items-center">
                             <motion.p
                                 className="text-[10px] lg:text-sm xl:text-md 2xl:text-lg text-justify md:leading-relaxed 2xl:mb-4 mb-2 2xl:w-[85%] w-[90%] sm:tracking-wide"
                                 variants={{
@@ -193,14 +196,14 @@ export default function OurStory() {
                                 viewport={{ once: false, amount: 0.3 }}
                                 transition={{ duration: 2, ease: "easeInOut" }}
                             >
-                                “Our journey in fashion has always been guided
+                                Our journey in fashion has always been guided
                                 by respect for tradition and a commitment to the
                                 future. With each creation we uphold our pride &
                                 values. We continue to shape this
-                                conversation-one inspired creation at a time.”
+                                conversation-one inspired creation at a time.
                             </motion.p>
                             <motion.h2
-                                className="text-[10px] lg:text-sm xl:text-md 2xl:text-xl font-semibold flex justify-end 2xl:w-[85%] w-[90%]"
+                                className="text-[10px] lg:text-sm xl:text-md 2xl:text-lg font- flex justify-end 2xl:w-[85%] w-[90%]"
                                 variants={{
                                     hidden: { opacity: 0, y: 1 },
                                     visible: { opacity: 1, y: 0 },
@@ -214,7 +217,7 @@ export default function OurStory() {
                                     ease: "easeInOut",
                                 }}
                             >
-                                — Shri Shyam Sahni & Smt. Veena Sahni
+                                Shri Shyam Sahni & Smt. Veena Sahni
                             </motion.h2>
                         </div>
                     </div>

@@ -87,7 +87,9 @@ function CraftedPrecision() {
                             }}
                             onMouseLeave={() => setPaused(false)} // resume autoplay...............
                             className={`relative group transition-all duration-700 ease-in-out ${
-                                activeIndex === i ? "grayscale-0" : "grayscale"
+                                activeIndex === i
+                                    ? "grayscale-0"
+                                    : "[filter:hue-rotate(210deg)_saturate(0.5)_brightness(0.9)] opacity-70"
                             }`}
                             style={{
                                 backgroundImage: `url(${card.img})`,
@@ -107,7 +109,7 @@ function CraftedPrecision() {
                                 }`}
                             ></div>
                             <div
-                                className={`absolute inset-y-0 right-0 flex flex-col justify-center items-start p-3 sm:p-4 md:p-6 transition-opacity duration-700 ${
+                                className={`absolute inset-y-0 left-0 flex flex-col justify-center items-start p-3 sm:p-4 md:p-6 transition-opacity duration-700 ${
                                     activeIndex === i
                                         ? "opacity-100 text-white bg-gradient-to-tl from-black/70 via-black/50 via-black/30 to-transparent bg-right w-[40%] flex flex-col items-center justify-center text-center"
                                         : "opacity-90 text-blue-950"

@@ -10,9 +10,9 @@ import icon2 from "../../assets/Responsible/Icons/SaveGreenery.png";
 import icon3 from "../../assets/Responsible/Icons/BuildingCommunity.png";
 import icon4 from "../../assets/Responsible/Icons/RespectWater.png";
 
-import img1 from "../../assets/Responsible/sustainableClothes1.jpg";
-import img2 from "../../assets/Responsible/sustainableClothes2.jpg";
-import img3 from "../../assets/Responsible/sustainableClothes3.jpg";
+import img1 from "../../assets/Responsible/img1.png";
+import img2 from "../../assets/Responsible/img2.png";
+import img3 from "../../assets/Responsible/img3.png";
 
 import cert1 from "../../assets/Responsible/certificate/gots.png";
 import cert2 from "../../assets/Responsible/certificate/grs.png";
@@ -50,36 +50,22 @@ function Responsibility() {
         <>
             <div className="h-20 w-full bg-gray-900"></div>
             <div className=" bg-[#49883f] lg:py-20 py-12 lg:text-6xl text-4xl text-center text-white font-semibold">
-                Sustainability
+                SUSTAINABILITY
             </div>
             <div className="lg:w-[80%] w-full mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="text-gray-700 text-center text-2xl font-semibold leading-relaxed">
-                    “For Panorama, sustainability means designing <br></br>
-                    with conscience, producing with care, and leaving a legacy
-                    the planet <br></br> can wear with pride.”
+                <div className="text-gray-700 text-center 2xl:text-xl lg:text-lg text-sm leading-relaxed">
+                    For Panorama, sustainability means designing with
+                    conscience,<br></br> producing with care, and leaving a legacy the
+                    planet can wear with pride.
                 </div>
                 <div className="w-full h-[1px] bg-blue-900 my-8"></div>
-
-                {/* Introduction */}
-                {/* <section className="my-16 flex justify-between items-center gap-10">
-                    <p className="w-[50%] text-4xl font-bold ">
-                        {" "}
-                        Sustainability is stitched into everything we do.
-                    </p>
-                    <p className="w-[50%] text-md font-medium leading-relaxed">
-                        At Panorama Exports, we strive for a better world and a
-                        thriving environment. As apparel vendors in USA and one
-                        of the leading sustainable clothing manufacturers
-                        globally...
-                    </p>
-                </section> */}
             </div>
             {/* Images Area */}
             <section className="grid grid-cols-3 gap-0">
                 <div className="">
                     <img src={img1} alt="" />
                 </div>
-                <div className="">
+                <div className="border-x-2 border-blue-800">
                     <img src={img2} alt="" />
                 </div>
                 <div className="">
@@ -99,7 +85,7 @@ function Responsibility() {
                             <img
                                 src={item.icon}
                                 alt="image"
-                                className="rounded-lg xl:w-40 w-36 xl:h-40 h-36"
+                                className="rounded-lg xl:w-36 w-28 xl:h-36 h-28"
                             />
                             <h2 className="text-blue-950 font-semibold my-4 text-[12px] md:text-sm xl:text-md 2xl:text-lg">
                                 {item.header}
@@ -109,12 +95,12 @@ function Responsibility() {
                 </section>
 
                 {/* Our Approaches */}
-                <section className="my-16 flex justify-between items-center gap-10">
-                    <p className="w-[50%] text-5xl font-bold leading-snug">
+                <section className="my-16 flex flex-col justify- items- gap-10">
+                    <p className=" text-5xl font-bold leading-snug">
                         {" "}
-                        Sustainability is stitched into everything we do.
+                        Sustainability is stitched into everything we do
                     </p>
-                    <div className="w-[50%] text-md font-semibold flex flex-col gap-3">
+                    <div className=" text-md font-semibold flex flex-col gap-3">
                         <p> · Responsible sourcing and clean production</p>
                         <p>
                             · Solar power, efficient logistics, and
@@ -132,7 +118,7 @@ function Responsibility() {
                 </section>
 
                 {/* Certifications */}
-                <section className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
+                <section className="mb-12 grid grid-cols-1 lg:grid-cols-3 gap-8 mt-20">
                     <div className="flex flex-col items-center">
                         <img src={cert1} alt="" />
                         <h3 className="my-5 font-semibold text-lg text-center">

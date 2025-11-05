@@ -5,29 +5,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import mfg from "../../assets/Crafted_Precision/Smart_Warehousing/2.png";
 import mfg1 from "../../assets/Crafted_Precision/Smart_Warehousing/1.png";
-import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/2.png";
-import mfg3 from "../../assets/Crafted_Precision/Smart_Warehousing/3.png";
+import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/3.png";
+import mfg3 from "../../assets/Crafted_Precision/Smart_Warehousing/mfg3.jpg";
 
 const mfgImages = [
     {
         title: "Smart Warehousing",
-        img: mfg2,
-    },
-];
-
-const VisionImages = [
-    {
-        id: 1,
-        image: mfg1,
-        text: "",
-        subtext: "",
-    },
-    {
-        id: 2,
-        image: mfg3,
-        text: "",
-        subtext: "",
+        img: mfg,
     },
 ];
 
@@ -140,29 +126,16 @@ function SmartWarehousing() {
                     process—but a promise.
                 </div>
             </section>
-            <section className="">
-                <div className="lg:w-[100%] mx-auto px-6 md:px-8 lg:px-10 2xl:px-12 md:py-12 py-5 grid lg:grid-cols-2 2xl:gap-12 lg:gap-10 md:gap-8 gap-6">
-                    {VisionImages.map((item) => (
-                        <div
-                            key={item.id}
-                            className="relative overflow-hidden shadow-lg group"
-                        >
-                            <img
-                                src={item.image}
-                                alt="vision"
-                                className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
-                            />
-                            {/* Overlay */}
-                            <div className="absolute inset-0 py-[10%] bg-gradient-to-t from-blue-950/50 via-blue-950/40 via-blue-950/30 via-blue-950/20 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-950/80 group-hover:via-blue-950/50 group-hover:via-blue-950/40 group-hover:to-transparent transition-all duration-500 flex flex-col justify-end p-6">
-                                <p className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mx-[10%]">
-                                    {item.text}
-                                </p>
-                                <p className="mx-[10%] mt-4 text-white">
-                                    {item.subtext}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
+            {/* Images Area */}
+            <section className="grid grid-cols-3 gap-0">
+                <div className="">
+                    <img src={mfg1} alt="" />
+                </div>
+                <div className="border-x-2 border-blue-800">
+                    <img src={mfg2} alt="" />
+                </div>
+                <div className="">
+                    <img src={mfg3} alt="" />
                 </div>
             </section>
         </>

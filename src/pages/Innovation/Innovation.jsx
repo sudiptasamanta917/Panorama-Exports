@@ -125,7 +125,7 @@ function Innovation() {
                         >
                             <Link
                                 to={crumb.path}
-                                className={`hover:underline ${
+                                className={`hover:underline sm:text-xl text-lg sm:my-1 ${
                                     activeCrumb === crumb.label
                                         ? "font-semibold text-white"
                                         : "text-gray-300"

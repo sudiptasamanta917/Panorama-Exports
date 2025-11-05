@@ -42,7 +42,7 @@ const OurPurpose = () => {
                     <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
                         OUR PURPOSE
                     </h1>
-                    <h3 className="mt-5">
+                    <h3 className="mt-5 2xl:text-xl lg:text-lg text-sm text-gray-600">
                         To enrich lives by building a dynamic, responsible, and
                         trusted global enterprise.
                     </h3>
