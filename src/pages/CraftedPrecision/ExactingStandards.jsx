@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet from "../../assets/Crafted_Precision/Exacting_Standards/ext.png";
+import aet from "../../assets/Crafted_Precision/Exacting_Standards/Ext.png";
 import aet1 from "../../assets/Crafted_Precision/Exacting_Standards/1.png";
 import aet2 from "../../assets/Crafted_Precision/Exacting_Standards/2.png";
 import aet3 from "../../assets/Crafted_Precision/Exacting_Standards/3.png";
