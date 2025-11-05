@@ -19,19 +19,17 @@ import Peoples from "../pages/People/Peoples";
 
 import Responsibility from "../pages/Responsibility/Responsibility";
 
-import WeavingStories from "../pages/WeavingStories";
-import ElevatedCraft from "../pages/ElevatedCraft";
-import Sustainability from "../pages/Sustainability";
+
 import CraftingTomorrow from "../pages/craftingTomorrow/CraftingTomorrow";
 import GlobalFootprint from "../pages/globalFootprint/GlobalFootprint";
-import OurInfrastructure from "../pages/OurInfrastructure";
+
 import Media from "../pages/media/Media";
 import UnitLocationMap from "../components/UnitLocationMap";
 
 import InnovationThatLeads from "../pages/Innovation/InnovationThatLeads";
 import StandardOfPerfection from "../pages/Innovation/StandardOfPerfection";
 import HandcraftedLuxury from "../pages/Innovation/HandcraftedLuxury";
-import Products from "../pages/Product/Products";
+
 
 
 export default function AppRoutes() {
@@ -59,13 +57,9 @@ export default function AppRoutes() {
 
             <Route path="/peoples" element={<Peoples />} />
             <Route path="/responsibility" element={<Responsibility />} />
-
-            <Route path="/weavingstories" element={<WeavingStories />} />
-            <Route path="/elevatedcraft" element={<ElevatedCraft />} />
-            <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/craftingtomorrow" element={<CraftingTomorrow />} />
             <Route path="/globalfootprint" element={<GlobalFootprint />} />
-            <Route path="/ourinfrastructure" element={<OurInfrastructure />} />
+           
             <Route path="/media" element={<Media />} />
             <Route path="/unitmap" element={<UnitLocationMap />} />
 
@@ -81,7 +75,7 @@ export default function AppRoutes() {
                 path="/innovation/handcraftedluxury"
                 element={<HandcraftedLuxury />}
             />
-            <Route path="/products" element={<Products />} />
+            
         </Routes>
     );
 }
