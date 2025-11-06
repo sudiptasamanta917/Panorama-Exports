@@ -6,8 +6,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import aet from "../../assets/Crafted_Precision/Advanced_washing/3.png";
-import aet1 from "../../assets/Crafted_Precision/Advanced_washing/1.png";
-import aet2 from "../../assets/Crafted_Precision/Advanced_washing/2.png";
+import aet1 from "../../assets/Crafted_Precision/Advanced_washing/1.jpg";
+import aet2 from "../../assets/Crafted_Precision/Advanced_washing/2.jpg";
 import aet3 from "../../assets/Crafted_Precision/Advanced_washing/Adv.png";
 
 const mfgImages = [
@@ -128,11 +128,11 @@ function AdvancedWashing() {
                 </div>
             </section>
             {/* Images Area */}
-            <section className="grid grid-cols-3 gap-0">
+            <section className="grid grid-cols-3 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
                 <div className="">
                     <img src={aet1} alt="" />
                 </div>
-                <div className="border-x-2 border-blue-800">
+                <div className="">
                     <img src={aet2} alt="" />
                 </div>
                 <div className="">

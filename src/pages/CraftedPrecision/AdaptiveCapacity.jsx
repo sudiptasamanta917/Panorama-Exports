@@ -6,9 +6,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import aet from "../../assets/Crafted_Precision/Adaptive_Capacity/3.png";
-import aet1 from "../../assets/Crafted_Precision/Adaptive_Capacity/adp3.jpg";
-import aet2 from "../../assets/Crafted_Precision/Adaptive_Capacity/2.png";
-import aet3 from "../../assets/Crafted_Precision/Adaptive_Capacity/1.png";
+import aet1 from "../../assets/Crafted_Precision/Adaptive_Capacity/Adp1.png";
+import aet2 from "../../assets/Crafted_Precision/Adaptive_Capacity/Adp2.png";
+import aet3 from "../../assets/Crafted_Precision/Adaptive_Capacity/Adp3.png";
 
 const mfgImages = [
     {
@@ -143,15 +143,15 @@ function AdaptiveCapacity() {
                 </div>
             </section>
             {/* Images Area */}
-            <section className="grid grid-cols-3 gap-0">
+            <section className="grid grid-cols-3 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
+                <div className="">
+                    <img src={aet1} alt="" />
+                </div>
                 <div className="">
                     <img src={aet2} alt="" />
                 </div>
-                <div className="border-x-2 border-blue-800">
-                    <img src={aet3} alt="" />
-                </div>
                 <div className="">
-                    <img src={aet1} alt="" />
+                    <img src={aet3} alt="" />
                 </div>
             </section>
         </>

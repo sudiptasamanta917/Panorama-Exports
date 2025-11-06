@@ -10,9 +10,10 @@ import icon2 from "../../assets/Responsible/Icons/SaveGreenery.png";
 import icon3 from "../../assets/Responsible/Icons/BuildingCommunity.png";
 import icon4 from "../../assets/Responsible/Icons/RespectWater.png";
 
-import img1 from "../../assets/Responsible/img1.png";
-import img2 from "../../assets/Responsible/img2.png";
-import img3 from "../../assets/Responsible/img3.png";
+import img1 from "../../assets/Responsible/Corporate/1.png";
+import img2 from "../../assets/Responsible/Corporate/2.png";
+import img3 from "../../assets/Responsible/Corporate/3.png";
+import img4 from "../../assets/Responsible/Full.png";
 
 import cert1 from "../../assets/Responsible/certificate/gots.png";
 import cert2 from "../../assets/Responsible/certificate/grs.png";
@@ -55,21 +56,15 @@ function Responsibility() {
             <div className="lg:w-[80%] w-full mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="text-gray-700 text-center 2xl:text-xl lg:text-lg text-sm leading-relaxed">
                     For Panorama, sustainability means designing with
-                    conscience,<br></br> producing with care, and leaving a legacy the
-                    planet can wear with pride.
+                    conscience,<br></br> producing with care, and leaving a
+                    legacy the planet can wear with pride.
                 </div>
                 <div className="w-full h-[1px] bg-blue-900 my-8"></div>
             </div>
             {/* Images Area */}
-            <section className="grid grid-cols-3 gap-0">
+            <section className="">
                 <div className="">
-                    <img src={img1} alt="" />
-                </div>
-                <div className="border-x-2 border-blue-800">
-                    <img src={img2} alt="" />
-                </div>
-                <div className="">
-                    <img src={img3} alt="" />
+                    <img src={img4} alt="" />
                 </div>
             </section>
             <div className="lg:w-[80%] w-full mx-auto px-4 sm:px-6 lg:px-8 py-5">
@@ -160,7 +155,32 @@ function Responsibility() {
                         </p>
                     </div>
                 </section>
+                <section className="my-16 flex flex-col justify- items- gap-10">
+                    <p className=" text-5xl font-bold leading-snug">
+                        {" "}
+                        Corporate Social Responsibility
+                    </p>
+                    <div className=" text-md font-semibold flex flex-col gap-3">
+                        Driven by purpose, Panorama nurtures progress through
+                        education and women empowerment. By creating safe,
+                        inclusive workplaces and community programs, we turn
+                        opportunity into impact-strengthening both individuals
+                        and society. 
+                    </div>
+                </section>
             </div>
+
+            <section className="grid grid-cols-3 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
+                <div className="">
+                    <img src={img1} alt="" />
+                </div>
+                <div className="">
+                    <img src={img2} alt="" />
+                </div>
+                <div className="">
+                    <img src={img3} alt="" />
+                </div>
+            </section>
         </>
     );
 }
