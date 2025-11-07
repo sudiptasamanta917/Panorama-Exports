@@ -24,7 +24,7 @@ import NavinPng from "../../assets/Founders/navin.png";
 import ShivaanPng from "../../assets/Founders/shivaan.png";
 import SidharthPng from "../../assets/Founders/Sidharth.png";
 
-import VisionImage from "../../assets/OurStory/visionMission/Vision.jpeg";
+import VisionImage from "../../assets/OurStory/visionMission/Vision.jpg";
 import MissionImage from "../../assets/OurStory/visionMission/Mission.jpg";
 
 const labels = {
@@ -294,7 +294,7 @@ export default function VisionMission() {
                 </div>
             </div>
 
-            {/* Vision Sections */}
+            {/* Vision mission Sections */}
             <section id="vision-values" ref={visionRef} className="bg-white">
                 {/* <div className="w-[70%] mx-auto px-6 md:px-20 sm:py-16 py-5 grid md:grid-cols-2 xl:gap-20 gap-10">
                     {VisionImages.map((item) => (
@@ -343,7 +343,7 @@ export default function VisionMission() {
                                             alt="Mission"
                                             className="object-cover w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] 2xl:w-[250px] h-[140px] md:h-[160px] lg:h-[180px] xl:h-[200px] 2xl:h-[250px]"
                                         />
-                                        <div class="absolute inset-0 bg-green-200 mix-blend-multiply opacity-40"></div>
+                                        <div class="absolute inset-0 bg-green-300 mix-blend-multiply opacity-40"></div>
                                     </div>
                                     <div className="mx-8 my-6">
                                         <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl font-bold text-black">
@@ -379,7 +379,7 @@ export default function VisionMission() {
                                         alt="Mission"
                                         className="object-cover w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] 2xl:w-[250px] h-[140px] md:h-[160px] lg:h-[180px] xl:h-[200px] 2xl:h-[250px]"
                                     />
-                                    <div class="absolute inset-0 bg-green-300 mix-blend-multiply opacity-60"></div>
+                                    <div class="absolute inset-0 bg-green-100 mix-blend-multiply opacity-60"></div>
                                 </div>
                             </div>
                         </div>

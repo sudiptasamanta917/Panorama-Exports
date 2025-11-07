@@ -53,7 +53,7 @@ function Responsibility() {
             <div className=" bg-[#49883f] lg:py-20 py-12 lg:text-6xl text-4xl text-center text-white font-semibold">
                 SUSTAINABILITY
             </div>
-            <div className="lg:w-[80%] w-full mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="lg:w-[90%] w-full mx-auto px-6 md:px-20 py-12">
                 <div className="text-gray-700 text-center 2xl:text-xl lg:text-lg text-sm leading-relaxed">
                     For Panorama, sustainability means designing with
                     conscience,<br></br> producing with care, and leaving a
@@ -67,7 +67,7 @@ function Responsibility() {
                     <img src={img4} alt="" />
                 </div>
             </section>
-            <div className="lg:w-[80%] w-full mx-auto px-4 sm:px-6 lg:px-8 py-5">
+            <div className="lg:w-[90%] w-full mx-auto px-6 md:px-20 py-12">
                 <div className="w-full h-[1px] bg-blue-900"></div>
                 <div className="w-full h-[1px] bg-blue-900 mt-[1px] mb-10"></div>
                 {/* Focus Areas */}
@@ -155,20 +155,19 @@ function Responsibility() {
                         </p>
                     </div>
                 </section>
-                <section className="my-16 flex flex-col justify- items- gap-10">
-                    <p className=" text-5xl font-bold leading-snug">
-                        {" "}
-                        Corporate Social Responsibility
-                    </p>
-                    <div className=" text-md font-semibold flex flex-col gap-3">
-                        Driven by purpose, Panorama nurtures progress through
-                        education and women empowerment. By creating safe,
-                        inclusive workplaces and community programs, we turn
-                        opportunity into impact-strengthening both individuals
-                        and society. 
-                    </div>
-                </section>
             </div>
+
+            <section className="w-[90%] mx-auto px-6 md:px-20 py-12">
+                <div className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                    CORPORATE SOCIAL RESPONSIBILITY
+                </div>
+                <div className="mt-5 text-sm md:text-lg flex flex-col gap-3">
+                    Driven by purpose, Panorama nurtures progress through
+                    education and women empowerment. By creating safe, inclusive
+                    workplaces and community programs, we turn opportunity into
+                    impact-strengthening both individuals and society. 
+                </div>
+            </section>
 
             <section className="grid grid-cols-3 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
                 <div className="">

@@ -29,6 +29,7 @@ import UnitLocationMap from "../components/UnitLocationMap";
 import InnovationThatLeads from "../pages/Innovation/InnovationThatLeads";
 import StandardOfPerfection from "../pages/Innovation/StandardOfPerfection";
 import HandcraftedLuxury from "../pages/Innovation/HandcraftedLuxury";
+import LookBook from "../pages/LookBook/LookBook";
 
 
 
@@ -59,9 +60,10 @@ export default function AppRoutes() {
             <Route path="/responsibility" element={<Responsibility />} />
             <Route path="/craftingtomorrow" element={<CraftingTomorrow />} />
             <Route path="/globalfootprint" element={<GlobalFootprint />} />
-           
+
             <Route path="/media" element={<Media />} />
             <Route path="/unitmap" element={<UnitLocationMap />} />
+            <Route path="/lookbook" element={<LookBook />} />
 
             <Route
                 path="/innovation/innovationleads"
@@ -75,7 +77,6 @@ export default function AppRoutes() {
                 path="/innovation/handcraftedluxury"
                 element={<HandcraftedLuxury />}
             />
-            
         </Routes>
     );
 }

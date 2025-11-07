@@ -117,7 +117,7 @@ export default function Navbar() {
         },
         {
             label: "LOOK BOOK",
-            path: "",
+            path: "/lookbook",
         },
         {
             label: "PEOPLE",

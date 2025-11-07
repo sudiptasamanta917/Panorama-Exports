@@ -1,37 +1,47 @@
 import React from "react";
 import { motion } from "framer-motion";
-import EnrichingLives from "../../assets/OurPurpose/EnrichingLives.jpg";
-import DynamicHeart from "../../assets/OurPurpose/DynamicHeart.jpg";
-import ResponsibleReverence from "../../assets/OurPurpose/ResponsibleReverence.jpg";
-import TrustCore from "../../assets/OurPurpose/TrustCore.jpg";
+import EnrichingLives from "../../assets/OurPurpose/Enriching.jpg";
+import DynamicHeart from "../../assets/OurPurpose/Dybamic.jpg";
+import ResponsibleReverence from "../../assets/OurPurpose/Responsible.jpg";
+import TrustCore from "../../assets/OurPurpose/Trusted.jpeg";
 
 import EnrichingText from "../../assets/OurPurpose/enrichingLivesText.png";
 import DynamoText from "../../assets/OurPurpose/dynamicHeartText.png";
 import TrustCoreText from "../../assets/OurPurpose/trustCoreText.png";
 import ResponsibleText from "../../assets/OurPurpose/responsibleReverenceText.png";
 
-const purposes = [
+const purposeItems = [
     {
-        title: "Enriching Lives",
         img: EnrichingLives,
-        textImg: EnrichingText,
+        title: "Enriching Lives",
+        description: `Empowering people, uplifting communities, and shaping better futures
+                        that sustains ecosystems, anticipates new lifestyles, and supports the aspirations of
+                        every member of our team`,
     },
     {
-        title: "DynamicHeart",
         img: DynamicHeart,
-        textImg: DynamoText,
+        title: "Dynamic Heart",
+        description: `Agile, bold, and ever-evolving with ideas, technology, and
+        learning.We acquire new capabilities, master fresh capacities, and continuously innovate
+        to pioneer and reinvent the future`,
     },
     {
-        title: "TrustCore",
         img: TrustCore,
-        textImg: TrustCoreText,
+        title: "Trusted at Core",
+        description: `Reliability and intent define every product, partnership, and promise.
+        Trust is our greatest currency-built in every interaction, upheld in all circumstances, and
+        strengthened over time through our products, services, and unwavering intent`,
     },
     {
-        title: "ResponsibleReverence",
         img: ResponsibleReverence,
-        textImg: ResponsibleText,
+        title: "Responsible Reverence",
+        description: `Committed to people, planet, and purpose—balancing profit
+        with progress. We foster a culture where every decision is thoughtful, accountable, and
+        value-driven. Advancing the circular economy, and creating capacity through smart
+        resource use and ethical governance`,
     },
 ];
+
 
 const OurPurpose = () => {
     return (
@@ -47,28 +57,35 @@ const OurPurpose = () => {
                         trusted global enterprise.
                     </h3>
                 </div>
-                <div>
-                    {purposes.map((purpose, index) => (
+                <div className="w-full mt-10 flex flex-col items-center justify-center">
+                    {/* Iterate over all items in array */}
+                    {purposeItems.map((item, idx) => (
                         <div
-                            className="w-full bg-center bg-contain flex items-end justify-end pr-[5%] pb-2"
-                            style={{
-                                backgroundImage: `url(${purpose.img})`,
-                                aspectRatio: "21/8.83",
-                            }}
+                            key={idx}
+                            className="flex flex-col md:flex-row items-center justify-end gap-8 2xl:w-[65%] xl:w-[75%] lg:w-[90%] py-20 mb-10"
                         >
-                            <motion.img
-                                src={purpose.textImg}
-                                alt={purpose.title}
-                                className="w-[85%] object-contain"
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{
-                                    duration: 2.5,
-                                    ease: "easeInOut",
-                                }}
-                                viewport={{ once: false, amount: 0.3 }}
-                            />
+                            {/* Text side */}
+                            <div className="relative 2xl:w-[600px] xl:w-[500px] lg:w-[450px] md:w[400px] w-full xl:h-[400px] lg:h-[350px] h-[300px] bg-[#f8f8f8] flex flex-col justify-center items-end py-8 text-gray-900">
+                                <div className="w-[85%] px-16">
+                                    <h2 className="2xl:text-[2rem] md:text-xl text-lg font-bold text-blue-700 mb-3 leading-tight">
+                                        {item.title}
+                                    </h2>
+                                    <div
+                                        className="2xl:text-base text-sm leading-relaxed text-gray-700"
+                                        dangerouslySetInnerHTML={{
+                                            __html: item.description,
+                                        }}
+                                    />
+                                </div>
+                                {/* Image side */}
+                                <div className="md:absolute bottom-20 2xl:left-[-510px] xl:left-[-425px] lg:left-[-382.5px] flex-shrink-0  overflow-hidden shadow-lg bg-white">
+                                    <img
+                                        src={item.img}
+                                        alt="purpose visual"
+                                        className="2xl:w-[600px] xl:w-[500px] lg:w-[450px] md:w[400px] w-full xl:h-[400px] lg:h-[350px] h-[300px]  object-cover"
+                                    />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

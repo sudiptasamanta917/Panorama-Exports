@@ -6,19 +6,19 @@ import { useLocation } from "react-router-dom";
 
 import FlipCard from "../../components/flipCard/FlipCard";
 
-import CadImg1 from "../../assets/Innovation/CAD&3DDraping/1.jpg";
+import CadImg1 from "../../assets/Innovation/CAD&3DDraping/01.jpg";
 import CadImg2 from "../../assets/Innovation/CAD&3DDraping/2.jpg";
 import CadImg3 from "../../assets/Innovation/CAD&3DDraping/3.jpg";
 
-import TextileImg1 from "../../assets/Innovation/TextileIngenuity/1.jpg";
+import TextileImg1 from "../../assets/Innovation/TextileIngenuity/Dewatermark.jpeg";
 import TextileImg2 from "../../assets/Innovation/TextileIngenuity/2.jpg";
 import TextileImg3 from "../../assets/Innovation/TextileIngenuity/3.jpg";
 
-import LeanImg1 from "../../assets/Innovation/LeanManufacturing/1.jpg";
+import LeanImg1 from "../../assets/Innovation/LeanManufacturing/3.png";
 import LeanImg2 from "../../assets/Innovation/LeanManufacturing/2.jpg";
 import LeanImg3 from "../../assets/Innovation/LeanManufacturing/3.jpg";
 
-import UbtImg1 from "../../assets/Innovation/UBTSewingTech/1.jpg";
+import UbtImg1 from "../../assets/Innovation/UBTSewingTech/Ubt1.jpg";
 import UbtImg2 from "../../assets/Innovation/UBTSewingTech/2.jpg";
 import UbtImg3 from "../../assets/Innovation/UBTSewingTech/3.jpg";
 
@@ -127,85 +127,118 @@ function InnovationThatLeads() {
 
     return (
         <>
-            <div>
-                <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
-                        CAD & 3D DRAPPING
-                    </h1>
+            <section
+                id=""
+                className="my-5 w-full bg-blue-950 flex justify-center py-20"
+            >
+                <div className="w-[80%] bg-white flex">
+                    {/* Left Side */}
+                    <div className="w-[50%] p-10 flex flex-col justify-center">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
+                            CAD & 3D DRAPING
+                        </h2>
+                        <div className="text-sm md:text-lg mt-3 sm:mb-3 text-center text-gray-600 ml-1 font-thin">
+                            Visualizing designs with precision before production
+                        </div>
+                    </div>
 
-                    <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
-                        Visualizing designs with precision before production.
+                    {/* Right Side Image */}
+                    <div className="w-[50%]">
+                        <img
+                            src={CadImg1}
+                            alt="Innovation"
+                            className="w-full h-full object-cover"
+                        />
                     </div>
                 </div>
-                <div className="w-[90%] mx-auto px-6 md:px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-2 mb-6 rounded-b-md h-auto">
-                    {CadImages.map((img, index) => (
-                        <div key={index} className="">
-                            <FlipCard imageUrl={img.image} id={img.id} />
+            </section>
+            <section
+                id=""
+                className="my-5 w-full bg-blue-950 flex justify-center py-20"
+            >
+                <div className="w-[80%] bg-white flex">
+                    {/* Left Side */}
+                    <div className="w-[50%] p-10 flex flex-col justify-center">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
+                            WEAVING BRILLIANCE
+                        </h2>
+                        <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
+                            From loom to luxury, we unite cutting-edge fabric
+                            innovation with eco-conscious materials and refined
+                            finishing—infusing every creation with the artistry
+                            and heritage of Made in India
                         </div>
-                    ))}
-                </div>
-            </div>
-            <div>
-                <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
-                        TEXTILE INGENUITY
-                    </h1>
-                    <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
-                        From loom to luxury, we unite cutting-edge fabric
-                        innovation with eco-conscious materials and refined
-                        finishing—infusing every creation with the artistry and
-                        heritage of Made in India
+                    </div>
+
+                    {/* Right Side Image */}
+                    <div className="w-[50%]">
+                        <img
+                            src={TextileImg1}
+                            alt="Innovation"
+                            className="w-full h-full object-cover"
+                        />
                     </div>
                 </div>
-                <div className="w-[90%] mx-auto px-6 md:px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-2 mb-6 rounded-b-md h-auto">
-                    {TextileImages.map((img, index) => (
-                        <div key={index} className="">
-                            <FlipCard imageUrl={img.image} id={img.id} />
+            </section>
+            <section
+                id=""
+                className="my-5 w-full bg-blue-950 flex justify-center py-20"
+            >
+                <div className="w-[80%] bg-white flex">
+                    {/* Left Side */}
+                    <div className="w-[50%] p-10 flex flex-col justify-center">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
+                            OPERATIONAL EXCELLENCE
+                        </h2>
+                        <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
+                            Systems for faster, cleaner, better production. It’s
+                            an art blending innovation with craftsmanship to
+                            reduce waste, enhance efficiency, and deliver
+                            quality that speaks for itself.
                         </div>
-                    ))}
-                </div>
-            </div>
-            <div>
-                <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
-                        LEAN MANUFACTURING
-                    </h1>
-                    <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
-                        Systems for faster, cleaner, better production. It’s an
-                        art blending innovation with craftsmanship to reduce
-                        waste, enhance efficiency, and deliver quality that
-                        speaks for itself.
+                    </div>
+
+                    {/* Right Side Image */}
+                    <div className="w-[50%]">
+                        <img
+                            src={LeanImg1}
+                            alt="Innovation"
+                            className="w-full h-full object-cover"
+                        />
                     </div>
                 </div>
-                <div className="w-[90%] mx-auto px-6 md:px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-2 mb-6 rounded-b-md h-auto">
-                    {LeanImages.map((img, index) => (
-                        <div key={index} className="">
-                            <FlipCard imageUrl={img.image} id={img.id} />
+            </section>
+            <section
+                id=""
+                className="my-5 w-full bg-blue-950 flex justify-center py-20"
+            >
+                <div className="w-[80%] bg-white flex">
+                    {/* Left Side */}
+                    <div className="w-[50%] p-10 flex flex-col justify-center">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
+                            UBT SEWING TECHNOLOGY
+                        </h2>
+                        <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
+                            Seam integrity meets advanced performance. We
+                            engineer resilience into every stitch—using
+                            ultra-bond thread technology to create seams that
+                            endure, perform, and excel in high-intensity
+                            activewear and outerwear.
                         </div>
-                    ))}
-                </div>
-            </div>
-            <div>
-                <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
-                        UBT SEWING TECHNOLOGY
-                    </h1>
-                    <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
-                        Seam integrity meets advanced performance. We engineer
-                        resilience into every stitch—using ultra-bond thread
-                        technology to create seams that endure, perform, and
-                        excel in high-intensity activewear and outerwear.
+                    </div>
+
+                    {/* Right Side Image */}
+                    <div className="w-[50%]">
+                        <img
+                            src={UbtImg1}
+                            alt="Innovation"
+                            className="w-full h-full object-cover"
+                        />
                     </div>
                 </div>
-                <div className="w-[90%] mx-auto px-6 md:px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-2 mb-6 rounded-b-md h-auto">
-                    {UbtImages.map((img, index) => (
-                        <div key={index} className="">
-                            <FlipCard imageUrl={img.image} id={img.id} />
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div>
+            </section>
+            
+            {/* <div>
                 <div className="w-[90%] mx-auto px-6 md:px-20 py-12 text-2xl sm:text-3xl md:text-4xl text-[#01276a] font-semibold">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
                         DIGITAL SAMPLING
@@ -222,7 +255,7 @@ function InnovationThatLeads() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }
