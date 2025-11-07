@@ -232,7 +232,7 @@ function InnovationThatLeads() {
                         <img
                             src={UbtImg1}
                             alt="Innovation"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain"
                         />
                     </div>
                 </div>

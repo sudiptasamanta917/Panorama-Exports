@@ -82,7 +82,7 @@ const OurPurpose = () => {
                                     <img
                                         src={item.img}
                                         alt="purpose visual"
-                                        className="2xl:w-[600px] xl:w-[500px] lg:w-[450px] md:w[400px] w-full xl:h-[400px] lg:h-[350px] h-[300px]  object-cover"
+                                        className="2xl:w-[600px] xl:w-[500px] lg:w-[450px] md:w[400px] w-full object-contain"
                                     />
                                 </div>
                             </div>
