@@ -39,7 +39,7 @@ const milestones = [
         year: "2010",
         text: [
             "We’ve launched ESG-driven sustainability programs that blend environmental sensitivity with critical prediction—creating impact for both society and industry development.",
-            "Grew state of art advanced manufacturing units in Faridabad, boosting capabilities and trimming delivery excellence.",
+            "Established state-of-the-art manufacturing units in Faridabad, enhancing production capabilities and elevating delivery efficiency.  ",
         ],
         textPosition: ["top", "bottom"],
         color: "[#053487]",
@@ -47,8 +47,8 @@ const milestones = [
     {
         year: "2024",
         text: [
-            "",
-            "Grew stats of our art advanced roof finishing units in Faridabad, blessing factory sustainability efforts.",
+            "Powered by 5,000+ skilled hands, we craft 12 million garments a year-now growing stronger with a new fabric warehouse fuelling global reach.",
+            "Unit-3 (Plot-11) A fresh stitch in time! This unit joined the fashion brigade with cutting-edge capabilities.",
         ],
         textPosition: ["top", "bottom"],
         color: "gray-400",
@@ -56,8 +56,8 @@ const milestones = [
     {
         year: "2025",
         text: [
-            "Powered by 5,000+ skilled hands, we craft 12 million garments a year—now growing outreach with new fabric ware and showcasing full global reach.",
-            "With 7,000 team members driving our approach, we commence with new head office in Kathgodam and one in Noida—a benchmark where science meets tradition, sheets technology, yet crafted essentials are retrieved, suited, refined pieces for the global market.",
+            "Powered by 5,000+ skilled professionals, we produce over 12 million garments annually-expanding our capabilities with new fabric divisions and strengthening our global footprint",
+            "Empowered by 5,000 skilled minds, our journey advances with the new Noida head office-an inspiring hub where innovation meets artistry, precision meets passion, and India’s crafted excellence reaches the world.  ",
         ],
         textPosition: ["top", "bottom"],
         color: "[#053487]",

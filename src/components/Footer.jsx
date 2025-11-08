@@ -8,21 +8,20 @@ export default function Footer() {
             { title: "Privacy Notice", path: "/privacy" },
             { title: "Cookie Notice", path: "/cookies" },
             { title: "Be Aware of Fraudulent Job Offers", path: "/fraud" },
-            { title: "Terms & Conditions", path: "/terms" }
+            { title: "Terms & Conditions", path: "/terms" },
         ],
         careers: [
             { title: "Careers", path: "/careers" },
-            { title: "Leadership Programs", path: "/leadership-programs" },
-            { title: "Life at Panorama", path: "/life-at-panorama" },
-            { title: "Teamwork & Culture", path: "/culture" }
+            { title: "Leadership", path: "/leadership-programs" },
+            { title: "Life at Panorama", path: "/peoples#life-at-panorama" },
         ],
         social: [
             { name: "Facebook", icon: "facebook", url: "#" },
             { name: "Instagram", icon: "instagram", url: "#" },
             { name: "X", icon: "x", url: "#" },
             { name: "LinkedIn", icon: "linkedin", url: "#" },
-            { name: "YouTube", icon: "youtube", url: "#" }
-        ]
+            { name: "YouTube", icon: "youtube", url: "#" },
+        ],
     };
 
     return (

@@ -73,7 +73,7 @@ const GoogleMapUnits = () => {
             lng: 77.22,
             title: "Unit 06",
             subtitle: "Panorama Warehouse",
-            address: "Noida",
+            address: "PANORAMA EXPORTS D144, Sector 63, Noida",
             locationUrl: "/unitmap",
             image: plant5,
         },
