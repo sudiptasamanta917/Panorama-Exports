@@ -53,7 +53,7 @@ function Responsibility() {
             <div className=" bg-[#49883f] lg:py-20 py-12 lg:text-6xl text-4xl text-center text-white font-semibold">
                 SUSTAINABILITY
             </div>
-            <div className="lg:w-[90%] w-full mx-auto px-6 md:px-20 py-12">
+            <div className="lg:w-[90%] w-full mx-auto px-6 md:px-20 pt-12">
                 <div className="text-gray-700 text-center 2xl:text-xl lg:text-lg text-sm leading-relaxed">
                     For Panorama, sustainability means designing with
                     conscience,<br></br> producing with care, and leaving a
@@ -61,6 +61,25 @@ function Responsibility() {
                 </div>
                 <div className="w-full h-[1px] bg-blue-900 my-8"></div>
             </div>
+            {/* Focus Areas */}
+            <section className="grid md:grid-cols-4 grid-cols-2 gap-5 mx-auto 2xl:w-[60%] xl:w-[70%] lg:w-[70%] md:w-[90%] w-full my-20">
+                {icons.map((item) => (
+                    <div
+                        key={item.id}
+                        className={`flex flex-col items-center justify-center`}
+                    >
+                        <img
+                            src={item.icon}
+                            alt="image"
+                            className="rounded-lg xl:w-36 w-28 xl:h-36 h-28"
+                        />
+                        <h2 className="text-blue-950 font-semibold my-4 text-[12px] md:text-sm xl:text-md 2xl:text-lg">
+                            {item.header}
+                        </h2>
+                    </div>
+                ))}
+            </section>
+
             {/* Images Area */}
             <section className="">
                 <div className="">
@@ -70,24 +89,6 @@ function Responsibility() {
             <div className="lg:w-[90%] w-full mx-auto px-6 md:px-20 py-12">
                 <div className="w-full h-[1px] bg-blue-900"></div>
                 <div className="w-full h-[1px] bg-blue-900 mt-[1px] mb-10"></div>
-                {/* Focus Areas */}
-                <section className="grid md:grid-cols-4 grid-cols-2 gap-5 mx-auto 2xl:w-[75%] lg:w-[90%] w-full my-20">
-                    {icons.map((item) => (
-                        <div
-                            key={item.id}
-                            className={`flex flex-col items-center justify-center`}
-                        >
-                            <img
-                                src={item.icon}
-                                alt="image"
-                                className="rounded-lg xl:w-36 w-28 xl:h-36 h-28"
-                            />
-                            <h2 className="text-blue-950 font-semibold my-4 text-[12px] md:text-sm xl:text-md 2xl:text-lg">
-                                {item.header}
-                            </h2>
-                        </div>
-                    ))}
-                </section>
 
                 {/* Our Approaches */}
                 <section className="my-16 flex flex-col justify- items- gap-10">

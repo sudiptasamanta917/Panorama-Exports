@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 export default function Footer() {
     const footerLinks = {
         company: [
-            { title: "Contact Us", path: "/contact" },
+            { title: "Contact Us", path: "/contactus" },
             { title: "Privacy Notice", path: "/privacy" },
-            { title: "Cookie Notice", path: "/cookies" },
-            { title: "Be Aware of Fraudulent Job Offers", path: "/fraud" },
             { title: "Terms & Conditions", path: "/terms" },
         ],
         careers: [
-            { title: "Careers", path: "/careers" },
-            { title: "Leadership", path: "/leadership-programs" },
+            { title: "Careers", path: "/peoples" },
+            { title: "Leadership", path: "/vision-values#leadership" },
             { title: "Life at Panorama", path: "/peoples#life-at-panorama" },
         ],
         social: [
@@ -28,7 +26,7 @@ export default function Footer() {
         <footer className="bg-gray-900 text-white">
             <div className="container mx-auto px-4 pt-10 pb-5">
                 <div className="grid md:grid-cols-3 gap-8">
-                    {/* Company Links */}
+                    {/*Important Links */}
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Company</h3>
                         <ul className="space-y-2">

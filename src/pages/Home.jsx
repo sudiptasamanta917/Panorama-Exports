@@ -437,7 +437,7 @@ export default function Home() {
                     <div className="flex items-center justify-start">
                         <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
                             Certifications
-                            <div className="text-sm md:text-lg mt-3 md:mb-14 text-gray-600 ml-1">
+                            <div className="text-sm md:text-lg mt-3 text-gray-600 ml-1">
                                 Our legal certificates
                             </div>
                         </div>

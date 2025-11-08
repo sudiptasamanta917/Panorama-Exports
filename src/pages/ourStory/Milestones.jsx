@@ -30,7 +30,7 @@ const milestones = [
         color: "[#053487]",
     },
     {
-        year: "2000s",
+        year: "2000",
         text: ["", ""],
         textPosition: ["top", "bottom"],
         color: "gray-400",
@@ -110,9 +110,11 @@ const Milestones = () => {
                             }`}
                         >
                             {m.text[0]}
-                            <div
-                                className={`mt-2 h-10 w-[2px] bg-${m.color}`}
-                            ></div>
+                            {m.year != "2000" && (
+                                <div
+                                    className={`mt-2 h-10 w-[2px] bg-${m.color}`}
+                                ></div>
+                            )}
                         </div>
 
                         {/* Timeline */}
@@ -169,9 +171,12 @@ const Milestones = () => {
                                 visible[i] ? "opacity-100" : "opacity-0"
                             }`}
                         >
-                            <div
-                                className={`mb-2 h-10 w-[2px] bg-${m.color}`}
-                            ></div>
+                            {m.year != "2000" && (
+                                <div
+                                    className={`mb-2 h-10 w-[2px] bg-${m.color}`}
+                                ></div>
+                            )}
+
                             {m.text.length === 2 ? m.text[1] : m.text[0]}
                         </div>
                     </div>

@@ -30,6 +30,7 @@ import InnovationThatLeads from "../pages/Innovation/InnovationThatLeads";
 import StandardOfPerfection from "../pages/Innovation/StandardOfPerfection";
 import HandcraftedLuxury from "../pages/Innovation/HandcraftedLuxury";
 import LookBook from "../pages/LookBook/LookBook";
+import ContactUs from "../pages/Contact/ContactUs";
 
 
 
@@ -64,6 +65,7 @@ export default function AppRoutes() {
             <Route path="/media" element={<Media />} />
             <Route path="/unitmap" element={<UnitLocationMap />} />
             <Route path="/lookbook" element={<LookBook />} />
+            <Route path="/contactus" element={<ContactUs />} />
 
             <Route
                 path="/innovation/innovationleads"

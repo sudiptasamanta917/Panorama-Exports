@@ -14,7 +14,7 @@ function StandardOfPerfection() {
                           <h1 className="text-lg md:text-2xl xl:text-3xl font-semibold text-blue-900">
                               Global Standards, Local Soul
                           </h1>
-                          <p className="text-sm md:text-lg mt-3 md:mb-14 text-gray-600 ml-1 font-thin w-[50%] text-justify">
+                          <p className="text-sm md:text-lg mt-3 text-gray-600 ml-1 font-thin w-[50%] text-justify">
                               From ethical sourcing to flawless finishing, our
                               certifications speak of trust, transparency, and
                               excellence, every garment carries the seal of
