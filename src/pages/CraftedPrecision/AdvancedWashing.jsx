@@ -5,8 +5,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import aet from "../../assets/Crafted_Precision/Advanced_washing/3.png";
-import aet1 from "../../assets/Crafted_Precision/Advanced_washing/1.jpg";
+import aet from "../../assets/Crafted_Precision/Advanced_washing/Header.jpg";
+import aet1 from "../../assets/Crafted_Precision/Advanced_washing/3.png";
 import aet2 from "../../assets/Crafted_Precision/Advanced_washing/2.jpg";
 import aet3 from "../../assets/Crafted_Precision/Advanced_washing/Adv.png";
 

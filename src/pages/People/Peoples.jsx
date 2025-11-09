@@ -380,7 +380,7 @@ function Peoples() {
                 }}
             >
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50"></div>
 
                 {/* Content */}
                 <div className="relative z-10 text-white 2xl:w-[65%] lg:w-[70%] md:w-[75%] sm:w-[80%] w-[90%] px-4">
