@@ -5,7 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 import InnovationThatLeads from "./InnovationThatLeads";
 import StandardOfPerfection from "./StandardOfPerfection";
 import HandcraftedLuxury from "./HandcraftedLuxury";
-import bgImage from "../../assets/Innovation/Header/frontbg.jpg";
+// import bgImage from "../../assets/Innovation/Header/frontbg.jpg";
+import bgImage from "../../assets/Innovation/Header/BHA.jpg";
 
 const labels = {
     "#innovation-leads": "Innovation that Leads",
@@ -87,7 +88,7 @@ function Innovation() {
             <section id="innovation-leads" ref={innovationRef}>
                 <div
                     ref={ref}
-                    className="w-full h-[100vh] bg-cover bg-center flex flex-col items-start justify-end"
+                    className="w-full aspect-[16/8] bg-contain bg-center flex flex-col items-start justify-end"
                     style={{ backgroundImage: `url(${bgImage})` }}
                 >
                     <motion.div
