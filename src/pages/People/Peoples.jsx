@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import HumanResources from "./HumanResources";
 import HealthSafety from "./HealthSafety";
 import PeoplePurpose from "./PeoplePurpose";
-import PeopleImg from "../../assets/People/ShivaanSidharth.png";
+import PeopleImg from "../../assets/People/Shivaansidharth1.png";
 import OurStrengthImg from "../../assets/People/OurStrength.png";
 import CommitmentImg from "../../assets/People/Compliance.jpg";
 import { FaArrowRight } from "react-icons/fa";
@@ -134,7 +134,7 @@ function Peoples() {
                         className="w-full bg-contain bg-center"
                         style={{
                             backgroundImage: `url(${director.img})`,
-                            aspectRatio: "16/7", // maintain image ratio
+                            aspectRatio: "16/7.17", // maintain image ratio
                         }}
                     >
                         <div className="bg-transparent w-full h-full flex items-center">

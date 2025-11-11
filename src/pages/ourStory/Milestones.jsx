@@ -24,7 +24,7 @@ const milestones = [
         year: "1990s",
         text: [
             "Expanded internationally; deepened global collaborations.",
-            "Embraced modern innovation for future-ready manufacturing.",
+            "",
         ],
         textPosition: ["top", "bottom"],
         color: "[#053487]",
@@ -57,7 +57,7 @@ const milestones = [
         year: "2025",
         text: [
             "Powered by 5,000+ skilled professionals, we produce over 12 million garments annually-expanding our capabilities with new fabric divisions and strengthening our global footprint",
-            "Empowered by 5,000 skilled minds, our journey advances with the new Noida head office-an inspiring hub where innovation meets artistry, precision meets passion, and India’s crafted excellence reaches the world.  ",
+            "  ",
         ],
         textPosition: ["top", "bottom"],
         color: "[#053487]",

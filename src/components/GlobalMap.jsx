@@ -81,9 +81,9 @@ export default function GlobalMap() {
                 </h1>
                 <div className="mt-10 flex justify-start items-center gap-8 ">
                     <p className="2xl:text-xl lg:text-lg md:text-md text-[12px] text-white">
-                        Panorama's presence extends to over numerous countries
-                        in four regions, establishing it as a
-                        significant global leader
+                        Panorama’s expanding global reach underscores its
+                        emergence as a prominent leader in the international
+                        apparel industry
                     </p>
                 </div>
             </div>
