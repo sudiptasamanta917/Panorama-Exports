@@ -5,15 +5,9 @@ import { Link, useLocation } from "react-router-dom";
 
 import Milestones from "./Milestones";
 
-// Hero images
-import img1 from "../../assets/OurStory/02.webp";
-import img2 from "../../assets/OurStory/03.webp";
-import img3 from "../../assets/OurStory/04.webp";
-import img4 from "../../assets/OurStory/05.webp";
+import LegacyImage from "../../assets/Legacy/final.webp";
 
-import LegacyImage from "../../assets/Legacy/final.png";
-
-import FounderImage from "../../assets/Founders/founderImage.png";
+import FounderImage from "../../assets/Founders/founderImage.webp";
 
 const heroImages = [LegacyImage];
 const labels = {
@@ -85,11 +79,12 @@ export default function OurStory() {
 
     return (
         <div className="text-gray-900 bg-white">
+            <div className="sm:hidden w-full h-10 bg-gray-900"></div>
             {/* Legacy Sections */}
             <section id="legacy" ref={legacyRef} className="bg-white">
                 {/* Hero Section */}
                 <div
-                    className="relative w-full bg-black overflow-hidden flex flex-col items-start justify-end py-28"
+                    className="relative w-full bg-black overflow-hidden flex flex-col items-start justify-end 2xl:py-28 xl:py-20 lg:py-10 md:py-5 sm:py-4 py-2"
                     style={{ aspectRatio: "16 / 7" }}
                 >
                     {/* Background Dissolve Animations images */}
@@ -113,11 +108,11 @@ export default function OurStory() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
 
                     {/* Text Box */}
-                    <div className="relative z-20 text-white w-[90%] mx-auto px-6 md:px-20 font-semibold">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5">
+                    <div className="relative z-20 text-white w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 font-semibold">
+                        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl xl:mb-5 md:mb-4 sm:mb-3 mb-2">
                             Legacy
                         </h1>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-normal">
+                        <h2 className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal">
                             <span className="font-light">Where</span> Heritage{" "}
                             <span className="font-light">Meets</span> Modern
                             Luxury
@@ -126,7 +121,7 @@ export default function OurStory() {
                 </div>
             </section>
             {/* Breadcrumbs */}
-            <div className="sticky top-20 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
+            <div className="hidden md:block sticky lg:top-20 md:top-12 top-10 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
                 <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
                     {crumbs.map((crumb, index) => (
                         <span
@@ -135,7 +130,7 @@ export default function OurStory() {
                         >
                             <Link
                                 to={crumb.path}
-                                className={`hover:underline sm:text-xl text-lg sm:my-1 ${
+                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 ${
                                     activeCrumb === crumb.label
                                         ? "font-semibold text-white"
                                         : "text-gray-300"
@@ -147,15 +142,9 @@ export default function OurStory() {
                     ))}
                 </div>
             </div>
-            <div className="bg-white sm:pt-16 pt-5 pb-10 px-6 ">
+            <div className="bg-white sm:pt-16 pt-5 lg:pb-10 md:pb-5 pb-0 sm:px-6 px-2">
                 <div className="">
-                    {/* Heading */}
-                    {/* <h2 className="2xl:text-7xl lg:text-5xl text-4xl text-gray-600 text-center md:mb-10 mb-4">
-                            Legacy
-                        </h2> */}
-
-                    {/* Subheading */}
-                    <p className="2xl:text-3xl lg:text-2xl md:text-xl text-md text-blue-900 text-justify max-w-[70%] mx-auto leading-relaxed">
+                    <p className="2xl:text-3xl lg:text-2xl md:text-xl sm:text-md text-sm text-blue-900 text-justify sm:max-w-[70%] w-[90%] mx-auto leading-relaxed">
                         Since 1973, Panorama Exports has transformed fabrics
                         into fashion blending Indian craftsmanship with advanced
                         manufacturing. Today, our garments travel from India to
@@ -167,26 +156,18 @@ export default function OurStory() {
             </div>
             {/* Founder's Message Sections */}
             <section id="founder-message" ref={ref} className="bg-white">
-                <div className="w-[90%] mx-auto sm:py-16 py-5 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                <div className="w-[90%] mx-auto md:py-16 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
+                    <p className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         FOUNDER'S MESSAGE
-                    </h1>
+                    </p>
                 </div>
 
-                <div className="bg-[#b9a686] h-[70vh] relative flex items-center pb-5">
-                    <div className="text-white h-[70vh] absolute bottom-0 flex items-center justify-center">
-                        <img
-                            src={FounderImage}
-                            alt="Founder"
-                            className="h-full object-contain"
-                        />
-                    </div>
-
+                <div className="bg-[#b9a686] xl:h-[70vh] lg:h-[50vh] h-full relative flex flex-col lg:flex-row items-center lg:pb-5">
                     {/* Quote Section */}
-                    <div className="flex flex-col justify-start items-end w-[100vw] h-[26vh] bg-[#96785e] text-white px-2 md:px-5 py-2">
-                        <div className="2xl:w-[45%] xl:w-[38%] w-[40%] 2xl:mt-2 flex flex-col justify-center items-center">
+                    <div className="flex flex-col lg:justify-start justify-center lg:items-end items-center w-[100vw] h-[26vh] bg-[#96785e] text-white px-2 md:px-5 py-2">
+                        <div className="2xl:w-[45%] xl:w-[38%] lg:w-[40%] px-2 sm:px-6 md:px-10 lg:px-0 2xl:mt-2 flex flex-col justify-center items-center">
                             <motion.p
-                                className="text-[10px] lg:text-sm xl:text-md 2xl:text-lg text-justify md:leading-relaxed 2xl:mb-4 mb-2 2xl:w-[85%] w-[90%] sm:tracking-wide"
+                                className="text-sm sm:text-md md:text-lg lg:text-sm xl:text-md 2xl:text-lg text-justify md:leading-relaxed 2xl:mb-4 mb-2 2xl:w-[85%] lg:w-[90%] sm:tracking-wide"
                                 variants={{
                                     hidden: { opacity: 0, y: 1 },
                                     visible: { opacity: 1, y: 0 },
@@ -196,14 +177,14 @@ export default function OurStory() {
                                 viewport={{ once: false, amount: 0.3 }}
                                 transition={{ duration: 2, ease: "easeInOut" }}
                             >
-                                Our journey in fashion has always been guided
-                                by respect for tradition and a commitment to the
+                                Our journey in fashion has always been guided by
+                                respect for tradition and a commitment to the
                                 future. With each creation we uphold our pride &
                                 values. We continue to shape this
                                 conversation-one inspired creation at a time.
                             </motion.p>
                             <motion.h2
-                                className="text-[10px] lg:text-sm xl:text-md 2xl:text-lg font- flex justify-end 2xl:w-[85%] w-[90%]"
+                                className="text-sm sm:text-md md:text-lg lg:text-sm xl:text-md 2xl:text-lg font- flex justify-end 2xl:w-[85%] lg:w-[90%]"
                                 variants={{
                                     hidden: { opacity: 0, y: 1 },
                                     visible: { opacity: 1, y: 0 },
@@ -221,15 +202,22 @@ export default function OurStory() {
                             </motion.h2>
                         </div>
                     </div>
+                    <div className="text-white xl:h-[70vh] lg:h-[50vh] lg:absolute bottom-0 flex items-center justify-center">
+                        <img
+                            src={FounderImage}
+                            alt="Founder"
+                            className="h-full object-contain"
+                        />
+                    </div>
                 </div>
             </section>
 
             {/* MileStones Sections */}
             <section id="milestones" ref={milestonesRef} className="bg-white">
-                <h2 className="w-[90%] mx-auto py-16 px-6 md:px-20 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                <h2 className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
+                    <p className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         MILESTONES
-                    </h1>
+                    </p>
                 </h2>
                 <Milestones />
             </section>

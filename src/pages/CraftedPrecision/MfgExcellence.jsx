@@ -5,10 +5,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import mfg from "../../assets/Crafted_Precision/Manufacturing_Excellence/mfg.png";
-import mfg1 from "../../assets/Crafted_Precision/Manufacturing_Excellence/1.png";
-import mfg2 from "../../assets/Crafted_Precision/Manufacturing_Excellence/2.png";
-import mfg3 from "../../assets/Crafted_Precision/Manufacturing_Excellence/3.png";
+import mfg from "../../assets/Crafted_Precision/Manufacturing_Excellence/mfg.webp";
+import mfg1 from "../../assets/Crafted_Precision/Manufacturing_Excellence/1.webp";
+import mfg2 from "../../assets/Crafted_Precision/Manufacturing_Excellence/2.webp";
+import mfg3 from "../../assets/Crafted_Precision/Manufacturing_Excellence/3.webp";
 
 const mfgImages = [
     {
@@ -88,17 +88,13 @@ function MfgExcellence() {
     return (
         <>
             <section className="bg-white">
-                <div className="w-full h-20 bg-gray-900"></div>
-                <div className="w-[90%] mx-auto py-16 px-6 md:px-20">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
+                <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl">
+                    <h1 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         MANUFACTURING EXCELLENCE
                     </h1>
-                    {/* <h3 className="mt-5">
-                      To enrich lives by building a dynamic, responsible, and
-                      trusted global enterprise.
-                  </h3> */}
                 </div>
-                <div className="mb-10">
+                <div className="md:mb-10">
                     <Swiper
                         ref={swiperRef}
                         modules={[Navigation, Pagination, Autoplay]}
@@ -130,12 +126,12 @@ function MfgExcellence() {
                         ))}
                     </Swiper>
                 </div>
-                <div className="my-16 text-justify md:w-[70%] w-[95%] mx-auto text-xl text-blue-950">
-                    <p className="font-bold text-2xl my-2 text-center">
+                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                    <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Manufacturing Excellence{" "}
                     </p>
                     Five state-of-the-art factories work in perfect
-                    synergy—streamlining every stage from fabric to final
+                    synergy-streamlining every stage from fabric to final
                     finish. Powered by smart technology and real-time quality
                     control, Panorama delivers garments that blend innovation,
                     craftsmanship, and efficiency.

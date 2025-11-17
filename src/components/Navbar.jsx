@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
-
-import firstImg from "../assets/images/first.jpg";
-import secondImg from "../assets/images/first.jpg";
-import thirdImg from "../assets/images/first.jpg";
-import fourthImg from "../assets/images/first.jpg";
-import fifthImg from "../assets/images/first.jpg";
-import sixthImg from "../assets/images/first.jpg";
+import { FaBars } from "react-icons/fa";
 
 export default function Navbar() {
     const location = useLocation();
@@ -24,32 +18,32 @@ export default function Navbar() {
                 {
                     label: "Legacy",
                     path: "/ourstory#legacy",
-                    image: firstImg,
+                    image: "",
                 },
                 {
                     label: "Vision & Values",
                     path: "/vision-values",
-                    image: secondImg,
+                    image: "",
                 },
                 {
                     label: "Core Values",
                     path: "/vision-values#core-values",
-                    image: thirdImg,
+                    image: "",
                 },
                 {
                     label: "Leadership",
                     path: "/vision-values#leadership",
-                    image: fourthImg,
+                    image: "",
                 },
                 {
                     label: "Milestones",
                     path: "/ourstory#milestones",
-                    image: fifthImg,
+                    image: "",
                 },
                 {
                     label: "Our Purpose",
                     path: "/our-purpose",
-                    image: sixthImg,
+                    image: "",
                 },
             ],
         },
@@ -60,37 +54,37 @@ export default function Navbar() {
                 {
                     label: "Manufacturing Excellence",
                     path: "/mfg-excellence",
-                    image: firstImg,
+                    image: "",
                 },
                 {
                     label: "Smart Warehousing",
                     path: "/smart-warehousing",
-                    image: secondImg,
+                    image: "",
                 },
                 {
                     label: "Art in Every Thread",
                     path: "/art-thread",
-                    image: thirdImg,
+                    image: "",
                 },
                 {
                     label: "Exacting Standards",
                     path: "/exacting-standards",
-                    image: fourthImg,
+                    image: "",
                 },
                 {
                     label: "Sustainable Designs",
                     path: "/sustainable-designs",
-                    image: fifthImg,
+                    image: "",
                 },
                 {
                     label: "Advanced Washing",
                     path: "/advanced-washing",
-                    image: sixthImg,
+                    image: "",
                 },
                 {
                     label: "Adaptive Capacity",
                     path: "/adaptive-capacity",
-                    image: sixthImg,
+                    image: "",
                 },
             ],
         },
@@ -101,17 +95,17 @@ export default function Navbar() {
                 {
                     label: "Innovation that Leads",
                     path: "/innovation#innovation-leads",
-                    image: firstImg,
+                    image: "",
                 },
                 {
                     label: "Standard Of Perfection",
                     path: "/innovation#standard-perfection",
-                    image: secondImg,
+                    image: "",
                 },
                 {
                     label: "Handcrafted Luxury",
                     path: "/innovation#handcrafted-luxury",
-                    image: thirdImg,
+                    image: "",
                 },
             ],
         },
@@ -148,9 +142,9 @@ export default function Navbar() {
         <nav
             className={`${
                 scrolled ? "bg-white" : "bg-transparent backdrop-blur-md"
-            } shadow-md sm:h-20 max-h-20 fixed top-0 left-0 right-0 z-50 transition-colors duration-500`}
+            } shadow-md lg:h-20 md:h-12 h-10 fixed top-0 left-0 right-0 z-50 transition-colors duration-500`}
         >
-            <div className=" mx-auto xl:px-4 px-2 2xl:h-24 sm:h-20 max-h-20 flex items-center justify-end xl:gap-3 gap-2">
+            <div className=" mx-auto xl:px-4 px-2 lg:h-20 md:h-12 h-10 flex items-center justify-end xl:gap-3 gap-2">
                 {/* Logo */}
                 {/* <Link
                     to="/"
@@ -167,8 +161,11 @@ export default function Navbar() {
                 <ul className="xl:w-[80%] w-[90%] hidden lg:flex xl:gap-8 gap-6 justify-end items-center relative text-white 2xl:text-base text-sm mr-5">
                     {navItems.map((item, index) => {
                         // Skip rendering if item is Home and current path is "/"
-                        if (item.label === "HOME" && location.pathname === "/") {
-                        return null;
+                        if (
+                            item.label === "HOME" &&
+                            location.pathname === "/"
+                        ) {
+                            return null;
                         }
 
                         return (
@@ -218,53 +215,20 @@ export default function Navbar() {
                     })}
                 </ul>
 
-                <div className="flex">
-                    {/* Language Switcher */}
-                    {/* <div
-                        className={`flex items-center space-x-2 2xl:ml-16 ml:2 xl:mr-2 ${
-                            scrolled ? "text-[#073281]" : "text-white"
-                        }`}
-                    >
-                        <button
-                            className={`2xl:text-base text-sm transition-colors duration-500 ${
-                                scrolled
-                                    ? "text-[#073281] hover:text-[#073281]"
-                                    : "hover:text-red-300"
-                            }`}
-                        >
-                            EN
-                        </button>
-                        <span className="text-sm">|</span>
-                        <button
-                            className={`2xl:text-base text-sm transition-colors duration-500 ${
-                                scrolled
-                                    ? "text-[#073281] hover:text-[#073281]"
-                                    : "hover:text-red-300"
-                            }`}
-                        >
-                            HI
-                        </button>
-                    </div> */}
-
+                <div className={`lg:hidden flex`}>
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="lg:hidden p-2 rounded-md text-white ml-10"
+                        className="px-2 rounded-md text-white ml-10"
                         aria-label="Toggle mobile menu"
                     >
-                        <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        </svg>
+                        <FaBars
+                            className={`${
+                                scrolled
+                                    ? "text-[#073281] hover:text-[#073281]"
+                                    : "text-white hover:text-red-300"
+                            }`}
+                        />
                     </button>
                 </div>
             </div>
@@ -296,15 +260,26 @@ export default function Navbar() {
                         </li>
                         <li>
                             <Link
-                                to="/manufacturing"
+                                to="/vision-values"
                                 onClick={() => setIsOpen(false)}
                             >
-                                Manufacturing
+                                Vision & Values
                             </Link>
                         </li>
                         <li>
-                            <Link to="/people" onClick={() => setIsOpen(false)}>
-                                People
+                            <Link
+                                to="/our-purpose"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Our Purpose
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/craftedprecision"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Crafted Precision
                             </Link>
                         </li>
                         <li>
@@ -316,15 +291,35 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li>
+                            <Link
+                                to="/lookbook"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Lookbook
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/peoples"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                People
+                            </Link>
+                        </li>
+
+                        <li>
                             <Link to="/media" onClick={() => setIsOpen(false)}>
                                 Media
                             </Link>
                         </li>
-                        {/* <li className="flex space-x-4 pt-2">
-                        <button className="hover:text-red-300">EN</button>
-                        <span>|</span>
-                        <button className="hover:text-red-300">HI</button>
-                    </li> */}
+                        <li>
+                            <Link
+                                to="/contactus"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Contact Us
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             )}

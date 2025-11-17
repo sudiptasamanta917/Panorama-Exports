@@ -5,8 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 import InnovationThatLeads from "./InnovationThatLeads";
 import StandardOfPerfection from "./StandardOfPerfection";
 import HandcraftedLuxury from "./HandcraftedLuxury";
-// import bgImage from "../../assets/Innovation/Header/frontbg.jpg";
-import bgImage from "../../assets/Innovation/Header/BHA.jpg";
+// import bgImage from "../../assets/Innovation/Header/frontbg.webp";
+import bgImage from "../../assets/Innovation/Header/BHA.webp";
 
 const labels = {
     "#innovation-leads": "Innovation that Leads",
@@ -86,13 +86,14 @@ function Innovation() {
     return (
         <>
             <section id="innovation-leads" ref={innovationRef}>
+                <div className="sm:hidden w-full h-10 bg-gray-900"></div>
                 <div
                     ref={ref}
                     className="w-full aspect-[16/8] bg-contain bg-center flex flex-col items-start justify-end"
                     style={{ backgroundImage: `url(${bgImage})` }}
                 >
                     <motion.div
-                        className="text-white bg-gradient-to-t from-blue-950/90 via-blue-950/80 via-blue-900/60 to-transparent px-[10%] pb-[4%] pt-[10%] w-full"
+                        className="text-white bg-gradient-to-t from-blue-950/90 via-blue-950/80 via-blue-900/60 to-transparent px-[10%] lg:pb-[4%] md:pb-[3%] sm:pb-[2%] pb-[1%] pt-[10%] w-full"
                         variants={{
                             hidden: { opacity: 0, y: 50 },
                             visible: { opacity: 1, y: 0 },
@@ -105,10 +106,10 @@ function Innovation() {
                             ease: "easeOut",
                         }}
                     >
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+                        <h1 className="text-md sm:text-lg md:text-xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold">
                             Innovation that Leads
                         </h1>
-                        <div className="text-lg sm:text-xl md:text-xl xl:text-2xl mt-4 w-[60%] text-justify font-relaxed">
+                        <div className="text-[12px] sm:text-sm md:text-md lg:text-xl xl:text-2xl 2xl:text-3xl xl:mt-4 lg:mt-3 md:mt-2 md:w-[60%] text-justify font-relaxed">
                             At Panorama, innovation is how we stay ahead-and
                             stay true.
                         </div>
@@ -117,7 +118,7 @@ function Innovation() {
             </section>
 
             {/* Breadcrumbs */}
-            <div className="sticky top-20 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
+            <div className="hidden md:block sticky lg:top-20 md:top-12 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
                 <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
                     {crumbs.map((crumb, index) => (
                         <span
@@ -126,7 +127,7 @@ function Innovation() {
                         >
                             <Link
                                 to={crumb.path}
-                                className={`hover:underline sm:text-xl text-lg sm:my-1 ${
+                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 ${
                                     activeCrumb === crumb.label
                                         ? "font-semibold text-white"
                                         : "text-gray-300"

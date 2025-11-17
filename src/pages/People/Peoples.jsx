@@ -5,9 +5,9 @@ import { Link, useLocation } from "react-router-dom";
 import HumanResources from "./HumanResources";
 import HealthSafety from "./HealthSafety";
 import PeoplePurpose from "./PeoplePurpose";
-import PeopleImg from "../../assets/People/Shivaansidharth1.png";
-import OurStrengthImg from "../../assets/People/OurStrength.png";
-import CommitmentImg from "../../assets/People/Compliance.jpg";
+import PeopleImg from "../../assets/People/shivaansidharth3.webp";
+import OurStrengthImg from "../../assets/People/OurStrength.webp";
+import CommitmentImg from "../../assets/People/Compliance.webp";
 import { FaArrowRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -16,29 +16,29 @@ import "swiper/css/navigation";
 import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 
-import img1 from "../../assets/People/LifePanorama/1.jpg";
-import img2 from "../../assets/People/LifePanorama/2.jpeg";
-import img3 from "../../assets/People/LifePanorama/3.jpeg";
-import img4 from "../../assets/People/LifePanorama/4.jpg";
-import img5 from "../../assets/People/LifePanorama/5.jpg";
-import img6 from "../../assets/People/LifePanorama/6.jpg";
-import img7 from "../../assets/People/LifePanorama/7.jpg";
-import img8 from "../../assets/People/LifePanorama/8.jpg";
-import img9 from "../../assets/People/LifePanorama/9.jpeg";
-import img10 from "../../assets/People/LifePanorama/10.jpeg";
-import img11 from "../../assets/People/LifePanorama/11.jpg";
-import img12 from "../../assets/People/LifePanorama/12.jpg";
-import img13 from "../../assets/People/LifePanorama/13.jpg";
-import img14 from "../../assets/People/LifePanorama/14.jpg";
-import img15 from "../../assets/People/LifePanorama/15.jpg";
-import img16 from "../../assets/People/LifePanorama/16.jpg";
+import img1 from "../../assets/People/LifePanorama/1.webp";
+import img2 from "../../assets/People/LifePanorama/2.webp";
+import img3 from "../../assets/People/LifePanorama/3.webp";
+import img4 from "../../assets/People/LifePanorama/4.webp";
+import img5 from "../../assets/People/LifePanorama/5.webp";
+import img6 from "../../assets/People/LifePanorama/6.webp";
+import img7 from "../../assets/People/LifePanorama/7.webp";
+import img8 from "../../assets/People/LifePanorama/8.webp";
+import img9 from "../../assets/People/LifePanorama/9.webp";
+import img10 from "../../assets/People/LifePanorama/10.webp";
+import img11 from "../../assets/People/LifePanorama/11.webp";
+import img12 from "../../assets/People/LifePanorama/12.webp";
+import img13 from "../../assets/People/LifePanorama/13.webp";
+import img14 from "../../assets/People/LifePanorama/14.webp";
+import img15 from "../../assets/People/LifePanorama/15.webp";
+import img16 from "../../assets/People/LifePanorama/16.webp";
 
-import TeamworkImage from "../../assets/People/TeamWork.jpg";
-import ForwardThinkingImage from "../../assets/People/ForwardThinking.jpg";
-import SpeedActionImage from "../../assets/People/SpeedAction.jpg";
-import CustomerCentricityImage from "../../assets/People/CustomerCentricity.jpg";
+import TeamworkImage from "../../assets/People/TeamWork.webp";
+import ForwardThinkingImage from "../../assets/People/ForwardThinking.webp";
+import SpeedActionImage from "../../assets/People/SpeedAction.webp";
+import CustomerCentricityImage from "../../assets/People/CustomerCentricity.webp";
 
-import CareerPng from "../../assets/People/Career.jpg";
+import CareerPng from "../../assets/People/Career.webp";
 
 const crumbs = [
     { label: "Our Strength", path: "#our-strength" },
@@ -80,13 +80,13 @@ const WeBelieveImages = [
         subtext: "",
     },
     {
-        id: 1,
+        id: 3,
         image: SpeedActionImage,
         text: "Speed To Action",
         subtext: "",
     },
     {
-        id: 2,
+        id: 4,
         image: CustomerCentricityImage,
         text: "Customer Centricity",
         subtext: "",
@@ -127,7 +127,7 @@ function Peoples() {
     return (
         <>
             <section className="bg-white">
-                <div className="w-full h-20 bg-gray-900"></div>
+                <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
                 {executiveDirectors.map((director) => (
                     <div
                         key={director.id}
@@ -171,7 +171,8 @@ function Peoples() {
                 ))}
             </section>
 
-            <div className="sticky top-20 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
+            {/* Breadcrumbs */}
+            <div className="hidden md:block sticky lg:top-20 md:top-12 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
                 <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
                     {crumbs.map((crumb, index) => (
                         <span
@@ -180,7 +181,7 @@ function Peoples() {
                         >
                             <a
                                 href={crumb.path}
-                                className={`hover:underline sm:text-xl text-lg sm:my-1 ${
+                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 ${
                                     activeCrumb === crumb.path.substring(1)
                                         ? "font-semibold text-white"
                                         : "text-gray-300"
@@ -193,13 +194,12 @@ function Peoples() {
                 </div>
             </div>
 
-            {/* <section className="bg-blue-950 w-full h-14"></section> */}
             <section>
-                <div className="w-[80%] mx-auto 2xl:pt-16 py-12">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                <div className="w-[90%] mx-auto md:py-16 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl">
+                    <h2 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         PEOPLE
                     </h2>
-                    <p className="text-sm sm:text-md lg:text-lg py-3 mt-5 text-justify leading-relaxed">
+                    <p className="text-sm sm:text-md lg:text-lg py-3 md:mt-5 mt-2 text-justify leading-relaxed">
                         Driven by our People First ethos, Panorama Exports
                         embraces integrity, inclusivity, and respect as the
                         cornerstones of its culture. Through collaboration and
@@ -210,40 +210,27 @@ function Peoples() {
             </section>
             <section
                 id="our-strength"
-                className="w-full bg-blue-950 flex justify-center py-20"
+                className="w-full bg-blue-950 flex justify-center md:py-20 py-10"
             >
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
-                    <div className="w-[50%] p-10 flex flex-col justify-center">
-                        <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-medium text-blue-950">
+                    <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
+                        <h2 className="text-sm sm:text-md md:text-xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
                             Our Strength
                         </h2>
-                        <p className="mt-4 leading-relaxed 2xl:text-base xl:text-sm lg:text-xs text-[10px] text-justify">
-                            The true fabric of Panorama is made of people -
-                            5,000 individuals, each adding their own thread of
-                            talent, passion, and creativity. With women making
-                            up half our team, we are proud to champion equality,
+                        <p className="text-[10px] sm:text-[12px] md:text-sm lg:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin text-justify">
+                            The true fabric of Panorama is made of people 5,000
+                            individuals, each adding their own thread of talent,
+                            passion, and creativity. With women making up half
+                            our team, we are proud to champion equality,
                             empowerment, and opportunity for all. We invest in
                             skills, foster safe and inclusive spaces, and
                             encourage every voice to be part of our shared
                             journey. When our people grow, we grow
-                            together—building a company where success is
+                            together-building a company where success is
                             measured not just in output, but in the lives, we
                             enrich.
                         </p>
-
-                        {/* Industry Links */}
-                        {/* <div className="flex flex-wrap gap-x-6 gap-y-3 mt-6">
-                            {industries.map((item, index) => (
-                                <a
-                                    key={index}
-                                    href="#"
-                                    className="flex items-center gap-2 text-red-700 hover:text-red-900 text-sm md:text-base"
-                                >
-                                    {item} <FaArrowRight className="text-xs" />
-                                </a>
-                            ))}
-                        </div> */}
                     </div>
 
                     {/* Right Side Image */}
@@ -256,9 +243,12 @@ function Peoples() {
                     </div>
                 </div>
             </section>
-            <section id="life-at-panorama" className="py-10 pt-14">
-                <div className="w-[80%] mx-auto 2xl:pt-16 py-12">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+            <section
+                id="life-at-panorama"
+                className="w-[90%] mx-auto md:pt-16 pt-5 px-2 sm:px-6 md:px-10 lg:px-20"
+            >
+                <div className="text-lg sm:text-3xl md:text-4xl lg:text-5xl pb-5 md:pb-16">
+                    <h2 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         LIFE AT PANORAMA
                     </h2>
                 </div>
@@ -291,22 +281,22 @@ function Peoples() {
                     </Swiper>
 
                     {/* Custom navigation buttons */}
-                    <button className="swiper-button-prev-custom absolute left-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950 hover:bg-blue-700 text-white w-10 h-10 rounded-full shadow-md">
+                    <button className="swiper-button-prev-custom absolute left-[-33px] md:left-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950 hover:bg-blue-700 text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md">
                         ❮
                     </button>
-                    <button className="swiper-button-next-custom absolute right-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950 hover:bg-blue-700 text-white w-10 h-10 rounded-full shadow-md">
+                    <button className="swiper-button-next-custom absolute right-[-33px] md:right-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950 hover:bg-blue-700 text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md">
                         ❯
                     </button>
                 </div>
             </section>
 
             <section>
-                <div className="w-[80%] mx-auto 2xl:pt-16 py-12">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                <div className="w-[90%] mx-auto md:py-16 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
+                    <h2 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         WE BELIEVE IN
                     </h2>
                 </div>
-                <div className="w-[80%] mx-auto mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 gap-4">
+                <div className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 gap-4">
                     {WeBelieveImages.map((item) => (
                         <div
                             key={item.id}
@@ -333,15 +323,15 @@ function Peoples() {
 
             <section
                 id="commitment"
-                className="w-full bg-blue-950 flex justify-center py-20"
+                className="w-full bg-blue-950 flex justify-center md:py-20 py-10"
             >
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
-                    <div className="w-[50%] p-10 flex flex-col justify-center">
-                        <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-medium text-blue-950">
+                    <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
+                        <h2 className="text-sm sm:text-md md:text-xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
                             Commitment to Care & Compliance
                         </h2>
-                        <p className="mt-4 leading-relaxed xl:text-sm lg:text-xs text-[10px] text-justify">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm lg:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin text-justify">
                             Panorama fosters a culture of accountability,
                             ensuring rigorous compliance with global labour
                             laws, buyer mandates, and ethical business
@@ -357,7 +347,7 @@ function Peoples() {
                             reinforcing a zero tolerance approach to harassment,
                             discrimination, and exploitation-upholding dignity,
                             respect, and fairness for all.
-                        </p>
+                        </div>
                     </div>
 
                     {/* Right Side Image */}
@@ -383,18 +373,18 @@ function Peoples() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50"></div>
 
                 {/* Content */}
-                <div className="relative z-10 text-white 2xl:w-[65%] lg:w-[70%] md:w-[75%] sm:w-[80%] w-[90%] px-4">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium mb-6 w-full">
+                <div className="relative z-10 text-white 2xl:w-[65%] lg:w-[70%] md:w-[75%] sm:w-[80%] w-[95%] md:px-4 px-1 md:py-4 py-1">
+                    <h1 className="text-md sm:text-2xl lg:text-3xl 2xl:text-5xl font-medium mb-1 md:mb-6 w-full">
                         Explore a career at PANORAMA.
                     </h1>
-                    <p className="text-sm sm:text-base leading-relaxed mb-8">
+                    <p className="text-[10px] sm:text-sm lg:text-lg leading-relaxed lg:mb-8 md:mb-5 mb-2">
                         Turn your job into a career at Panorama Exports. Learn,
                         grow, and work alongside driven minds. Join us—contact
                         HR for openings.
                     </p>
 
-                    <div className="flex items-center">
-                        <button className="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">
+                    <div className="flex items-center text-[10px] md:text-sm lg:text-lg">
+                        <button className="md:px-6 px-2 md:py-3 py-1 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">
                             Follow us on LinkedIn
                         </button>
                     </div>

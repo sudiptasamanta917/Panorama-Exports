@@ -8,7 +8,7 @@ import C5 from "../assets/Certificates/cert 5.webp";
 import C6 from "../assets/Certificates/cert 6.webp";
 import C7 from "../assets/Certificates/cert 7.webp";
 import C8 from "../assets/Certificates/cert 8.webp";
-import AllCertificates from "../assets/Certificates/AllCertificates.jpg";
+import AllCertificates from "../assets/Certificates/AllCertificates.webp";
 
 const certificates = [
     { id: 1, src: C1, alt: "Certificate 1" },
@@ -25,21 +25,13 @@ const CertificateSlider = () => {
    
 
     return (
-        <div className="p-6 w-[90%] mx-auto md:px-20">
-            {/* grid container */}
-            {/* <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 xl:w-[60%] lg:w-[80%] mx-auto">
-                {certificates.map((cert, idx) => (
-                    <div key={idx} className="">
-                        <img
-                            src={cert.src}
-                            alt={cert.alt}
-                            className="object-contain shadow-[0_0_12px_rgba(0,0,0,0.2)]"
-                        />
-                    </div>
-                ))}
-            </div> */}
+        <div className="md:p-6 w-[90%] mx-auto md:px-10 lg:px-20">
             <div className="">
-                <img src={AllCertificates} alt="certificates" className="w-full object-contain" />
+                <img
+                    src={AllCertificates}
+                    alt="certificates"
+                    className="w-full object-contain"
+                />
             </div>
         </div>
     );

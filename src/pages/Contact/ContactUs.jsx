@@ -31,19 +31,19 @@ const ContactUs = () => {
 
     return (
         <div className="bg-white">
-            <div className="w-full h-20 bg-gray-900"></div>
-            <div className="bg-blue-900 py-20">
+            <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
+            <div className="bg-blue-900 md:py-20 py-10">
                 <h1 className="lg:text-6xl md:text-4xl text-3xl font-bold text-white text-center">
                     CONTACT US
                 </h1>
             </div>
 
-            <div className="md:w-[90%] w-full px-6 md:px-20 mx-auto flex flex-col md:flex-row gap-8 px-4 py-10">
+            <div className="md:w-[90%] w-full md:px-20 mx-auto flex flex-col md:flex-row gap-8 px-4 md:py-10 py-5">
                 <div className="md:w-[40%] text-blue-950">
                     <h2 className="lg:text-5xl md:text-3xl text-2xl font-bold mb-4">
                         Contact us
                     </h2>
-                    <h3 className="font-semibold text-2xl mb-2 mt-10">
+                    <h3 className="font-semibold text-2xl mb-2 md:mt-10 mt-5">
                         Panorama Exports
                     </h3>
                     <p className="mb-2">
@@ -64,7 +64,7 @@ const ContactUs = () => {
                     className="md:w-[60%] bg-white rounded-sm p-6 text-blue-950"
                     onSubmit={handleSubmit}
                 >
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
                         <div className="mb-4">
                             <label className="block mb-1 font-medium">
                                 Name *

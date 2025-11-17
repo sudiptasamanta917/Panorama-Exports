@@ -107,7 +107,7 @@ const MediaScrollSection = () => {
     };
 
     return (
-        <div className="bg-white w-[90%] mx-auto px-6 md:px-20 py-10 lg:flex gap-4">
+        <div className="bg-white w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 md:py-10 sm:py-4 py-2 lg:flex gap-4">
             {/* Stats Section */}
             <div
                 ref={sectionRef}
@@ -126,14 +126,14 @@ const MediaScrollSection = () => {
                                     "0 4px 12px rgba(0,0,0,0.15), 0 -4px 12px rgba(0,0,0,0.1)",
                             }}
                         >
-                            <span className="2xl:text-5xl xl:text-4xl text-3xl font-bold text-blue-800">
+                            <span className="2xl:text-5xl xl:text-4xl sm:text-3xl text-2xl font-bold text-blue-800">
                                 {stat.label === "GARMENTS" &&
                                 animatedNumbers[index] >= 1000000
                                     ? "1 MILLION"
                                     : animatedNumbers[index].toLocaleString()}
                                 {stat.label !== "GARMENTS" && suffix}
                             </span>
-                            <span className="2xl:text-lg xl:text-md text-sm font-semibold tracking-wide text-gray-500 mt-1">
+                            <span className="2xl:text-lg xl:text-md sm:text-sm text-[12px] font-semibold tracking-wide text-gray-500 mt-1">
                                 {stat.label}
                             </span>
                         </div>

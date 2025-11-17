@@ -48,7 +48,7 @@ export default function Landing({ onEnter }) {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+        <div className="fixed inset-0 z-50 flex justify-center items-start bg-white border border-black">
             {/* Background Video */}
             {!hasEntered && (
                 <>
@@ -57,27 +57,28 @@ export default function Landing({ onEnter }) {
                         autoPlay
                         muted
                         playsInline
-                        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+                        className="w-full lg:h-full lg:object-cover object-contain z-[-1]"
                     >
                         <source src="/logo.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
+                        Your browser does not support the Mp4 video.
                     </video>
                     {/* Button overlay on video */}
                     {showButton && (
                         <button
                             onClick={handleEnterClick}
-                            className="z-10 px-6 py-2.5 rounded-lg text-white text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 absolute bottom-16 left-1/2 -translate-x-1/2 animate-slideInFromLeft"
+                            className="lg:z-10 px-6 py-2.5 rounded-lg text-white text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-500 transform absolute bottom-16 hover:scale-105 animate-slideInFromLeft"
                             style={{
-                                backgroundColor: '#16368c',
-                                background: 'linear-gradient(135deg, #16368c 0%, #1e4ba3 100%)',
-                                border: 'none',
-                                backdropFilter: 'blur(8px)',
-                                boxShadow: '0 8px 25px rgba(22, 54, 140, 0.25)',
-                                letterSpacing: '0.5px',
-                                animation: 'slideInFromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
-                                position: 'absolute',
-                                left: '45%',
-                                transform: 'translateX(-50%)'
+                                backgroundColor: "#16368c",
+                                background:
+                                    "linear-gradient(135deg, #16368c 0%, #1e4ba3 100%)",
+                                border: "none",
+                                backdropFilter: "blur(8px)",
+                                boxShadow: "0 8px 25px rgba(22, 54, 140, 0.25)",
+                                letterSpacing: "0.5px",
+                                animation:
+                                    "slideInFromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
+                                position: "absolute",
+                                transform: "translateX(-50%)",
                             }}
                         >
                             OPEN WEBSITE
@@ -101,10 +102,6 @@ export default function Landing({ onEnter }) {
                     <div className="absolute inset-0 bg-gray-900/60 z-10" />
 
                     {/* Animated Text */}
-                    <div className="text-white text-2xl font-bold fixed top-16 z-20">
-                        PANORAMA EXPORTS
-                    </div>
-
                     <div className="relative z-20 flex flex-col items-center justify-center text-white px-6 h-full">
                         <div className="text-[6vw] font-semibold text-center">
                             {"PANORAMA".split("").map((char, i) => (

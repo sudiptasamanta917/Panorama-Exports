@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import p1 from "../../assets/People/HumanResources/01.jpg";
-import p2 from "../../assets/People/HumanResources/02.jpg";
-import p3 from "../../assets/People/HumanResources/03.jpg";
-import p4 from "../../assets/People/HumanResources/05.jpg";
+import p1 from "../../assets/People/HumanResources/01.webp";
+import p2 from "../../assets/People/HumanResources/02.webp";
+import p3 from "../../assets/People/HumanResources/03.webp";
+import p4 from "../../assets/People/HumanResources/05.webp";
 
 function HumanResources() {
   const [index, setIndex] = useState(0);

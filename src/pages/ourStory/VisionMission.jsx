@@ -11,42 +11,20 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import bgImage from "../../assets/OurStory/visionMission/main_bg.webp";
-import visionMission from "../../assets/OurStory/visionMission/vision-mission.webp";
 import CoreValues from "./CoreValues";
-import DirectorBg1 from "../../assets/Founders/bg 03.png";
-import DirectorBg2 from "../../assets/Founders/bg 02.png";
-// import RajanPng from "../../assets/Founders/rajan copy.png";
-// import NavinPng from "../../assets/Founders/Navin copy.png";
-// import ShivaanPng from "../../assets/Founders/shivaan copy.png";
-// import SidharthPng from "../../assets/Founders/Sidharth.png";
-import RajanPng from "../../assets/Founders/rajan.png";
-import NavinPng from "../../assets/Founders/navin.png";
-import ShivaanPng from "../../assets/Founders/shivaan.png";
-import SidharthPng from "../../assets/Founders/Sidharth.png";
+import RajanPng from "../../assets/Founders/rajan.webp";
+import NavinPng from "../../assets/Founders/navin.webp";
+import ShivaanPng from "../../assets/Founders/shivaan.webp";
+import SidharthPng from "../../assets/Founders/Sidharth.webp";
 
-import VisionImage from "../../assets/OurStory/visionMission/Vision.jpg";
-import MissionImage from "../../assets/OurStory/visionMission/Mission.jpg";
+import VisionImage from "../../assets/OurStory/visionMission/Vision.webp";
+import MissionImage from "../../assets/OurStory/visionMission/Mission.webp";
 
 const labels = {
     "#vision-values": "VisionValues",
     "#core-values": "CoreValues",
     "#leadership": "leadership",
 };
-
-// const VisionImages = [
-//     {
-//         id: 1,
-//         image: VisionImage,
-//         text: "Vision",
-//         subtext: "To be the world’s most trusted apparel partner, championing technology, sustainability, and design excellence.",
-//     },
-//     {
-//         id: 2,
-//         image: MissionImage,
-//         text: "Mission",
-//         subtext: "To exceed expectations through innovation, efficiency, and a people-first culture-redefining global apparel manufacturing.",
-//     },
-// ];
 
 const directors = [
     {
@@ -241,13 +219,14 @@ export default function VisionMission() {
 
     return (
         <>
+            <div className="sm:hidden w-full h-10 bg-gray-900"></div>
             <div
                 ref={ref}
-                className="w-full h-[100vh] bg-cover bg-center flex flex-col items-start justify-end"
+                className="w-full bg-contain bg-center flex flex-col items-center justify-end aspect-[16/7]"
                 style={{ backgroundImage: `url(${bgImage})` }}
             >
                 <motion.div
-                    className="text-white bg-gradient-to-t from-black/90 via-black/80 via-black/70 to-transparent px-[10%] pb-[4%] pt-[10%]"
+                    className="text-white bg-gradient-to-t from-black/90 via-black/80 via-black/70 to-transparent lg:px-[10%] md:px-[8%] sm:px-[6%] px-[4%] lg:pb-[4%] md:pb-5 sm:pb-4 pb-2 pt-[10%]"
                     variants={{
                         hidden: { opacity: 0, y: 50 },
                         visible: { opacity: 1, y: 0 },
@@ -260,10 +239,10 @@ export default function VisionMission() {
                         ease: "easeOut",
                     }}
                 >
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+                    <h1 className="text-sm sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-semibold mb-1 sm:mb-0">
                         Woven into Every Thread
                     </h1>
-                    <div className="text-lg sm:text-xl md:text-xl xl:text-2xl mt-4 w-[100%] text-justify font-relaxed">
+                    <div className="hidden sm:block text-[10px] sm:text-sm md:text-md lg:text-xl xl:text-2xl lg:mt-4 sm:mt-2 mt-1 w-[100%] text-justify font-relaxed">
                         Our vision shapes the future of fashion; our values
                         guide every stitch. We don’t just make clothing-we build
                         trust, innovate with intent, and create with heart.
@@ -272,7 +251,7 @@ export default function VisionMission() {
             </div>
 
             {/* Breadcrumbs */}
-            <div className="sticky top-20 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
+            <div className="hidden md:block sticky md:top-12 lg:top-20 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
                 <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
                     {crumbs.map((crumb, index) => (
                         <span
@@ -281,7 +260,7 @@ export default function VisionMission() {
                         >
                             <Link
                                 to={crumb.path}
-                                className={`hover:underline sm:text-xl text-lg sm:my-1 ${
+                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 ${
                                     activeCrumb === crumb.label
                                         ? "font-semibold text-white"
                                         : "text-gray-300"
@@ -296,36 +275,13 @@ export default function VisionMission() {
 
             {/* Vision mission Sections */}
             <section id="vision-values" ref={visionRef} className="bg-white">
-                {/* <div className="w-[70%] mx-auto px-6 md:px-20 sm:py-16 py-5 grid md:grid-cols-2 xl:gap-20 gap-10">
-                    {VisionImages.map((item) => (
-                        <div
-                            key={item.id}
-                            className="relative overflow-hidden shadow-lg group"
-                        >
-                            <img
-                                src={item.image}
-                                alt="vision"
-                                className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
-                            />
-                          
-                            <div className="absolute inset-0 py-[10%] bg-gradient-to-t from-blue-950/50 via-blue-950/40 via-blue-950/30 via-blue-950/20 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-950/80 group-hover:via-blue-950/50 group-hover:via-blue-950/40 group-hover:to-transparent transition-all duration-500 flex flex-col justify-end p-6">
-                                <p className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mx-[10%]">
-                                    {item.text}
-                                </p>
-                                <p className="mx-[10%] mt-4 text-white">
-                                    {item.subtext}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div> */}
-                <div className="bg-white w-full py-16 flex flex-col items-center">
+                <div className="bg-white w-full sm:py-16 py-2 flex flex-col items-center">
                     {/* Mission and Vision blocks */}
-                    <div className="w-full my-5 flex flex-col">
-                        <div className="flex gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
-                            <div className="flex justify-end items-center w-[40%]">
+                    <div className="w-full sm:my-5 my-2 flex flex-col">
+                        <div className="flex flex-col sm:flex-row items-end sm:items-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
+                            <div className="flex sm:justify-end justify-center items-center md:w-[40%] sm:w-[30%] w-full">
                                 <div className="">
-                                    <h2 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-black">
+                                    <h2 className="text-lg sm:text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-black">
                                         Our Mission
                                         <br />& Vision
                                     </h2>
@@ -335,7 +291,7 @@ export default function VisionMission() {
                                 </div>
                             </div>
                             {/* Mission */}
-                            <div className="flex items-center justify-between bg-[#f2f2f2] shadow-xl mb-4 w-[60%]">
+                            <div className="flex items-center justify-between bg-[#f2f2f2] shadow-xl mb-4 md:w-[60%] sm:w-[70%] w-[90%]">
                                 <div className="flex items-center w-full">
                                     <div className="overflow-hidden flex items-center justify-center relative">
                                         <img
@@ -343,16 +299,16 @@ export default function VisionMission() {
                                             alt="Mission"
                                             className="object-cover w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] 2xl:w-[250px] h-[140px] md:h-[160px] lg:h-[180px] xl:h-[200px] 2xl:h-[250px]"
                                         />
-                                        <div class="absolute inset-0 bg-green-300 mix-blend-multiply opacity-40"></div>
+                                        <div className="absolute inset-0 bg-green-300 mix-blend-multiply opacity-40"></div>
                                     </div>
-                                    <div className="mx-8 my-6">
-                                        <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl font-bold text-black">
+                                    <div className="md:mx-8 sm:mx-5 mx-3 md:my-6 my-4">
+                                        <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-md font-bold text-black">
                                             Mission
                                         </h3>
-                                        <p className="text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs mt-1">
+                                        <p className="text-[10px] sm:text-[12px] md:text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs md:mt-1 mt-2px">
                                             To exceed expectations through
                                             innovation, efficiency, and a
-                                            people-first culture—redefining
+                                            people-first culture-redefining
                                             global apparel manufacturing.
                                         </p>
                                     </div>
@@ -361,13 +317,13 @@ export default function VisionMission() {
                         </div>
 
                         {/* Vision */}
-                        <div className="flex items-center justify-between bg-[#f2f2f2] shadow-xl w-[55%] mt-8 xl:mt-12">
+                        <div className="flex items-center justify-between bg-[#f2f2f2] shadow-xl xl:w-[55%] md:w-[60%] sm:w-[70%] w-[90%] sm:mt-8 mt-2 xl:mt-12">
                             <div className="flex items-center justify-end w-full">
-                                <div className="text-end mx-8 my-6">
-                                    <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl font-bold text-black">
+                                <div className="text-end md:mx-8 sm:mx-5 mx-3 md:my-6 my-4">
+                                    <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-md font-bold text-black">
                                         Vision
                                     </h3>
-                                    <p className="text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs mt-1">
+                                    <p className="text-[10px] sm:text-[12px] md:text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs md:mt-1 mt-2px">
                                         To be the world’s most trusted apparel
                                         partner, championing technology,
                                         sustainability, and design excellence.
@@ -379,54 +335,12 @@ export default function VisionMission() {
                                         alt="Mission"
                                         className="object-cover w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] 2xl:w-[250px] h-[140px] md:h-[160px] lg:h-[180px] xl:h-[200px] 2xl:h-[250px]"
                                     />
-                                    <div class="absolute inset-0 bg-green-100 mix-blend-multiply opacity-60"></div>
+                                    <div className="absolute inset-0 bg-green-100 mix-blend-multiply opacity-60"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                {/* <div
-                    className="relative w-full h-[100vh] mt-4 flex items-center justify-center bg-cover bg-center"
-                    style={{ backgroundImage: `url(${visionMission})` }}
-                >
-                    <div className="absolute inset-0 lg:bg-black/10 md:bg-black/20 bg-black/60" />
-                    <div className="relative z-10 w-[90%] mx-auto flex justify-between text-center text-white">
-                        <motion.div
-                            className="2xl:w-[35%] w-[30%] flex flex-col items-center justify-center font-semibold mb-8 md:mb-0"
-                            initial={{ y: 200, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            viewport={{ once: false, amount: 0.3 }}
-                        >
-                            <h2 className="xl:text-5xl md:text-4xl text-3x mb-4">
-                                Our Vision
-                            </h2>
-                            <p className="xl:text-xl md:text-lg sm:text-md text-sm text-gray-200">
-                                To be the world’s most trusted apparel partner,
-                                championing technology, sustainability, and
-                                design excellence.
-                            </p>
-                        </motion.div>
-
-                        <motion.div
-                            className="2xl:w-[35%] w-[30%] flex flex-col items-center justify-center font-semibold"
-                            initial={{ y: 200, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            viewport={{ once: false, amount: 0.3 }}
-                        >
-                            <h2 className="xl:text-5xl md:text-4xl text-3xl mb-4">
-                                Our Mission
-                            </h2>
-                            <p className="xl:text-xl md:text-lg sm:text-md text-sm text-gray-200">
-                                To exceed expectations through innovation,
-                                efficiency, and a people-first
-                                culture-redefining global apparel manufacturing.
-                            </p>
-                        </motion.div>
-                    </div>
-                </div> */}
             </section>
             {/* Values Sections */}
             <section
@@ -438,11 +352,14 @@ export default function VisionMission() {
             </section>
             {/* Directors's Message Sections */}
             <section id="leadership" ref={leadershipRef} className="bg-white">
-                <h2 className="w-[90%] mx-auto px-6 md:px-20 sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
+                    <h3 className="hidden py-3 px-4 font-semibold bg-blue-950 sm:inline-block text-white">
                         DIRECTOR'S MESSAGE
-                    </h1>
-                </h2>
+                    </h3>
+                    <h3 className="sm:hidden py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        DIRECTORS
+                    </h3>
+                </div>
                 <Swiper
                     ref={swiperRef}
                     modules={[Navigation, Pagination, Autoplay]}
@@ -477,12 +394,12 @@ export default function VisionMission() {
                             >
                                 <div className="bg-transparent w-full h-full flex items-center">
                                     <div
-                                        className={`w-[50%] ${
+                                        className={`sm:w-[50%] w-[60%] ${
                                             director.id === 2 ? "hidden" : ""
-                                        } py-10 flex items-center`}
+                                        } sm:py-10 flex items-center`}
                                     >
                                         <motion.div
-                                            className="w-[90%] ml-auto flex flex-col items-end justify-center"
+                                            className="sm:w-[90%] w-[98%] ml-auto flex flex-col items-end justify-center"
                                             initial={{ opacity: 0 }}
                                             whileInView={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
@@ -495,7 +412,7 @@ export default function VisionMission() {
                                                 amount: 0.3,
                                             }}
                                         >
-                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="hidden sm:block 2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
                                                 </span>
@@ -513,12 +430,12 @@ export default function VisionMission() {
                                         </motion.div>
                                     </div>
                                     <div
-                                        className={`w-[50%] ml-auto ${
+                                        className={`sm:w-[50%] w-[60%] ml-auto ${
                                             director.id === 1 ? "hidden" : ""
-                                        } py-10 flex items-center`}
+                                        } sm:py-10 flex items-center`}
                                     >
                                         <motion.div
-                                            className="w-[90%] mr-auto flex flex-col items-start justify-center"
+                                            className="sm:w-[90%] w-[98%] mr-auto flex flex-col items-start justify-center"
                                             initial={{ opacity: 0 }}
                                             whileInView={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
@@ -531,7 +448,7 @@ export default function VisionMission() {
                                                 amount: 0.3,
                                             }}
                                         >
-                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="hidden sm:block 2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
                                                 </span>
@@ -540,10 +457,10 @@ export default function VisionMission() {
                                                     ”
                                                 </span>
                                             </div>
-                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
                                                 {director.role}
                                             </h3>
                                         </motion.div>
@@ -559,11 +476,14 @@ export default function VisionMission() {
             </section>
             {/* Executive Directors's Message Sections */}
             <section id="director-message" className="bg-white">
-                <h2 className="w-[90%] mx-auto px-6 md:px-20 sm:py-16 py-5 text-3xl sm:text-4xl md:text-5xl text-[#01276a] font-semibold">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
+                    <h3 className="hidden py-3 px-4 font-semibold bg-blue-950 sm:inline-block text-white">
                         EXECUTIVE DIRECTOR'S MESSAGE
-                    </h1>
-                </h2>
+                    </h3>
+                    <h3 className="sm:hidden py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
+                        EXECUTIVE DIRECTORS
+                    </h3>
+                </div>
                 <Swiper
                     ref={swiperRef}
                     modules={[Navigation, Pagination, Autoplay]}
@@ -598,12 +518,12 @@ export default function VisionMission() {
                             >
                                 <div className="bg-transparent w-full h-full flex items-center">
                                     <div
-                                        className={`w-[50%] ${
+                                        className={`sm:w-[50%] w-[60%] ${
                                             director.id === 2 ? "hidden" : ""
                                         } py-10 flex items-center`}
                                     >
                                         <motion.div
-                                            className="w-[90%] ml-auto flex flex-col items-end justify-center"
+                                            className="sm:w-[90%] w-[98%] ml-auto flex flex-col items-end justify-center"
                                             initial={{ opacity: 0 }}
                                             whileInView={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
@@ -616,7 +536,7 @@ export default function VisionMission() {
                                                 amount: 0.3,
                                             }}
                                         >
-                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="hidden sm:block 2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
                                                 </span>
@@ -634,12 +554,12 @@ export default function VisionMission() {
                                         </motion.div>
                                     </div>
                                     <div
-                                        className={`w-[50%] ml-auto ${
+                                        className={`sm:w-[50%] w-[60%] ml-auto ${
                                             director.id === 1 ? "hidden" : ""
                                         } py-10 flex items-center`}
                                     >
                                         <motion.div
-                                            className="w-[90%] mr-auto flex flex-col items-start justify-center"
+                                            className="sm:w-[90%] w-[98%] mr-auto flex flex-col items-start justify-center"
                                             initial={{ opacity: 0 }}
                                             whileInView={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
@@ -652,7 +572,7 @@ export default function VisionMission() {
                                                 amount: 0.3,
                                             }}
                                         >
-                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="hidden sm:block 2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
                                                 </span>
@@ -661,10 +581,10 @@ export default function VisionMission() {
                                                     ”
                                                 </span>
                                             </div>
-                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
                                                 {director.role}
                                             </h3>
                                         </motion.div>

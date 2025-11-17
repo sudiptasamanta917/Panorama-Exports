@@ -5,9 +5,9 @@ import { useLocation } from "react-router-dom";
 
 import FlipCard from "../../components/flipCard/FlipCard";
 
-import HlImg1 from "../../assets/Innovation/HandcraftedLuxury/1.jpg";
-import HlImg2 from "../../assets/Innovation/HandcraftedLuxury/2.jpg";
-import HlImg3 from "../../assets/Innovation/HandcraftedLuxury/03.jpg";
+import HlImg1 from "../../assets/Innovation/HandcraftedLuxury/1.webp";
+import HlImg2 from "../../assets/Innovation/HandcraftedLuxury/2.webp";
+import HlImg3 from "../../assets/Innovation/HandcraftedLuxury/03.webp";
 
 const Images = [
     {
@@ -58,23 +58,21 @@ const HandcraftedLuxury = () => {
             </div> */}
             <section
                 id=""
-                className="mt-5 w-full bg-blue-950 flex justify-center py-20"
+                className="w-full bg-blue-950 flex justify-center md:py-20 py-10"
             >
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
-                    <div className="w-[50%] p-10 flex flex-col justify-center">
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
+                    <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
+                        <h2 className="text-sm sm:text-md md:text-3xl lg:text-4xl font-bold text-center text-blue-950">
                             HANDCRAFTED LUXURY
                         </h2>
-                        <div className="text-sm md:text-lg mt-3 sm:mb-3 text-gray-600 ml-1 font-thin">
-                            <h1 className="">
+                        <div className="text-[10px] sm:text-[12px] md:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
+                            
                                 Rooted in tradition, designed for tomorrow.
-                            </h1>
-                            <p className="mt-2">
                                 Each piece reflects generational wisdom, modern
                                 refinement, and the soulful artistry of “Made in
                                 India.”
-                            </p>
+                        
                         </div>
                     </div>
 

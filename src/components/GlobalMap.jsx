@@ -71,7 +71,7 @@ export default function GlobalMap() {
 
 
     return (
-        <div className="bg-gradient-to-r from-[#4a3e2e]/90 via-[#7e6e55]/90 to-[#bda684]/90 px-auto sm:px-6 md:px-20 xl:h-[60vh] lg:h-[50vh] sm:h-[75vh] h-[55vh] w-full mt-2 text-white lg:flex items-center justify-between gap-6 relative">
+        <div className="bg-gradient-to-r from-[#4a3e2e]/90 via-[#7e6e55]/90 to-[#bda684]/90 px-2 sm:px-6 md:px-10 lg:px-20 xl:h-[60vh] lg:h-[50vh] sm:h-[75vh] h-[55vh] w-full sm:mt-2 text-white lg:flex items-center justify-between gap-6 relative">
             <div className="xl:h-[50vh] lg:h-[40vh] sm:h-[30vh] h-[25vh] xl:w-[40%] lg:w-[30%] w-full 2xl:px-5 px-10 lg:px-0 flex flex-col justify-center">
                 <h1 className="2xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] xl:gap-7 gap-5 flex flex-wrap justify-start items-center">
                     <p className="font-semibold 2xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl text-2xl">
@@ -79,7 +79,7 @@ export default function GlobalMap() {
                     </p>
                     Footprint
                 </h1>
-                <div className="mt-10 flex justify-start items-center gap-8 ">
+                <div className="md:mt-10 mt-5 flex justify-start items-center gap-8 ">
                     <p className="2xl:text-xl lg:text-lg md:text-md text-[12px] text-white">
                         Panorama’s expanding global reach underscores its
                         emergence as a prominent leader in the international
@@ -120,10 +120,7 @@ export default function GlobalMap() {
                                 }}
                             >
                                 <div className="relative">
-                                    <MdLocationPin
-                                        size={28}
-                                        className="text-white"
-                                    />
+                                    <MdLocationPin className="text-white lg:text-[28px] md:text-[20px] sm:text-[15px] text-[10px]" />
                                     <div className="absolute z-10 bottom-6 hidden group-hover:block bg-white text-sm text-red-950 px-2 py-1 rounded-lg shadow-md whitespace-nowrap">
                                         <strong>{marker.country} : </strong>{" "}
                                         {marker.brands.join(", ")}

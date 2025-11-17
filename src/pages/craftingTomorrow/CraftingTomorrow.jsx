@@ -34,36 +34,36 @@ export default function CraftingTomorrow() {
                     backgroundPosition: "center",
                     position: "relative",
                 }}
-                className="pt-4 w-full h-screen text-white flex flex-col items-center justify-center relative"
+                className="pt-4 w-full lg:h-screen h-[75vh] text-white flex flex-col items-center justify-center relative"
             >
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/40 z-0"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-                    <h1 className="text-7xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)]">
+                    <h1 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-semibold shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)]">
                         Crafting Tomorrow
                     </h1>
 
-                    <div className="mt-4 text-2xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] text-center max-w-5xl">
-                        True fashion tells a bigger story—of people, purpose,
+                    <div className="mt-4 2xl:text-2xl lg:text-xl md:text-lg text-sm shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] text-center md:max-w-5xl w-[90%] mx-auto">
+                        True fashion tells a bigger story of people, purpose,
                         and planet. With every thread, we strive to weave
                         dignity into design, merging timeless artistry with a
                         future-forward responsibility.
                     </div>
 
-                    <div className="flex gap-5 lg:gap-10">
+                    <div className="flex flex-col md:flex-row md:gap-5 gap-2 lg:gap-10">
                         <button
                             onClick={handleToggleModal}
-                            className="mt-10 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-blue-900 text-lg font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
+                            className="md:mt-10 mt-5 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-blue-900 lg:text-lg md:text-md sm:text-sm text-[12px] font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
                         >
                             Watch Now
-                            <CiPlay1 className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
+                            <CiPlay1 className="lg:text-lg md:text-md sm:text-sm text-[12px] group-hover:translate-x-1 transition-transform duration-300" />
                         </button>
                         <button
                             onClick={handleDownload}
-                            className="mt-10 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-blue-900 text-lg font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
+                            className="md:mt-10 mt-5 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-blue-900 lg:text-lg md:text-md sm:text-sm text-[12px] font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
                         >
                             Download PPT
-                            <FaCloudDownloadAlt className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
+                            <FaCloudDownloadAlt className="lg:text-lg md:text-md sm:text-sm text-[12px] group-hover:translate-x-1 transition-transform duration-300" />
                         </button>
                     </div>
                 </div>

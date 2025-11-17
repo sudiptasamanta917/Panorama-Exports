@@ -80,7 +80,7 @@ const GoogleMapUnits = () => {
     ];
 
     return (
-        <div className="bg-white w-[90%] mx-auto px-6 md:px-20 py-10 lg:flex xl:gap-4 gap-2">
+        <div className="bg-white w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 md:py-10 sm:py-4 py-2 lg:flex xl:gap-4 gap-2">
             <div
                 ref={sectionRef}
                 className="xl:w-[60%] lg:w-[50%] w-full grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-3 grid-cols-2 xl:gap-4 gap-2"
@@ -103,8 +103,12 @@ const GoogleMapUnits = () => {
                                 />
                             </div>
                             <div className=" border border-transparent text-white">
-                                <h2 className="font-semibold">{unit.title}</h2>
-                                <h2 className="text-sm">{unit.address}</h2>
+                                <h2 className="font-semibold lg:text-lg md:text-md text-sm">
+                                    {unit.title}
+                                </h2>
+                                <h2 className="lg:text-md md:text-sm text-[12px]">
+                                    {unit.address}
+                                </h2>
                             </div>
                         </div>
                     );

@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import Img1 from "../../assets/OurStory/coreValues/CraftedExcellence.png";
-import Img2 from "../../assets/OurStory/coreValues/OneTeamDream.png";
-import Img3 from "../../assets/OurStory/coreValues/InnovatingPurpose.png";
-import Img4 from "../../assets/OurStory/coreValues/PlanetFirstProcess.png";
-import Img5 from "../../assets/OurStory/coreValues/ProudlyMadeIndia.png";
+import Img1 from "../../assets/OurStory/coreValues/CraftedExcellence.webp";
+import Img2 from "../../assets/OurStory/coreValues/OneTeamDream.webp";
+import Img3 from "../../assets/OurStory/coreValues/InnovatingPurpose.webp";
+import Img4 from "../../assets/OurStory/coreValues/PlanetFirstProcess.webp";
+import Img5 from "../../assets/OurStory/coreValues/ProudlyMadeIndia.webp";
 
 //hello
 
@@ -48,12 +48,12 @@ const CoreValues = () => {
 
     return (
         <>
-            <div className="py-10">
-                <h2 className="w-[90%] mx-auto py-5 px-6 lg:px-20 text-3xl pb-16 sm:text-4xl md:text-5xl text-blue-950 tracking-widest text-center font-semibold">
+            <div className="md:py-10 sm:py-5 py-2">
+                <h2 className="w-[90%] mx-auto py-5 px-6 lg:px-20 text-3xl md:pb-16 pb-5 sm:text-4xl md:text-5xl text-blue-950 tracking-widest text-center font-semibold">
                     CORE VALUE
                 </h2>
 
-                <div className="w-[90%] mx-auto py-5 mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:gap-10 xl:gap-8 lg:gap-6 md:gap-8 gap-6">
+                <div className="w-[90%] mx-auto py-5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:gap-10 xl:gap-8 lg:gap-6 md:gap-8 gap-6">
                     {values.map((value, index) => (
                         <motion.div
                             key={index}
@@ -74,10 +74,10 @@ const CoreValues = () => {
                                     <img src={value.img} alt="" className="image-contain" />
                                 </div>
                                 <div className="p-4">
-                                    <h3 className="2xl:h-16 xl:h-14 lg:h-12 md:h-12 h-10 2xl:text-xl xl:text-lg lg:text-sm md:text-md md:text-md sm:text-sm text-[12px] text-blue-900 font-semibold mb-2">
+                                    <h3 className="2xl:h-16 xl:h-14 lg:h-12 md:h-12 md:h-10 h-7 2xl:text-xl xl:text-lg lg:text-sm md:text-md md:text-md text-sm text-blue-900 font-semibold mb-2">
                                         {value.title}
                                     </h3>
-                                    <p className="2xl:text-sm xl:text-[12px] lg:text-[10px] md:text-[9px] text-[8px] text-gray-600">
+                                    <p className="2xl:text-sm xl:text-[12px] lg:text-[10px] text-[12px] text-gray-600">
                                         {value.description}
                                     </p>
                                 </div>

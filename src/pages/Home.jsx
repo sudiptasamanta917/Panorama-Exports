@@ -62,35 +62,35 @@ const heroSlides = [
 
 // Brands images
 import brand1 from "../assets/GlobalFootprint/brands/25487.webp";
-import brand2 from "../assets/GlobalFootprint/brands/Boden-new-logo.jpg";
-import brand3 from "../assets/GlobalFootprint/brands/Boots_logo.svg.png";
-import brand4 from "../assets/GlobalFootprint/brands/brand.gif";
+import brand2 from "../assets/GlobalFootprint/brands/Boden-new-logo.webp";
+import brand3 from "../assets/GlobalFootprint/brands/Boots_logo.svg.webp";
+import brand4 from "../assets/GlobalFootprint/brands/brand.webp";
 import brand5 from "../assets/GlobalFootprint/brands/ceclogo.webp";
-import brand6 from "../assets/GlobalFootprint/brands/channels4_profile.jpg";
+import brand6 from "../assets/GlobalFootprint/brands/channels4_profile.webp";
 import brand7 from "../assets/GlobalFootprint/brands/DKNY-Donna-Karan-New-York-logo.webp";
-import brand8 from "../assets/GlobalFootprint/brands/Etam-logo.jpg";
-import brand9 from "../assets/GlobalFootprint/brands/Falabella_Logo.png";
-import brand12 from "../assets/GlobalFootprint/brands/images (1).png";
-import brand13 from "../assets/GlobalFootprint/brands/images.jpg";
-import brand14 from "../assets/GlobalFootprint/brands/images.png";
-import brand15 from "../assets/GlobalFootprint/brands/KS.png";
-import brand16 from "../assets/GlobalFootprint/brands/logo_FARM-RIO.png";
-import brand17 from "../assets/GlobalFootprint/brands/Mango-logo.jpg";
-import brand18 from "../assets/GlobalFootprint/brands/marea_by_liz_joy_logo.jpg";
-import brand19 from "../assets/GlobalFootprint/brands/Matalan-logo.png";
-import brand20 from "../assets/GlobalFootprint/brands/Mothercare-Emblem.png";
-import brand21 from "../assets/GlobalFootprint/brands/Mothercare-Logo.png";
-import brand22 from "../assets/GlobalFootprint/brands/Shinsegae_logo.svg.png";
-import brand23 from "../assets/GlobalFootprint/brands/street-one-logo-png_seeklo.png";
-import brand24 from "../assets/GlobalFootprint/brands/Tesco_Logo.svg.png";
+import brand8 from "../assets/GlobalFootprint/brands/Etam-logo.webp";
+import brand9 from "../assets/GlobalFootprint/brands/Falabella_Logo.webp";
+import brand12 from "../assets/GlobalFootprint/brands/images (1).webp";
+import brand13 from "../assets/GlobalFootprint/brands/images.webp";
+import brand14 from "../assets/GlobalFootprint/brands/images.webp";
+import brand15 from "../assets/GlobalFootprint/brands/KS.webp";
+import brand16 from "../assets/GlobalFootprint/brands/logo_FARM-RIO.webp";
+import brand17 from "../assets/GlobalFootprint/brands/Mango-logo.webp";
+import brand18 from "../assets/GlobalFootprint/brands/marea_by_liz_joy_logo.webp";
+import brand19 from "../assets/GlobalFootprint/brands/Matalan-logo.webp";
+import brand20 from "../assets/GlobalFootprint/brands/Mothercare-Emblem.webp";
+import brand21 from "../assets/GlobalFootprint/brands/Mothercare-Logo.webp";
+import brand22 from "../assets/GlobalFootprint/brands/Shinsegae_logo.svg.webp";
+import brand23 from "../assets/GlobalFootprint/brands/street-one-logo-png_seeklo.webp";
+import brand24 from "../assets/GlobalFootprint/brands/Tesco_Logo.svg.webp";
 
 const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20, brand21, brand22, brand23, brand24];
 
 // Crafting Tomorrow images
-import img1 from "../assets/CraftingTomorrow/01.png";
+import img1 from "../assets/CraftingTomorrow/01.webp";
 import img2 from "../assets/CraftingTomorrow/2.webp";
 import img3 from "../assets/CraftingTomorrow/3.webp";
-import img4 from "../assets/CraftingTomorrow/4.png";
+import img4 from "../assets/CraftingTomorrow/4.webp";
 
 const crImages = [img2, img4];
 
@@ -155,6 +155,7 @@ export default function Home() {
 
     return (
         <div className="relative">
+            <div className="sm:hidden w-full h-10 bg-gray-900"></div>
             {/* Hero Carousel */}
             <div className="relative z-10 w-full">
                 <Swiper
@@ -264,15 +265,15 @@ export default function Home() {
 
             <div className="bg-white sm:pt-6 pt-2">
                 {/* Global presence */}
-                <div className="py-8 mt-6 text-[#01276a] mx-auto px-6 md:px-20 rounded-t-md">
+                <div className="md:py-8 py-2 md:mt-6 mt-2 text-[#01276a] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex items-center justify-center 2xl:px-5 gap-6">
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular flex flex-wrap gap-4">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
                             <p className="font-bold">Global</p> Presence
                         </div>
                     </div>
                 </div>
                 {/* Brands logo section */}
-                <div className="w-full mb-10">
+                <div className="w-full md:mb-10 mb-5">
                     <div className="overflow-hidden w-full py-6 bg-white space-y-6">
                         {/* Row 1 */}
                         <div className="flex w-max animate-marquee gap-4">
@@ -285,7 +286,7 @@ export default function Home() {
                                         <img
                                             src={brand}
                                             alt="brand"
-                                            className="2xl:h-20 lg:h-16 md:h-12 h-10 2xl:w-28 lg:w-24 md:w-20 w-16 object-contain"
+                                            className="2xl:h-20 lg:h-16 md:h-12 sm:h-10 h-6 2xl:w-28 lg:w-24 md:w-20 sm:w-16 w-10 object-contain"
                                         />
                                     </div>
                                 </div>
@@ -303,7 +304,7 @@ export default function Home() {
                                         <img
                                             src={brand}
                                             alt="brand"
-                                            className="2xl:h-20 lg:h-16 md:h-12 h-10 2xl:w-28 lg:w-24 md:w-20 w-16 object-contain"
+                                            className="2xl:h-20 lg:h-16 md:h-12 sm:h-10 h-6 2xl:w-28 lg:w-24 md:w-20 sm:w-16 w-10 object-contain"
                                         />
                                     </div>
                                 </div>
@@ -333,7 +334,7 @@ export default function Home() {
                 </div>
                 {/* Crafting Tomorrow Content */}
                 <div
-                    className="relative bg-[#182123] px-6 md:px-20 mb-6 text-white flex flex-col items-center justify-center overflow-hidden w-full"
+                    className="relative bg-[#182123] px-2 sm:px-6 md:px-10 lg:px-20 md:mb-6 text-white flex flex-col items-center justify-center overflow-hidden w-full"
                     style={{ aspectRatio: "16 / 5" }}
                 >
                     {/* Background Slideshow */}
@@ -358,14 +359,14 @@ export default function Home() {
 
                     {/* Text + Button (always fixed on top) */}
                     <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-                        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-2xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] flex flex-wrap gap-4">
+                        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] flex flex-wrap gap-4">
                             <p className="font-bold">Crafting</p> Tomorrow
                         </h1>
 
                         <Link to="/craftingtomorrow">
-                            <button className="md:mt-10 mt-5 lg:text-lg md:text-md text-sm md:px-6 px-4 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
+                            <button className="md:mt-10 mt-5 lg:text-lg md:text-md sm:text-sm text-[10px] md:px-6 sm:px-4 px-2 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
                                 Click to Read More
-                                <IoEnterOutline className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
+                                <IoEnterOutline className="lg:h-7 lg:w-7 md:h-5 md:w-5 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                             </button>
                         </Link>
                     </div>
@@ -375,40 +376,31 @@ export default function Home() {
                 <GlobalMap />
 
                 {/* Integrated Units section */}
-                <div className="py-8 mt-6 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
+                <div className="md:py-8 py-6 sm:mt-6 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex flex-col items-start justify-center">
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular flex flex-wrap gap-4">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
                             <p className="font-bold">Manufacturing</p> Units
-                            {/* <div className="text-sm md:text-lg mt-3 mb-14 text-gray-600 ml-1">
-                                Global-Grade Facilities
-                            </div> */}
                         </div>
-                        <div className="w-[50%] mt-5">
-                            <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
+                        <div className="sm:w-[50%] md:mt-5 mt-2">
+                            <p className="2xl:text-xl lg:text-lg sm:text-sm text-[12px] text-gray-600">
                                 Seamless cut-to-pack capabilities for
                                 quality and speed.
                             </p>
-                            {/* <Link to="">
-                                <button className="my-4 group inline-flex items-center  font-semibold md:text-lg text-sm">
-                                    View More
-                                    <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
-                                </button>
-                            </Link> */}
                         </div>
                     </div>
                 </div>
-                
+
                 {/* Google Map section */}
                 <div className="">
                     <GoogleMapUnits />
                 </div>
 
                 {/* People section */}
-                <div className="sm:py-8 text-[#01276a] w-[90%] mx-auto px-6 md:px-20 rounded-t-md mt-6">
+                <div className="sm:py-8 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
                     <div className="sm:flex items-center justify-between">
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-regular">
                             People
-                            <div className="text-sm md:text-lg mt-3 sm:mb-14 text-gray-600 ml-1">
+                            <div className="text-sm md:text-lg sm:text-sm text-[12px] sm:mt-3 mt-2 sm:mb-14 text-gray-600 ml-1">
                                 The soul of Panorama is its people
                             </div>
                         </div>
@@ -422,7 +414,7 @@ export default function Home() {
                                 way.
                             </p>
                             <Link to="/peoples">
-                                <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg text-sm">
+                                <button className="sm:my-4 my-2 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
                                     Visit People
                                     <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
@@ -433,11 +425,11 @@ export default function Home() {
                 <MediaScrollSection />
 
                 {/* Certifications section */}
-                <div className="py-4 text-[#01276a] mt-6 w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
+                <div className="pt-4 md:pb-4 text-[#01276a] md:mt-6 mt-1 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex items-center justify-start">
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-regular">
                             Certifications
-                            <div className="text-sm md:text-lg mt-3 text-gray-600 ml-1">
+                            <div className="text-[12px] sm:text-sm md:text-lg sm:mt-3 mt-1 text-gray-600 ml-1">
                                 Our legal certificates
                             </div>
                         </div>
@@ -446,23 +438,23 @@ export default function Home() {
                 <Certifications />
 
                 {/* Community section */}
-                <div className="py-8 text-[#01276a] mt-6 w-[90%] mx-auto px-6 md:px-20 rounded-t-md">
-                    <div className="flex items-start justify-between">
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-regular">
+                <div className="py-8 text-[#01276a] mt-6 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-regular">
                             Human Touch
                         </div>
-                        <div className="w-[50%] mx-4 hidden sm:flex items-center justify-center">
+                        <div className="sm:w-[40%] lg:w-[50%] lg:mx-4 flex items-center justify-end">
                             <Link to="/responsibility">
-                                <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg text-sm">
+                                <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
                                     Visit Responsibility
-                                    <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
+                                    <IoEnterOutline className="md:h-6 md:w-6 h-4 w-4 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
                             </Link>
                         </div>
                     </div>
                 </div>
-                <div className="pt-20 bg-[#fcfbf7]">
-                    <div className="w-[90%] mx-auto px-6 md:px-20 mb-1">
+                <div className="xl:pt-20 lg:pt-16 md:pt-12 sm:pt-10 pt-8 bg-[#fcfbf7]">
+                    <div className="w-[90%] mx-auto px-6 md:px-10 lg:px-20 mb-1">
                         <img
                             src={HumanTouch2}
                             alt="Human Touch"
@@ -470,14 +462,14 @@ export default function Home() {
                         />
                     </div>
                     <div
-                        className="w-full h-[50vh] flex lg:items-center items-start justify-end 2xl:px-[10%] xl:px-[8%] lg:px-[5%] md:px-[2%] px-[5%] lg:pt-[0px] md:pt-[50px] pt-[20px] "
+                        className="w-full flex lg:items-center items-start pt-0 sm:pt-5 lg:pt-0 pr-0 sm:pr-5 lg:pr-0 justify-end aspect-[16/4.823] "
                         style={{
                             backgroundImage: `url(${HumanTouch1})`,
-                            backgroundSize: "cover",
+                            backgroundSize: "contain",
                             backgroundPosition: "center",
                         }}
                     >
-                        <p className="2xl:w-[400px] xl:w-[330px] md:w-[250px] w-[170px] 2xl:text-xl lg:text-md sm:text-sm text-[10px] text-blue-950 font-semibold">
+                        <p className="2xl:w-[550px] xl:w-[450px] lg:w-[350px] md:w-[300px] w-[150px] 2xl:text-xl lg:text-md md:text-sm sm:text-[10px] text-[8px] sm:pr-2 text-blue-950 font-semibold">
                             Our motto: People. Progress. Purpose. At Panorama,
                             we cultivate a culture of responsibility, inclusion,
                             and continuous growth

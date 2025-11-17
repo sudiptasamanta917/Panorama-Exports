@@ -28,8 +28,10 @@ export default function Footer() {
                 <div className="grid md:grid-cols-3 gap-8">
                     {/*Important Links */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Company</h3>
-                        <ul className="space-y-2">
+                        <h3 className="md:text-lg text-md font-semibold mb-4">
+                            Company
+                        </h3>
+                        <ul className="space-y-2 text-sm md:text-md">
                             {footerLinks.company.map((link, index) => (
                                 <li key={index}>
                                     <Link
@@ -45,8 +47,10 @@ export default function Footer() {
 
                     {/* Careers */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Careers</h3>
-                        <ul className="space-y-2">
+                        <h3 className="md:text-lg text-md font-semibold mb-4">
+                            Careers
+                        </h3>
+                        <ul className="space-y-2 text-sm md:text-md">
                             {footerLinks.careers.map((link, index) => (
                                 <li key={index}>
                                     <Link
@@ -62,7 +66,7 @@ export default function Footer() {
 
                     {/* Social & Newsletter */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">
+                        <h3 className="md:text-lg text-md font-semibold mb-4">
                             Connect With Us
                         </h3>
 
@@ -151,41 +155,15 @@ export default function Footer() {
                                 </a>
                             ))}
                         </div>
-
-                        {/* Newsletter */}
-                        <div>
-                            <h4 className="text-sm font-semibold mb-3">
-                                Subscribe to our newsletter for the latest: now
-                                straight to your inbox.
-                            </h4>
-                            <div className="flex">
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className="flex-1 px-4 py-2 text-gray-800 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-800"
-                                />
-                                <button className="w-[10]bg-white text-[#073281] xl:px-6 px-2 bg-white py-2 rounded-r-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
-                                    Submit
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
                 <div className="border-t border-white mt-8 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
-                        <div className="text-sm text-blue-100 mb-4 md:mb-0">
+                        <div className="md:text-sm text-[12px] text-blue-100 mb-4 md:mb-0">
                             © 2025 All Rights Reserved. Panorama Exports Pvt.
                             Ltd.
-                        </div>
-                        <div className="flex items-center space-x-4">
-                            <Link
-                                to="/cookie-preferences"
-                                className="text-sm text-blue-100 hover:text-white transition-colors duration-200"
-                            >
-                                Cookie Preferences
-                            </Link>
                         </div>
                     </div>
                 </div>

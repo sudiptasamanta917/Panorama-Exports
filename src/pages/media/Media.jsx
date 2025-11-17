@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import TopHeader from "../../assets/Media/LeftImg.jpg";
-import RightHeader1 from "../../assets/Media/RightImg1.jpg";
-import RightHeader2 from "../../assets/Media/RightImg2.jpg";
+import TopHeader from "../../assets/Media/LeftImg.webp";
+import RightHeader1 from "../../assets/Media/RightImg1.webp";
+import RightHeader2 from "../../assets/Media/RightImg2.webp";
 
-import NewsletterImg1 from "../../assets/Media/Workshop/Img1.png";
-import NewsletterImg2 from "../../assets/Media/Workshop/Img2.png";
-import NewsletterImg3 from "../../assets/Media/Workshop/Img3.png";
-import NewsletterImg4 from "../../assets/Media/Workshop/Img4.png";
-import NewsletterImg5 from "../../assets/Media/Workshop/Img5.png";
-import NewsletterImg6 from "../../assets/Media/Workshop/Img6.png";
-import NewsletterImg7 from "../../assets/Media/Workshop/Img7.png";
-import NewsletterImg8 from "../../assets/Media/Workshop/Img8.png";
-import NewsletterImg9 from "../../assets/Media/Workshop/Img9.png";
-import NewsletterImg10 from "../../assets/Media/Workshop/Img10.png";
+import NewsletterImg1 from "../../assets/Media/Workshop/Img1.webp";
+import NewsletterImg2 from "../../assets/Media/Workshop/Img2.webp";
+import NewsletterImg3 from "../../assets/Media/Workshop/Img3.webp";
+import NewsletterImg4 from "../../assets/Media/Workshop/Img4.webp";
+import NewsletterImg5 from "../../assets/Media/Workshop/Img5.webp";
+import NewsletterImg6 from "../../assets/Media/Workshop/Img6.webp";
+import NewsletterImg7 from "../../assets/Media/Workshop/Img7.webp";
+import NewsletterImg8 from "../../assets/Media/Workshop/Img8.webp";
+import NewsletterImg9 from "../../assets/Media/Workshop/Img9.webp";
+import NewsletterImg10 from "../../assets/Media/Workshop/Img10.webp";
 
-import Safety from "../../assets/Media/Workshop/Safety.jpg";
+import Safety from "../../assets/Media/Workshop/Safety.webp";
 
-import Environment1 from "../../assets/Media/Workshop/Environment1.jpg";
-import Environment2 from "../../assets/Media/Workshop/Environment2.jpg";
-import Environment3 from "../../assets/Media/Workshop/Environment3.jpg";
+import Environment1 from "../../assets/Media/Workshop/Environment1.webp";
+import Environment2 from "../../assets/Media/Workshop/Environment2.webp";
+import Environment3 from "../../assets/Media/Workshop/Environment3.webp";
 
 const tabsData = {
     Workshop: [
@@ -140,24 +140,24 @@ export default function Media() {
 
     return (
         <div className="bg-white">
-            <div className="w-full h-20 bg-gray-900"></div>
+            <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
             {/* Top Hero Section */}
             <section className="w-full py-1">
                 <div className="flex gap-2">
                     {/* Card 1 */}
-                    <div className="w-[70%] relative overflow-hidden shadow-lg group">
+                    <div className="md:w-[70%] w-full relative overflow-hidden shadow-lg group">
                         <img
                             src={TopHeader}
                             alt="The Missing Link in Scaling Sustainable Fashion Innovation"
                             className="w-full aspect-[16/6] object-contain group-hover:scale-105 duration-200"
                         />
                         <div className="absolute bottom-0 left-0 w-full h-full flex justify-center items-end bg-gradient-to-t from-black/40 via-black/20 to-transparent px-4 py-3">
-                            <h2 className="text-white font-semibold lg:text-4xl text-2xl pb-16">
+                            <h2 className="text-white sm:font-semibold 2xl:text-4xl lg:text-2xl sm:text-lg text-sm 2xl:pb-16 lg:pb-10 md:pb-6 sm:pb-5 pb-1">
                                 Panorama Exports Sustainable Fashion Innovation
                             </h2>
                         </div>
                     </div>
-                    <div className="w-[30%] flex flex-col gap-2">
+                    <div className="hidden md:block w-[30%] flex flex-col">
                         {/* Card 2 */}
                         <div className="relative overflow-hidden shadow-lg group">
                             <img
@@ -169,13 +169,13 @@ export default function Media() {
                                 {/* <div className="text-xs text-gray-200">
                                     Media & Research | October 17, 2025
                                 </div> */}
-                                <h2 className="text-white font-semibold lg:text-2xl text-lg text-center">
+                                <h2 className="text-white lg:font-semibold 2xl:text-2xl lg:text-lg text-sm text-center">
                                     Panorama Exports Media & News
                                 </h2>
                             </div>
                         </div>
                         {/* Card 3 */}
-                        <div className="relative overflow-hidden shadow-lg group">
+                        <div className="relative mt-2 overflow-hidden shadow-lg group">
                             <img
                                 src={RightHeader2}
                                 alt="The Manufacturing Perspective 2025"
@@ -185,7 +185,7 @@ export default function Media() {
                                 {/* <div className="text-xs text-gray-200">
                                     Media & Research | September 30, 2025
                                 </div> */}
-                                <h2 className="text-white font-semibold lg:text-2xl text-lg text-center">
+                                <h2 className="text-white lg:font-semibold 2xl:text-2xl lg:text-lg text-sm text-center">
                                     The Manufacturing Perspective
                                 </h2>
                             </div>
@@ -195,8 +195,8 @@ export default function Media() {
             </section>
 
             {/* Tabs Navigation */}
-            <div className="mt-5 max-w-7xl mx-auto px-4">
-                <nav className="flex space-x-8 lg:space-x-16">
+            <div className="mt-5 md:max-w-7xl mx-auto px-4">
+                <nav className="flex md:space-x-8 lg:space-x-16 sm:space-x-5 space-x-3 text-[12px]">
                     {tabNames.map((tab) => (
                         <button
                             key={tab}
@@ -214,7 +214,7 @@ export default function Media() {
             </div>
 
             {/* Tab Content - News/Image Cards */}
-            <div className="max-w-7xl mx-auto px-4 py-8">
+            <div className="md:max-w-7xl mx-auto px-4 py-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                     {(tabsData[activeTab] || []).map((item) => (
                         <div
