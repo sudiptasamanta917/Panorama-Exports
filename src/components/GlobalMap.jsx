@@ -71,8 +71,8 @@ export default function GlobalMap() {
 
 
     return (
-        <div className="bg-gradient-to-r from-[#4a3e2e]/90 via-[#7e6e55]/90 to-[#bda684]/90 px-2 sm:px-6 md:px-10 lg:px-20 xl:h-[60vh] lg:h-[50vh] sm:h-[75vh] h-[55vh] w-full sm:mt-2 text-white lg:flex items-center justify-between gap-6 relative">
-            <div className="xl:h-[50vh] lg:h-[40vh] sm:h-[30vh] h-[25vh] xl:w-[40%] lg:w-[30%] w-full 2xl:px-5 px-10 lg:px-0 flex flex-col justify-center">
+        <div className="bg-gradient-to-r from-[#4a3e2e]/90 via-[#7e6e55]/90 to-[#bda684]/90 px-2 sm:px-6 md:px-10 2xl:px-20 py-10 w-full sm:mt-2 text-white lg:flex items-center justify-between gap-6 relative">
+            <div className="xl:w-[40%] lg:w-[30%] w-full 2xl:px-5 px-10 lg:px-0 flex flex-col justify-center py-10">
                 <h1 className="2xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] xl:gap-7 gap-5 flex flex-wrap justify-start items-center">
                     <p className="font-semibold 2xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl text-2xl">
                         Global
@@ -90,18 +90,18 @@ export default function GlobalMap() {
 
             <div
                 ref={ref}
-                className={`xl:w-[60%] lg:w-[70%] xl:h-[50vh] h-[40vh] z-10 flex flex-col items-center justify-center w-full h-full`}
+                className={`xl:w-[60%] lg:w-[70%] z-10 flex flex-col items-center justify-center w-full`}
             >
-                <div className="relative w-full h-full">
+                <div className="relative w-full">
                     {/* Background Map */}
                     <img
                         src={globalMap}
                         alt="World Map"
-                        className="opacity-60 image-contain image-no-repeat xl:h-[50vh] sm:h-[40vh] h-[30vh] w-full"
+                        className="opacity-60 image-contain image-no-repeat w-full"
                     />
 
                     {/* Location Markers */}
-                    <div className="absolute inset-0 hidden sm:block">
+                    <div className="absolute inset-0">
                         {markers.map((marker, index) => (
                             <motion.div
                                 key={marker.country || index}
@@ -120,7 +120,7 @@ export default function GlobalMap() {
                                 }}
                             >
                                 <div className="relative">
-                                    <MdLocationPin className="text-white lg:text-[28px] md:text-[20px] sm:text-[15px] text-[10px]" />
+                                    <MdLocationPin className="text-white 2xl:text-[28px] xl:text-[25px] lg:text-[20px] md:text-[18px] sm:text-[15px] text-[12px]" />
                                     <div className="absolute z-10 bottom-6 hidden group-hover:block bg-white text-sm text-red-950 px-2 py-1 rounded-lg shadow-md whitespace-nowrap">
                                         <strong>{marker.country} : </strong>{" "}
                                         {marker.brands.join(", ")}

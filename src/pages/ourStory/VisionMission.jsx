@@ -352,12 +352,9 @@ export default function VisionMission() {
             </section>
             {/* Directors's Message Sections */}
             <section id="leadership" ref={leadershipRef} className="bg-white">
-                <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
-                    <h3 className="hidden py-3 px-4 font-semibold bg-blue-950 sm:inline-block text-white">
+                <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
+                    <h3 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         DIRECTOR'S MESSAGE
-                    </h3>
-                    <h3 className="sm:hidden py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
-                        DIRECTORS
                     </h3>
                 </div>
                 <Swiper
@@ -412,7 +409,7 @@ export default function VisionMission() {
                                                 amount: 0.3,
                                             }}
                                         >
-                                            <div className="hidden sm:block 2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[9px] text-white sm:text-justify sm:leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
                                                 </span>
@@ -421,10 +418,10 @@ export default function VisionMission() {
                                                     ”
                                                 </span>
                                             </div>
-                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">
                                                 {director.role}
                                             </h3>
                                         </motion.div>
@@ -448,7 +445,7 @@ export default function VisionMission() {
                                                 amount: 0.3,
                                             }}
                                         >
-                                            <div className="hidden sm:block 2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[9px] text-white sm:text-justify sm:leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
                                                 </span>
@@ -457,10 +454,10 @@ export default function VisionMission() {
                                                     ”
                                                 </span>
                                             </div>
-                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">
                                                 {director.role}
                                             </h3>
                                         </motion.div>
@@ -476,12 +473,9 @@ export default function VisionMission() {
             </section>
             {/* Executive Directors's Message Sections */}
             <section id="director-message" className="bg-white">
-                <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
-                    <h3 className="hidden py-3 px-4 font-semibold bg-blue-950 sm:inline-block text-white">
+                <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
+                    <h3 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         EXECUTIVE DIRECTOR'S MESSAGE
-                    </h3>
-                    <h3 className="sm:hidden py-3 px-4 mt-5 font-semibold bg-blue-950 inline-block text-white">
-                        EXECUTIVE DIRECTORS
                     </h3>
                 </div>
                 <Swiper
@@ -536,7 +530,7 @@ export default function VisionMission() {
                                                 amount: 0.3,
                                             }}
                                         >
-                                            <div className="hidden sm:block 2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[9px] text-white sm:text-justify sm:leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
                                                 </span>
@@ -545,10 +539,10 @@ export default function VisionMission() {
                                                     ”
                                                 </span>
                                             </div>
-                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">
                                                 {director.role}
                                             </h3>
                                         </motion.div>
@@ -572,7 +566,7 @@ export default function VisionMission() {
                                                 amount: 0.3,
                                             }}
                                         >
-                                            <div className="hidden sm:block 2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
+                                            <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[9px] text-white sm:text-justify sm:leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
                                                 <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
                                                     “
                                                 </span>
@@ -581,10 +575,10 @@ export default function VisionMission() {
                                                     ”
                                                 </span>
                                             </div>
-                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-xl font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
+                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">
                                                 {director.name}
                                             </h1>
-                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
+                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">
                                                 {director.role}
                                             </h3>
                                         </motion.div>

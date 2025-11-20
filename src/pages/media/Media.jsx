@@ -1,4 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
+
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+
 import TopHeader from "../../assets/Media/LeftImg.webp";
 import RightHeader1 from "../../assets/Media/RightImg1.webp";
 import RightHeader2 from "../../assets/Media/RightImg2.webp";
@@ -110,26 +117,16 @@ const tabsData = {
     Newsletter: [
         {
             id: 1,
-            title: "",
+            title: "Panorama Exports Newsletter",
             date: "",
-            image: "",
+            url: "/media/November2025.pdf",
         },
     ],
     Community: [
-        {
-            id: 1,
-            title: "",
-            date: "",
-            image: "",
-        },
+        
     ],
     News: [
-        {
-            id: 1,
-            title: "",
-            date: "",
-            image: "",
-        },
+        
     ],
 };
 
@@ -137,6 +134,27 @@ const tabNames = Object.keys(tabsData);
 
 export default function Media() {
     const [activeTab, setActiveTab] = useState(tabNames[0]);
+    const [numPages, setNumPages] = useState(null);
+    const [width, setWidth] = useState(window.innerWidth);
+
+    const handleLoadSuccess = ({ numPages }) => setNumPages(numPages);
+
+    //  Update width on resize (for responsiveness)
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // Decide PDF page width (responsive breakpoints)
+    function getPageWidth() {
+        if (width >= 1530) return 1300; // 2xl screens
+        if (width >= 1280) return 1100; // xl screens
+        if (width >= 1024) return 900; // lg
+        if (width >= 768) return 700; // md
+        if (width >= 640) return 600; // sm
+        return Math.min(width - 32, 300); // xs
+    }
 
     return (
         <div className="bg-white">
@@ -214,39 +232,69 @@ export default function Media() {
             </div>
 
             {/* Tab Content - News/Image Cards */}
-            <div className="md:max-w-7xl mx-auto px-4 py-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-                    {(tabsData[activeTab] || []).map((item) => (
-                        <div
-                            key={item.id}
-                            className="relative group bg-white rounded-sm overflow-hidden shadow transition-shadow duration-500 aspect-[16/14]"
-                        >
-                            {/* Front (Image) - Slides Up & Fades Out on Hover */}
-                            <div
-                                className="absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]
-      group-hover:-translate-y-48 group-hover:opacity-0"
-                            >
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="w-full h-full object-cover"
-                                />
+            {activeTab === "Newsletter" && (
+                <div className="md:max-w-7xl mx-auto w-full px-4 py-8">
+                    <div className="flex flex-col gap-5">
+                        {tabsData[activeTab].map((item) => (
+                            <div key={item.id} className="">
+                                <Document
+                                    file={item.url}
+                                    onLoadSuccess={handleLoadSuccess}
+                                    onLoadError={(err) =>
+                                        console.error("PDF load error:", err)
+                                    }
+                                    className="w-full flex flex-col items-center"
+                                >
+                                    {Array.from(new Array(numPages), (_, i) => (
+                                        <Page
+                                            key={`page_${i + 1}`}
+                                            pageNumber={i + 1}
+                                            width={getPageWidth()}
+                                            className="mb-4 border"
+                                        />
+                                    ))}
+                                </Document>
                             </div>
-                            {/* Back (Text Panel) - Slides Up & Fades In on Hover */}
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {activeTab !== "Newsletter" && (
+                <div className="md:max-w-7xl mx-auto px-4 py-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+                        {(tabsData[activeTab] || []).map((item) => (
                             <div
-                                className="absolute inset-0 p-4 flex items-center justify-center
+                                key={item.id}
+                                className="relative group bg-white rounded-sm overflow-hidden shadow transition-shadow duration-500 aspect-[16/14]"
+                            >
+                                {/* Front (Image) - Slides Up & Fades Out on Hover */}
+                                <div
+                                    className="absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]
+      group-hover:-translate-y-48 group-hover:opacity-0"
+                                >
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                {/* Back (Text Panel) - Slides Up & Fades In on Hover */}
+                                <div
+                                    className="absolute inset-0 p-4 flex items-center justify-center
       opacity-0 translate-y-48 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]
       group-hover:opacity-100 group-hover:translate-y-0
       bg-gradient-to-b from-blue-500 to-purple-500"
-                            >
-                                <h3 className="font-semibold text-base text-white text-center">
-                                    {item.title}
-                                </h3>
+                                >
+                                    <h3 className="font-semibold text-base text-white text-center">
+                                        {item.title}
+                                    </h3>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 }

@@ -9,7 +9,7 @@ export default function Landing({ onEnter }) {
     useEffect(() => {
         const video = videoRef.current;
         if (video) {
-            video.playbackRate = 2;
+            video.playbackRate = 1.1;
             video.addEventListener("timeupdate", handleTimeUpdate);
             video.addEventListener("play", handleVideoPlay);
         }
@@ -17,7 +17,7 @@ export default function Landing({ onEnter }) {
         // Show button after 2 seconds (since video is 2x speed)
         const buttonTimer = setTimeout(() => {
             setShowButton(true);
-        }, 2000);
+        }, 1800);
         
         return () => {
             if (video) {
@@ -60,7 +60,6 @@ export default function Landing({ onEnter }) {
                         className="w-full lg:h-full lg:object-cover object-contain z-[-1]"
                     >
                         <source src="/logo.mp4" type="video/mp4" />
-                        Your browser does not support the Mp4 video.
                     </video>
                     {/* Button overlay on video */}
                     {showButton && (
@@ -90,51 +89,7 @@ export default function Landing({ onEnter }) {
             {/* Overlay and Content */}
             {hasEntered && (
                 <>
-                    {/* Background image (not stretched to cover) */}
-                    <img
-                        src=""
-                        alt="Background"
-                        className="absolute inset-0 w-auto h-3/4 object-contain md:object-cover mx-auto my-auto"
-                        style={{ zIndex: 0 }}
-                    />
-
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-gray-900/60 z-10" />
-
-                    {/* Animated Text */}
-                    <div className="relative z-20 flex flex-col items-center justify-center text-white px-6 h-full">
-                        <div className="text-[6vw] font-semibold text-center">
-                            {"PANORAMA".split("").map((char, i) => (
-                                <span
-                                    key={`p${i}`}
-                                    className="drop-letter"
-                                    style={{ animationDelay: `${i * 0.2}s` }}
-                                >
-                                    {char}
-                                </span>
-                            ))}
-                            &nbsp;
-                            {"EXPORTS".split("").map((char, i) => (
-                                <span
-                                    key={`e${i}`}
-                                    className="rise-letter"
-                                    style={{
-                                        animationDelay: `${7 * 0.2 + i * 0.2}s`,
-                                    }}
-                                >
-                                    {char}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Footer Text */}
-                    <div className="text-white text-xl fixed left-10 bottom-10 z-20">
-                        Step into the future
-                    </div>
-                    <div className="text-white text-xl fixed right-10 bottom-10 z-20">
-                        Step into the future
-                    </div>
+                    
                 </>
             )}
         </div>
