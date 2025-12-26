@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { IoEnterOutline } from "react-icons/io5";
-import Media1 from "../assets/Media/media_1.webp";
+import Media1 from "../assets/Media/01.jpg";
 import Media2 from "../assets/Media/media_2.webp";
-import Media3 from "../assets/Media/media_3.webp";
+import Media3 from "../assets/Media/02.jpg";
+import Media4 from "../assets/Media/03.jpg";
 
 const stats = [
     { number: "4759+", label: "EMPLOYEES" },
@@ -11,7 +12,7 @@ const stats = [
     { number: "6", label: "UNITS" },
 ];
 
-const images = [Media1, Media2, Media3];
+const images = [Media1, Media2, Media3, Media4];
 
 const MediaScrollSection = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -142,7 +143,7 @@ const MediaScrollSection = () => {
             </div>
 
             {/* Carousel Section */}
-            <div className="xl:w-[40%] lg:w-[50%] w-full overflow-hidden rounded-lg lg:mt-0 mt-10 border">
+            <div className="lg:w-[50%] w-full overflow-hidden rounded-lg lg:mt-0 mt-10 border">
                 <div
                     onTransitionEnd={handleTransitionEnd}
                     className={`flex ${
@@ -155,7 +156,7 @@ const MediaScrollSection = () => {
                     {extended.map((src, idx) => (
                         <div
                             key={idx}
-                            className="w-full lg:h-[60vh] md:h-[42vh] h-[30vh] flex-shrink-0 bg-center bg-cover bg-no-repeat flex items-end justify-center"
+                            className="w-full lg:h-[40vh] md:h-[42vh] h-[30vh] flex-shrink-0 bg-center bg-cover bg-no-repeat flex items-end justify-center"
                             style={{ backgroundImage: `url(${src})` }}
                         >
                             {/* Uncomment button if needed */}

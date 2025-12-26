@@ -18,12 +18,12 @@ import GoogleMapUnits from "../components/GoogleMapUnits";
 import HumanTouch1 from "../assets/Community/csr.webp";
 import HumanTouch2 from "../assets/Community/csr2.webp";
 
-import Hero1 from "../assets/HeroImages/01.webp";
-import Hero2 from "../assets/HeroImages/02.webp";
-import Hero3 from "../assets/HeroImages/03.webp";
+import Hero1 from "../assets/HeroImages/WearYourStory.jpg";
+import Hero2 from "../assets/HeroImages/Elegance.jpg";
+import Hero3 from "../assets/HeroImages/WarmAlcove.jpg";
 import Hero4 from "../assets/HeroImages/04.webp";
-import Hero05 from "../assets/HeroImages/05.webp";
-import Hero06 from "../assets/HeroImages/07.webp";
+import Hero05 from "../assets/HeroImages/AheadCurve.jpg";
+import Hero06 from "../assets/HeroImages/WorkPlay.jpg";
 
 
 // Hero data

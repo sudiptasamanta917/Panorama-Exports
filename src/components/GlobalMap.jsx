@@ -121,7 +121,11 @@ export default function GlobalMap() {
                             >
                                 <div className="relative">
                                     <MdLocationPin className="text-white 2xl:text-[28px] xl:text-[25px] lg:text-[20px] md:text-[18px] sm:text-[15px] text-[12px]" />
-                                    <div className="absolute z-10 bottom-6 hidden group-hover:block bg-white text-sm text-red-950 px-2 py-1 rounded-lg shadow-md whitespace-nowrap">
+                                    <div
+                                        className="absolute z-50 left-1/2 bottom-6 hidden group-hover:block bg-white lg:text-sm md:text-[10px] text-[7px] text-red-950 px-2 py-1 rounded-lg shadow-md whitespace-nowrap
+                                        bottom-4 left-1/2 -translate-x-1/2
+                                        lg:left-1/2 lg:-translate-x-1/2 md:bottom-5 xl:bottom-6 2xl:bottom-7"
+                                    >
                                         <strong>{marker.country} : </strong>{" "}
                                         {marker.brands.join(", ")}
                                     </div>

@@ -4,10 +4,10 @@ import LiveMap from "../components/LiveMap";
 
 import plant1 from "../assets/OurInfrastructure/unit_1.webp";
 import plant2 from "../assets/OurInfrastructure/unit_2.webp";
-import plant3 from "../assets/OurInfrastructure/unit_3.webp";
-import plant4 from "../assets/OurInfrastructure/unit_4.webp";
-import corporateOffice from "../assets/OurInfrastructure/unit_1.webp";
-import plant5 from "../assets/OurInfrastructure/unit_1.webp";
+import plant3 from "../assets/OurInfrastructure/Unit3.jpg";
+import plant4 from "../assets/OurInfrastructure/Unit4.jpg";
+import plant5 from "../assets/OurInfrastructure/Unit5.jpg";
+import plant6 from "../assets/OurInfrastructure/Unit6.jpg";
 
 const GoogleMapUnits = () => {
 
@@ -65,7 +65,7 @@ const GoogleMapUnits = () => {
             address:
                 "Plot --I 20 Dlf Industrial area Phase 1, Faridabad, Pin code 121003",
             locationUrl: "/unitmap",
-            image: corporateOffice,
+            image: plant5,
         },
         {
             id: 5,
@@ -75,7 +75,7 @@ const GoogleMapUnits = () => {
             subtitle: "Panorama Warehouse",
             address: "PANORAMA EXPORTS D144, Sector 63, Noida",
             locationUrl: "/unitmap",
-            image: plant5,
+            image: plant6,
         },
     ];
 
