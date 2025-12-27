@@ -3,19 +3,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
+import AutoPlayVideo from "../../components/AutoPlayVideo";
 
-import mfg from "../../assets/Crafted_Precision/Smart_Warehousing/mfg.webp";
+import video from "../../assets/Crafted_Precision/Smart_Warehousing/1st big pic.mp4";
 import mfg1 from "../../assets/Crafted_Precision/Smart_Warehousing/1.webp";
-import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/2.webp";
+import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/Small2.jpg";
 import mfg3 from "../../assets/Crafted_Precision/Smart_Warehousing/3.webp";
 
-const mfgImages = [
-    {
-        title: "Smart Warehousing",
-        img: mfg,
-    },
-];
+// const mfgImages = [
+//     {
+//         title: "Smart Warehousing",
+//         img: mfg,
+//     },
+// ];
 
 function SmartWarehousing() {
     const swiperRef = useRef(null);
@@ -79,37 +79,13 @@ function SmartWarehousing() {
                         SMART WAREHOUSING
                     </h1>
                 </div>
-                <div className="md:mb-10">
-                    <Swiper
-                        ref={swiperRef}
-                        modules={[Navigation, Pagination, Autoplay]}
-                        spaceBetween={0}
-                        slidesPerView={1}
-                        loop={true}
-                        initialSlide={0}
-                        speed={600}
-                        autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false,
-                            pauseOnMouseEnter: false,
-                            waitForTransition: true,
-                            enabled: true,
-                        }}
-                        className="w-full overflow-hidden bg-[#5b4e39]"
-                    >
-                        {mfgImages.map((mfg, i) => (
-                            <SwiperSlide key={i}>
-                                <div className="relative">
-                                    {/* background image */}
-                                    <img
-                                        src={mfg.img}
-                                        alt={mfg.title}
-                                        className="w-full object-contain"
-                                    />
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                <div className="md:mb-10 w-[90%] xl:w-full mx-auto">
+                    <AutoPlayVideo
+                        src={video}
+                        loopTime={5000}
+                        className="md:mb-10"
+                        bgColor="#5b4e39"
+                    />
                 </div>
                 <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
                     <p className="font-bold text-xl md:text-2xl my-2 text-center">
