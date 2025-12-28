@@ -88,9 +88,9 @@ function SmartWarehousing() {
                     />
                 </div>
                 <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
-                    <p className="font-bold text-xl md:text-2xl my-2 text-center">
+                    {/* <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Smart Warehousing
-                    </p>
+                    </p> */}
                     Powered by advanced automation and digital precision, our
                     warehousing ecosystem ensures every garment moves seamlessly
                     from line to logistics. Real-time tracking, optimized
@@ -110,6 +110,15 @@ function SmartWarehousing() {
                     <img src={mfg3} alt="" />
                 </div>
             </section>
+            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                Panorama’s smart warehousing operates under strict compliance
+                frameworks, ensuring full traceability, accuracy, and audit
+                readiness. Digitized inventory systems enable controlled
+                storage, secure handling, and real-time monitoring. Automated
+                workflows reduce risk and human error across material movement.
+                Every process aligns with global regulatory and customer
+                compliance standards.
+            </div>
         </>
     );
 }

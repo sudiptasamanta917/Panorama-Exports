@@ -104,9 +104,9 @@ function AdaptiveCapacity() {
                     />
                 </div>
                 <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
-                    <p className="font-bold text-xl md:text-2xl my-2 text-center">
+                    {/* <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Adaptive Capacity
-                    </p>
+                    </p> */}
                     With five fully integrated manufacturing units and a
                     combined capacity exceeding 12 million garments annually,
                     Panorama’s flexible operations respond dynamically to every
@@ -127,6 +127,12 @@ function AdaptiveCapacity() {
                     <img src={aet3} alt="" />
                 </div>
             </section>
+            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                Adaptive capacity empowers Panorama to respond swiftly to
+                evolving market demands, seasonal fluctuations, and
+                client-specific requirements without compromising quality or
+                timelines.
+            </div>
         </>
     );
 }

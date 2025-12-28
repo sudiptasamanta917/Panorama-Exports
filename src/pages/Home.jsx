@@ -25,6 +25,8 @@ import Hero4 from "../assets/HeroImages/04.webp";
 import Hero05 from "../assets/HeroImages/AheadCurve.jpg";
 import Hero06 from "../assets/HeroImages/WorkPlay.jpg";
 
+import AutoPlayVideo from "../components/AutoPlayVideo";
+
 
 // Hero data
 const heroSlides = [
@@ -91,6 +93,7 @@ import img1 from "../assets/CraftingTomorrow/01.webp";
 import img2 from "../assets/CraftingTomorrow/2.webp";
 import img3 from "../assets/CraftingTomorrow/3.webp";
 import img4 from "../assets/CraftingTomorrow/4.webp";
+import video from "../assets/CraftingTomorrow/Crafting Tomorrow.mp4";
 
 const crImages = [img2, img4];
 
@@ -334,41 +337,35 @@ export default function Home() {
                 </div>
                 {/* Crafting Tomorrow Content */}
                 <div
-                    className="relative bg-[#182123] px-2 sm:px-6 md:px-10 lg:px-20 md:mb-6 text-white flex flex-col items-center justify-center overflow-hidden w-full"
-                    style={{ aspectRatio: "16 / 5" }}
+                    className="relative bg-[#182123] text-white flex flex-col items-center justify-center overflow-hidden w-full"
+                    style={{ aspectRatio: "16 / 9" }}
                 >
-                    {/* Background Slideshow */}
-                    {crImages.map((img, index) => (
-                        <div
-                            key={index}
-                            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                                index === currentIndex
-                                    ? "opacity-100"
-                                    : "opacity-0"
-                            }`}
-                            style={{
-                                backgroundImage: `url(${img})`,
-                                backgroundSize: "cover",
-                                backgroundPosition: "center",
-                            }}
-                        ></div>
-                    ))}
+                    <div className="md:mb-6 w-full absolute inset-0">
+                        <AutoPlayVideo
+                            src={video}
+                            loopTime={26000}
+                            className="md:mb-6 w-full"
+                            bgColor="#5b4e39"
+                        />
+                    </div>
 
                     {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/30 z-0"></div>
+                    {/* <div className="absolute inset-0 bg-black/30 z-0"></div> */}
 
                     {/* Text + Button (always fixed on top) */}
-                    <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-                        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] flex flex-wrap gap-4">
-                            <p className="font-bold">Crafting</p> Tomorrow
-                        </h1>
+                    <div className="relative z-10 flex items-end justify-center w-[80%] h-full 2xl:pb-20 xl:pb-14 lg:pb-8 md:pb-6 sm:pb-5 pb-1">
+                        <div className="flex flex-col items-center">
+                            <h1 className="2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] flex flex-wrap gap-4">
+                                <p className="font-bold">Crafting</p> Tomorrow
+                            </h1>
 
-                        <Link to="/craftingtomorrow">
-                            <button className="md:mt-10 mt-5 lg:text-lg md:text-md sm:text-sm text-[10px] md:px-6 sm:px-4 px-2 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
-                                Click to Read More
-                                <IoEnterOutline className="lg:h-7 lg:w-7 md:h-5 md:w-5 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                            </button>
-                        </Link>
+                            <Link to="/craftingtomorrow">
+                                <button className="xl:mt-10 lg:mt-6 md:mt-4 mt-1 lg:text-lg md:text-md sm:text-sm text-[10px] md:px-6 sm:px-4 px-2 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
+                                    Click to Read More
+                                    <IoEnterOutline className="lg:h-7 lg:w-7 md:h-5 md:w-5 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 

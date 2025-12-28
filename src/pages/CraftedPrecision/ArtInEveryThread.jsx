@@ -89,9 +89,9 @@ function ArtInEveryThread() {
                     />
                 </div>
                 <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
-                    <p className="font-bold text-xl md:text-2xl my-2 text-center">
+                    {/* <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Art in Every Thread
-                    </p>
+                    </p> */}
                     Bridging innovation and heritage, our modern embroidery
                     ecosystem delivers superior intricacy and flawless
                     execution. Each design is crafted with engineered precision
@@ -111,6 +111,13 @@ function ArtInEveryThread() {
                     <img src={aet3} alt="" />
                 </div>
             </section>
+            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                From Schiffli artistry to contemporary embroidery techniques,
+                every thread is placed with purpose. Automated controls ensure
+                repeat accuracy, while skilled specialists refine detailing
+                through hand-guided interventions—preserving authenticity while
+                maintaining production efficiency.
+            </div>
         </>
     );
 }

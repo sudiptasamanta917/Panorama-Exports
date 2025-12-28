@@ -89,9 +89,9 @@ function ExactingStandards() {
                     />
                 </div>
                 <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
-                    <p className="font-bold text-xl md:text-2xl my-2 text-center">
+                    {/* <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Exacting Standards
-                    </p>
+                    </p> */}
                     Every garment embodies a story of precision and
                     accountability—crafted from responsibly sourced materials
                     and guided through a meticulously monitored production
@@ -112,6 +112,11 @@ function ExactingStandards() {
                     <img src={aet3} alt="" />
                 </div>
             </section>
+            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                Through the harmony of cutting-edge technology and artisanal
+                finesse, each creation achieves a level of refinement that
+                defines modern luxury.
+            </div>
         </>
     );
 }

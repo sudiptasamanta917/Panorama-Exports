@@ -104,9 +104,9 @@ function MfgExcellence() {
                     />
                 </div>
                 <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
-                    <p className="font-bold text-xl md:text-2xl my-2 text-center">
+                    {/* <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Manufacturing Excellence{" "}
-                    </p>
+                    </p> */}
                     Five state-of-the-art factories work in perfect
                     synergy-streamlining every stage from fabric to final
                     finish. Powered by smart technology and real-time quality
@@ -151,6 +151,20 @@ function MfgExcellence() {
                         <img src={mfg3} alt="" />
                     </div>
                 </section>
+                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                    At Panorama, excellence is both a process and a promise.
+                    Integrated quality control ensures uniformity, resilience,
+                    and refinement throughout production. Sustainability remains
+                    central to our innovation-driven by water-conscious dyeing
+                    methods, cleaner processes, and advanced finishing
+                    techniques. Our expertise in customization enables the
+                    development of distinctive fabrics, finishes, and designs
+                    that elevate brand identity and performance standards. Fully
+                    aligned with global compliance and certification
+                    requirements, Panorama shapes the future of woven fabrics
+                    and garments-where premium craftsmanship meets responsible
+                    innovation.
+                </div>
             </section>
         </>
     );

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 const AutoPlayVideo = ({
     src,
-    loopTime = 5000,
+    loopTime = 10000,
     threshold = 0.5,
     className = "",
     videoClassName = "",

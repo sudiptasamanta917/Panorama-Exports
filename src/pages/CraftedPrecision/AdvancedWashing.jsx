@@ -89,9 +89,9 @@ function AdvancedWashing() {
                     />
                 </div>
                 <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
-                    <p className="font-bold text-xl md:text-2xl my-2 text-center">
+                    {/* <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Advanced Washing
-                    </p>
+                    </p> */}
                     Through a combination of automated systems and eco-conscious
                     techniques, our wash units achieve the perfect balance of
                     finish and sustainability. From enzyme and silicon washes to
@@ -112,6 +112,11 @@ function AdvancedWashing() {
                     <img src={aet3} alt="" />
                 </div>
             </section>
+            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                Our advanced washing processes optimize water, energy, and
+                chemical usage, delivering consistent finishes while
+                significantly reducing environmental impact.
+            </div>
         </>
     );
 }

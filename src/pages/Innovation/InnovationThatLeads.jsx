@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLocation } from "react-router-dom";
+import AutoPlayVideo from "../../components/AutoPlayVideo";
 
 import CadImg1 from "../../assets/Innovation/CAD&3DDraping/01.webp";
 
@@ -10,6 +11,13 @@ import TextileImg1 from "../../assets/Innovation/TextileIngenuity/Dewatermark.we
 import LeanImg1 from "../../assets/Innovation/LeanManufacturing/4.webp";
 
 import UbtImg1 from "../../assets/Innovation/UBTSewingTech/Ubt1.webp";
+
+import Cadvideo from "../../assets/Innovation/CAD&3DDraping/CAD.mp4";
+import Weavingvideo from "../../assets/Innovation/TextileIngenuity/Weaving Excellence.mp4";
+import Operationalvideo from "../../assets/Innovation/LeanManufacturing/Operational Excellence.mp4";
+import UbtSewingvideo from "../../assets/Innovation/UBTSewingTech/UBT Sewing Technology.mp4";
+
+
 
 
 
@@ -30,20 +38,26 @@ function InnovationThatLeads() {
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
                     <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-sm sm:text-md md:text-3xl lg:text-4xl font-bold text-center text-blue-950">
+                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-bold text-center text-blue-950">
                             CAD & 3D DRAPING
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-lg md:mt-3 mt-1 sm:mb-3 text-center text-gray-600 ml-1 font-thin">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-center text-gray-600 ml-1 font-thin">
                             Visualizing designs with precision before production
                         </div>
                     </div>
 
                     {/* Right Side Image */}
-                    <div className="w-[50%]">
-                        <img
+                    <div className="w-[50%] flex items-center justify-center">
+                        {/* <img
                             src={CadImg1}
                             alt="Innovation"
                             className="w-full h-full object-cover"
+                        /> */}
+                        <AutoPlayVideo
+                            src={Cadvideo}
+                            loopTime={4000}
+                            className="w-full"
+                            bgColor="#5b4e39"
                         />
                     </div>
                 </div>
@@ -55,10 +69,10 @@ function InnovationThatLeads() {
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
                     <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-sm sm:text-md md:text-3xl lg:text-4xl font-bold text-center text-blue-950">
+                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-bold text-center text-blue-950">
                             WEAVING BRILLIANCE
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
                             From loom to luxury, we unite cutting-edge fabric
                             innovation with eco-conscious materials and refined
                             finishing-infusing every creation with the artistry
@@ -67,11 +81,17 @@ function InnovationThatLeads() {
                     </div>
 
                     {/* Right Side Image */}
-                    <div className="w-[50%]">
-                        <img
+                    <div className="w-[50%] flex items-center justify-center">
+                        {/* <img
                             src={TextileImg1}
                             alt="Innovation"
                             className="w-full h-full object-cover"
+                        /> */}
+                        <AutoPlayVideo
+                            src={Weavingvideo}
+                            loopTime={8000}
+                            className="w-full"
+                            bgColor="#5b4e39"
                         />
                     </div>
                 </div>
@@ -83,10 +103,10 @@ function InnovationThatLeads() {
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
                     <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-sm sm:text-md md:text-3xl lg:text-webp font-bold text-center text-blue-950">
+                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-bold text-center text-blue-950">
                             OPERATIONAL EXCELLENCE
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
                             Systems for faster, cleaner, better production. It’s
                             an art blending innovation with craftsmanship to
                             reduce waste, enhance efficiency, and deliver
@@ -95,11 +115,18 @@ function InnovationThatLeads() {
                     </div>
 
                     {/* Right Side Image */}
-                    <div className="w-[50%]">
-                        <img
+                    <div className="w-[50%] flex items-center justify-center">
+                        {/* <img
                             src={LeanImg1}
                             alt="Innovation"
                             className="w-full h-full object-cover"
+                        /> */}
+
+                        <AutoPlayVideo
+                            src={Operationalvideo}
+                            loopTime={15000}
+                            className="w-full"
+                            bgColor="#5b4e39"
                         />
                     </div>
                 </div>
@@ -111,10 +138,10 @@ function InnovationThatLeads() {
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
                     <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-sm sm:text-md md:text-3xl lg:text-4xl font-bold text-center text-blue-950">
+                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-bold text-center text-blue-950">
                             UBT SEWING TECHNOLOGY
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
                             Seam integrity meets advanced performance. We
                             engineer resilience into every stitch-using
                             ultra-bond thread technology to create seams that
@@ -124,11 +151,18 @@ function InnovationThatLeads() {
                     </div>
 
                     {/* Right Side Image */}
-                    <div className="w-[50%]">
-                        <img
+                    <div className="w-[50%] flex items-center justify-center">
+                        {/* <img
                             src={UbtImg1}
                             alt="Innovation"
                             className="w-full h-full object-cover"
+                        /> */}
+
+                        <AutoPlayVideo
+                            src={UbtSewingvideo}
+                            loopTime={7000}
+                            className="w-full"
+                            bgColor="#5b4e39"
                         />
                     </div>
                 </div>

@@ -81,9 +81,9 @@ function SustainableDesigns() {
                     />
                 </div>
                 <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
-                    <p className="font-bold text-xl md:text-2xl my-2 text-center">
+                    {/* <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Sustainable Designs
-                    </p>
+                    </p> */}
                     Blending heritage craftsmanship with advanced,
                     resource-efficient systems, we transform creativity into
                     conscious innovation. Every piece we create reflects a
@@ -103,6 +103,11 @@ function SustainableDesigns() {
                     <img src={aet3} alt="" />
                 </div>
             </section>
+            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                Our approach to sustainable design integrates performance,
+                precision, and environmental accountability—delivering products
+                that meet global standards while reducing ecological impact.
+            </div>
         </>
     );
 }
