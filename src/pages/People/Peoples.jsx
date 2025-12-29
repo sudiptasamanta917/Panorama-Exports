@@ -212,9 +212,9 @@ function Peoples() {
                 id="our-strength"
                 className="w-full bg-blue-950 flex justify-center md:py-20 py-10"
             >
-                <div className="w-[80%] bg-white flex">
+                <div className="w-[80%] bg-white flex flex-col sm:flex-row">
                     {/* Left Side */}
-                    <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
+                    <div className="sm:w-[50%] md:p-10 p-2 flex flex-col justify-center">
                         <h2 className="text-sm sm:text-md md:text-xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
                             Our Strength
                         </h2>
@@ -234,7 +234,7 @@ function Peoples() {
                     </div>
 
                     {/* Right Side Image */}
-                    <div className="w-[50%]">
+                    <div className="sm:w-[50%]">
                         <img
                             src={OurStrengthImg}
                             alt="Innovation"
@@ -325,13 +325,13 @@ function Peoples() {
                 id="commitment"
                 className="w-full bg-blue-950 flex justify-center md:py-20 py-10"
             >
-                <div className="w-[80%] bg-white flex">
+                <div className="w-[80%] bg-white flex flex-col lg:flex-row">
                     {/* Left Side */}
-                    <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
+                    <div className="lg:w-[50%] md:p-10 p-2 flex flex-col justify-center">
                         <h2 className="text-sm sm:text-md md:text-xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
                             Commitment to Care & Compliance
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-sm lg:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin text-justify">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin text-justify">
                             Panorama fosters a culture of accountability,
                             ensuring rigorous compliance with global labour
                             laws, buyer mandates, and ethical business
@@ -351,7 +351,7 @@ function Peoples() {
                     </div>
 
                     {/* Right Side Image */}
-                    <div className="w-[50%]">
+                    <div className="lg:w-[50%]">
                         <img
                             src={CommitmentImg}
                             alt="Innovation"
@@ -383,10 +383,16 @@ function Peoples() {
                         HR for openings.
                     </p>
 
-                    <div className="flex items-center text-[10px] md:text-sm lg:text-lg">
-                        <button className="md:px-6 px-2 md:py-3 py-1 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">
+                    <div className="flex items-center gap-2 text-[10px] md:text-sm lg:text-lg">
+                        <a
+                            href="https://www.linkedin.com/company/panorama-exports/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="md:px-6 px-2 md:py-3 py-1 border border-white rounded-full
+               hover:bg-white hover:text-black transition duration-300"
+                        >
                             Follow us on LinkedIn
-                        </button>
+                        </a>
                     </div>
                 </div>
             </section>
