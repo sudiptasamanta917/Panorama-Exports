@@ -62,7 +62,7 @@ const OurPurpose = () => {
                             {/* Text side */}
                             <div className="relative 2xl:w-[600px] xl:w-[500px] lg:w-[450px] md:w-[350px] sm:w-[300px] w-[280px] xl:h-[400px] lg:h-[350px] md:h-[300px] sm:h-[250px] h-[350px] bg-[#f8f8f8] flex flex-col sm:justify-center justify-end items-end py-8 text-gray-900">
                                 <div className="md:w-[85%] w-[90%] lg:px-16 md:px-5 px-2">
-                                    <h2 className="2xl:text-[2rem] md:text-xl sm:text-md text-sm font-bold text-blue-700 mb-3 leading-tight">
+                                    <h2 className="2xl:text-[2rem] md:text-xl sm:text-md text-sm font-bold text-blue-900 mb-3 leading-tight">
                                         {item.title}
                                     </h2>
                                     <div
