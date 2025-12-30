@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import EnrichingLives from "../../assets/OurPurpose/Enriching.webp";
-import DynamicHeart from "../../assets/OurPurpose/Dybamic.webp";
+import EnrichingLives from "../../assets/OurPurpose/1.webp";
+import DynamicHeart from "../../assets/OurPurpose/2.webp";
 import ResponsibleReverence from "../../assets/OurPurpose/Responsible.webp";
 import TrustCore from "../../assets/OurPurpose/Trusted.webp";
 

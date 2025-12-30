@@ -18,12 +18,12 @@ import GoogleMapUnits from "../components/GoogleMapUnits";
 import HumanTouch1 from "../assets/Community/csr.webp";
 import HumanTouch2 from "../assets/Community/csr2.webp";
 
-import Hero1 from "../assets/HeroImages/WearYourStory.jpg";
-import Hero2 from "../assets/HeroImages/Elegance.jpg";
-import Hero3 from "../assets/HeroImages/WarmAlcove.jpg";
-import Hero4 from "../assets/HeroImages/04.webp";
-import Hero05 from "../assets/HeroImages/AheadCurve.jpg";
-import Hero06 from "../assets/HeroImages/WorkPlay.jpg";
+import Hero1 from "../assets/HeroImages/WearYourStory.webp";
+import Hero2 from "../assets/HeroImages/Elegance.webp";
+import Hero3 from "../assets/HeroImages/WarmAlcove.webp";
+import Hero4 from "../assets/HeroImages/ThreadsLegacy.webp";
+import Hero05 from "../assets/HeroImages/AheadCurve.webp";
+import Hero06 from "../assets/HeroImages/WorkPlay.webp";
 
 import AutoPlayVideo from "../components/AutoPlayVideo";
 
@@ -403,7 +403,7 @@ export default function Home() {
                         </div>
                         <div className="w-[50%] sm:mx-4">
                             <p className="2xl:text-xl lg:text-lg text-sm text-gray-600 hidden sm:block">
-                                4,759+ individuals, 40% women, all united by
+                                5,000+ individuals, 40% women, all united by
                                 passion, purpose, and creativity. We foster
                                 safe, inclusive spaces, invest in
                                 skill-building, and champion equal

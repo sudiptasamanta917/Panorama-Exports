@@ -6,8 +6,8 @@ import HumanResources from "./HumanResources";
 import HealthSafety from "./HealthSafety";
 import PeoplePurpose from "./PeoplePurpose";
 import PeopleImg from "../../assets/People/shivaansidharth3.webp";
-import OurStrengthImg from "../../assets/People/OurStrength.webp";
-import CommitmentImg from "../../assets/People/Compliance.webp";
+import OurStrengthImg from "../../assets/People/OurStrength1.webp";
+import CommitmentImg from "../../assets/People/Commitment.webp";
 import { FaArrowRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -32,11 +32,21 @@ import img13 from "../../assets/People/LifePanorama/13.webp";
 import img14 from "../../assets/People/LifePanorama/14.webp";
 import img15 from "../../assets/People/LifePanorama/15.webp";
 import img16 from "../../assets/People/LifePanorama/16.webp";
+import img17 from "../../assets/People/LifePanorama/17.webp";
+import img18 from "../../assets/People/LifePanorama/18.webp";
+import img19 from "../../assets/People/LifePanorama/19.webp";
+import img20 from "../../assets/People/LifePanorama/20.webp";
+import img21 from "../../assets/People/LifePanorama/21.webp";
+import img22 from "../../assets/People/LifePanorama/22.webp";
+import img23 from "../../assets/People/LifePanorama/23.webp";
+import img24 from "../../assets/People/LifePanorama/24.webp";
+import img25 from "../../assets/People/LifePanorama/25.webp";
+import img26 from "../../assets/People/LifePanorama/26.webp";
 
-import TeamworkImage from "../../assets/People/TeamWork.webp";
-import ForwardThinkingImage from "../../assets/People/ForwardThinking.webp";
-import SpeedActionImage from "../../assets/People/SpeedAction.webp";
-import CustomerCentricityImage from "../../assets/People/CustomerCentricity.webp";
+import TeamworkImage from "../../assets/People/TeamWork1.webp";
+import ForwardThinkingImage from "../../assets/People/ForwardThinking1.webp";
+import SpeedActionImage from "../../assets/People/SpeedAction1.webp";
+import CustomerCentricityImage from "../../assets/People/CustomerCentricity1.webp";
 
 import CareerPng from "../../assets/People/Career.webp";
 
@@ -95,7 +105,7 @@ const WeBelieveImages = [
 
 function Peoples() {
 
-    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16];
+    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25, img26];
     const location = useLocation();
     const [activeCrumb, setActiveCrumb] = useState("");
 
@@ -218,7 +228,7 @@ function Peoples() {
                         <h2 className="text-sm sm:text-md md:text-xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
                             Our Strength
                         </h2>
-                        <p className="text-[10px] sm:text-[12px] md:text-sm lg:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin text-justify">
+                        <p className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin text-justify">
                             The true fabric of Panorama is made of people 5,000
                             individuals, each adding their own thread of talent,
                             passion, and creativity. With women making up half
@@ -296,7 +306,7 @@ function Peoples() {
                         WE BELIEVE IN
                     </h2>
                 </div>
-                <div className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 gap-4">
+                <div className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:gap-6 gap-4">
                     {WeBelieveImages.map((item) => (
                         <div
                             key={item.id}
@@ -308,7 +318,7 @@ function Peoples() {
                                 className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
                             />
                             {/* Overlay */}
-                            <div className="absolute inset-0 py-[10%] bg-gradient-to-t from-blue-950/50 via-blue-950/40 via-blue-950/30 via-blue-950/20 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-950/80 group-hover:via-blue-950/50 group-hover:via-blue-950/40 group-hover:to-transparent transition-all duration-500 flex flex-col justify-end p-6">
+                            <div className="absolute bottom-0 h-[50%] w-full py-[10%] bg-gradient-to-t from-blue-950/20 via-blue-950/10 via-blue-950/0 via-blue-950/0 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-950/80 group-hover:via-blue-950/50 group-hover:via-blue-950/40 group-hover:to-transparent transition-all duration-500 flex flex-col justify-end p-6">
                                 <p className="text-white text-md md:text-lg lg:text-xl xl:text-2xl font-semibold mx-[10%] text-center">
                                     {item.text}
                                 </p>

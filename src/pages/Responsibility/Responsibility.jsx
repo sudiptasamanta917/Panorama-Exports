@@ -5,10 +5,14 @@ import icon2 from "../../assets/Responsible/Icons/SaveGreenery.webp";
 import icon3 from "../../assets/Responsible/Icons/BuildingCommunity.webp";
 import icon4 from "../../assets/Responsible/Icons/RespectWater.webp";
 
-import img1 from "../../assets/Responsible/Corporate/1.webp";
-import img2 from "../../assets/Responsible/Corporate/2.webp";
-import img3 from "../../assets/Responsible/Corporate/3.webp";
+import img1 from "../../assets/Responsible/pic1.webp";
+import img2 from "../../assets/Responsible/pic2.webp";
+import img3 from "../../assets/Responsible/pic3.webp";
 import img4 from "../../assets/Responsible/Full.webp";
+
+import cimg1 from "../../assets/Responsible/Corporate/1.webp";
+import cimg2 from "../../assets/Responsible/Corporate/2.webp";
+import cimg3 from "../../assets/Responsible/Corporate/3.webp";
 
 import cert1 from "../../assets/Responsible/certificate/gots.webp";
 import cert2 from "../../assets/Responsible/certificate/grs.webp";
@@ -76,9 +80,15 @@ function Responsibility() {
             </section>
 
             {/* Images Area */}
-            <section className="">
-                <div className="">
-                    <img src={img4} alt="" />
+            <section className="grid sm:grid-cols-3 grid-cols-1 gap-2 sm:gap-0">
+                <div className="sm:border-r-4 border-blue-900">
+                    <img src={img1} alt="" />
+                </div>
+                <div className="sm:border-r-4 border-blue-900">
+                    <img src={img2} alt="" />
+                </div>
+                <div className="sm:border-r-4 border-gray-500">
+                    <img src={img3} alt="" />
                 </div>
             </section>
             <div className="w-[90%] w-full mx-auto 2xl:py-16 md:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
@@ -165,15 +175,15 @@ function Responsibility() {
                 </div>
             </section>
 
-            <section className="grid grid-cols-3 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
+            <section className="grid sm:grid-cols-3 grid-cols-1 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
                 <div className="">
-                    <img src={img1} alt="" />
+                    <img src={cimg1} alt="" />
                 </div>
                 <div className="">
-                    <img src={img2} alt="" />
+                    <img src={cimg2} alt="" />
                 </div>
                 <div className="">
-                    <img src={img3} alt="" />
+                    <img src={cimg3} alt="" />
                 </div>
             </section>
         </>

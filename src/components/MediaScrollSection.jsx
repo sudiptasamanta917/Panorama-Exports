@@ -1,14 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { IoEnterOutline } from "react-icons/io5";
-import Media1 from "../assets/Media/01.jpg";
+import Media1 from "../assets/Media/01.webp";
 import Media2 from "../assets/Media/media_2.webp";
-import Media3 from "../assets/Media/02.jpg";
-import Media4 from "../assets/Media/03.jpg";
+import Media3 from "../assets/Media/02.webp";
+import Media4 from "../assets/Media/03.webp";
 
 const stats = [
-    { number: "4759+", label: "EMPLOYEES" },
-    { number: "40%", label: "WOMEN" },
-    { number: "1 MILLION", label: "GARMENTS" },
+    { number: "5000+", label: "EMPLOYEES" },
+    { number: "45%", label: "WOMEN" },
+    { number: "12 MILLION", label: "GARMENTS ANNUALLY" },
     { number: "6", label: "UNITS" },
 ];
 
@@ -32,11 +32,11 @@ const MediaScrollSection = () => {
                 ? parseFloat(match[0].replace(/,/g, ""))
                 : 0;
 
-            // Special case for GARMENTS (1 MILLION)
+            // Special case for GARMENTS (12 MILLION)
             let startValue = 0;
-            if (stat.label === "GARMENTS") {
+            if (stat.label === "GARMENTS ANNUALLY") {
                 startValue = 100;
-                targetValue = 1000000;
+                targetValue = 12000000;
             }
 
             setAnimatedNumbers((prev) => {
@@ -128,11 +128,11 @@ const MediaScrollSection = () => {
                             }}
                         >
                             <span className="2xl:text-5xl xl:text-4xl sm:text-3xl text-2xl font-bold text-blue-800">
-                                {stat.label === "GARMENTS" &&
-                                animatedNumbers[index] >= 1000000
-                                    ? "1 MILLION"
+                                {stat.label === "GARMENTS ANNUALLY" &&
+                                animatedNumbers[index] >= 12000000
+                                    ? "12 MILLION"
                                     : animatedNumbers[index].toLocaleString()}
-                                {stat.label !== "GARMENTS" && suffix}
+                                {stat.label !== "GARMENTS ANNUALLY" && suffix}
                             </span>
                             <span className="2xl:text-lg xl:text-md sm:text-sm text-[12px] font-semibold tracking-wide text-gray-500 mt-1">
                                 {stat.label}

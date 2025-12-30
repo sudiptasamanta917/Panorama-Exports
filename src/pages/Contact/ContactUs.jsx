@@ -46,10 +46,9 @@ const ContactUs = () => {
                     <h3 className="font-semibold text-2xl mb-2 md:mt-10 mt-5">
                         Panorama Exports
                     </h3>
-                    <p className="mb-2">
-                        Headquarters: B-188, Ma Anandmayee Marg,<br></br> Pocket
-                        C, Okhla Phase I, Okhla Industrial Estate,<br></br> New
-                        Delhi, Delhi 110020
+                    <p className="mb-2 text-wrap">
+                        Headquarters: Plot --I 20 DLF<br></br> Industrial area
+                        Phase 1, Faridabad,<br></br> Pin code 121003
                     </p>
                     <p className="mb-1">
                         <span className="font-semibold">Phone No:</span> I-20 -

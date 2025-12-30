@@ -6,7 +6,7 @@ import InnovationThatLeads from "./InnovationThatLeads";
 import StandardOfPerfection from "./StandardOfPerfection";
 import HandcraftedLuxury from "./HandcraftedLuxury";
 // import bgImage from "../../assets/Innovation/Header/frontbg.webp";
-import bgImage from "../../assets/Innovation/Header/BHA.webp";
+import bgImage from "../../assets/Innovation/Header/Header1.webp";
 
 const labels = {
     "#innovation-leads": "Innovation that Leads",
@@ -86,7 +86,7 @@ function Innovation() {
     return (
         <>
             <section id="innovation-leads" ref={innovationRef}>
-                <div className="sm:hidden w-full h-10 bg-gray-900"></div>
+                <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
                 <div
                     ref={ref}
                     className="w-full aspect-[16/8] bg-contain bg-center flex flex-col items-start justify-end"
