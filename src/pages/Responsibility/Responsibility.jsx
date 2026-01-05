@@ -58,7 +58,7 @@ function Responsibility() {
                     conscience,<br></br> producing with care, and leaving a
                     legacy the planet can wear with pride.
                 </div>
-                <div className="w-full h-[1px] bg-blue-900 md:my-8 my-5"></div>
+                <div className="w-full h-[1px] bg-blue-800 md:my-8 my-5"></div>
             </div>
             {/* Focus Areas */}
             <section className="grid md:grid-cols-4 grid-cols-2 sm:gap-5 gap-2 mx-auto 2xl:w-[65%] xl:w-[70%] lg:w-[85%] w-[90%] mx-auto 2xl:py-16 md:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
@@ -101,20 +101,13 @@ function Responsibility() {
                         {" "}
                         Sustainability is stitched into everything we do
                     </p>
-                    <div className="text-sm md:text-md md:font-semibold flex flex-col gap-3">
-                        <p> · Responsible sourcing and clean production</p>
-                        <p>
-                            · Solar power, efficient logistics, and
-                            eco-conscious facilities/infrastructure
-                        </p>
-                        <p>
-                            · Fair wages, safe workplaces, and community
-                            upliftment
-                        </p>
-                        <p>
-                            · Transparency, integrity, and circular practices at
-                            every level
-                        </p>
+                    <div className="text-gray-700 2xl:text-xl lg:text-lg text-sm leading-relaxed">
+                        Responsible sourcing and clean production guide our
+                        operations-powered by renewable energy, efficient
+                        logistics, and eco-conscious infrastructure. Ethical
+                        practices, workplace safety, community upliftment,
+                        transparency, and circularity define our commitment at
+                        every level.
                     </div>
                 </section>
 

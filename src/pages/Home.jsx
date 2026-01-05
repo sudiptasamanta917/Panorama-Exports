@@ -156,6 +156,8 @@ export default function Home() {
         return () => clearInterval(interval);
     }, []);
 
+    
+
     return (
         <div className="relative">
             <div className="sm:hidden w-full h-10 bg-gray-900"></div>

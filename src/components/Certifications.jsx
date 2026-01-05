@@ -8,7 +8,7 @@ import C5 from "../assets/Certificates/cert 5.webp";
 import C6 from "../assets/Certificates/cert 6.webp";
 import C7 from "../assets/Certificates/cert 7.webp";
 import C8 from "../assets/Certificates/cert 8.webp";
-import AllCertificates from "../assets/Certificates/AllCertificates.webp";
+import AllCertificates from "../assets/Certificates/AllCertificates.png";
 
 const certificates = [
     { id: 1, src: C1, alt: "Certificate 1" },

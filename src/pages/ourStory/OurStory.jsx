@@ -77,6 +77,8 @@ export default function OurStory() {
         }
     }, [location]);
 
+    
+
     return (
         <div className="text-gray-900 bg-white">
             <div className="sm:hidden w-full h-10 bg-gray-900"></div>

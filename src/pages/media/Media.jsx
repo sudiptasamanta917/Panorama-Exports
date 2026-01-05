@@ -25,7 +25,8 @@ import Safety from "../../assets/Media/Workshop/Safety.webp";
 
 import Environment1 from "../../assets/Media/Workshop/Environment1.webp";
 import Environment2 from "../../assets/Media/Workshop/Environment2.webp";
-import Environment3 from "../../assets/Media/Workshop/Environment3.webp";
+import Environment3 from "../../assets/Media/Workshop/DSC03107.webp";
+import Environment4 from "../../assets/Media/Workshop/CM100651.webp";
 
 const tabsData = {
     Workshop: [
@@ -113,6 +114,12 @@ const tabsData = {
             date: "",
             image: Environment3,
         },
+        {
+            id: 15,
+            title: "Environment Day",
+            date: "",
+            image: Environment4,
+        },
     ],
     Newsletter: [
         {
@@ -122,12 +129,8 @@ const tabsData = {
             url: "/media/November2025.pdf",
         },
     ],
-    Community: [
-        
-    ],
-    News: [
-        
-    ],
+    Community: [],
+    News: [],
 };
 
 const tabNames = Object.keys(tabsData);
