@@ -63,7 +63,7 @@ const GoogleMapUnits = () => {
             title: "Unit 05",
             subtitle: "Panorama Exports Pvt Ltd ",
             address:
-                "Plot --I 20 Dlf Industrial area Phase 1, Faridabad, Pin code 121003",
+                "Panorama Exports Pvt Ltd D-144 Sector 63 Faridabad, Pin code 121003",
             locationUrl: "/unitmap",
             image: plant5,
         },

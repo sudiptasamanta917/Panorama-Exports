@@ -128,6 +128,12 @@ const tabsData = {
             date: "",
             url: "/media/November2025.pdf",
         },
+        {
+            id: 2,
+            title: "Panorama Exports Newsletter",
+            date: "",
+            url: "/media/Christmas Newletter.pdf",
+        },
     ],
     Community: [],
     News: [],

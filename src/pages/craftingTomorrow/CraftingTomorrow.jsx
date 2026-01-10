@@ -17,8 +17,8 @@ export default function CraftingTomorrow() {
 
     const handleDownload = () => {
         const link = document.createElement("a");
-        link.href = "/Panorama company profile.pptx";
-        link.download = "Panorama company profile.pptx";
+        link.href = "/Panorama company profile - REVISED - Copy 2026.pdf";
+        link.download = "Panorama company profile - REVISED - Copy 2026.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
