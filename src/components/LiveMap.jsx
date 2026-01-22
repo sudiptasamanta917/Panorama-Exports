@@ -15,14 +15,17 @@ const LiveMap = ({ locations = [], center, zoom }) => {
             script.defer = true;
             document.body.appendChild(script);
 
-            script.onload = initMap;
+            script.onload = () => {
+                setTimeout(initMap, 100); // Yield to main thread
+            };
         } else {
             if (window.google && !mapRef.current) {
-                initMap();
+                setTimeout(initMap, 100); // Yield to main thread
             }
         }
 
         function initMap() {
+            if (!window.google) return;
             mapRef.current = new window.google.maps.Map(
                 document.getElementById("map"),
                 {

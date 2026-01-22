@@ -1,84 +1,85 @@
+import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import Loader from "../components/Loader";
 import Home from "../pages/Home";
-import OurStory from "../pages/ourStory/OurStory";
-import VisionMission from "../pages/ourStory/VisionMission";
-import OurPurpose from "../pages/ourStory/OurPurpose";
 
-import CraftedPrecision from "../pages/CraftedPrecision/CraftedPrecision";
-import MfgExcellence from "../pages/CraftedPrecision/MfgExcellence";
-import SmartWarehousing from "../pages/CraftedPrecision/SmartWarehousing";
-import ArtInEveryThread from "../pages/CraftedPrecision/ArtInEveryThread";
-import ExactingStandards from "../pages/CraftedPrecision/ExactingStandards";
-import SustainableDesigns from "../pages/CraftedPrecision/SustainableDesigns";
-import AdvancedWashing from "../pages/CraftedPrecision/AdvancedWashing";
-import AdaptiveCapacity from "../pages/CraftedPrecision/AdaptiveCapacity";
+// Lazy load all page components
+// const Home = lazy(() => import("../pages/Home"));
+const OurStory = lazy(() => import("../pages/ourStory/OurStory"));
+const VisionMission = lazy(() => import("../pages/ourStory/VisionMission"));
+const OurPurpose = lazy(() => import("../pages/ourStory/OurPurpose"));
 
-import Innovation from "../pages/Innovation/Innovation";
+const CraftedPrecision = lazy(() => import("../pages/CraftedPrecision/CraftedPrecision"));
+const MfgExcellence = lazy(() => import("../pages/CraftedPrecision/MfgExcellence"));
+const SmartWarehousing = lazy(() => import("../pages/CraftedPrecision/SmartWarehousing"));
+const ArtInEveryThread = lazy(() => import("../pages/CraftedPrecision/ArtInEveryThread"));
+const ExactingStandards = lazy(() => import("../pages/CraftedPrecision/ExactingStandards"));
+const SustainableDesigns = lazy(() => import("../pages/CraftedPrecision/SustainableDesigns"));
+const AdvancedWashing = lazy(() => import("../pages/CraftedPrecision/AdvancedWashing"));
+const AdaptiveCapacity = lazy(() => import("../pages/CraftedPrecision/AdaptiveCapacity"));
 
-import Peoples from "../pages/People/Peoples";
+const Innovation = lazy(() => import("../pages/Innovation/Innovation"));
+const InnovationThatLeads = lazy(() => import("../pages/Innovation/InnovationThatLeads"));
+const StandardOfPerfection = lazy(() => import("../pages/Innovation/StandardOfPerfection"));
+const HandcraftedLuxury = lazy(() => import("../pages/Innovation/HandcraftedLuxury"));
 
-import Responsibility from "../pages/Responsibility/Responsibility";
+const Peoples = lazy(() => import("../pages/People/Peoples"));
+const Responsibility = lazy(() => import("../pages/Responsibility/Responsibility"));
+const CraftingTomorrow = lazy(() => import("../pages/craftingTomorrow/CraftingTomorrow"));
+const GlobalFootprint = lazy(() => import("../pages/globalFootprint/GlobalFootprint"));
 
-
-import CraftingTomorrow from "../pages/craftingTomorrow/CraftingTomorrow";
-import GlobalFootprint from "../pages/globalFootprint/GlobalFootprint";
-
-import Media from "../pages/media/Media";
-import UnitLocationMap from "../components/UnitLocationMap";
-
-import InnovationThatLeads from "../pages/Innovation/InnovationThatLeads";
-import StandardOfPerfection from "../pages/Innovation/StandardOfPerfection";
-import HandcraftedLuxury from "../pages/Innovation/HandcraftedLuxury";
-import LookBook from "../pages/LookBook/LookBook";
-import ContactUs from "../pages/Contact/ContactUs";
-
-
+const Media = lazy(() => import("../pages/media/Media"));
+const UnitLocationMap = lazy(() => import("../components/UnitLocationMap"));
+const LookBook = lazy(() => import("../pages/LookBook/LookBook"));
+const ContactUs = lazy(() => import("../pages/Contact/ContactUs"));
 
 export default function AppRoutes() {
     return (
-        <Routes>
-            <Route path="/" element={<Home />} />
+        <Suspense fallback={<Loader />}>
+            <Routes>
+                <Route path="/" element={<Home />} />
 
-            <Route path="/ourstory" element={<OurStory />} />
-            <Route path="/vision-values" element={<VisionMission />} />
-            <Route path="/our-purpose" element={<OurPurpose />} />
+                <Route path="/ourstory" element={<OurStory />} />
+                <Route path="/vision-values" element={<VisionMission />} />
+                <Route path="/our-purpose" element={<OurPurpose />} />
 
-            <Route path="/craftedprecision" element={<CraftedPrecision />} />
-            <Route path="/mfg-excellence" element={<MfgExcellence />} />
-            <Route path="/smart-warehousing" element={<SmartWarehousing />} />
-            <Route path="/art-thread" element={<ArtInEveryThread />} />
-            <Route path="/exacting-standards" element={<ExactingStandards />} />
-            <Route
-                path="/sustainable-designs"
-                element={<SustainableDesigns />}
-            />
-            <Route path="/advanced-washing" element={<AdvancedWashing />} />
-            <Route path="/adaptive-capacity" element={<AdaptiveCapacity />} />
+                <Route path="/craftedprecision" element={<CraftedPrecision />} />
+                <Route path="/mfg-excellence" element={<MfgExcellence />} />
+                <Route path="/smart-warehousing" element={<SmartWarehousing />} />
+                <Route path="/art-thread" element={<ArtInEveryThread />} />
+                <Route path="/exacting-standards" element={<ExactingStandards />} />
+                <Route
+                    path="/sustainable-designs"
+                    element={<SustainableDesigns />}
+                />
+                <Route path="/advanced-washing" element={<AdvancedWashing />} />
+                <Route path="/adaptive-capacity" element={<AdaptiveCapacity />} />
 
-            <Route path="/innovation" element={<Innovation />} />
+                <Route path="/innovation" element={<Innovation />} />
 
-            <Route path="/peoples" element={<Peoples />} />
-            <Route path="/responsibility" element={<Responsibility />} />
-            <Route path="/craftingtomorrow" element={<CraftingTomorrow />} />
-            <Route path="/globalfootprint" element={<GlobalFootprint />} />
+                <Route path="/peoples" element={<Peoples />} />
+                <Route path="/responsibility" element={<Responsibility />} />
+                <Route path="/craftingtomorrow" element={<CraftingTomorrow />} />
+                <Route path="/globalfootprint" element={<GlobalFootprint />} />
 
-            <Route path="/media" element={<Media />} />
-            <Route path="/unitmap" element={<UnitLocationMap />} />
-            <Route path="/lookbook" element={<LookBook />} />
-            <Route path="/contactus" element={<ContactUs />} />
+                <Route path="/media" element={<Media />} />
+                <Route path="/unitmap" element={<UnitLocationMap />} />
+                <Route path="/lookbook" element={<LookBook />} />
+                <Route path="/contactus" element={<ContactUs />} />
 
-            <Route
-                path="/innovation/innovationleads"
-                element={<InnovationThatLeads />}
-            />
-            <Route
-                path="/innovation/standardperfection"
-                element={<StandardOfPerfection />}
-            />
-            <Route
-                path="/innovation/handcraftedluxury"
-                element={<HandcraftedLuxury />}
-            />
-        </Routes>
+                <Route
+                    path="/innovation/innovationleads"
+                    element={<InnovationThatLeads />}
+                />
+                <Route
+                    path="/innovation/standardperfection"
+                    element={<StandardOfPerfection />}
+                />
+                <Route
+                    path="/innovation/handcraftedluxury"
+                    element={<HandcraftedLuxury />}
+                />
+            </Routes>
+        </Suspense>
     );
 }

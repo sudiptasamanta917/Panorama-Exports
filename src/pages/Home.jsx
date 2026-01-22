@@ -26,6 +26,7 @@ import Hero05 from "../assets/HeroImages/AheadCurve.webp";
 import Hero06 from "../assets/HeroImages/WorkPlay.webp";
 
 import AutoPlayVideo from "../components/AutoPlayVideo";
+import LazyRender from "../components/LazyRender";
 
 
 // Hero data
@@ -108,19 +109,19 @@ export default function Home() {
 
         // Set initial slide index
         setCurrentSlideIndex(0);
-        
+
         // Initialize autoplay with a slight delay
         const autoplayTimer = setTimeout(() => {
             if (swiper.autoplay) {
                 swiper.autoplay.start();
             }
         }, 100);
-        
+
         // Handle slide changes
         const handleSlideChange = () => {
             const newIndex = swiper.realIndex;
             setCurrentSlideIndex(newIndex);
-            
+
             // Announce slide changes for screen readers
             const activeSlide = heroSlides[newIndex];
             if (activeSlide) {
@@ -130,7 +131,7 @@ export default function Home() {
                 announcement.className = 'sr-only';
                 announcement.textContent = `Slide ${newIndex + 1} of ${heroSlides.length}: PANORAMA ${activeSlide.dynamicText}`;
                 document.body.appendChild(announcement);
-                
+
                 // Clean up announcement after screen reader has time to read it
                 setTimeout(() => {
                     if (document.body.contains(announcement)) {
@@ -139,9 +140,9 @@ export default function Home() {
                 }, 1000);
             }
         };
-        
+
         swiper.on('slideChange', handleSlideChange);
-        
+
         // Cleanup function
         return () => {
             clearTimeout(autoplayTimer);
@@ -156,7 +157,7 @@ export default function Home() {
         return () => clearInterval(interval);
     }, []);
 
-    
+
 
     return (
         <div className="relative">
@@ -310,6 +311,8 @@ export default function Home() {
                                     <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
                                         <img
                                             src={brand}
+                                            loading="lazy"
+                                            decoding="async"
                                             alt="brand"
                                             className="2xl:h-20 lg:h-16 md:h-12 sm:h-10 h-6 2xl:w-28 lg:w-24 md:w-20 sm:w-16 w-10 object-contain"
                                         />
@@ -331,9 +334,17 @@ export default function Home() {
                             }
                             .animate-marquee {
                             animation: marquee 60s linear infinite;
+                            will-change: transform;
+                            }
+                            .animate-marquee:hover {
+                            animation-play-state: paused;
                             }
                             .animate-marquee-reverse {
                             animation: marquee-reverse 60s linear infinite;
+                            will-change: transform;
+                            }
+                            .animate-marquee-reverse:hover {
+                            animation-play-state: paused;
                             }
                             `}
                         </style>
@@ -374,7 +385,9 @@ export default function Home() {
                 </div>
 
                 {/* Global Map section */}
-                <GlobalMap />
+                <LazyRender height="500px" rootMargin="2000px">
+                    <GlobalMap />
+                </LazyRender>
 
                 {/* Integrated Units section */}
                 <div className="md:py-8 py-6 sm:mt-6 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
@@ -393,7 +406,9 @@ export default function Home() {
 
                 {/* Google Map section */}
                 <div className="">
-                    <GoogleMapUnits />
+                    <LazyRender height="400px" rootMargin="2000px">
+                        <GoogleMapUnits />
+                    </LazyRender>
                 </div>
 
                 {/* People section */}
@@ -423,7 +438,9 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <MediaScrollSection />
+                <LazyRender height="400px" rootMargin="2000px">
+                    <MediaScrollSection />
+                </LazyRender>
 
                 {/* Certifications section */}
                 <div className="pt-4 md:pb-4 text-[#01276a] md:mt-6 mt-1 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">

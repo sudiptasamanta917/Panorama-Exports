@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { IoEnterOutline } from "react-icons/io5";
+import gsap from "gsap";
 import Media1 from "../assets/Media/01.webp";
 import Media2 from "../assets/Media/media_2.webp";
 import Media3 from "../assets/Media/02.webp";
@@ -15,52 +16,61 @@ const stats = [
 const images = [Media1, Media2, Media3, Media4];
 
 const MediaScrollSection = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [enableTransition, setEnableTransition] = useState(true);
-    const [animatedNumbers, setAnimatedNumbers] = useState(stats.map(() => 0));
+    // Removed React state for animation to prevent re-renders
+    // const [animatedNumbers, setAnimatedNumbers] = useState(stats.map(() => 0)); // DELETED
 
     const sectionRef = useRef(null);
     const observerRef = useRef(null);
+    const sliderRef = useRef(null);
+
+    // Refs for the number elements to update DOM directly
+    const numberRefs = useRef([]);
 
     // Animate number counts
     const animateCounts = () => {
-        setAnimatedNumbers(stats.map(() => 0)); // reset before animating
+        // Reset to initial values (but wait, we want to animate from 0)
+        // No need to reset state, just start animating logic.
 
         stats.forEach((stat, index) => {
+            const element = numberRefs.current[index];
+            if (!element) return;
+
             const match = stat.number.match(/[\d,\.]+/);
             let targetValue = match
                 ? parseFloat(match[0].replace(/,/g, ""))
                 : 0;
-
-            // Special case for GARMENTS (12 MILLION)
             let startValue = 0;
+
             if (stat.label === "GARMENTS ANNUALLY") {
-                startValue = 100;
+                startValue = 0;
                 targetValue = 12000000;
             }
 
-            setAnimatedNumbers((prev) => {
-                const newValues = [...prev];
-                newValues[index] = startValue;
-                return newValues;
-            });
+            const startTime = performance.now();
+            const duration = 2000; // Animation duration in ms
 
-            const increment = Math.max(1, Math.ceil(targetValue / 80));
+            const step = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
 
-            const interval = setInterval(() => {
-                setAnimatedNumbers((prev) => {
-                    const newValues = [...prev];
-                    if (newValues[index] < targetValue) {
-                        newValues[index] = Math.min(
-                            newValues[index] + increment,
-                            targetValue
-                        );
-                    } else {
-                        clearInterval(interval);
-                    }
-                    return newValues;
-                });
-            }, 40);
+                // EaseOutQuart function for smooth deceleration
+                const ease = 1 - Math.pow(1 - progress, 4);
+
+                const currentValue = Math.floor(startValue + (targetValue - startValue) * ease);
+
+                // Update DOM directly - ZERO React Re-renders
+                if (stat.label === "GARMENTS ANNUALLY" && currentValue >= 12000000) {
+                    element.innerText = "12 MILLION";
+                } else {
+                    element.innerText = currentValue.toLocaleString();
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                }
+            };
+
+            requestAnimationFrame(step);
         });
     };
 
@@ -87,25 +97,48 @@ const MediaScrollSection = () => {
         };
     }, []);
 
-    // Carousel logic
+    // GSAP Carousel Logic
+    // ... (unchanged)
     const extended = [...images, images[0]];
 
     useEffect(() => {
-        const id = setInterval(() => {
-            setCurrentIndex((i) => (i + 1) % (images.length + 1));
-        }, 2000);
-        return () => clearInterval(id);
-    }, []);
+        const slider = sliderRef.current;
+        if (!slider) return;
 
-    const handleTransitionEnd = () => {
-        if (currentIndex === images.length) {
-            setEnableTransition(false);
-            setCurrentIndex(0);
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => setEnableTransition(true));
-            });
-        }
-    };
+        let currentIndex = 0;
+        const totalSlides = images.length; // 4 original images
+        let timeoutId;
+
+        const nextSlide = () => {
+            // Wait 2 seconds (2000ms) then slide
+            timeoutId = setTimeout(() => {
+                currentIndex++;
+                gsap.to(slider, {
+                    xPercent: -currentIndex * 100,
+                    duration: 0.7,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        // If we reached the clone (index 4)
+                        if (currentIndex >= totalSlides) {
+                            currentIndex = 0;
+                            // Instant reset to 0
+                            gsap.set(slider, { xPercent: 0 });
+                        }
+                        // Continue loop
+                        nextSlide();
+                    }
+                });
+            }, 2000);
+        };
+
+        // Start the loop
+        nextSlide();
+
+        return () => {
+            clearTimeout(timeoutId);
+            gsap.killTweensOf(slider);
+        };
+    }, []);
 
     return (
         <div className="bg-white w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 md:py-10 sm:py-4 py-2 lg:flex gap-4">
@@ -128,10 +161,9 @@ const MediaScrollSection = () => {
                             }}
                         >
                             <span className="2xl:text-5xl xl:text-4xl sm:text-3xl text-2xl font-bold text-blue-800">
-                                {stat.label === "GARMENTS ANNUALLY" &&
-                                animatedNumbers[index] >= 12000000
-                                    ? "12 MILLION"
-                                    : animatedNumbers[index].toLocaleString()}
+                                <span ref={el => numberRefs.current[index] = el}>
+                                    0
+                                </span>
                                 {stat.label !== "GARMENTS ANNUALLY" && suffix}
                             </span>
                             <span className="2xl:text-lg xl:text-md sm:text-sm text-[12px] font-semibold tracking-wide text-gray-500 mt-1">
@@ -145,13 +177,10 @@ const MediaScrollSection = () => {
             {/* Carousel Section */}
             <div className="lg:w-[50%] w-full overflow-hidden rounded-lg lg:mt-0 mt-10 border">
                 <div
-                    onTransitionEnd={handleTransitionEnd}
-                    className={`flex ${
-                        enableTransition
-                            ? "transition-transform duration-700"
-                            : ""
-                    }`}
-                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                    ref={sliderRef}
+                    className="flex"
+                // Removed dynamic transform style & transition classes
+                // GSAP handles xPercent directly on this element
                 >
                     {extended.map((src, idx) => (
                         <div
@@ -159,13 +188,6 @@ const MediaScrollSection = () => {
                             className="w-full lg:h-[40vh] md:h-[42vh] h-[30vh] flex-shrink-0 bg-center bg-cover bg-no-repeat flex items-end justify-center"
                             style={{ backgroundImage: `url(${src})` }}
                         >
-                            {/* Uncomment button if needed */}
-                            {/* <a href="#" className="mb-10">
-                                <button className="mt-10 lg:text-md bg-green-600 md:text-sm text-xs px-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-1 border text-white border-white hover:bg-pink-200 hover:text-red-950 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
-                                    Click to view
-                                    <IoEnterOutline className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
-                                </button>
-                            </a> */}
                         </div>
                     ))}
                 </div>

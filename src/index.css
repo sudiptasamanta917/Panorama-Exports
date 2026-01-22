@@ -155,6 +155,7 @@ body {
     transform: translateX(-350px) scale(0.7) rotateY(45deg);
     opacity: 0.5;
   }
+
   100% {
     transform: translateX(0) scale(1) rotateY(0deg);
     opacity: 1;
@@ -166,6 +167,7 @@ body {
     transform: translateX(0) scale(1) rotateY(0deg);
     opacity: 1;
   }
+
   100% {
     transform: translateX(350px) scale(0.7) rotateY(-45deg);
     opacity: 0.5;
@@ -177,6 +179,7 @@ body {
     transform: translateX(350px) scale(0.7) rotateY(-45deg);
     opacity: 0.5;
   }
+
   100% {
     transform: translateX(700px) scale(0.5) rotateY(-90deg);
     opacity: 0;
@@ -223,46 +226,49 @@ body {
   .section-title {
     font-size: 2rem;
   }
-  
+
   .section-subtitle {
     font-size: 1rem;
   }
-  
+
   .certificate-card {
     width: 250px;
     height: 350px;
   }
-  
+
   .card-left {
     transform: translateX(-200px) scale(0.7) rotateY(45deg);
   }
-  
+
   .card-right {
     transform: translateX(200px) scale(0.7) rotateY(-45deg);
   }
-  
+
   @keyframes slideToMiddleLeft {
     0% {
       transform: translateX(-200px) scale(0.7) rotateY(45deg);
     }
+
     100% {
       transform: translateX(0) scale(1) rotateY(0deg);
     }
   }
-  
+
   @keyframes slideToRight {
     0% {
       transform: translateX(0) scale(1) rotateY(0deg);
     }
+
     100% {
       transform: translateX(200px) scale(0.7) rotateY(-45deg);
     }
   }
-  
+
   @keyframes fadeOutRight {
     0% {
       transform: translateX(200px) scale(0.7) rotateY(-45deg);
     }
+
     100% {
       transform: translateX(400px) scale(0.5) rotateY(-90deg);
     }
@@ -274,11 +280,11 @@ body {
     width: 200px;
     height: 300px;
   }
-  
+
   .card-left {
     transform: translateX(-150px) scale(0.7) rotateY(45deg);
   }
-  
+
   .card-right {
     transform: translateX(150px) scale(0.7) rotateY(-45deg);
   }
@@ -293,7 +299,7 @@ body {
   right: 0;
   bottom: 0;
   background: radial-gradient(circle at 30% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
-              radial-gradient(circle at 70% 50%, rgba(255, 119, 198, 0.3), transparent 50%);
+    radial-gradient(circle at 70% 50%, rgba(255, 119, 198, 0.3), transparent 50%);
   pointer-events: none;
 }
 
@@ -316,6 +322,7 @@ body {
   from {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   }
+
   to {
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
   }
@@ -335,9 +342,11 @@ body {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -346,6 +355,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -371,12 +381,13 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
 
 .animate-scroll {
-  animation: scroll 25s linear infinite; /* adjust 25s for speed */
+  animation: scroll 25s linear infinite;
+  /* adjust 25s for speed */
 }
-

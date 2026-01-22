@@ -8,15 +8,34 @@ const AutoPlayVideo = ({
     bgColor = "#000",
 }) => {
     const videoRef = useRef(null);
+    const containerRef = useRef(null);
 
     useEffect(() => {
         const video = videoRef.current;
+        const container = containerRef.current;
+        if (!container) return;
+
+        // Observer for loading the video
+        const loadObserver = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && video && !video.src) {
+                    video.src = src;
+                    video.load();
+                    loadObserver.disconnect();
+                }
+            },
+            { rootMargin: "200px" } // Start loading 200px before it comes into view
+        );
+
+        loadObserver.observe(container);
+
         if (!video) return;
 
-        const observer = new IntersectionObserver(
+        // Observer for playing/pausing
+        const playObserver = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    video.play().catch(() => {});
+                    video.play().catch(() => { });
                 } else {
                     video.pause();
                 }
@@ -24,23 +43,27 @@ const AutoPlayVideo = ({
             { threshold }
         );
 
-        observer.observe(video);
+        playObserver.observe(video);
 
-        return () => observer.disconnect();
-    }, [threshold]);
+        return () => {
+            loadObserver.disconnect();
+            playObserver.disconnect();
+        };
+    }, [src, threshold]);
 
     return (
         <div
+            ref={containerRef}
             className={`w-full overflow-hidden ${className}`}
             style={{ backgroundColor: bgColor }}
         >
             <video
                 ref={videoRef}
-                src={src}
+                // src is removed from here and added via JS
                 muted
                 playsInline
                 loop // ✅ native loop
-                preload="metadata" // ✅ lightweight
+                preload="none" // ✅ strictly no preload
                 className={`w-full h-auto object-cover ${videoClassName}`}
                 style={{
                     willChange: "transform",

@@ -246,15 +246,14 @@ export default function Media() {
 
             {/* Tabs Navigation */}
             <div className="mt-5 md:max-w-7xl mx-auto px-4">
-                <nav className="flex md:space-x-8 lg:space-x-16 sm:space-x-5 space-x-3 text-[12px]">
+                <nav className="flex md:space-x-8 lg:space-x-16 sm:space-x-5 space-x-3 text-base md:text-xl">
                     {tabNames.map((tab) => (
                         <button
                             key={tab}
-                            className={`py-2 ${
-                                activeTab === tab
+                            className={`py-2 ${activeTab === tab
                                     ? "border-b-2 border-blue-900 text-blue-900 font-semibold"
                                     : "text-gray-800"
-                            }`}
+                                }`}
                             onClick={() => setActiveTab(tab)}
                         >
                             {tab}

@@ -5,6 +5,7 @@ export default function Footer() {
     const footerLinks = {
         company: [
             { title: "Contact Us", path: "/contactus" },
+            { title: "Our Story", path: "/ourstory" },
             // { title: "Privacy Notice", path: "/privacy" },
             // { title: "Terms & Conditions", path: "/terms" },
         ],

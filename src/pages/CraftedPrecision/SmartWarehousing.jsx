@@ -47,9 +47,8 @@ function SmartWarehousing() {
                 announcement.setAttribute("aria-live", "polite");
                 announcement.setAttribute("aria-atomic", "true");
                 announcement.className = "sr-only";
-                announcement.textContent = `Slide ${newIndex + 1} of ${
-                    mfgImages.length
-                }: PANORAMA ${activeSlide.dynamicText}`;
+                announcement.textContent = `Slide ${newIndex + 1} of ${mfgImages.length
+                    }: PANORAMA ${activeSlide.dynamicText}`;
                 document.body.appendChild(announcement);
 
                 // Clean up announcement after screen reader has time to read it
@@ -101,13 +100,13 @@ function SmartWarehousing() {
             {/* Images Area */}
             <section className="grid md:grid-cols-3 grid-cols-1 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
                 <div className="">
-                    <img src={mfg1} alt="" />
+                    <img src={mfg1} alt="" loading="lazy" />
                 </div>
                 <div className="">
-                    <img src={mfg2} alt="" />
+                    <img src={mfg2} alt="" loading="lazy" />
                 </div>
                 <div className="">
-                    <img src={mfg3} alt="" />
+                    <img src={mfg3} alt="" loading="lazy" />
                 </div>
             </section>
             <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">

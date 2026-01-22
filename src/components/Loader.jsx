@@ -13,12 +13,11 @@ export default function Loader() {
 
     return (
         <div
-            className={`fixed inset-0 z-50 bg-black flex items-center justify-center transition-opacity duration-1000 ${
-                fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
-            }`}
+            className={`fixed inset-0 z-50 bg-black flex items-center justify-center transition-opacity duration-1000 ${fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
+                }`}
         >
             <div className="animate-pulse text-white text-4xl font-bold tracking-wider">
-                CASA LUNARA
+                PANORAMA EXPORTS
             </div>
         </div>
     );

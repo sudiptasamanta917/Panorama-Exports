@@ -47,8 +47,8 @@ const ContactUs = () => {
                         Panorama Exports
                     </h3>
                     <p className="mb-2 text-wrap">
-                        Headquarters: Panorama Exports Pvt Ltd<br></br> D-144
-                        Sector 63 Faridabad,<br></br> Pin code 121003 
+                        Headquarters: Panorama Exports Pvt Ltd<br />
+                        I 20, Sector 32, Block A, DLF Industrial Area, Faridabad, Haryana 121003
                     </p>
                     <p className="mb-1">
                         <span className="font-semibold">Phone No:</span> I-20 -
