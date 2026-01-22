@@ -141,6 +141,29 @@ const tabsData = {
 
 const tabNames = Object.keys(tabsData);
 
+function PdfViewer({ url, getPageWidth }) {
+    const [numPages, setNumPages] = useState(null);
+
+    return (
+        <Document
+            file={url}
+            onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+            className="flex flex-col items-center"
+        >
+            {numPages &&
+                Array.from({ length: numPages }, (_, i) => (
+                    <Page
+                        key={i}
+                        pageNumber={i + 1}
+                        width={getPageWidth()}
+                        className="mb-4 border"
+                    />
+                ))}
+        </Document>
+    );
+}
+
+
 export default function Media() {
     const [activeTab, setActiveTab] = useState(tabNames[0]);
     const [numPages, setNumPages] = useState(null);
@@ -242,30 +265,14 @@ export default function Media() {
 
             {/* Tab Content - News/Image Cards */}
             {activeTab === "Newsletter" && (
-                <div className="md:max-w-7xl mx-auto w-full px-4 py-8">
-                    <div className="flex flex-col gap-5">
-                        {tabsData[activeTab].map((item) => (
-                            <div key={item.id} className="">
-                                <Document
-                                    file={item.url}
-                                    onLoadSuccess={handleLoadSuccess}
-                                    onLoadError={(err) =>
-                                        console.error("PDF load error:", err)
-                                    }
-                                    className="w-full flex flex-col items-center"
-                                >
-                                    {Array.from(new Array(numPages), (_, i) => (
-                                        <Page
-                                            key={`page_${i + 1}`}
-                                            pageNumber={i + 1}
-                                            width={getPageWidth()}
-                                            className="mb-4 border"
-                                        />
-                                    ))}
-                                </Document>
-                            </div>
-                        ))}
-                    </div>
+                <div className="md:max-w-7xl mx-auto w-full px-4 py-8 space-y-8">
+                    {tabsData.Newsletter.map((item) => (
+                        <PdfViewer
+                            key={item.id}
+                            url={item.url}
+                            getPageWidth={getPageWidth}
+                        />
+                    ))}
                 </div>
             )}
 

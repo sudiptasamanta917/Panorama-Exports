@@ -63,12 +63,12 @@ const GoogleMapUnits = () => {
             title: "Unit 05",
             subtitle: "Panorama Exports Pvt Ltd ",
             address:
-                "Panorama Exports Pvt Ltd D-144 Sector 63 Faridabad, Pin code 121003",
+                "I 20, Sector 32, Block A, DLF Industrial Area, Faridabad, Haryana 121003",
             locationUrl: "/unitmap",
             image: plant5,
         },
         {
-            id: 5,
+            id: 6,
             lat: 28.5139,
             lng: 77.22,
             title: "Unit 06",
@@ -98,6 +98,8 @@ const GoogleMapUnits = () => {
                             <div className="w-full xl:h-40 h-36 rounded-lg">
                                 <img
                                     src={unit.image}
+                                    loading="lazy"
+                                    decoding="async"
                                     alt={unit.title}
                                     className="w-full xl:h-40 h-36 object-cover rounded-lg border-2 border-[#f8ce84]"
                                 />

@@ -2,52 +2,35 @@ import { useEffect, useRef } from "react";
 
 const AutoPlayVideo = ({
     src,
-    loopTime = 10000,
-    threshold = 0.5,
+    threshold = 0.4,
     className = "",
     videoClassName = "",
     bgColor = "#000",
 }) => {
     const videoRef = useRef(null);
-    const sectionRef = useRef(null);
-    const intervalRef = useRef(null);
 
     useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    videoRef.current?.play();
-
-                    intervalRef.current = setInterval(() => {
-                        if (videoRef.current) {
-                            videoRef.current.currentTime = 0;
-                            videoRef.current.play();
-                        }
-                    }, loopTime);
+                    video.play().catch(() => {});
                 } else {
-                    videoRef.current?.pause();
-                    if (intervalRef.current) {
-                        clearInterval(intervalRef.current);
-                        intervalRef.current = null;
-                    }
+                    video.pause();
                 }
             },
             { threshold }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
+        observer.observe(video);
 
-        return () => {
-            observer.disconnect();
-            if (intervalRef.current) clearInterval(intervalRef.current);
-        };
-    }, [loopTime, threshold]);
+        return () => observer.disconnect();
+    }, [threshold]);
 
     return (
         <div
-            ref={sectionRef}
             className={`w-full overflow-hidden ${className}`}
             style={{ backgroundColor: bgColor }}
         >
@@ -56,8 +39,13 @@ const AutoPlayVideo = ({
                 src={src}
                 muted
                 playsInline
-                preload="auto"
+                loop // ✅ native loop
+                preload="metadata" // ✅ lightweight
                 className={`w-full h-auto object-cover ${videoClassName}`}
+                style={{
+                    willChange: "transform",
+                    transform: "translateZ(0)",
+                }}
             />
         </div>
     );

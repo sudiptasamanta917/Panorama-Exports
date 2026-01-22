@@ -170,9 +170,9 @@ export default function Home() {
                     slidesPerView={1}
                     loop={true}
                     initialSlide={0}
-                    speed={800}
+                    speed={600}
                     autoplay={{
-                        delay: 2000,
+                        delay: 3500,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: false,
                         waitForTransition: true,
@@ -290,6 +290,8 @@ export default function Home() {
                                     <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
                                         <img
                                             src={brand}
+                                            loading="lazy"
+                                            decoding="async"
                                             alt="brand"
                                             className="2xl:h-20 lg:h-16 md:h-12 sm:h-10 h-6 2xl:w-28 lg:w-24 md:w-20 sm:w-16 w-10 object-contain"
                                         />
