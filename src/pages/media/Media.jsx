@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+import { pdfjs } from "react-pdf";
+import NewsletterGrid from "../../components/Newsletter/NewsletterGrid";
+import { mediaData } from "../../data/mediaData";
+import { useNavigate } from "react-router-dom";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
@@ -10,183 +13,18 @@ import TopHeader from "../../assets/Media/LeftImg.webp";
 import RightHeader1 from "../../assets/Media/RightImg1.webp";
 import RightHeader2 from "../../assets/Media/RightImg2.webp";
 
-import NewsletterImg1 from "../../assets/Media/Workshop/Img1.webp";
-import NewsletterImg2 from "../../assets/Media/Workshop/Img2.webp";
-import NewsletterImg3 from "../../assets/Media/Workshop/Img3.webp";
-import NewsletterImg4 from "../../assets/Media/Workshop/Img4.webp";
-import NewsletterImg5 from "../../assets/Media/Workshop/Img5.webp";
-import NewsletterImg6 from "../../assets/Media/Workshop/Img6.webp";
-import NewsletterImg7 from "../../assets/Media/Workshop/Img7.webp";
-import NewsletterImg8 from "../../assets/Media/Workshop/Img8.webp";
-import NewsletterImg9 from "../../assets/Media/Workshop/Img9.webp";
-import NewsletterImg10 from "../../assets/Media/Workshop/Img10.webp";
 
-import Safety from "../../assets/Media/Workshop/Safety.webp";
 
-import Environment1 from "../../assets/Media/Workshop/Environment1.webp";
-import Environment2 from "../../assets/Media/Workshop/Environment2.webp";
-import Environment3 from "../../assets/Media/Workshop/DSC03107.webp";
-import Environment4 from "../../assets/Media/Workshop/CM100651.webp";
 
-const tabsData = {
-    Workshop: [
-        {
-            id: 1,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg1,
-        },
-        {
-            id: 2,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg2,
-        },
-        {
-            id: 3,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg3,
-        },
-        {
-            id: 4,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg4,
-        },
-        {
-            id: 5,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg5,
-        },
-        {
-            id: 6,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg6,
-        },
-        {
-            id: 7,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg7,
-        },
-        {
-            id: 8,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg8,
-        },
-        {
-            id: 9,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg9,
-        },
-        {
-            id: 10,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg10,
-        },
-        {
-            id: 11,
-            title: "Safety",
-            date: "",
-            image: Safety,
-        },
-        {
-            id: 12,
-            title: "Environment Day",
-            date: "",
-            image: Environment1,
-        },
-        {
-            id: 13,
-            title: "Environment Day",
-            date: "",
-            image: Environment2,
-        },
-        {
-            id: 14,
-            title: "Environment Day",
-            date: "",
-            image: Environment3,
-        },
-        {
-            id: 15,
-            title: "Environment Day",
-            date: "",
-            image: Environment4,
-        },
-    ],
-    Newsletter: [
-        {
-            id: 1,
-            title: "Panorama Exports Newsletter",
-            date: "",
-            url: "/media/November2025.pdf",
-        },
-        {
-            id: 2,
-            title: "Panorama Exports Newsletter",
-            date: "",
-            url: "/media/Christmas Newletter.pdf",
-        },
-    ],
-    Community: [],
-    News: [],
-};
 
-const tabNames = Object.keys(tabsData);
+const tabNames = Object.keys(mediaData);
 
-function PdfViewer({ url, getPageWidth }) {
-    const [numPages, setNumPages] = useState(null);
 
-    return (
-        <Document
-            file={url}
-            onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-            className="flex flex-col items-center"
-        >
-            {numPages &&
-                Array.from({ length: numPages }, (_, i) => (
-                    <Page
-                        key={i}
-                        pageNumber={i + 1}
-                        width={getPageWidth()}
-                        className="mb-4 border"
-                    />
-                ))}
-        </Document>
-    );
-}
 
 
 export default function Media() {
     const [activeTab, setActiveTab] = useState(tabNames[0]);
-    const [numPages, setNumPages] = useState(null);
-    const [width, setWidth] = useState(window.innerWidth);
-
-    const handleLoadSuccess = ({ numPages }) => setNumPages(numPages);
-
-    //  Update width on resize (for responsiveness)
-    useEffect(() => {
-        const handleResize = () => setWidth(window.innerWidth);
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    // Decide PDF page width (responsive breakpoints)
-    function getPageWidth() {
-        if (width >= 1530) return 1300; // 2xl screens
-        if (width >= 1280) return 1100; // xl screens
-        if (width >= 1024) return 900; // lg
-        if (width >= 768) return 700; // md
-        if (width >= 640) return 600; // sm
-        return Math.min(width - 32, 300); // xs
-    }
+    const navigate = useNavigate();
 
     return (
         <div className="bg-white">
@@ -251,8 +89,8 @@ export default function Media() {
                         <button
                             key={tab}
                             className={`py-2 ${activeTab === tab
-                                    ? "border-b-2 border-blue-900 text-blue-900 font-semibold"
-                                    : "text-gray-800"
+                                ? "border-b-2 border-blue-900 text-blue-900 font-semibold"
+                                : "text-gray-800"
                                 }`}
                             onClick={() => setActiveTab(tab)}
                         >
@@ -263,22 +101,20 @@ export default function Media() {
             </div>
 
             {/* Tab Content - News/Image Cards */}
+            {/* Tab Content - News/Image Cards */}
             {activeTab === "Newsletter" && (
-                <div className="md:max-w-7xl mx-auto w-full px-4 py-8 space-y-8">
-                    {tabsData.Newsletter.map((item) => (
-                        <PdfViewer
-                            key={item.id}
-                            url={item.url}
-                            getPageWidth={getPageWidth}
-                        />
-                    ))}
+                <div className="md:max-w-7xl mx-auto w-full px-4 py-8">
+                    <NewsletterGrid
+                        newsletters={mediaData.Newsletter}
+                        onSelect={(item) => navigate(`/media/newsletter/${item.id}`)}
+                    />
                 </div>
             )}
 
             {activeTab !== "Newsletter" && (
                 <div className="md:max-w-7xl mx-auto px-4 py-8">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-                        {(tabsData[activeTab] || []).map((item) => (
+                        {(mediaData[activeTab] || []).map((item) => (
                             <div
                                 key={item.id}
                                 className="relative group bg-white rounded-sm overflow-hidden shadow transition-shadow duration-500 aspect-[16/14]"

@@ -29,6 +29,7 @@ const CraftingTomorrow = lazy(() => import("../pages/craftingTomorrow/CraftingTo
 const GlobalFootprint = lazy(() => import("../pages/globalFootprint/GlobalFootprint"));
 
 const Media = lazy(() => import("../pages/media/Media"));
+const NewsletterViewer = lazy(() => import("../pages/media/NewsletterViewer"));
 const UnitLocationMap = lazy(() => import("../components/UnitLocationMap"));
 const LookBook = lazy(() => import("../pages/LookBook/LookBook"));
 const ContactUs = lazy(() => import("../pages/Contact/ContactUs"));
@@ -63,6 +64,7 @@ export default function AppRoutes() {
                 <Route path="/globalfootprint" element={<GlobalFootprint />} />
 
                 <Route path="/media" element={<Media />} />
+                <Route path="/media/newsletter/:id" element={<NewsletterViewer />} />
                 <Route path="/unitmap" element={<UnitLocationMap />} />
                 <Route path="/lookbook" element={<LookBook />} />
                 <Route path="/contactus" element={<ContactUs />} />
